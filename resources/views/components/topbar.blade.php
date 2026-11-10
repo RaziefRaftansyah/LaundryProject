@@ -14,7 +14,7 @@
             <button
                 type="button"
                 x-on:click="sidebarOpen = true"
-                class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-500 cursor-pointer"
+                class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] cursor-pointer"
                 aria-label="Buka menu navigasi"
             >
                 <x-icon name="menu" class="w-6 h-6" />
@@ -35,9 +35,9 @@
                 <button
                     type="button"
                     x-on:click="userMenu = !userMenu"
-                    class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 cursor-pointer"
+                    class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-[#FDECEC] cursor-pointer"
                 >
-                    <div class="w-8 h-8 rounded-full bg-sky-600 text-white font-bold text-xs flex items-center justify-center">
+                    <div class="w-8 h-8 rounded-full bg-[#D91B20] text-white font-bold text-xs flex items-center justify-center">
                         {{ strtoupper(substr($user->name ?? 'U', 0, 1)) }}
                     </div>
                     <span class="hidden md:inline-block text-xs font-semibold text-slate-700 max-w-[120px] truncate">
@@ -63,7 +63,7 @@
                         <p class="text-[11px] text-slate-500 truncate">{{ $user->email ?? '' }}</p>
                     </div>
 
-                    <a href="{{ route('profile.edit') }}" class="flex items-center gap-2.5 px-4 py-2 text-slate-700 hover:bg-slate-50 hover:text-sky-600">
+                    <a href="{{ route('profile.edit') }}" class="flex items-center gap-2.5 px-4 py-2 text-slate-700 hover:bg-slate-50 hover:text-[#D91B20]">
                         <x-icon name="user" class="w-4 h-4" />
                         <span>Pengaturan Profil</span>
                     </a>

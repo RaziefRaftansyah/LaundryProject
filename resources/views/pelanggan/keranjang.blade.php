@@ -6,7 +6,7 @@
 <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 lg:pb-16">
     <!-- Judul + navigasi kembali -->
     <div class="pt-2 pb-6">
-        <a href="{{ route('pelanggan.pesan.index') }}" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-sky-600">
+        <a href="{{ route('pelanggan.pesan.index') }}" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-[#D91B20]">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
             Kembali pilih layanan
         </a>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="mt-4 text-center">
-        <a href="{{ route('pelanggan.pesan.index') }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-sky-700 hover:text-sky-800">
+        <a href="{{ route('pelanggan.pesan.index') }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#D91B20] hover:text-[#D91B20]">
             <x-icon name="plus" class="w-4 h-4" /> Tambah layanan lain
         </a>
     </div>

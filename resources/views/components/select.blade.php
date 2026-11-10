@@ -14,7 +14,7 @@
 
     $borderClass = $hasError
         ? 'border-rose-300 text-rose-900 focus:border-rose-500 focus:ring-rose-200'
-        : 'border-slate-300 hover:border-slate-400 focus:border-sky-500 focus:ring-sky-100';
+        : 'border-slate-300 hover:border-slate-400 focus:border-[#FDECEC] focus:ring-[#FDECEC]';
 @endphp
 
 <div {{ $attributes->only('class') }}>

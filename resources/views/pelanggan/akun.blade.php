@@ -12,7 +12,7 @@
 @endphp
 
 <!-- 1. Header & Profil (latar biru) -->
-<header class="bg-gradient-to-br from-sky-600 to-sky-700 text-white px-4 pt-4 pb-6 rounded-b-3xl">
+<header class="bg-gradient-to-br from-[#8F0F13] to-[#8F0F13] text-white px-4 pt-4 pb-6 rounded-b-3xl">
     <!-- Top bar: judul kiri, ikon notifikasi / pesan / pengaturan di kanan -->
     <div class="flex items-center justify-between">
         <a href="{{ route('home') }}" class="flex items-center gap-2 text-sm font-extrabold tracking-tight">
@@ -59,9 +59,9 @@
                     </svg>
                 </a>
             </div>
-            <p class="text-xs text-sky-100 truncate">{{ $user->phone ?: $user->email }}</p>
+            <p class="text-xs text-[#D91B20] truncate">{{ $user->phone ?: $user->email }}</p>
         </div>
-        <div class="w-16 h-16 rounded-full bg-white text-sky-700 flex items-center justify-center text-xl font-extrabold ring-4 ring-white/30 shrink-0" aria-hidden="true">
+        <div class="w-16 h-16 rounded-full bg-white text-[#D91B20] flex items-center justify-center text-xl font-extrabold ring-4 ring-white/30 shrink-0" aria-hidden="true">
             {{ $user->initials() }}
         </div>
     </div>
@@ -72,7 +72,7 @@
     <section id="riwayat" class="bg-white rounded-2xl border border-slate-200 p-4 scroll-mt-4">
         <div class="flex items-center justify-between mb-3">
             <h2 class="text-sm font-extrabold text-slate-900">Riwayat Pemesanan</h2>
-            <a href="{{ route('pelanggan.orders.index', $tab === 'semua' ? [] : ['status' => $tab]) }}" class="text-xs font-bold text-sky-600 hover:text-sky-700">
+            <a href="{{ route('pelanggan.orders.index', $tab === 'semua' ? [] : ['status' => $tab]) }}" class="text-xs font-bold text-[#D91B20] hover:text-[#D91B20]">
                 Lihat Semua
             </a>
         </div>
@@ -86,7 +86,7 @@
                 </div>
                 <p class="text-sm font-bold text-slate-700">{{ $tabTitles[$tab] }}</p>
                 @if ($tab === 'semua')
-                    <a href="{{ route('pelanggan.pesan.index') }}" class="mt-3 inline-flex px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold transition-colors">
+                    <a href="{{ route('pelanggan.pesan.index') }}" class="mt-3 inline-flex px-4 py-2 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white text-xs font-bold transition-colors">
                         Pesan Layanan Sekarang
                     </a>
                 @endif
@@ -100,12 +100,12 @@
                     @endphp
                     <li>
                         <a href="{{ route('pelanggan.orders.show', $order) }}" class="flex items-start gap-3 py-3 group">
-                            <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shrink-0">
+                            <div class="w-10 h-10 rounded-xl bg-[#FDECEC] text-[#D91B20] flex items-center justify-center shrink-0">
                                 <x-icon name="washer" class="w-5 h-5" />
                             </div>
                             <div class="flex-1 min-w-0">
                                 <div class="flex items-start justify-between gap-2">
-                                    <p class="text-sm font-bold text-slate-900 truncate group-hover:text-sky-700">{{ $order->service?->name ?? 'Layanan' }}</p>
+                                    <p class="text-sm font-bold text-slate-900 truncate group-hover:text-[#D91B20]">{{ $order->service?->name ?? 'Layanan' }}</p>
                                     <x-badge :status="$order->status" size="sm" />
                                 </div>
                                 <p class="text-[11px] text-slate-500 mt-0.5">
@@ -145,7 +145,7 @@
                 ['label' => 'Aturan Penggunaan', 'href' => route('aturan')],
             ] as $menu)
                 <li>
-                    <a href="{{ $menu['href'] }}" class="flex items-center justify-between px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-sky-700 transition-colors">
+                    <a href="{{ $menu['href'] }}" class="flex items-center justify-between px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-[#D91B20] transition-colors">
                         <span>{{ $menu['label'] }}</span>
                         <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

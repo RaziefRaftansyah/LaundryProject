@@ -32,7 +32,7 @@
             <button
                 type="button"
                 @click="addUserModalOpen = true"
-                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-md transition-all self-start sm:self-auto"
+                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-xs shadow-md transition-all self-start sm:self-auto"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" />
@@ -84,14 +84,14 @@
                     name="search"
                     value="{{ $search ?? '' }}"
                     placeholder="Cari nama, email, atau nomor telepon..."
-                    class="w-full pl-9 pr-4 py-2 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                    class="w-full pl-9 pr-4 py-2 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                 />
             </div>
 
             <div class="sm:col-span-3">
                 <select
                     name="role"
-                    class="w-full py-2 px-3 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                    class="w-full py-2 px-3 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                 >
                     <option value="">Semua Peran (Role)</option>
                     <option value="admin" {{ ($role ?? '') === 'admin' ? 'selected' : '' }}>Administrator</option>
@@ -141,7 +141,7 @@
                                     <div class="font-bold text-slate-900 text-xs flex items-center gap-1.5">
                                         <span>{{ $userItem->name }}</span>
                                         @if ($userItem->id === auth()->id())
-                                            <span class="px-1.5 py-0.5 rounded text-[10px] bg-sky-100 text-sky-800 font-extrabold">Anda</span>
+                                            <span class="px-1.5 py-0.5 rounded text-[10px] bg-[#FDECEC] text-[#D91B20] font-extrabold">Anda</span>
                                         @endif
                                     </div>
                                     <div class="text-[11px] text-slate-500">ID #{{ $userItem->id }}</div>
@@ -166,8 +166,8 @@
                                     <span>Pegawai</span>
                                 </span>
                             @else
-                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-sky-50 text-sky-700 border border-sky-200">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
+                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-[#FDECEC] text-[#D91B20] border border-[#FDECEC]">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-[#FDECEC]"></span>
                                     <span>Pelanggan</span>
                                 </span>
                             @endif
@@ -189,7 +189,7 @@
                                             'phone' => $userItem->phone,
                                             'role' => $userRoleStr,
                                         ]) }})"
-                                        class="px-2.5 py-1.5 rounded-lg bg-sky-50 hover:bg-sky-100 text-sky-700 font-bold text-xs transition-colors"
+                                        class="px-2.5 py-1.5 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-[#D91B20] font-bold text-xs transition-colors"
                                     >
                                         Edit
                                     </button>
@@ -253,10 +253,10 @@
                 x-show="addUserModalOpen"
                 class="relative z-10 inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-slate-200"
             >
-                <div class="px-6 py-5 bg-gradient-to-r from-sky-900 to-slate-900 text-white flex items-center justify-between">
+                <div class="px-6 py-5 bg-gradient-to-r from-[#8F0F13] to-slate-900 text-white flex items-center justify-between">
                     <div>
                         <h3 class="text-base font-bold">Tambah Pengguna Baru</h3>
-                        <p class="text-xs text-sky-200">Buat akun staf atau pelanggan secara manual</p>
+                        <p class="text-xs text-[#D91B20]">Buat akun staf atau pelanggan secara manual</p>
                     </div>
                     <button
                         type="button"
@@ -282,7 +282,7 @@
                             name="name"
                             required
                             placeholder="Contoh: Budi Santoso"
-                            class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                            class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                         />
                     </div>
 
@@ -296,7 +296,7 @@
                             name="email"
                             required
                             placeholder="nama@email.com"
-                            class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                            class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                         />
                     </div>
 
@@ -309,7 +309,7 @@
                             type="tel"
                             name="phone"
                             placeholder="0812xxxxxxxx"
-                            class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                            class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                         />
                     </div>
 
@@ -324,7 +324,7 @@
                             required
                             minlength="8"
                             placeholder="Minimal 8 karakter"
-                            class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                            class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                         />
                     </div>
 
@@ -336,7 +336,7 @@
                             id="new-role"
                             name="role"
                             required
-                            class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                            class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                         >
                             <option value="pelanggan">Pelanggan (Customer)</option>
                             <option value="pegawai">Pegawai Outlet (Staf / Kasir)</option>
@@ -354,7 +354,7 @@
                         </button>
                         <button
                             type="submit"
-                            class="px-5 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-xs transition-colors"
+                            class="px-5 py-2 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-xs shadow-xs transition-colors"
                         >
                             Simpan Pengguna
                         </button>
@@ -387,10 +387,10 @@
             >
                 <template x-if="selectedUser">
                     <div>
-                        <div class="px-6 py-5 bg-gradient-to-r from-slate-900 to-sky-900 text-white flex items-center justify-between">
+                        <div class="px-6 py-5 bg-gradient-to-r from-slate-900 to-[#8F0F13] text-white flex items-center justify-between">
                             <div>
                                 <h3 class="text-base font-bold">Edit Akun Pengguna</h3>
-                                <p class="text-xs text-sky-200" x-text="selectedUser.name + ' (#' + selectedUser.id + ')'"></p>
+                                <p class="text-xs text-[#D91B20]" x-text="selectedUser.name + ' (#' + selectedUser.id + ')'"></p>
                             </div>
                             <button
                                 type="button"
@@ -417,7 +417,7 @@
                                     name="name"
                                     :value="selectedUser.name"
                                     required
-                                    class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                    class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                                 />
                             </div>
 
@@ -431,7 +431,7 @@
                                     name="email"
                                     :value="selectedUser.email"
                                     required
-                                    class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                    class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                                 />
                             </div>
 
@@ -444,7 +444,7 @@
                                     type="tel"
                                     name="phone"
                                     :value="selectedUser.phone"
-                                    class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                    class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                                 />
                             </div>
 
@@ -458,7 +458,7 @@
                                     name="password"
                                     minlength="8"
                                     placeholder="Isi hanya jika ingin mereset password"
-                                    class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                    class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                                 />
                             </div>
 
@@ -471,7 +471,7 @@
                                     name="role"
                                     required
                                     :disabled="selectedUser.id === currentUserId"
-                                    class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500 disabled:bg-slate-100 disabled:text-slate-500"
+                                    class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC] disabled:bg-slate-100 disabled:text-slate-500"
                                 >
                                     <option value="pelanggan" :selected="selectedUser.role === 'pelanggan'">Pelanggan (Customer)</option>
                                     <option value="pegawai" :selected="selectedUser.role === 'pegawai'">Pegawai Outlet (Staf / Kasir)</option>
@@ -494,7 +494,7 @@
                                 </button>
                                 <button
                                     type="submit"
-                                    class="px-5 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-xs transition-colors"
+                                    class="px-5 py-2 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-xs shadow-xs transition-colors"
                                 >
                                     Simpan Perubahan
                                 </button>

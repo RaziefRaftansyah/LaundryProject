@@ -16,7 +16,7 @@
 >
     <div class="px-5 pt-5 pb-4 border-b border-slate-100 flex items-center justify-between">
         <h2 id="keranjang-title" class="flex items-center gap-2 text-base font-extrabold text-slate-900">
-            <x-icon name="cart" class="w-5 h-5 text-sky-600" />
+            <x-icon name="cart" class="w-5 h-5 text-[#D91B20]" />
             Keranjang
         </h2>
         <span class="text-xs font-bold text-slate-500">{{ $cart['items']->count() }} layanan</span>
@@ -33,14 +33,14 @@
             </div>
             <p class="text-sm font-bold text-slate-700">Keranjang masih kosong</p>
             <p class="text-xs text-slate-500 mt-1">Centang layanan di halaman Pesan, lalu klik ikon keranjang di bar bawah.</p>
-            <a href="{{ route('pelanggan.pesan.index') }}" class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold transition-colors">
+            <a href="{{ route('pelanggan.pesan.index') }}" class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-white text-xs font-bold transition-colors">
                 Pilih Layanan
             </a>
         </div>
     @else
         @if (! $readonly && $prices->isNotEmpty())
             <label class="px-5 py-3 border-b border-slate-100 flex items-center gap-3 text-xs font-bold text-slate-700 cursor-pointer">
-                <input type="checkbox" :checked="allSelected()" x-on:change="toggleAll($event.target.checked)" class="w-5 h-5 rounded border-slate-300 text-sky-600 focus:ring-sky-500" />
+                <input type="checkbox" :checked="allSelected()" x-on:change="toggleAll($event.target.checked)" class="w-5 h-5 rounded border-slate-300 text-[#D91B20] focus:ring-[#FDECEC]" />
                 Pilih semua
             </label>
         @endif
@@ -57,7 +57,7 @@
                                 value="{{ $item->id }}"
                                 form="lanjut-bayar"
                                 x-model="selected"
-                                class="mt-0.5 w-5 h-5 shrink-0 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
+                                class="mt-0.5 w-5 h-5 shrink-0 rounded border-slate-300 text-[#D91B20] focus:ring-[#FDECEC]"
                                 aria-label="Pilih {{ $item->service?->name }} untuk dibayar"
                             />
                         @endif
@@ -120,9 +120,9 @@
                 </div>
                 <div class="flex items-center justify-between">
                     <span class="text-xs font-bold uppercase tracking-wider text-slate-700">Total</span>
-                    <span class="text-lg font-extrabold text-sky-700">Rp {{ number_format($cart['total'], 0, ',', '.') }}</span>
+                    <span class="text-lg font-extrabold text-[#D91B20]">Rp {{ number_format($cart['total'], 0, ',', '.') }}</span>
                 </div>
-                <a href="{{ route('pelanggan.cart.index') }}" class="block text-center text-xs font-bold text-sky-700 hover:text-sky-800">
+                <a href="{{ route('pelanggan.cart.index') }}" class="block text-center text-xs font-bold text-[#D91B20] hover:text-[#D91B20]">
                     Ubah isi keranjang
                 </a>
             </div>
@@ -143,7 +143,7 @@
                 <div x-show="selected.length > 0" x-cloak class="flex flex-wrap items-center justify-between gap-3">
                     <div class="text-xs">
                         <p class="font-bold text-slate-900">Ingin melanjutkan pembayaran?</p>
-                        <p class="text-slate-500"><span x-text="selected.length"></span> layanan · <span class="font-extrabold text-sky-700" x-text="rupiah(selectedTotal())"></span></p>
+                        <p class="text-slate-500"><span x-text="selected.length"></span> layanan · <span class="font-extrabold text-[#D91B20]" x-text="rupiah(selectedTotal())"></span></p>
                     </div>
                     <button type="submit" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-sm font-bold shadow-sm transition-colors">
                         Lanjutkan

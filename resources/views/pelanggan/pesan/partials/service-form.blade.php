@@ -64,7 +64,7 @@
                         ->filter();
                 @endphp
                 <div
-                    :class="sel[{{ $id }}].checked ? 'border-sky-500 ring-2 ring-sky-100 bg-sky-50/30' : 'border-slate-200 hover:border-slate-300'"
+                    :class="sel[{{ $id }}].checked ? 'border-[#FDECEC] ring-2 ring-[#FDECEC] bg-[#FDECEC]/30' : 'border-slate-200 hover:border-slate-300'"
                     @class([
                         'rounded-xl border transition-colors',
                         'outline-2 outline-offset-2 outline-rose-400' => $cardErrors->isNotEmpty(),
@@ -75,13 +75,13 @@
                         <input
                             type="checkbox"
                             x-model="sel[{{ $id }}].checked"
-                            class="mt-1 w-5 h-5 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
+                            class="mt-1 w-5 h-5 rounded border-slate-300 text-[#D91B20] focus:ring-[#FDECEC]"
                             aria-describedby="srv-{{ $id }}-desc"
                         />
                         <span class="flex-1 min-w-0">
                             <span class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
                                 <span class="text-sm font-extrabold text-slate-900">{{ $service->name }}</span>
-                                <span class="text-sm font-extrabold text-sky-700">
+                                <span class="text-sm font-extrabold text-[#D91B20]">
                                     Rp {{ number_format($service->price, 0, ',', '.') }}
                                     <span class="text-[11px] font-semibold text-slate-500">/ {{ $service->unit ?? 'Mesin' }}</span>
                                 </span>
@@ -117,7 +117,7 @@
                                     name="items[{{ $id }}][item_type]"
                                     x-model="sel[{{ $id }}].item_type"
                                     :disabled="! included({{ $id }})"
-                                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                                 >
                                     @foreach ($itemTypes as $key => $type)
                                         <option value="{{ $key }}">{{ $type['label'] }} (maks {{ $type['capacity'] }} {{ $type['unit'] }}/mesin)</option>
@@ -144,7 +144,7 @@
                                         :disabled="! included({{ $id }})"
                                         min="1"
                                         max="{{ $maxQty }}"
-                                        class="w-16 text-center rounded-lg border border-slate-300 py-1.5 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                        class="w-16 text-center rounded-lg border border-slate-300 py-1.5 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                                     />
                                     <button type="button" x-on:click="inc({{ $id }})" :disabled="! sel[{{ $id }}].checked" class="w-9 h-9 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 flex items-center justify-center" aria-label="Tambah jumlah mesin {{ $service->name }}">
                                         <x-icon name="plus" class="w-4 h-4" />
@@ -199,7 +199,7 @@
                                     :disabled="! included({{ $id }})"
                                     maxlength="500"
                                     placeholder="Contoh: pisahkan pakaian putih"
-                                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                                 />
                             </div>
 
@@ -226,7 +226,7 @@
                     :disabled="submitting"
                     :aria-label="selectedCount() > 0 ? 'Masukkan layanan terpilih ke keranjang' : 'Buka keranjang'"
                     :title="selectedCount() > 0 ? 'Masukkan layanan terpilih ke keranjang' : 'Buka keranjang'"
-                    class="relative w-11 h-11 shrink-0 rounded-lg border border-sky-200 bg-sky-50 hover:bg-sky-100 text-sky-700 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    class="relative w-11 h-11 shrink-0 rounded-lg border border-[#FDECEC] bg-[#D91B20] hover:bg-[#B71419] text-[#D91B20] flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                     <x-icon name="cart" class="w-5 h-5" />
                     <span x-show="cartCount > 0" x-text="cartCount" class="absolute -top-1.5 -right-1.5 min-w-5 h-5 px-1 rounded-full bg-amber-400 text-slate-900 text-[10px] font-extrabold leading-5 text-center" aria-hidden="true"></span>
@@ -234,7 +234,7 @@
 
                 <div class="min-w-0 flex-1 text-xs">
                     <p class="font-bold text-slate-900 truncate" x-text="selectedCount() > 0 ? selectedCount() + ' layanan dipilih' : cartCount + ' layanan di keranjang'"></p>
-                    <p class="text-slate-500 truncate" x-show="selectedCount() > 0">Estimasi <span class="font-extrabold text-sky-700" x-text="rupiah(selectedTotal())"></span></p>
+                    <p class="text-slate-500 truncate" x-show="selectedCount() > 0">Estimasi <span class="font-extrabold text-[#D91B20]" x-text="rupiah(selectedTotal())"></span></p>
                 </div>
 
                 <button

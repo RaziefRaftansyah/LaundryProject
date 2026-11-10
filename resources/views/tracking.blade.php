@@ -9,7 +9,7 @@
         
         <!-- Header -->
         <div class="text-center mb-8">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-bold uppercase tracking-wider mb-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FDECEC] text-[#D91B20] text-xs font-bold uppercase tracking-wider mb-2">
                 Pelacakan Publik
             </span>
             <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
@@ -40,7 +40,7 @@
                                 placeholder="Contoh: LC-XXXXXX"
                                 required
                                 autofocus
-                                class="w-full pl-11 pr-4 py-2.5 rounded-lg border border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 font-mono text-sm uppercase"
+                                class="w-full pl-11 pr-4 py-2.5 rounded-lg border border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] font-mono text-sm uppercase"
                             />
                         </div>
                         <x-button type="submit" variant="primary" size="md" class="shrink-0">
@@ -68,9 +68,9 @@
             <x-card title="Informasi Pesanan" :subtitle="'Kode Unik: ' . $trackedOrder['order_code']">
                 <div class="space-y-6">
                     <!-- Status Highlight -->
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-xl bg-sky-50/70 border border-sky-100">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-xl bg-[#FDECEC]/70 border border-[#FDECEC]">
                         <div>
-                            <span class="text-xs text-sky-800 font-semibold uppercase tracking-wider">Status Saat Ini</span>
+                            <span class="text-xs text-[#D91B20] font-semibold uppercase tracking-wider">Status Saat Ini</span>
                             <div class="flex items-center gap-2 mt-1">
                                 <x-badge :variant="$statusBadgeVariant" size="md">
                                     {{ ucfirst($trackedOrder['status']) }}

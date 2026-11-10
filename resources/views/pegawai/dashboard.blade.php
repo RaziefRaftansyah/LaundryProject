@@ -6,7 +6,7 @@
 <div class="space-y-6">
 
     <!-- Top Banner -->
-    <div class="bg-gradient-to-r from-slate-900 via-sky-950 to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800">
+    <div class="bg-gradient-to-r from-slate-900 via-[#8F0F13] to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800">
         <div>
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold mb-2 border border-amber-400/30">
                 <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
@@ -32,7 +32,7 @@
             </a>
             <a
                 href="{{ route('pegawai.orders.index') }}"
-                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-md transition-all active:scale-[0.98]"
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-xs shadow-md transition-all active:scale-[0.98]"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -98,10 +98,14 @@
     </div>
 
     <!-- Antrean Pengerjaan Aktif Card -->
-    <x-card title="Antrean Proses Pengerjaan Aktif" subtitle="Daftar cucian yang butuh segera diproses (Cuci, Kering, atau Lipat)">
-        @if (($activeProcesses ?? collect())->isNotEmpty())
+    @php
+    $processOrder = ['cuci' => 1, 'kering' => 2, 'lipat' => 3];
+    $currentProcesses = ($activeProcesses ?? collect())->groupBy('order_id')->map(fn ($items) => $items->sortBy(fn ($item) => $processOrder[$item->process] ?? 99)->first())->values();
+@endphp
+<x-card title="Antrean Proses Pengerjaan Aktif" subtitle="Setiap pesanan hanya menampilkan proses aktif berikutnya: Cuci, Kering, lalu Lipat">
+        @if ($currentProcesses->isNotEmpty())
             <x-table :headers="['Kode Order', 'Pelanggan', 'Layanan', 'Tahap Pengerjaan', 'Status', 'Aksi Cepat']">
-                @foreach ($activeProcesses as $proc)
+                @foreach ($currentProcesses as $proc)
                     <tr class="hover:bg-slate-50/70 transition-colors">
                         <td class="px-5 py-4 font-mono font-bold text-slate-900 text-xs">
                             {{ $proc->order?->order_code ?? '-' }}
@@ -122,7 +126,7 @@
                         </td>
                         <td class="px-5 py-4">
                             <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider
-                                @if($proc->process === 'cuci') bg-sky-100 text-sky-800
+                                @if($proc->process === 'cuci') bg-[#FDECEC] text-[#D91B20]
                                 @elseif($proc->process === 'kering') bg-amber-100 text-amber-800
                                 @else bg-violet-100 text-violet-800 @endif
                             ">
@@ -143,12 +147,12 @@
                                     <input type="hidden" name="status" value="selesai">
                                     <button
                                         type="submit"
-                                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-colors"
+                                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-xs shadow-xs transition-colors"
                                     >
                                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                                         </svg>
-                                        <span>Tandai Selesai</span>
+                                        <span>Tandai {{ ucfirst($proc->process) }} Selesai</span>
                                     </button>
                                 </form>
                             @endcan
@@ -167,7 +171,7 @@
     <!-- Pesanan Hari Ini Card -->
     <x-card title="Pesanan Berjalan Hari Ini" subtitle="10 pesanan pending atau dalam proses pengerjaan">
         <x-slot:action>
-            <a href="{{ route('pegawai.orders.index') }}" class="text-xs font-bold text-sky-600 hover:text-sky-700">
+            <a href="{{ route('pegawai.orders.index') }}" class="text-xs font-bold text-[#D91B20] hover:text-[#D91B20]">
                 Buka Kasir & Daftar Pesanan →
             </a>
         </x-slot:action>

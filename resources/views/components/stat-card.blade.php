@@ -10,7 +10,7 @@
 
 @php
     $colorMap = [
-        'sky' => 'bg-sky-50 text-sky-600 border-sky-100',
+        'sky' => 'bg-[#FDECEC] text-[#D91B20] border-[#FDECEC]',
         'amber' => 'bg-amber-50 text-amber-600 border-amber-100',
         'emerald' => 'bg-emerald-50 text-emerald-600 border-emerald-100',
         'violet' => 'bg-violet-50 text-violet-600 border-violet-100',

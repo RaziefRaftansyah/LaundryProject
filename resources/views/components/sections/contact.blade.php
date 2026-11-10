@@ -3,7 +3,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <!-- Left Info Column -->
             <div class="lg:col-span-5 space-y-6">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50 text-sky-700 text-xs font-bold uppercase tracking-wider border border-sky-200">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FDECEC] text-[#D91B20] text-xs font-bold uppercase tracking-wider border border-[#FDECEC]">
                     Hubungi Laundry Coin
                 </span>
 
@@ -32,12 +32,12 @@
                         Kirim pesan instan untuk konsultasi kapasitas cucian, ketersediaan mesin cuci mandiri, atau pertanyaan seputar layanan kami.
                     </p>
                     <a
-                        href="https://wa.me/{{ preg_replace('/[^0-9]/', '', config('laundry.whatsapp', '')) }}?text=Halo%20{{ urlencode(config('laundry.store_name', 'Laundry Coin')) }},%20saya%20ingin%20tanya%20layanan"
+                        href="tel:+6282150305758"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-white text-emerald-800 hover:bg-emerald-50 font-bold text-xs shadow-xs transition-colors"
                     >
-                        <span>Chat WhatsApp Sekarang</span>
+                        <span>Hubungi Laundry Coin</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                     </a>
                 </div>
@@ -62,7 +62,7 @@
                                     type="text"
                                     required
                                     placeholder="Contoh: Budi Santoso"
-                                    class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                    class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                                 />
                             </div>
 
@@ -75,7 +75,7 @@
                                     type="tel"
                                     required
                                     placeholder="0812xxxxxxxx"
-                                    class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                    class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                                 />
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                             </label>
                             <select
                                 id="contact-service"
-                                class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                             >
                                 <option value="self-laundry">Self Laundry (Cuci & Kering Mandiri di Outlet)</option>
                                 <option value="dropoff">Drop-Off Kiloan / Express</option>
@@ -104,13 +104,13 @@
                                 rows="4"
                                 required
                                 placeholder="Tuliskan pertanyaan atau alamat penjemputan Anda..."
-                                class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                             ></textarea>
                         </div>
 
                         <button
                             type="submit"
-                            class="w-full py-3 px-6 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all active:scale-[0.98]"
+                            class="w-full py-3 px-6 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all active:scale-[0.98]"
                         >
                             Kirim Pesan Sekarang
                         </button>

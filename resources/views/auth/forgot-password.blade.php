@@ -48,7 +48,7 @@
 
             <div class="mt-6 pt-5 border-t border-slate-100 text-center text-xs text-slate-600">
                 Kembali ke
-                <a href="{{ route('login') }}" class="text-sky-600 hover:text-sky-700 font-bold hover:underline ml-1">
+                <a href="{{ route('login') }}" class="text-[#D91B20] hover:text-[#D91B20] font-bold hover:underline ml-1">
                     Halaman Masuk
                 </a>
             </div>

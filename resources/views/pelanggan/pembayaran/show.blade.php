@@ -19,7 +19,7 @@
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
     <div class="pt-2 pb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-            <a href="{{ route('home') }}" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-sky-600">
+            <a href="{{ route('home') }}" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-[#D91B20]">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                 Kembali ke Beranda
             </a>
@@ -59,7 +59,7 @@
 
                 <div class="px-5 sm:px-6 py-4 border-t border-slate-200 bg-slate-50/70 rounded-b-2xl flex items-center justify-between">
                     <span class="text-xs font-bold uppercase tracking-wider text-slate-700">Total Pembayaran</span>
-                    <span class="text-xl font-extrabold text-sky-700">Rp {{ number_format($checkout->total_amount, 0, ',', '.') }}</span>
+                    <span class="text-xl font-extrabold text-[#D91B20]">Rp {{ number_format($checkout->total_amount, 0, ',', '.') }}</span>
                 </div>
             </section>
 
@@ -67,16 +67,16 @@
                 <h2 class="text-sm font-extrabold text-slate-900">Detail Pengantaran</h2>
                 <dl class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                     <div class="flex items-start gap-2">
-                        <x-icon name="calendar" class="w-4 h-4 text-sky-600 shrink-0" />
+                        <x-icon name="calendar" class="w-4 h-4 text-[#D91B20] shrink-0" />
                         <div><dt class="text-slate-500">Rencana antar ke outlet</dt><dd class="font-bold text-slate-900">{{ $checkout->drop_off_date?->translatedFormat('l, d F Y') }}</dd></div>
                     </div>
                     <div class="flex items-start gap-2">
-                        <x-icon name="phone" class="w-4 h-4 text-sky-600 shrink-0" />
+                        <x-icon name="phone" class="w-4 h-4 text-[#D91B20] shrink-0" />
                         <div><dt class="text-slate-500">No. HP / WhatsApp</dt><dd class="font-bold text-slate-900">{{ $checkout->contact_phone }}</dd></div>
                     </div>
                     @if ($checkout->notes)
                         <div class="sm:col-span-2 flex items-start gap-2">
-                            <x-icon name="edit" class="w-4 h-4 text-sky-600 shrink-0" />
+                            <x-icon name="edit" class="w-4 h-4 text-[#D91B20] shrink-0" />
                             <div><dt class="text-slate-500">Catatan</dt><dd class="font-semibold text-slate-900">{{ $checkout->notes }}</dd></div>
                         </div>
                     @endif
@@ -114,7 +114,7 @@
                         </div>
 
                         <template x-if="! expired">
-                            <a href="{{ $payment->checkout_url }}" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-sky-600 hover:bg-sky-700 text-white text-sm font-bold shadow-sm">
+                            <a href="{{ $payment->checkout_url }}" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-white text-sm font-bold shadow-sm">
                                 Lanjutkan ke Halaman Pembayaran <x-icon name="arrow-right" class="w-4 h-4" />
                             </a>
                         </template>
@@ -126,7 +126,7 @@
 
                         <!-- Metode lain = token baru = tagihan baru (yang lama ditutup); metode yang sama tetap tagihan ini -->
                         <div x-data="{ change: false }" class="border-t border-slate-100 pt-3">
-                            <button type="button" x-on:click="change = ! change" class="text-xs font-bold text-slate-600 hover:text-sky-700">
+                            <button type="button" x-on:click="change = ! change" class="text-xs font-bold text-slate-600 hover:text-[#D91B20]">
                                 <span x-text="change ? 'Batal ganti metode' : 'Ganti metode pembayaran'">Ganti metode pembayaran</span>
                             </button>
                             <div x-show="change" x-collapse x-cloak class="mt-3 space-y-3">
@@ -162,9 +162,9 @@
             </section>
 
             <!-- Mini tutorial cara membayar -->
-            <section class="rounded-2xl border border-sky-200 bg-sky-50/60 p-5" aria-labelledby="tutorial-bayar-title">
+            <section class="rounded-2xl border border-[#FDECEC] bg-[#FDECEC]/60 p-5" aria-labelledby="tutorial-bayar-title">
                 <h2 id="tutorial-bayar-title" class="flex items-center gap-2 text-sm font-extrabold text-slate-900">
-                    <x-icon name="info" class="w-4 h-4 text-sky-600" /> Cara Membayar
+                    <x-icon name="info" class="w-4 h-4 text-[#D91B20]" /> Cara Membayar
                 </h2>
                 <ol class="mt-3 space-y-3">
                     @foreach ([
@@ -173,7 +173,7 @@
                         ['Kembali otomatis', 'Status di halaman ini diperbarui otomatis. Setelah lunas, antar cucian ke outlet sesuai tanggal.'],
                     ] as $i => [$title, $text])
                         <li class="flex gap-3">
-                            <span class="w-6 h-6 rounded-full bg-sky-600 text-white text-[11px] font-extrabold flex items-center justify-center shrink-0">{{ $i + 1 }}</span>
+                            <span class="w-6 h-6 rounded-full bg-[#D91B20] text-white text-[11px] font-extrabold flex items-center justify-center shrink-0">{{ $i + 1 }}</span>
                             <div>
                                 <p class="text-xs font-bold text-slate-900">{{ $title }}</p>
                                 <p class="text-[11px] text-slate-600 leading-snug">{{ $text }}</p>
@@ -181,7 +181,7 @@
                         </li>
                     @endforeach
                 </ol>
-                <p class="mt-3 text-[11px] text-slate-600 border-t border-sky-200 pt-3">
+                <p class="mt-3 text-[11px] text-slate-600 border-t border-[#FDECEC] pt-3">
                     Klik "Bayar" lebih dari sekali atau koneksi terputus? Tenang, setiap permintaan pembayaran punya kode unik sehingga Anda tidak akan ditagih dua kali.
                 </p>
             </section>

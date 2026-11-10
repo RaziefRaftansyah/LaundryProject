@@ -42,7 +42,7 @@
         <form method="GET" action="{{ route('pegawai.keuangan.index') }}" class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
             <div class="sm:col-span-3">
                 <label for="periode" class="sr-only">Periode</label>
-                <select id="periode" name="periode" class="w-full py-2 px-3 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500">
+                <select id="periode" name="periode" class="w-full py-2 px-3 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]">
                     @foreach (FinanceReportService::PERIODS as $value => $label)
                         <option value="{{ $value }}" @selected($report['period'] === $value)>{{ $label }}</option>
                     @endforeach
@@ -50,7 +50,7 @@
             </div>
             <div class="sm:col-span-3">
                 <label for="kanal" class="sr-only">Saluran</label>
-                <select id="kanal" name="kanal" class="w-full py-2 px-3 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500">
+                <select id="kanal" name="kanal" class="w-full py-2 px-3 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]">
                     @foreach (FinanceReportService::CHANNELS as $value => $label)
                         <option value="{{ $value }}" @selected($report['channel'] === $value)>{{ $label }}</option>
                     @endforeach
@@ -63,20 +63,20 @@
                     type="date"
                     name="tanggal"
                     value="{{ $report['date']->format('Y-m-d') }}"
-                    class="w-full py-2 px-3 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                    class="w-full py-2 px-3 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                 />
             </div>
             <div class="sm:col-span-2">
-                <button type="submit" class="w-full px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs shadow-xs transition-colors">
+                <button type="submit" class="w-full px-4 py-2 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-xs shadow-xs transition-colors">
                     Tampilkan
                 </button>
             </div>
         </form>
 
         <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between gap-3">
-            <a href="{{ route('pegawai.keuangan.index', ['tanggal' => $report['date']->{$back}()->format('Y-m-d')] + $params) }}" class="text-xs font-bold text-sky-600 hover:text-sky-700">&larr; Sebelumnya</a>
+            <a href="{{ route('pegawai.keuangan.index', ['tanggal' => $report['date']->{$back}()->format('Y-m-d')] + $params) }}" class="text-xs font-bold text-[#D91B20] hover:text-[#D91B20]">&larr; Sebelumnya</a>
             <span class="text-xs sm:text-sm font-extrabold text-slate-900 text-center">{{ $report['label'] }}</span>
-            <a href="{{ route('pegawai.keuangan.index', ['tanggal' => $report['date']->{$step}()->format('Y-m-d')] + $params) }}" class="text-xs font-bold text-sky-600 hover:text-sky-700">Berikutnya &rarr;</a>
+            <a href="{{ route('pegawai.keuangan.index', ['tanggal' => $report['date']->{$step}()->format('Y-m-d')] + $params) }}" class="text-xs font-bold text-[#D91B20] hover:text-[#D91B20]">Berikutnya &rarr;</a>
         </div>
     </x-card>
 
@@ -130,7 +130,7 @@
     <!-- Dua pertanyaan audit: keduanya selalu berjumlah sama dengan Total Pemasukan -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
         @foreach ([
-            ['Uang Masuk ke Mana?', 'Cocokkan tiap nominal dengan kondisi nyatanya', $report['destinations'], 'bg-sky-500'],
+            ['Uang Masuk ke Mana?', 'Cocokkan tiap nominal dengan kondisi nyatanya', $report['destinations'], 'bg-[#FDECEC]'],
             ['Uang dari Layanan Apa?', 'Uang yang diterima, dibagi per layanan', $report['sources'], 'bg-emerald-500'],
             ...($report['channel'] === 'online' ? [] : [['Diterima Petugas Siapa?', 'Tunai harus sama dengan setoran petugas', $report['cashiers'], 'bg-amber-500']]),
         ] as [$title, $subtitle, $rows, $barColor])
@@ -173,7 +173,7 @@
                 @foreach ($report['byDay'] as $day)
                     <tr>
                         <td class="px-5 py-3 text-xs">
-                            <a href="{{ route('pegawai.keuangan.index', ['periode' => 'harian', 'kanal' => $report['channel'], 'tanggal' => $day['date']->format('Y-m-d')]) }}" class="font-bold text-sky-600 hover:text-sky-700">
+                            <a href="{{ route('pegawai.keuangan.index', ['periode' => 'harian', 'kanal' => $report['channel'], 'tanggal' => $day['date']->format('Y-m-d')]) }}" class="font-bold text-[#D91B20] hover:text-[#D91B20]">
                                 {{ $day['date']->translatedFormat('D, d M Y') }}
                             </a>
                         </td>

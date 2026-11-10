@@ -12,8 +12,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-18">
             <!-- Brand Logo -->
-            <a href="{{ route('home') }}" class="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded-lg">
-                <div class="w-10 h-10 rounded-xl bg-sky-600 text-white flex items-center justify-center shadow-xs group-hover:bg-sky-700 transition-colors">
+            <a href="{{ route('home') }}" class="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FDECEC] rounded-lg">
+                <div class="w-10 h-10 rounded-xl bg-[#D91B20] text-white flex items-center justify-center shadow-xs group-hover:bg-[#FDECEC] transition-colors">
                     <!-- Modern Washer + Coin SVG Icon -->
                     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <!-- Washer Body -->
@@ -32,8 +32,8 @@
                     </svg>
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-lg font-extrabold text-slate-900 tracking-tight leading-none group-hover:text-sky-600 transition-colors">
-                        Laundry <span class="text-sky-600">Coin</span>
+                    <span class="text-lg font-extrabold text-slate-900 tracking-tight leading-none group-hover:text-[#D91B20] transition-colors">
+                        Laundry <span class="text-[#D91B20]">Coin</span>
                     </span>
                     <span class="text-[10px] font-semibold uppercase tracking-wider text-amber-600 mt-0.5">
                         Modern Laundromat
@@ -43,22 +43,22 @@
 
             <!-- Desktop Nav Links -->
             <div class="hidden md:flex items-center gap-1">
-                <a href="{{ route('home') }}#hero" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-sky-600 rounded-lg hover:bg-slate-50 transition-colors">
+                <a href="{{ route('home') }}#hero" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-[#D91B20] rounded-lg hover:bg-slate-50 transition-colors">
                     Beranda
                 </a>
-                <a href="{{ route('home') }}#layanan" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-sky-600 rounded-lg hover:bg-slate-50 transition-colors">
+                <a href="{{ route('home') }}#layanan" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-[#D91B20] rounded-lg hover:bg-slate-50 transition-colors">
                     Layanan & Tarif
                 </a>
-                <a href="{{ route('home') }}#cara-kerja" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-sky-600 rounded-lg hover:bg-slate-50 transition-colors">
+                <a href="{{ route('home') }}#cara-kerja" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-[#D91B20] rounded-lg hover:bg-slate-50 transition-colors">
                     Cara Kerja
                 </a>
-                <a href="{{ route('home') }}#operasional" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-sky-600 rounded-lg hover:bg-slate-50 transition-colors">
+                <a href="{{ route('home') }}#operasional" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-[#D91B20] rounded-lg hover:bg-slate-50 transition-colors">
                     Area & Jam
                 </a>
-                <a href="{{ route('home') }}#faq" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-sky-600 rounded-lg hover:bg-slate-50 transition-colors">
+                <a href="{{ route('home') }}#faq" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-[#D91B20] rounded-lg hover:bg-slate-50 transition-colors">
                     FAQ
                 </a>
-                <a href="{{ route('home') }}#kontak" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-sky-600 rounded-lg hover:bg-slate-50 transition-colors">
+                <a href="{{ route('home') }}#kontak" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-[#D91B20] rounded-lg hover:bg-slate-50 transition-colors">
                     Kontak
                 </a>
             </div>
@@ -69,7 +69,7 @@
                     @if (auth()->user()->isPelanggan())
                         <a
                             href="{{ route('pelanggan.pesan.index') }}"
-                            class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-sky-600 hover:bg-sky-700 rounded-lg shadow-xs transition-all"
+                            class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-[#D91B20] hover:bg-[#B71419] rounded-lg shadow-xs transition-all"
                         >
                             <x-icon name="plus" class="w-4 h-4" />
                             <span>Pesan</span>
@@ -78,7 +78,7 @@
                         <a
                             href="{{ route('pelanggan.cart.index') }}"
                             @if (request()->routeIs('pelanggan.cart.index')) aria-current="page" @endif
-                            class="relative w-10 h-10 inline-flex items-center justify-center rounded-lg border {{ request()->routeIs('pelanggan.cart.index') ? 'border-sky-300 bg-sky-50 text-sky-700' : 'border-slate-200 text-slate-700 hover:text-sky-600 hover:border-sky-300 hover:bg-sky-50/60' }} transition-colors"
+                            class="relative w-10 h-10 inline-flex items-center justify-center rounded-lg border {{ request()->routeIs('pelanggan.cart.index') ? 'border-[#FDECEC] bg-[#FDECEC] text-[#D91B20]' : 'border-slate-200 text-slate-700 hover:text-[#D91B20] hover:border-[#FDECEC] hover:bg-[#FDECEC]/60' }} transition-colors"
                             aria-label="Keranjang{{ $cartCount > 0 ? " ({$cartCount} layanan)" : '' }}"
                             title="Keranjang"
                         >
@@ -89,16 +89,16 @@
                         </a>
                         <a
                             href="{{ route('pelanggan.akun') }}"
-                            class="flex items-center gap-2.5 pl-3 pr-1 py-1 rounded-full border border-slate-200 hover:border-sky-300 hover:bg-sky-50/60 transition-colors"
+                            class="flex items-center gap-2.5 pl-3 pr-1 py-1 rounded-full border border-slate-200 hover:border-[#FDECEC] hover:bg-[#FDECEC]/60 transition-colors"
                             aria-label="Akun Saya"
                         >
                             <span class="text-sm font-semibold text-slate-800 max-w-[10rem] truncate">{{ auth()->user()->name }}</span>
-                            <span class="w-8 h-8 rounded-full bg-sky-600 text-white flex items-center justify-center text-xs font-extrabold">{{ auth()->user()->initials() }}</span>
+                            <span class="w-8 h-8 rounded-full bg-[#D91B20] text-white flex items-center justify-center text-xs font-extrabold">{{ auth()->user()->initials() }}</span>
                         </a>
                     @else
                         <a
                             href="{{ route('dashboard') }}"
-                            class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-sky-600 hover:bg-sky-700 rounded-lg shadow-xs transition-all"
+                            class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-[#D91B20] hover:bg-[#B71419] rounded-lg shadow-xs transition-all"
                         >
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -109,13 +109,13 @@
                 @else
                     <a
                         href="{{ route('login') }}"
-                        class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-sky-600 rounded-lg hover:bg-slate-50 transition-colors"
+                        class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-[#D91B20] rounded-lg hover:bg-slate-50 transition-colors"
                     >
                         Masuk
                     </a>
                     <a
                         href="{{ route('register') }}"
-                        class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-white bg-sky-600 hover:bg-sky-700 rounded-lg shadow-xs transition-all active:scale-[0.98]"
+                        class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-white bg-[#D91B20] hover:bg-[#B71419] rounded-lg shadow-xs transition-all active:scale-[0.98]"
                     >
                         <span>Daftar Akun</span>
                     </a>
@@ -128,7 +128,7 @@
                     @if (auth()->user()->isPelanggan())
                         <a
                             href="{{ route('pelanggan.cart.index') }}"
-                            class="relative p-2 rounded-lg text-slate-600 hover:text-sky-600 hover:bg-slate-100"
+                            class="relative p-2 rounded-lg text-slate-600 hover:text-[#D91B20] hover:bg-slate-100"
                             aria-label="Keranjang{{ $cartCount > 0 ? " ({$cartCount} layanan)" : '' }}"
                         >
                             <x-icon name="cart" class="w-6 h-6" />
@@ -141,7 +141,7 @@
                 <button
                     type="button"
                     x-on:click="mobileOpen = !mobileOpen"
-                    class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-500"
+                    class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#FDECEC]"
                     aria-label="Toggle navigation"
                 >
                     <svg x-show="!mobileOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -186,7 +186,7 @@
                 @if (auth()->user()->isPelanggan())
                     <a
                         href="{{ route('pelanggan.pesan.index') }}"
-                        class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-sky-700 bg-sky-50 border border-sky-200 rounded-lg"
+                        class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-[#D91B20] bg-[#FDECEC] border border-[#FDECEC] rounded-lg"
                     >
                         <x-icon name="plus" class="w-4 h-4" />
                         Pesan Layanan
@@ -201,7 +201,7 @@
                 @endif
                 <a
                     href="{{ auth()->user()->isPelanggan() ? route('pelanggan.akun') : route('dashboard') }}"
-                    class="w-full text-center px-4 py-2.5 text-sm font-semibold text-white bg-sky-600 rounded-lg"
+                    class="w-full text-center px-4 py-2.5 text-sm font-semibold text-white bg-[#FDECEC] rounded-lg"
                 >
                     {{ auth()->user()->isPelanggan() ? 'Akun Saya' : 'Dashboard Saya' }}
                 </a>
@@ -214,7 +214,7 @@
                 </a>
                 <a
                     href="{{ route('register') }}"
-                    class="w-full text-center px-4 py-2.5 text-sm font-semibold text-white bg-sky-600 rounded-lg"
+                    class="w-full text-center px-4 py-2.5 text-sm font-semibold text-white bg-[#FDECEC] rounded-lg"
                 >
                     Daftar Akun Baru
                 </a>

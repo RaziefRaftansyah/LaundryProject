@@ -30,7 +30,7 @@
 <section id="faq" class="py-16 lg:py-24 bg-slate-50 border-b border-slate-200/60">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50 text-sky-700 text-xs font-bold uppercase tracking-wider border border-sky-200 mb-3">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FDECEC] text-[#D91B20] text-xs font-bold uppercase tracking-wider border border-[#FDECEC] mb-3">
                 Pertanyaan yang Sering Diajukan
             </span>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -47,12 +47,12 @@
                     <button
                         type="button"
                         x-on:click="active = (active === {{ $index }} ? null : {{ $index }})"
-                        class="w-full px-6 py-4.5 text-left flex items-center justify-between gap-4 font-semibold text-slate-900 hover:text-sky-600 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 rounded-2xl"
+                        class="w-full px-6 py-4.5 text-left flex items-center justify-between gap-4 font-semibold text-slate-900 hover:text-[#D91B20] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FDECEC] rounded-2xl"
                     >
                         <span class="text-sm sm:text-base">{{ $item['q'] }}</span>
                         <div
                             class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 shrink-0 transition-transform duration-200"
-                            :class="active === {{ $index }} ? 'rotate-180 bg-sky-100 text-sky-700' : ''"
+                            :class="active === {{ $index }} ? 'rotate-180 bg-[#FDECEC] text-[#D91B20]' : ''"
                         >
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />

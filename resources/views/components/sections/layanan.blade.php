@@ -16,7 +16,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50 text-sky-700 text-xs font-bold uppercase tracking-wider border border-sky-200 mb-3">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FDECEC] text-[#D91B20] text-xs font-bold uppercase tracking-wider border border-[#FDECEC] mb-3">
                 Tarif Transparan & Bersahabat
             </span>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -46,21 +46,21 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
                 <div class="bg-white/80 p-3.5 rounded-xl border border-amber-200/60 flex items-center gap-3">
-                    <span class="w-8 h-8 rounded-lg bg-sky-100 text-sky-700 flex items-center justify-center font-bold shrink-0">1</span>
+                    <span class="w-8 h-8 rounded-lg bg-[#FDECEC] text-[#D91B20] flex items-center justify-center font-bold shrink-0">1</span>
                     <div>
                         <p class="font-bold text-slate-900">Pakaian Biasa</p>
                         <p class="text-slate-600 font-semibold text-amber-900">Maksimal 6 KG / mesin</p>
                     </div>
                 </div>
                 <div class="bg-white/80 p-3.5 rounded-xl border border-amber-200/60 flex items-center gap-3">
-                    <span class="w-8 h-8 rounded-lg bg-sky-100 text-sky-700 flex items-center justify-center font-bold shrink-0">2</span>
+                    <span class="w-8 h-8 rounded-lg bg-[#FDECEC] text-[#D91B20] flex items-center justify-center font-bold shrink-0">2</span>
                     <div>
                         <p class="font-bold text-slate-900">Sprei / Selimut Tipis</p>
                         <p class="text-slate-600 font-semibold text-amber-900">Maksimal 3 KG / mesin</p>
                     </div>
                 </div>
                 <div class="bg-white/80 p-3.5 rounded-xl border border-amber-200/60 flex items-center gap-3">
-                    <span class="w-8 h-8 rounded-lg bg-sky-100 text-sky-700 flex items-center justify-center font-bold shrink-0">3</span>
+                    <span class="w-8 h-8 rounded-lg bg-[#FDECEC] text-[#D91B20] flex items-center justify-center font-bold shrink-0">3</span>
                     <div>
                         <p class="font-bold text-slate-900">Bedcover</p>
                         <p class="text-slate-600 font-semibold text-amber-900">Maksimal 1 Pcs / mesin</p>
@@ -79,7 +79,7 @@
         <!-- GRUP 1: Self Service -->
         <div class="mb-16">
             <div class="flex items-center gap-3 mb-6">
-                <span class="w-3 h-8 bg-sky-600 rounded-full"></span>
+                <span class="w-3 h-8 bg-[#FDECEC] rounded-full"></span>
                 <div>
                     <h3 class="text-2xl font-bold text-slate-900">1. Layanan Self Laundry (Cuci Mandiri di Outlet)</h3>
                     <p class="text-xs text-slate-500">Cuci & keringkan pakaian sendiri secara fleksibel, cepat, dan higienis langsung di outlet kami.</p>
@@ -91,10 +91,10 @@
             @else
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     @foreach ($selfServices as $service)
-                        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs hover:border-sky-300 hover:shadow-md transition-all flex flex-col justify-between">
+                        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs hover:border-[#FDECEC] hover:shadow-md transition-all flex flex-col justify-between">
                             <div>
                                 <div class="flex items-center justify-between mb-4">
-                                    <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center">
+                                    <div class="w-10 h-10 rounded-xl bg-[#FDECEC] text-[#D91B20] flex items-center justify-center">
                                         <x-icon name="washer" class="w-5 h-5" />
                                     </div>
                                     <x-badge variant="info" size="sm">Self Laundry</x-badge>
@@ -108,7 +108,7 @@
                                         <span class="text-2xl font-extrabold text-slate-900">Rp {{ number_format($service->price, 0, ',', '.') }}</span>
                                         <span class="text-xs text-slate-500 font-semibold">/ {{ $service->unit }}</span>
                                     </div>
-                                    <div class="flex items-center gap-1.5 mt-2 text-xs text-sky-700 font-medium">
+                                    <div class="flex items-center gap-1.5 mt-2 text-xs text-[#D91B20] font-medium">
                                         <x-icon name="clock" class="w-3.5 h-3.5 shrink-0" />
                                         <span>Estimasi: {{ $service->estimate }}</span>
                                     </div>

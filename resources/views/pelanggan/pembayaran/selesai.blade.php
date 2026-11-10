@@ -72,12 +72,12 @@
             @foreach ($checkout->orders as $order)
                 <li>
                     <a href="{{ route('pelanggan.orders.show', $order) }}" class="flex items-start gap-3 px-5 sm:px-6 py-4 group hover:bg-slate-50/70 transition-colors">
-                        <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shrink-0">
+                        <div class="w-10 h-10 rounded-xl bg-[#FDECEC] text-[#D91B20] flex items-center justify-center shrink-0">
                             <x-icon name="washer" class="w-5 h-5" />
                         </div>
                         <div class="flex-1 min-w-0">
                             <div class="flex items-start justify-between gap-2">
-                                <p class="text-sm font-bold text-slate-900 group-hover:text-sky-700">{{ $order->service?->name ?? 'Layanan' }}</p>
+                                <p class="text-sm font-bold text-slate-900 group-hover:text-[#D91B20]">{{ $order->service?->name ?? 'Layanan' }}</p>
                                 <x-badge :status="$order->status" size="sm" />
                             </div>
                             <p class="text-[11px] text-slate-500 mt-0.5">
@@ -118,7 +118,7 @@
                     <li>
                         <a href="{{ route('pelanggan.orders.show', $order) }}" class="flex items-center gap-3 px-5 sm:px-6 py-3 group hover:bg-slate-50/70 transition-colors">
                             <div class="flex-1 min-w-0">
-                                <p class="text-sm font-semibold text-slate-800 truncate group-hover:text-sky-700">{{ $order->service?->name ?? 'Layanan' }}</p>
+                                <p class="text-sm font-semibold text-slate-800 truncate group-hover:text-[#D91B20]">{{ $order->service?->name ?? 'Layanan' }}</p>
                                 <p class="text-[11px] text-slate-500"><span class="font-mono">{{ $order->order_code }}</span> · {{ $order->created_at->format('d M Y') }}</p>
                             </div>
                             <x-badge :status="$order->status" size="sm" />
@@ -131,14 +131,14 @@
     </section>
 
     <!-- 4. Mini tutorial / deskripsi riwayat lengkap -->
-    <section class="rounded-2xl border border-sky-200 bg-sky-50/70 p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4">
-        <div class="w-11 h-11 rounded-xl bg-sky-600 text-white flex items-center justify-center shrink-0">
+    <section class="rounded-2xl border border-[#FDECEC] bg-[#FDECEC]/70 p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4">
+        <div class="w-11 h-11 rounded-xl bg-[#D91B20] text-white flex items-center justify-center shrink-0">
             <x-icon name="user" class="w-5 h-5" />
         </div>
         <p class="flex-1 text-sm text-slate-700 leading-relaxed">
             Jika ingin melihat semua riwayat pemesanan Anda, silakan kembali ke halaman utama dan klik <strong>profil pengguna</strong> Anda!
         </p>
-        <a href="{{ route('home') }}" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-sky-600 hover:bg-sky-700 text-white text-sm font-bold shrink-0">
+        <a href="{{ route('home') }}" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-white text-sm font-bold shrink-0">
             Kembali ke Beranda
         </a>
     </section>

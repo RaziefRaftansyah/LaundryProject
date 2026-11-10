@@ -28,7 +28,7 @@
 
     <div class="flex items-center justify-between">
         <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Total Tagihan</span>
-        <span class="text-sm font-extrabold text-sky-700" x-text="'Rp ' + estimatedTotal.toLocaleString('id-ID')"></span>
+        <span class="text-sm font-extrabold text-[#D91B20]" x-text="'Rp ' + estimatedTotal.toLocaleString('id-ID')"></span>
     </div>
 
     <div>
@@ -50,7 +50,7 @@
     <div x-show="method === 'cash'" class="space-y-2">
         <div class="flex items-center justify-between gap-2">
             <label for="cashier-received" class="block text-[11px] font-semibold text-slate-600">Uang Diterima</label>
-            <button type="button" @click="received = estimatedTotal" class="text-[11px] font-bold text-sky-600 hover:text-sky-700">Uang pas</button>
+            <button type="button" @click="received = estimatedTotal" class="text-[11px] font-bold text-[#D91B20] hover:text-[#D91B20]">Uang pas</button>
         </div>
         <input
             id="cashier-received"

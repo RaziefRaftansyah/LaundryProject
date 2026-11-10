@@ -6,9 +6,9 @@
 <div class="space-y-6">
 
     <!-- Header Banner -->
-    <div class="bg-gradient-to-r from-slate-900 via-sky-950 to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800">
+    <div class="bg-gradient-to-r from-slate-900 via-[#8F0F13] to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800">
         <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-semibold mb-2 border border-sky-400/30">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FDECEC]/20 text-[#D91B20] text-xs font-semibold mb-2 border border-[#FDECEC]/30">
                 <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                 <span>Pusat Kendali Administrator</span>
             </div>
@@ -23,7 +23,7 @@
         <div class="flex flex-wrap items-center gap-3">
             <a
                 href="{{ route('admin.orders.index') }}"
-                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-md transition-all"
+                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-xs shadow-md transition-all"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -110,8 +110,8 @@
     <!-- Grafik Tren Pesanan 6 Bulan Terakhir -->
     <x-card title="Tren Pesanan 6 Bulan Terakhir" subtitle="Volume order per bulan untuk analisis kapasitas outlet">
         <x-slot:action>
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-sky-50 text-sky-700 border border-sky-200">
-                <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-[#FDECEC] text-[#D91B20] border border-[#FDECEC]">
+                <span class="w-2 h-2 rounded-full bg-[#FDECEC] animate-pulse"></span>
                 <span>Chart.js Realtime Feed</span>
             </span>
         </x-slot:action>
@@ -124,7 +124,7 @@
     <!-- Tabel Pesanan Terbaru -->
     <x-card title="Pesanan Terbaru" subtitle="5 pesanan laundry paling mutakhir yang masuk ke sistem">
         <x-slot:action>
-            <a href="{{ route('admin.orders.index') }}" class="text-xs font-bold text-sky-600 hover:text-sky-700 inline-flex items-center gap-1">
+            <a href="{{ route('admin.orders.index') }}" class="text-xs font-bold text-[#D91B20] hover:text-[#D91B20] inline-flex items-center gap-1">
                 <span>Buka Semua Pesanan</span>
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -195,7 +195,7 @@
                 datasets: [{
                     label: 'Pesanan Selesai / Masuk',
                     data: dataValues,
-                    backgroundColor: 'rgba(2, 132, 199, 0.85)',
+                    backgroundColor: 'rgba(217, 27, 32, 0.85)',
                     hoverBackgroundColor: 'rgba(3, 105, 161, 1)',
                     borderRadius: 8,
                     borderSkipped: false,

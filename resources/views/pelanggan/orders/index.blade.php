@@ -18,7 +18,7 @@
 
         <a
             href="{{ route('pelanggan.pesan.index') }}"
-            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs shadow-xs transition-colors self-start sm:self-auto"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-xs shadow-xs transition-colors self-start sm:self-auto"
         >
             <x-icon name="plus" class="w-4 h-4" />
             <span>Buat Pesanan Baru</span>
@@ -67,7 +67,7 @@
                         <td class="px-5 py-4 text-right">
                             <a
                                 href="{{ route('pelanggan.orders.show', $order) }}"
-                                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-sky-50 hover:bg-sky-100 text-sky-700 font-bold text-xs transition-colors"
+                                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-[#D91B20] font-bold text-xs transition-colors"
                             >
                                 <span>Detail</span>
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,7 +90,7 @@
                 <x-slot:action>
                     <a
                         href="{{ route('pelanggan.pesan.index') }}"
-                        class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs shadow-xs transition-colors"
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-xs shadow-xs transition-colors"
                     >
                         <x-icon name="plus" class="w-4 h-4" />
                         <span>Buat Pesanan Pertama</span>

@@ -4,7 +4,7 @@
             <!-- Brand Column -->
             <div class="lg:col-span-2 space-y-4">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-sky-600 text-white flex items-center justify-center shadow-xs">
+                    <div class="w-10 h-10 rounded-xl bg-[#D91B20] text-white flex items-center justify-center shadow-xs">
                         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                             <rect x="3" y="2" width="18" height="20" rx="3" stroke-width="2" />
                             <line x1="3" y1="7" x2="21" y2="7" stroke-width="1.5" />
@@ -16,7 +16,7 @@
                         </svg>
                     </div>
                     <div>
-                        <span class="text-xl font-extrabold text-white tracking-tight">Laundry <span class="text-sky-400">Coin</span></span>
+                        <span class="text-xl font-extrabold text-white tracking-tight">Laundry <span class="text-[#D91B20]">Coin</span></span>
                         <p class="text-xs font-semibold uppercase tracking-wider text-amber-400">Modern Laundromat & Service</p>
                     </div>
                 </div>
@@ -42,11 +42,11 @@
             <div>
                 <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Navigasi Cepat</h4>
                 <ul class="space-y-2.5 text-sm">
-                    <li><a href="{{ route('home') }}#hero" class="hover:text-sky-400 transition-colors">Beranda</a></li>
-                    <li><a href="{{ route('home') }}#layanan" class="hover:text-sky-400 transition-colors">Daftar Layanan</a></li>
-                    <li><a href="{{ route('home') }}#cara-kerja" class="hover:text-sky-400 transition-colors">Cara Kerja</a></li>
-                    <li><a href="{{ route('home') }}#faq" class="hover:text-sky-400 transition-colors">Pertanyaan Umum (FAQ)</a></li>
-                    <li><a href="{{ route('home') }}#kontak" class="hover:text-sky-400 transition-colors">Hubungi Kami</a></li>
+                    <li><a href="{{ route('home') }}#hero" class="hover:text-[#D91B20] transition-colors">Beranda</a></li>
+                    <li><a href="{{ route('home') }}#layanan" class="hover:text-[#D91B20] transition-colors">Daftar Layanan</a></li>
+                    <li><a href="{{ route('home') }}#cara-kerja" class="hover:text-[#D91B20] transition-colors">Cara Kerja</a></li>
+                    <li><a href="{{ route('home') }}#faq" class="hover:text-[#D91B20] transition-colors">Pertanyaan Umum (FAQ)</a></li>
+                    <li><a href="{{ route('home') }}#kontak" class="hover:text-[#D91B20] transition-colors">Hubungi Kami</a></li>
                 </ul>
             </div>
 
@@ -76,20 +76,20 @@
                 <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Outlet & Kontak</h4>
                 <ul class="space-y-2.5 text-sm text-slate-400">
                     <li class="flex items-start gap-2.5">
-                        <svg class="w-4 h-4 text-sky-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 text-[#D91B20] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                         <span>{{ config('laundry.address', '[ISI ALAMAT TOKO LENGKAP]') }}</span>
                     </li>
                     <li class="flex items-center gap-2.5">
-                        <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 text-[#D91B20] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
                         <span>{{ config('laundry.phone', '[ISI NOMOR HP/TELEPON]') }}</span>
                     </li>
                     <li class="flex items-center gap-2.5">
-                        <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 text-[#D91B20] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                         <span>{{ config('laundry.email', '[ISI EMAIL TOKO]') }}</span>

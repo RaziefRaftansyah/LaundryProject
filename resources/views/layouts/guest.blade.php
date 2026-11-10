@@ -18,7 +18,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased font-sans min-h-screen flex flex-col selection:bg-sky-200 selection:text-sky-900">
+<body class="bg-slate-50 text-slate-800 antialiased font-sans min-h-screen flex flex-col pb-20 md:pb-0 selection:bg-[#FDECEC] selection:text-[#D91B20]">
     <!-- Public Navbar Component -->
     <x-navbar />
 
@@ -44,6 +44,7 @@
 
     <!-- Public Footer Component -->
     <x-footer />
+    @if (!auth()->check() || auth()->user()->isPelanggan())<x-bottom-nav />@endif
 
     @stack('scripts')
 </body>

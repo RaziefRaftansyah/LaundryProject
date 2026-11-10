@@ -13,14 +13,14 @@ return [
     'tagline'    => env('LAUNDRY_TAGLINE', '[ISI TAGLINE TOKO]'),
     
     // Alamat dan Lokasi Outlet
-    'city'             => env('LAUNDRY_CITY', '[ISI KOTA OUTLET]'),
-    'address'          => env('LAUNDRY_ADDRESS', '[ISI ALAMAT LENGKAP OUTLET]'),
+    'city'             => env('LAUNDRY_CITY', 'Samarinda'),
+    'address'          => env('LAUNDRY_ADDRESS', 'Jl. PM. Noor No.15b, Sempaja Sel., Kec. Samarinda Utara, Kota Samarinda, Kalimantan Timur 75119'),
     'service_area'     => env('LAUNDRY_SERVICE_AREA', '[ISI NAMA AREA / JANGKAUAN LAYANAN]'),
-    'google_maps_url'  => env('LAUNDRY_MAPS_URL', 'https://maps.google.com'),
+    'google_maps_url'  => env('LAUNDRY_MAPS_URL', 'https://maps.app.goo.gl/ut37zj8Xg8pxSAYi9'),
 
     // Kontak Outlet
-    'phone'      => env('LAUNDRY_PHONE', '[ISI NOMOR HP/TELEPON]'),
-    'whatsapp'   => env('LAUNDRY_WHATSAPP', '[ISI NOMOR WHATSAPP]'), // format nomor: misal 628123456789
+    'phone'      => env('LAUNDRY_PHONE', '0821-5030-5758'),
+    'whatsapp'   => env('LAUNDRY_WHATSAPP', '6282150305758'), // format nomor: misal 628123456789
     'email'      => env('LAUNDRY_EMAIL', '[ISI EMAIL TOKO]'),
 
     // Zona waktu outlet: batas hari di laporan keuangan (aplikasi menyimpan waktu dalam UTC).
@@ -58,10 +58,10 @@ return [
 
     // Jam Operasional
     'operating_hours' => [
-        'weekday'    => env('LAUNDRY_HOURS_WEEKDAY', '[ISI JAM OPERASIONAL SENIN-JUMAT]'),
-        'weekend'    => env('LAUNDRY_HOURS_WEEKEND', '[ISI JAM OPERASIONAL SABTU-MINGGU]'),
-        'timezone'   => env('LAUNDRY_TIMEZONE_LABEL', '[ISI ZONA WAKTU]'),
-        'last_order' => env('LAUNDRY_LAST_ORDER', '[ISI JAM LAST ORDER]'),
-        'notes'      => env('LAUNDRY_HOURS_NOTES', '[ISI CATATAN OPERASIONAL]'),
+        'weekday'    => env('LAUNDRY_HOURS_WEEKDAY', '07:00 - 19:00'),
+        'weekend'    => env('LAUNDRY_HOURS_WEEKEND', '07:00 - 20:00'),
+        'timezone'   => env('LAUNDRY_TIMEZONE_LABEL', 'WITA'),
+        'last_order' => env('LAUNDRY_LAST_ORDER', '18:00'),
+        'notes'      => env('LAUNDRY_HOURS_NOTES', 'Buka setiap hari termasuk hari libur.'),
     ],
 ];

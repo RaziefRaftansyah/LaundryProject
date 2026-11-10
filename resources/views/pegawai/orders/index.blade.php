@@ -69,7 +69,7 @@
                     name="search"
                     value="{{ $search ?? '' }}"
                     placeholder="Cari kode order (LC-XXXXXX), nama, atau telepon..."
-                    class="w-full pl-9 pr-4 py-2 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                    class="w-full pl-9 pr-4 py-2 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                 />
             </div>
 
@@ -77,7 +77,7 @@
             <div class="sm:col-span-4">
                 <select
                     name="status"
-                    class="w-full py-2 px-3 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                    class="w-full py-2 px-3 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                 >
                     <option value="">Semua Status Cucian</option>
                     <option value="pending" {{ ($status ?? '') === 'pending' ? 'selected' : '' }}>Menunggu (Pending)</option>
@@ -119,7 +119,7 @@
                         <td class="px-5 py-4 font-mono font-bold text-slate-900 text-xs">
                             {{ $order->order_code }}
                             @if ($order->checkout)
-                                <span class="block mt-0.5 text-[10px] font-semibold text-sky-700" title="Dibayar sekaligus dalam 1 transaksi online">{{ $order->checkout->code }}</span>
+                                <span class="block mt-0.5 text-[10px] font-semibold text-[#D91B20]" title="Dibayar sekaligus dalam 1 transaksi online">{{ $order->checkout->code }}</span>
                             @endif
                         </td>
                         <td class="px-5 py-4">
@@ -173,7 +173,7 @@
                                         'payment_status' => $payStatus,
                                         'payment_method' => $payment?->method ?? 'cash',
                                     ]) }})"
-                                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-50 hover:bg-sky-100 text-sky-700 font-bold text-xs transition-colors"
+                                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-[#D91B20] font-bold text-xs transition-colors"
                                 >
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -233,10 +233,10 @@
                 x-show="walkInModalOpen"
                 class="relative z-10 inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-slate-200"
             >
-                <div class="px-6 py-5 bg-gradient-to-r from-slate-900 via-sky-900 to-slate-900 text-white flex items-center justify-between">
+                <div class="px-6 py-5 bg-gradient-to-r from-slate-900 via-[#8F0F13] to-slate-900 text-white flex items-center justify-between">
                     <div>
                         <h3 class="text-base font-bold">Kasir: Buat Pesanan Walk-in</h3>
-                        <p class="text-xs text-sky-200">Catat pesanan langsung di kasir outlet</p>
+                        <p class="text-xs text-[#D91B20]">Catat pesanan langsung di kasir outlet</p>
                     </div>
                     <button
                         type="button"
@@ -261,7 +261,7 @@
                             <button
                                 type="button"
                                 @click="customerType = 'walkin'"
-                                :class="customerType === 'walkin' ? 'bg-sky-600 text-white border-sky-600' : 'bg-slate-50 text-slate-700 border-slate-300'"
+                                :class="customerType === 'walkin' ? 'bg-[#D91B20] text-white border-[#FDECEC]' : 'bg-slate-50 text-slate-700 border-slate-300'"
                                 class="py-2 px-3 rounded-xl border text-xs font-bold transition-colors text-center"
                             >
                                 Walk-in (Manual)
@@ -269,7 +269,7 @@
                             <button
                                 type="button"
                                 @click="customerType = 'registered'"
-                                :class="customerType === 'registered' ? 'bg-sky-600 text-white border-sky-600' : 'bg-slate-50 text-slate-700 border-slate-300'"
+                                :class="customerType === 'registered' ? 'bg-[#D91B20] text-white border-[#FDECEC]' : 'bg-slate-50 text-slate-700 border-slate-300'"
                                 class="py-2 px-3 rounded-xl border text-xs font-bold transition-colors text-center"
                             >
                                 Member Terdaftar
@@ -287,7 +287,7 @@
                                     maxlength="255"
                                     placeholder="Nama Lengkap Pelanggan Walk-in *"
                                     :required="customerType === 'walkin'"
-                                    class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                    class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                                 />
                             </div>
                             <div>
@@ -299,7 +299,7 @@
                                     maxlength="20"
                                     placeholder="Nomor Telepon / WhatsApp Pelanggan (08xxxx) *"
                                     :required="customerType === 'walkin'"
-                                    class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                    class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                                 />
                             </div>
                         </div>
@@ -310,7 +310,7 @@
                                 name="user_id"
                                 :disabled="customerType !== 'registered'"
                                 :required="customerType === 'registered'"
-                                class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                             >
                                 <option value="">-- Pilih Akun Pelanggan --</option>
                                 @foreach ($customers as $cust)
@@ -332,7 +332,7 @@
                             name="service_id"
                             x-model="serviceId"
                             required
-                            class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-xs text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                            class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-xs text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                         >
                             @foreach ($services as $srv)
                                 <option value="{{ $srv->id }}">
@@ -361,7 +361,7 @@
                                 min="1"
                                 max="20"
                                 required
-                                class="w-20 text-center rounded-xl border border-slate-300 py-2 text-xs font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                class="w-20 text-center rounded-xl border border-slate-300 py-2 text-xs font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                             />
                             <button
                                 type="button"
@@ -419,13 +419,13 @@
                 <template x-if="selectedOrder">
                     <div>
                         <!-- Header Modal -->
-                        <div class="px-6 py-5 bg-gradient-to-r from-sky-900 to-slate-900 text-white flex items-center justify-between">
+                        <div class="px-6 py-5 bg-gradient-to-r from-[#8F0F13] to-slate-900 text-white flex items-center justify-between">
                             <div>
                                 <div class="flex items-center gap-2">
                                     <span class="font-mono text-base font-extrabold text-white" x-text="'#' + selectedOrder.order_code"></span>
                                     <span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-white/20 text-white" x-text="selectedOrder.status"></span>
                                 </div>
-                                <p class="text-xs text-sky-200 mt-0.5" x-text="selectedOrder.customer_name + ' • ' + selectedOrder.service_name"></p>
+                                <p class="text-xs text-[#D91B20] mt-0.5" x-text="selectedOrder.customer_name + ' • ' + selectedOrder.service_name"></p>
                             </div>
                             <button
                                 type="button"
@@ -450,7 +450,7 @@
                                     @method('PUT')
                                     <select
                                         name="status"
-                                        class="flex-1 rounded-xl border border-slate-300 py-2 px-3 text-xs text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                        class="flex-1 rounded-xl border border-slate-300 py-2 px-3 text-xs text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                                     >
                                         <option value="pending" :selected="selectedOrder.status === 'pending'">Menunggu (Pending)</option>
                                         <option value="diproses" :selected="selectedOrder.status === 'diproses'">Diproses (Washing/Drying)</option>
@@ -459,7 +459,7 @@
                                     </select>
                                     <button
                                         type="submit"
-                                        class="px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs shadow-xs transition-colors shrink-0"
+                                        class="px-4 py-2 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-xs shadow-xs transition-colors shrink-0"
                                     >
                                         Simpan Status
                                     </button>

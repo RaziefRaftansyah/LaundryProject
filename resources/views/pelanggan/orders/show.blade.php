@@ -11,7 +11,7 @@
             <div class="flex items-center gap-2 mb-1">
                 <a
                     href="{{ route('pelanggan.orders.index') }}"
-                    class="inline-flex items-center gap-1 text-xs font-bold text-sky-600 hover:text-sky-700"
+                    class="inline-flex items-center gap-1 text-xs font-bold text-[#D91B20] hover:text-[#D91B20]"
                 >
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -33,7 +33,7 @@
                 target="_blank"
                 class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs shadow-xs transition-colors"
             >
-                <svg class="w-4 h-4 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 text-[#D91B20]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
                 <span>Halaman Tracking Publik</span>
@@ -63,7 +63,7 @@
 
         <div class="bg-white rounded-xl border border-slate-200/80 p-5 shadow-xs">
             <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total Biaya</span>
-            <p class="text-xl font-extrabold text-sky-700 mt-1">
+            <p class="text-xl font-extrabold text-[#D91B20] mt-1">
                 Rp {{ number_format($order->total_price, 0, ',', '.') }}
             </p>
             <div class="mt-1">
@@ -101,16 +101,16 @@
         @elseif ($order->checkout)
             {{-- Order dari keranjang dibayar sekaligus per transaksi, bukan per order --}}
             <div class="space-y-3">
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-sky-50/70 border border-sky-200 text-xs">
-                    <x-icon name="info" class="w-5 h-5 text-sky-600 shrink-0" />
+                <div class="flex items-start gap-3 p-4 rounded-xl bg-[#FDECEC]/70 border border-[#FDECEC] text-xs">
+                    <x-icon name="info" class="w-5 h-5 text-[#D91B20] shrink-0" />
                     <div>
-                        <p class="font-bold text-sky-900">Bagian dari transaksi <span class="font-mono">{{ $order->checkout->code }}</span></p>
-                        <p class="text-sky-800/90 mt-0.5">Pesanan ini dibayar bersama {{ $order->checkout->orders()->count() }} pesanan dalam transaksi yang sama, total Rp {{ number_format($order->checkout->total_amount, 0, ',', '.') }}.</p>
+                        <p class="font-bold text-[#D91B20]">Bagian dari transaksi <span class="font-mono">{{ $order->checkout->code }}</span></p>
+                        <p class="text-[#D91B20]/90 mt-0.5">Pesanan ini dibayar bersama {{ $order->checkout->orders()->count() }} pesanan dalam transaksi yang sama, total Rp {{ number_format($order->checkout->total_amount, 0, ',', '.') }}.</p>
                     </div>
                 </div>
                 <a
                     href="{{ route('pelanggan.pembayaran.show', $order->checkout) }}"
-                    class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-sm shadow-xs transition-colors"
+                    class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-sm shadow-xs transition-colors"
                 >
                     Bayar di Halaman Transaksi
                 </a>
@@ -131,7 +131,7 @@
                 </div>
                 <a
                     href="{{ $payment->checkout_url }}"
-                    class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-sm shadow-xs transition-colors"
+                    class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-sm shadow-xs transition-colors"
                 >
                     Bayar Sekarang
                 </a>
@@ -158,7 +158,7 @@
 
                 <button
                     type="submit"
-                    class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-sm shadow-xs transition-colors"
+                    class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-sm shadow-xs transition-colors"
                 >
                     {{ $failedAttempt ? 'Buat Tagihan Baru' : 'Bayar Sekarang' }}
                 </button>

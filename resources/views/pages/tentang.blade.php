@@ -5,7 +5,7 @@
 @section('content')
 <section class="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-6">
     <div>
-        <span class="inline-flex px-3 py-1 rounded-full bg-sky-50 text-sky-700 text-xs font-bold uppercase tracking-wider border border-sky-200">Tentang Kami</span>
+        <span class="inline-flex px-3 py-1 rounded-full bg-[#FDECEC] text-[#D91B20] text-xs font-bold uppercase tracking-wider border border-[#FDECEC]">Tentang Kami</span>
         <h1 class="mt-3 text-3xl font-extrabold text-slate-900 tracking-tight">Tentang Laundry Coin</h1>
     </div>
 
@@ -23,7 +23,7 @@
     </div>
 
     <div class="flex flex-wrap gap-3">
-        <a href="{{ route('home') }}#layanan" class="px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold transition-colors">Lihat Layanan</a>
+        <a href="{{ route('home') }}#layanan" class="px-4 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white text-xs font-bold transition-colors">Lihat Layanan</a>
         <a href="{{ route('home') }}#kontak" class="px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold transition-colors">Hubungi Kami</a>
     </div>
 </section>

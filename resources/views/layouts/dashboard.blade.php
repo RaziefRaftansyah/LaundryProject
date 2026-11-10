@@ -26,7 +26,7 @@
 </head>
 <body
     x-data="{ sidebarOpen: false }"
-    class="h-full font-sans text-slate-800 antialiased bg-slate-50 selection:bg-sky-200 selection:text-sky-900"
+    class="h-full font-sans text-slate-800 antialiased bg-slate-50 selection:bg-[#FDECEC] selection:text-[#D91B20]"
 >
     <div class="min-h-screen flex flex-col">
         <!-- Sidebar Component -->

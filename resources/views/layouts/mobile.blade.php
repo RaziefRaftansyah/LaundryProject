@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full bg-slate-100">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full bg-white">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="theme-color" content="#0284C7">
+    <meta name="theme-color" content="#8F0F13">
 
     <title>@yield('title', 'Akun') - {{ config('app.name', 'Laundry Coin') }}</title>
 
@@ -14,9 +14,9 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="min-h-full font-sans text-slate-800 antialiased bg-slate-100">
+<body class="min-h-full font-sans text-slate-800 antialiased bg-white">
     {{-- Layout gaya aplikasi mobile (halaman Akun pelanggan): konten di tengah + bottom navigation --}}
-    <div class="max-w-3xl mx-auto min-h-screen bg-slate-50 shadow-sm pb-24">
+    <div class="max-w-3xl mx-auto min-h-screen bg-[#FFF5F5] shadow-sm pb-24">
         @if (session('success') || session('error') || session('status'))
             <div class="px-4 pt-4 space-y-2">
                 @if (session('success'))
