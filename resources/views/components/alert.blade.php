@@ -7,7 +7,7 @@
 @php
     $types = [
         'success' => [
-            'bg' => 'bg-emerald-50 border-emerald-200 text-emerald-800',
+            'bg' => 'bg-emerald-50 border-emerald-200 text-[#166534]',
             'icon' => 'M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z',
             'iconColor' => 'text-emerald-500',
         ],
@@ -51,7 +51,7 @@
         <button
             type="button"
             x-on:click="show = false"
-            class="shrink-0 p-1 rounded-md opacity-70 hover:opacity-100 hover:bg-black/5 transition-opacity"
+            class="shrink-0 p-1 rounded-md opacity-70 hover:opacity-100 hover:bg-[#1F1415]/5 transition-opacity"
         >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />

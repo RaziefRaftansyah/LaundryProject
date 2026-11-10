@@ -9,7 +9,7 @@
     method="POST"
     x-data="{ submitting: false }"
     x-on:submit="if (submitting) { $event.preventDefault(); return; } submitting = true"
-    class="rounded-2xl border border-slate-200 bg-white shadow-xs"
+    class="rounded-2xl border border-slate-200 bg-[#FAFAFA] shadow-xs"
 >
     @csrf
     <input type="hidden" name="submission_token" value="{{ $submissionToken }}" />
@@ -34,7 +34,7 @@
 
         <!-- Nama pemesan (dari akun) -->
         <div class="rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 flex items-center gap-3">
-            <span class="w-9 h-9 rounded-full bg-[#D91B20] text-white flex items-center justify-center text-xs font-extrabold shrink-0">{{ $user->initials() }}</span>
+            <span class="w-9 h-9 rounded-full bg-[#D91B20] text-[#FAFAFA] flex items-center justify-center text-xs font-extrabold shrink-0">{{ $user->initials() }}</span>
             <div class="min-w-0">
                 <p class="text-xs text-slate-500">Dipesan atas nama</p>
                 <p class="text-sm font-bold text-slate-900 truncate">{{ $user->name }} <span class="font-normal text-slate-500">· {{ $user->email }}</span></p>
@@ -140,7 +140,7 @@
         </div>
     </div>
 
-    <div class="sticky bottom-0 lg:static z-20 rounded-b-2xl border-t border-slate-200 bg-white/95 backdrop-blur px-5 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-3">
+    <div class="sticky bottom-0 lg:static z-20 rounded-b-2xl border-t border-slate-200 bg-[#FAFAFA]/95 backdrop-blur px-5 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-3">
         <div class="text-xs">
             <p class="text-slate-500">Total yang akan dibayar</p>
             <p class="text-lg font-extrabold text-[#D91B20]">Rp {{ number_format($cart['total'], 0, ',', '.') }}</p>
@@ -148,7 +148,7 @@
         <button
             type="submit"
             :disabled="submitting"
-            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-white text-sm font-bold shadow-sm disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-[#FAFAFA] text-sm font-bold shadow-sm disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
         >
             <span x-text="submitting ? 'Membuat pesanan...' : 'Buat Pesanan & Lanjut Bayar'">Buat Pesanan & Lanjut Bayar</span>
             <x-icon name="arrow-right" class="w-4 h-4" />

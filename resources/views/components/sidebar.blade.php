@@ -43,14 +43,14 @@
 
 <!-- Main Sidebar Container -->
 <aside
-    class="fixed top-0 left-0 h-full w-64 bg-slate-900 text-white flex flex-col z-50 transition-transform duration-300 ease-in-out lg:translate-x-0 border-r border-slate-800"
+    class="fixed top-0 left-0 h-full w-64 bg-slate-900 text-[#FAFAFA] flex flex-col z-50 transition-transform duration-300 ease-in-out lg:translate-x-0 border-r border-slate-800"
     :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'"
 >
     <!-- Close Button (Mobile Only) -->
     <button
         type="button"
         x-on:click="sidebarOpen = false"
-        class="absolute top-4 right-4 lg:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white"
+        class="absolute top-4 right-4 lg:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-[#FAFAFA]"
         aria-label="Tutup menu"
     >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,11 +60,11 @@
 
     <!-- Sidebar Header / Brand Logo -->
     <div class="px-6 py-6 border-b border-slate-800 flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-[#D91B20] text-white flex items-center justify-center shadow-xs shrink-0">
+        <div class="w-10 h-10 rounded-xl bg-[#D91B20] text-[#FAFAFA] flex items-center justify-center shadow-xs shrink-0">
             <x-icon name="washer" class="w-6 h-6" />
         </div>
         <div class="flex flex-col overflow-hidden">
-            <a href="{{ route('home') }}" class="font-extrabold text-lg tracking-tight text-white leading-none hover:text-[#D91B20] transition-colors">
+            <a href="{{ route('home') }}" class="font-extrabold text-lg tracking-tight text-[#FAFAFA] leading-none hover:text-[#D91B20] transition-colors">
                 Laundry <span class="text-[#D91B20]">Coin</span>
             </a>
             <div class="flex items-center gap-1.5 mt-1.5">
@@ -85,7 +85,7 @@
             @endphp
             <a
                 href="{{ $url }}"
-                class="relative flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors group {{ $isActive ? 'bg-[#D91B20] text-white font-semibold shadow-xs' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}"
+                class="relative flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors group {{ $isActive ? 'bg-[#D91B20] text-[#FAFAFA] font-semibold shadow-xs' : 'text-slate-300 hover:bg-slate-800 hover:text-[#FAFAFA]' }}"
             >
                 @if ($isActive)
                     <div class="absolute left-0 top-1.5 bottom-1.5 w-1 bg-amber-400 rounded-r-md"></div>
@@ -118,7 +118,7 @@
                 {{ strtoupper(substr($user->name ?? 'U', 0, 1)) }}
             </div>
             <div class="flex-col min-w-0 flex-1">
-                <p class="text-xs font-semibold text-white truncate">{{ $user->name ?? 'User' }}</p>
+                <p class="text-xs font-semibold text-[#FAFAFA] truncate">{{ $user->name ?? 'User' }}</p>
                 <p class="text-[11px] text-slate-400 truncate">{{ $user->email ?? '' }}</p>
             </div>
         </a>
@@ -127,7 +127,7 @@
             @csrf
             <button
                 type="submit"
-                class="w-full flex items-center justify-center gap-2 px-3 py-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-red-600/80 rounded-lg transition-colors cursor-pointer"
+                class="w-full flex items-center justify-center gap-2 px-3 py-2 text-xs font-semibold text-slate-300 hover:text-[#FAFAFA] bg-slate-800 hover:bg-red-600/80 rounded-lg transition-colors cursor-pointer"
             >
                 <x-icon name="logout" class="w-4 h-4" />
                 <span>Keluar (Logout)</span>

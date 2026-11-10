@@ -34,16 +34,16 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name'     => 'required|string|max:255',
             'email'    => 'nullable|string|lowercase|email|max:255|unique:' . User::class,
-            'phone'    => 'required|string|max:20',
+            'phone'    => 'nullable|string|max:20',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $phone = PhoneNumber::tryNormalize($request->phone);
-        if (! $phone || User::where('phone', '0' . substr($phone, 3))->exists()) { throw ValidationException::withMessages(['phone' => 'Nomor HP tidak valid atau sudah terdaftar.']); }
+        if ($phone && User::where('phone', '0' . substr($phone, 3))->exists()) { throw ValidationException::withMessages(['phone' => 'Nomor HP sudah terdaftar.']); }
         $user = new User([
             'name' => $request->name,
             'email' => $request->email ?: 'phone-' . Str::lower((string) Str::ulid()) . '@pelanggan.laundrycoin.invalid',
-            'phone' => '0' . substr($phone, 3), 'password' => Hash::make($request->password),
+            'phone' => $phone ? '0' . substr($phone, 3) : null, 'password' => Hash::make($request->password),
         ]);
         // Role selalu dikunci sebagai pelanggan di sisi server
         $user->role = UserRole::PELANGGAN;

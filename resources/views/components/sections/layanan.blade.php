@@ -12,7 +12,7 @@
     $isPelanggan = $authUser?->isPelanggan() ?? false;
 @endphp
 
-<section id="layanan" class="py-16 lg:py-24 bg-white border-b border-slate-200/60">
+<section id="layanan" class="py-16 lg:py-24 bg-[#FAFAFA] border-b border-slate-200/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-16">
@@ -45,28 +45,28 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-                <div class="bg-white/80 p-3.5 rounded-xl border border-amber-200/60 flex items-center gap-3">
+                <div class="bg-[#FAFAFA]/80 p-3.5 rounded-xl border border-amber-200/60 flex items-center gap-3">
                     <span class="w-8 h-8 rounded-lg bg-[#FDECEC] text-[#D91B20] flex items-center justify-center font-bold shrink-0">1</span>
                     <div>
                         <p class="font-bold text-slate-900">Pakaian Biasa</p>
                         <p class="text-slate-600 font-semibold text-amber-900">Maksimal 6 KG / mesin</p>
                     </div>
                 </div>
-                <div class="bg-white/80 p-3.5 rounded-xl border border-amber-200/60 flex items-center gap-3">
+                <div class="bg-[#FAFAFA]/80 p-3.5 rounded-xl border border-amber-200/60 flex items-center gap-3">
                     <span class="w-8 h-8 rounded-lg bg-[#FDECEC] text-[#D91B20] flex items-center justify-center font-bold shrink-0">2</span>
                     <div>
                         <p class="font-bold text-slate-900">Sprei / Selimut Tipis</p>
                         <p class="text-slate-600 font-semibold text-amber-900">Maksimal 3 KG / mesin</p>
                     </div>
                 </div>
-                <div class="bg-white/80 p-3.5 rounded-xl border border-amber-200/60 flex items-center gap-3">
+                <div class="bg-[#FAFAFA]/80 p-3.5 rounded-xl border border-amber-200/60 flex items-center gap-3">
                     <span class="w-8 h-8 rounded-lg bg-[#FDECEC] text-[#D91B20] flex items-center justify-center font-bold shrink-0">3</span>
                     <div>
                         <p class="font-bold text-slate-900">Bedcover</p>
                         <p class="text-slate-600 font-semibold text-amber-900">Maksimal 1 Pcs / mesin</p>
                     </div>
                 </div>
-                <div class="bg-white/80 p-3.5 rounded-xl border border-amber-200/60 flex items-center gap-3">
+                <div class="bg-[#FAFAFA]/80 p-3.5 rounded-xl border border-amber-200/60 flex items-center gap-3">
                     <span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center font-bold shrink-0">4</span>
                     <div>
                         <p class="font-bold text-slate-900">Mesin Besar</p>
@@ -91,7 +91,7 @@
             @else
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     @foreach ($selfServices as $service)
-                        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs hover:border-[#FDECEC] hover:shadow-md transition-all flex flex-col justify-between">
+                        <div class="rounded-2xl border border-slate-200 bg-[#FAFAFA] p-6 shadow-xs hover:border-[#FDECEC] hover:shadow-md transition-all flex flex-col justify-between">
                             <div>
                                 <div class="flex items-center justify-between mb-4">
                                     <div class="w-10 h-10 rounded-xl bg-[#FDECEC] text-[#D91B20] flex items-center justify-center">
@@ -142,10 +142,10 @@
             @else
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     @foreach ($nonSelfServices as $service)
-                        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs hover:border-slate-300 hover:shadow-md transition-all flex flex-col justify-between">
+                        <div class="rounded-2xl border border-slate-200 bg-[#FAFAFA] p-6 shadow-xs hover:border-slate-300 hover:shadow-md transition-all flex flex-col justify-between">
                             <div>
                                 <div class="flex items-center justify-between mb-4">
-                                    <div class="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center">
+                                    <div class="w-10 h-10 rounded-xl bg-[#FAFAFA] text-[#1F1415] border border-slate-200 flex items-center justify-center">
                                         <x-icon name="truck" class="w-5 h-5" />
                                     </div>
                                     <x-badge variant="neutral" size="sm">Drop-Off Titip</x-badge>

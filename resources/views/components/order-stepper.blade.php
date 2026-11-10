@@ -22,8 +22,8 @@
         <li class="flex items-center gap-2" @if ($state === 'current') aria-current="step" @endif>
             <span @class([
                 'w-7 h-7 rounded-full flex items-center justify-center shrink-0',
-                'bg-emerald-500 text-white' => $state === 'done',
-                'bg-[#D91B20] text-white ring-4 ring-[#FDECEC]' => $state === 'current',
+                'bg-[#22C55E] text-[#FAFAFA]' => $state === 'done',
+                'bg-[#D91B20] text-[#FAFAFA] ring-4 ring-[#FDECEC]' => $state === 'current',
                 'bg-slate-200 text-slate-500' => $state === 'next',
             ])>
                 @if ($state === 'done') <x-icon name="check" class="w-3.5 h-3.5" /> @else {{ $i + 1 }} @endif

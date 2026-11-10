@@ -14,9 +14,9 @@
     </div>
 
     <!-- 1. Banner berhasil -->
-    <section class="rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white p-6 sm:p-8 shadow-sm">
+    <section class="rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-[#FAFAFA] p-6 sm:p-8 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center gap-5">
-            <div class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
+            <div class="w-14 h-14 rounded-2xl bg-[#FAFAFA]/20 flex items-center justify-center shrink-0">
                 <x-icon name="check" class="w-8 h-8" />
             </div>
             <div class="flex-1 min-w-0">
@@ -30,19 +30,19 @@
         </div>
 
         <dl class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-            <div class="rounded-xl bg-white/15 px-3 py-2.5">
+            <div class="rounded-xl bg-[#FAFAFA]/15 px-3 py-2.5">
                 <dt class="text-emerald-100">Kode Transaksi</dt>
                 <dd class="font-mono font-bold">{{ $checkout->code }}</dd>
             </div>
-            <div class="rounded-xl bg-white/15 px-3 py-2.5">
+            <div class="rounded-xl bg-[#FAFAFA]/15 px-3 py-2.5">
                 <dt class="text-emerald-100">Metode</dt>
                 <dd class="font-bold">{{ $methodLabel }}</dd>
             </div>
-            <div class="rounded-xl bg-white/15 px-3 py-2.5">
+            <div class="rounded-xl bg-[#FAFAFA]/15 px-3 py-2.5">
                 <dt class="text-emerald-100">Dibayar</dt>
                 <dd class="font-bold">{{ $payment?->paid_at?->translatedFormat('d M Y, H:i') ?? '-' }}</dd>
             </div>
-            <div class="rounded-xl bg-white/15 px-3 py-2.5">
+            <div class="rounded-xl bg-[#FAFAFA]/15 px-3 py-2.5">
                 <dt class="text-emerald-100">Antar ke Outlet</dt>
                 <dd class="font-bold">{{ $checkout->drop_off_date?->translatedFormat('d M Y') }}</dd>
             </div>
@@ -62,7 +62,7 @@
     </section>
 
     <!-- 3. Riwayat pemesanan dari transaksi ini -->
-    <section class="rounded-2xl border border-slate-200 bg-white shadow-xs" aria-labelledby="riwayat-transaksi-title">
+    <section class="rounded-2xl border border-slate-200 bg-[#FAFAFA] shadow-xs" aria-labelledby="riwayat-transaksi-title">
         <div class="px-5 sm:px-6 pt-5 pb-4 border-b border-slate-100">
             <h2 id="riwayat-transaksi-title" class="text-base font-extrabold text-slate-900">Riwayat Pemesanan Layanan</h2>
             <p class="text-xs text-slate-500 mt-0.5">Pesanan dari transaksi ini ({{ $checkout->orders->count() }} layanan)</p>
@@ -88,7 +88,7 @@
                                     @foreach ($order->orderProcesses as $process)
                                         <span @class([
                                             'inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-bold',
-                                            'bg-emerald-100 text-emerald-700' => $process->status === 'selesai',
+                                            'bg-emerald-100 text-[#22C55E]' => $process->status === 'selesai',
                                             'bg-slate-100 text-slate-500' => $process->status !== 'selesai',
                                         ])>
                                             @if ($process->status === 'selesai') <x-icon name="check" class="w-3 h-3" /> @endif
@@ -132,13 +132,13 @@
 
     <!-- 4. Mini tutorial / deskripsi riwayat lengkap -->
     <section class="rounded-2xl border border-[#FDECEC] bg-[#FDECEC]/70 p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4">
-        <div class="w-11 h-11 rounded-xl bg-[#D91B20] text-white flex items-center justify-center shrink-0">
+        <div class="w-11 h-11 rounded-xl bg-[#D91B20] text-[#FAFAFA] flex items-center justify-center shrink-0">
             <x-icon name="user" class="w-5 h-5" />
         </div>
         <p class="flex-1 text-sm text-slate-700 leading-relaxed">
             Jika ingin melihat semua riwayat pemesanan Anda, silakan kembali ke halaman utama dan klik <strong>profil pengguna</strong> Anda!
         </p>
-        <a href="{{ route('home') }}" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-white text-sm font-bold shrink-0">
+        <a href="{{ route('home') }}" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-[#FAFAFA] text-sm font-bold shrink-0">
             Kembali ke Beranda
         </a>
     </section>

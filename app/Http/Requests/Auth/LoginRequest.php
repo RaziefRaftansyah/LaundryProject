@@ -15,16 +15,17 @@ use Illuminate\Validation\ValidationException;
 class LoginRequest extends FormRequest
 {
     public function authorize(): bool { return true; }
-    public function rules(): array { return ['phone'=>['required','string','max:20'],'password'=>['required','string']]; }
+    public function rules(): array { return ['phone'=>['nullable','string','max:255'],'email'=>['nullable','email'],'password'=>['required','string']]; }
     public function authenticate(): void
     {
         $this->ensureIsNotRateLimited();
         $phone = PhoneNumber::tryNormalize((string) $this->input('phone'));
         $local = $phone ? '0'.substr($phone,3) : null;
         $user = $phone ? User::where('phone',$local)->orWhere('phone',$phone)->first() : null;
+        if (!$user && $this->filled('email')) { $user = User::where('email', $this->input('email'))->first(); }
         if (!$user || !Hash::check((string)$this->input('password'), $user->password)) {
             RateLimiter::hit($this->throttleKey());
-            throw ValidationException::withMessages(['phone'=>'Nomor HP atau kata sandi tidak sesuai.']);
+            throw ValidationException::withMessages(['phone'=>'Nomor HP/email atau kata sandi tidak sesuai.']);
         }
         Auth::login($user, $this->boolean('remember'));
         if (method_exists($user,'isActive') && !$user->isActive()) { Auth::guard('web')->logout(); throw ValidationException::withMessages(['phone'=>'Akun ini sudah dinonaktifkan. Hubungi admin Laundry Coin.']); }

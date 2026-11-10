@@ -28,7 +28,7 @@
 
         <a
             href="{{ route('pegawai.keuangan.export', $params) }}"
-            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-xs transition-colors self-start sm:self-auto"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-[#FAFAFA] font-bold text-xs shadow-xs transition-colors self-start sm:self-auto"
         >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" />
@@ -42,7 +42,7 @@
         <form method="GET" action="{{ route('pegawai.keuangan.index') }}" class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
             <div class="sm:col-span-3">
                 <label for="periode" class="sr-only">Periode</label>
-                <select id="periode" name="periode" class="w-full py-2 px-3 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]">
+                <select id="periode" name="periode" class="w-full py-2 px-3 text-xs rounded-xl border border-slate-300 bg-[#FAFAFA] text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]">
                     @foreach (FinanceReportService::PERIODS as $value => $label)
                         <option value="{{ $value }}" @selected($report['period'] === $value)>{{ $label }}</option>
                     @endforeach
@@ -50,7 +50,7 @@
             </div>
             <div class="sm:col-span-3">
                 <label for="kanal" class="sr-only">Saluran</label>
-                <select id="kanal" name="kanal" class="w-full py-2 px-3 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]">
+                <select id="kanal" name="kanal" class="w-full py-2 px-3 text-xs rounded-xl border border-slate-300 bg-[#FAFAFA] text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]">
                     @foreach (FinanceReportService::CHANNELS as $value => $label)
                         <option value="{{ $value }}" @selected($report['channel'] === $value)>{{ $label }}</option>
                     @endforeach
@@ -63,11 +63,11 @@
                     type="date"
                     name="tanggal"
                     value="{{ $report['date']->format('Y-m-d') }}"
-                    class="w-full py-2 px-3 text-xs rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
+                    class="w-full py-2 px-3 text-xs rounded-xl border border-slate-300 bg-[#FAFAFA] text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                 />
             </div>
             <div class="sm:col-span-2">
-                <button type="submit" class="w-full px-4 py-2 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-xs shadow-xs transition-colors">
+                <button type="submit" class="w-full px-4 py-2 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-[#FAFAFA] font-bold text-xs shadow-xs transition-colors">
                     Tampilkan
                 </button>
             </div>
@@ -122,7 +122,7 @@
             </x-table>
         </x-card>
     @else
-        <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold">
+        <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-[#166534] text-xs font-bold">
             Audit bersih: semua pembayaran cocok dengan nilai pesanan, punya bukti, dan tidak ada pembayaran ganda.
         </div>
     @endif
@@ -131,7 +131,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
         @foreach ([
             ['Uang Masuk ke Mana?', 'Cocokkan tiap nominal dengan kondisi nyatanya', $report['destinations'], 'bg-[#FDECEC]'],
-            ['Uang dari Layanan Apa?', 'Uang yang diterima, dibagi per layanan', $report['sources'], 'bg-emerald-500'],
+            ['Uang dari Layanan Apa?', 'Uang yang diterima, dibagi per layanan', $report['sources'], 'bg-[#22C55E]'],
             ...($report['channel'] === 'online' ? [] : [['Diterima Petugas Siapa?', 'Tunai harus sama dengan setoran petugas', $report['cashiers'], 'bg-amber-500']]),
         ] as [$title, $subtitle, $rows, $barColor])
             <x-card :title="$title" :subtitle="$subtitle" padding="p-0">

@@ -1,4 +1,4 @@
-<section id="lacak" class="py-16 lg:py-20 bg-gradient-to-b from-[#8F0F13]/50 to-white border-b border-slate-200/60">
+<section id="lacak" class="py-16 lg:py-20 bg-[#FAFAFA] border-b border-slate-200/60">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FDECEC] text-[#D91B20] text-xs font-bold uppercase tracking-wider mb-3">
             Realtime Status
@@ -20,7 +20,7 @@
                     name="order_code"
                     placeholder="Masukkan Kode Pesanan (LC-XXXXXX)"
                     required
-                    class="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC] font-mono text-sm uppercase shadow-xs"
+                    class="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 bg-[#FAFAFA] text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC] font-mono text-sm uppercase shadow-xs"
                 />
             </div>
             <x-button type="submit" variant="primary" size="lg" class="rounded-xl shrink-0">

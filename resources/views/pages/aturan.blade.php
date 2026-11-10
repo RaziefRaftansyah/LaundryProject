@@ -33,7 +33,7 @@
     </div>
 
     @foreach ($rules as $title => $items)
-        <div class="bg-white rounded-2xl border border-slate-200 p-6">
+        <div class="bg-[#FAFAFA] rounded-2xl border border-slate-200 p-6">
             <h2 class="text-base font-bold text-slate-900 mb-3">{{ $loop->iteration }}. {{ $title }}</h2>
             <ul class="list-disc list-inside space-y-1.5 text-sm text-slate-600 leading-relaxed">
                 @foreach ($items as $item)

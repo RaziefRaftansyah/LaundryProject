@@ -1,94 +1,71 @@
 ﻿# Laundry Coin
 
-## Ringkasan
-Aplikasi laundry Laravel Blade MVC dengan area publik, pelanggan, pegawai, dan admin. Fitur utama meliputi katalog layanan, keranjang, checkout, pembayaran, tracking order, antrean pengerjaan, laporan, refund, dan manajemen outlet.
+Laundry Coin adalah layanan laundry modern di Samarinda yang menyediakan self-service laundry dan layanan drop-off. Website ini membantu pelanggan memilih layanan, melakukan pemesanan, membayar secara cashless, dan memantau status cucian.
 
-## Perubahan yang diterapkan
+## Layanan
 
-### Design system mobile-first
-Palet warna wajib didefinisikan di `resources/css/app.css`:
+- Pemesanan layanan laundry secara online.
+- Keranjang untuk memilih satu atau beberapa layanan.
+- Pembayaran online melalui metode cashless.
+- Tracking status pesanan.
+- Riwayat transaksi dan timeline pengerjaan.
+- Informasi lokasi dan jam operasional outlet.
+- Dukungan kontak langsung melalui nomor telepon Laundry Coin.
 
-```css
-:root {
-  --brand:#ED1E24; --primary:#D91B20; --primary-hover:#B71419; --primary-dark:#8F0F13;
-  --tint:#FDECEC; --surface:#FFF5F5; --text:#1F1415; --text-muted:#5C4A4B;
-  --accent-orange:#B34700; --accent-magenta:#C2006F; --success:#1B7F3B;
-}
-```
+## Cara menggunakan website
 
-CTA utama memakai `#D91B20`, hover `#B71419`, heading/fokus `#8F0F13`, sukses `#1B7F3B`, proses `#B34700`, dan self-service `#C2006F`. Status selalu memakai ikon dan teks. Target sentuh minimal 48px dan fokus keyboard menggunakan outline 2px dengan offset 2px.
+1. Buka halaman beranda.
+2. Pilih layanan laundry yang tersedia.
+3. Masuk atau daftar menggunakan nomor HP/WhatsApp.
+4. Pilih jenis cucian menggunakan pilihan radio dan tentukan jumlah mesin.
+5. Buka keranjang dan lanjutkan ke checkout.
+6. Pilih metode pembayaran dan selesaikan pembayaran.
+7. Pantau status pesanan melalui riwayat, timeline, atau fitur tracking.
 
-Semua penggunaan warna biru pada Blade/CSS yang telah ditemukan diarahkan ke palet brand.
+## Login dan pendaftaran
 
-### Beranda
-- Eyebrow badge di atas headline dihapus.
-- Kartu ilustrasi mesin cuci diganti iframe Google Maps Laundry Coin.
-- Peta menggunakan embed Google Maps pada `resources/views/components/sections/hero.blade.php`.
-- Tombol lokasi menggunakan `https://maps.app.goo.gl/ut37zj8Xg8pxSAYi9`.
+- Login menggunakan nomor HP/WhatsApp dan kata sandi.
+- Nomor HP digunakan sebagai kontak pemesanan.
+- Pelanggan tidak perlu mengisi ulang nomor telepon saat membuat pesanan jika nomor sudah tersimpan di akun.
+- Email pada saat pendaftaran bersifat opsional.
 
-### Navigasi mobile
-Bottom navigation tampil pada layar mobile dan berisi lima pilihan, urutan kiri ke kanan:
+## Navigasi mobile
+
+Pada perangkat mobile tersedia navigasi bawah dengan lima pilihan:
 
 1. Beranda
 2. Transaksi
-3. Tombol bulat `+ Pesan`
+3. `+ Pesan`
 4. Keranjang
 5. Akun
 
-Urutan mulai dari kanan: Akun, Keranjang, Pesan, Transaksi, Beranda. Menu hamburger tidak mengulang lima tujuan tersebut; hanya memuat tautan informasi seperti Layanan, Cara Kerja, Area & Jam, FAQ, dan Kontak.
+Tombol `+ Pesan` menjadi tombol utama untuk memulai pemesanan.
 
-### Antrean pegawai
-Dashboard pegawai mengelompokkan proses berdasarkan order dan hanya menampilkan proses aktif berikutnya dengan urutan:
+## Lokasi dan jam operasional
 
-`cuci → kering → lipat`
+**Alamat:**
 
-Tombol aksi menyesuaikan proses:
+Jl. PM. Noor No.15b, Sempaja Sel., Kec. Samarinda Utara, Kota Samarinda, Kalimantan Timur 75119
 
-- `Tandai Cuci Selesai`
-- `Tandai Kering Selesai`
-- `Tandai Lipat Selesai`
+**Jam operasional:**
 
-Route backend tetap sama; perubahan hanya pada cara proses aktif dipilih dan label tombol.
+- Senin–Jumat: 07:00–19:00 WITA
+- Sabtu–Minggu: 07:00–20:00 WITA
 
-### Login nomor HP
-Login sekarang menggunakan nomor HP/WhatsApp dan kata sandi, bukan email. Nomor diterima dalam format lokal Indonesia dan dinormalisasi sebelum dicari pada kolom `users.phone` yang sudah ada.
+**Telepon:** [0821-5030-5758](tel:+6282150305758)
 
-Registrasi:
-- Nomor HP wajib.
-- Email opsional.
-- Email placeholder dibuat otomatis bila email dikosongkan agar kompatibel dengan kolom email database.
-- Nomor HP yang disimpan pada akun otomatis digunakan saat checkout, sehingga pelanggan tidak perlu mengisi nomor kontak lagi.
+**Google Maps:** [Buka lokasi Laundry Coin](https://maps.app.goo.gl/ut37zj8Xg8pxSAYi9)
 
-Perubahan auth berada di `LoginRequest.php`, `RegisteredUserController.php`, dan form auth. Tidak ada penambahan kolom database pada reapply ini.
+## Status pesanan
 
-### Informasi outlet
-Default konfigurasi berada pada `config/laundry.php`:
+Status pesanan selalu disertai ikon dan teks:
 
-- Alamat: `Jl. PM. Noor No.15b, Sempaja Sel., Kec. Samarinda Utara, Kota Samarinda, Kalimantan Timur 75119`
-- Telepon: `0821-5030-5758`
-- Maps: `https://maps.app.goo.gl/ut37zj8Xg8pxSAYi9`
-- Senin–Jumat: `07:00 - 19:00 WITA`
-- Sabtu–Minggu: `07:00 - 20:00 WITA`
-- Kontak otomatis menggunakan `tel:+6282150305758`.
+- Diproses: ikon jam dan warna oranye.
+- Selesai atau siap diambil: ikon centang dan warna hijau.
+- Peringatan atau gagal: ikon seru dan warna merah gelap.
 
-## Alur aplikasi
-1. Pengunjung membuka `/`.
-2. Pelanggan mendaftar/login dengan nomor HP.
-3. Pelanggan memilih layanan pada `/pesan`.
-4. Item disimpan ke `/pesan/keranjang`.
-5. Checkout dibuat pada `/pembayaran/{checkout:code}`.
-6. Pembayaran diproses gateway dan status dipantau.
-7. Pegawai memproses order berurutan cuci, kering, lalu lipat.
-8. Pelanggan melihat status melalui riwayat, timeline, atau `/tracking`.
+## Aksesibilitas dan tampilan
 
-## Validasi
-```bash
-php artisan route:list
-php artisan view:cache
-php -l app/Http/Requests/Auth/LoginRequest.php
-php -l app/Http/Controllers/Auth/RegisteredUserController.php
-php artisan test
-npm run build
-```
+Website dirancang mobile-first dengan target sentuh minimal 48px, fokus keyboard yang terlihat, pilihan warna dengan kontras yang diperhatikan, serta tampilan permukaan netral berbasis Spatial System.
 
-`php artisan view:cache` dan lint PHP telah berhasil dijalankan setelah reapply. Jika `npm run build` mengalami `spawn EPERM`, itu berasal dari pembatasan proses `esbuild` pada environment Windows.
+Untuk dokumentasi teknis dan panduan pengembangan, lihat [`docs/DOKUMENTASI_PENGEMBANGAN.md`](docs/DOKUMENTASI_PENGEMBANGAN.md).

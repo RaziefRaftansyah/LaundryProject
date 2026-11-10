@@ -23,8 +23,8 @@
         <p class="mt-1">Halaman ini hanya simulasi untuk pengujian. Tidak ada uang sungguhan yang ditagih atau berpindah.</p>
     </div>
 
-    <div class="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
-        <div class="px-6 py-5 bg-gradient-to-r from-[#8F0F13] to-slate-900 text-white">
+    <div class="bg-[#FAFAFA] rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
+        <div class="px-6 py-5 bg-gradient-to-r from-[#8F0F13] to-slate-900 text-[#FAFAFA]">
             <p class="text-xs text-[#D91B20]">Total Tagihan</p>
             <p class="text-3xl font-extrabold">Rp {{ number_format($payment->amount, 0, ',', '.') }}</p>
         </div>
@@ -65,8 +65,8 @@
                     <p class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2">Simulasikan Hasil Pembayaran</p>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
                         @foreach ([
-                            'paid'    => ['label' => 'Bayar Berhasil', 'class' => 'bg-emerald-600 hover:bg-emerald-700 text-white'],
-                            'failed'  => ['label' => 'Bayar Gagal', 'class' => 'bg-rose-600 hover:bg-rose-700 text-white'],
+                            'paid'    => ['label' => 'Bayar Berhasil', 'class' => 'bg-[#22C55E] hover:bg-[#16A34A] text-[#FAFAFA]'],
+                            'failed'  => ['label' => 'Bayar Gagal', 'class' => 'bg-[#47080A] hover:bg-[#83191C] text-[#FAFAFA]'],
                             'expired' => ['label' => 'Kadaluarsa', 'class' => 'bg-slate-200 hover:bg-slate-300 text-slate-800'],
                         ] as $result => $btn)
                             <button type="submit" name="result" value="{{ $result }}" class="w-full px-4 py-2.5 rounded-xl font-bold text-xs transition-colors {{ $btn['class'] }}">

@@ -27,7 +27,7 @@
         x-cloak
         x-transition.opacity
         role="tooltip"
-        class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 z-30 w-60 rounded-lg bg-slate-900 px-3 py-2 text-[11px] font-medium normal-case tracking-normal leading-snug text-white shadow-lg"
+        class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 z-30 w-60 rounded-lg bg-slate-900 px-3 py-2 text-[11px] font-medium normal-case tracking-normal leading-snug text-[#FAFAFA] shadow-lg"
     >
         {{ $text }}
     </span>

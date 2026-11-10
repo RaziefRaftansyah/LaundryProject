@@ -38,7 +38,7 @@
             name="payment_method"
             x-model="method"
             required
-            class="w-full rounded-lg border border-slate-300 py-1.5 px-2.5 text-xs text-slate-900 bg-white"
+            class="w-full rounded-lg border border-slate-300 py-1.5 px-2.5 text-xs text-slate-900 bg-[#FAFAFA]"
         >
             <option value="cash">Tunai (Cash)</option>
             <option value="transfer">Transfer Bank</option>
@@ -63,10 +63,10 @@
             max="100000000"
             step="1"
             placeholder="Nominal yang diterima dari pelanggan"
-            class="w-full rounded-lg border border-slate-300 py-1.5 px-2.5 text-xs text-slate-900 bg-white"
+            class="w-full rounded-lg border border-slate-300 py-1.5 px-2.5 text-xs text-slate-900 bg-[#FAFAFA]"
         />
         <p x-show="shortfall > 0" class="text-[11px] font-bold text-rose-600" x-text="'Kurang Rp ' + shortfall.toLocaleString('id-ID')"></p>
-        <p x-show="shortfall === 0 && paid > 0" class="text-[11px] font-bold text-emerald-700" x-text="'Kembalian Rp ' + change.toLocaleString('id-ID')"></p>
+        <p x-show="shortfall === 0 && paid > 0" class="text-[11px] font-bold text-[#22C55E]" x-text="'Kembalian Rp ' + change.toLocaleString('id-ID')"></p>
     </div>
 
     <!-- Non-tunai: nomor bukti wajib agar bisa dicocokkan dengan mutasi -->
@@ -81,7 +81,7 @@
             :disabled="method === 'cash'"
             maxlength="60"
             placeholder="Nomor referensi di bukti transfer / QRIS"
-            class="w-full rounded-lg border border-slate-300 py-1.5 px-2.5 text-xs text-slate-900 bg-white"
+            class="w-full rounded-lg border border-slate-300 py-1.5 px-2.5 text-xs text-slate-900 bg-[#FAFAFA]"
         />
         <p class="mt-1 text-[11px] text-slate-500">Cek dulu uangnya sudah masuk. Satu nomor bukti hanya bisa dipakai sekali.</p>
     </div>

@@ -31,7 +31,7 @@
             <a
                 href="{{ route('tracking', ['order_code' => $order->order_code]) }}"
                 target="_blank"
-                class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs shadow-xs transition-colors"
+                class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-slate-200 bg-[#FAFAFA] hover:bg-slate-50 text-slate-700 font-bold text-xs shadow-xs transition-colors"
             >
                 <svg class="w-4 h-4 text-[#D91B20]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -43,13 +43,13 @@
 
     <!-- Status Overview Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="bg-white rounded-xl border border-slate-200/80 p-5 shadow-xs">
+        <div class="bg-[#FAFAFA] rounded-xl border border-slate-200/80 p-5 shadow-xs">
             <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Layanan</span>
             <p class="text-base font-bold text-slate-900 mt-1">{{ $order->service?->name ?? 'Layanan' }}</p>
             <span class="text-[11px] text-slate-500">{{ $order->service?->category ?? 'Laundromat' }}</span>
         </div>
 
-        <div class="bg-white rounded-xl border border-slate-200/80 p-5 shadow-xs">
+        <div class="bg-[#FAFAFA] rounded-xl border border-slate-200/80 p-5 shadow-xs">
             <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Kapasitas / Unit</span>
             <p class="text-base font-bold text-slate-900 mt-1">
                 @if (($order->service?->unit ?? 'Mesin') === 'Mesin')
@@ -61,7 +61,7 @@
             <span class="text-[11px] text-slate-500">Rp {{ number_format($order->unit_price, 0, ',', '.') }} / unit</span>
         </div>
 
-        <div class="bg-white rounded-xl border border-slate-200/80 p-5 shadow-xs">
+        <div class="bg-[#FAFAFA] rounded-xl border border-slate-200/80 p-5 shadow-xs">
             <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total Biaya</span>
             <p class="text-xl font-extrabold text-[#D91B20] mt-1">
                 Rp {{ number_format($order->total_price, 0, ',', '.') }}
@@ -74,7 +74,7 @@
             </div>
         </div>
 
-        <div class="bg-white rounded-xl border border-slate-200/80 p-5 shadow-xs">
+        <div class="bg-[#FAFAFA] rounded-xl border border-slate-200/80 p-5 shadow-xs">
             <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Waktu Pemesanan</span>
             <p class="text-sm font-bold text-slate-800 mt-1">
                 {{ $order->created_at->format('d M Y') }}
@@ -87,10 +87,10 @@
     <x-card title="Pembayaran" subtitle="Pembayaran online cashless untuk pesanan ini">
         @if ($isPaid)
             <div class="flex items-start gap-3 p-4 rounded-xl bg-emerald-50/70 border border-emerald-200 text-xs">
-                <x-icon name="check" class="w-5 h-5 text-emerald-600 shrink-0" />
+                <x-icon name="check" class="w-5 h-5 text-[#22C55E] shrink-0" />
                 <div>
                     <p class="font-bold text-emerald-900">Pembayaran Lunas</p>
-                    <p class="text-emerald-800/90 mt-0.5">
+                    <p class="text-[#166534]/90 mt-0.5">
                         Dibayar {{ $payment->paid_at?->format('d M Y, H:i') }} via {{ config('laundry.online_payment_methods.' . $payment->method . '.label', strtoupper($payment->method)) }}.
                         @if ($payment->reference)
                             Ref: <span class="font-mono">{{ $payment->reference }}</span>
@@ -110,7 +110,7 @@
                 </div>
                 <a
                     href="{{ route('pelanggan.pembayaran.show', $order->checkout) }}"
-                    class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-sm shadow-xs transition-colors"
+                    class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-[#FAFAFA] font-bold text-sm shadow-xs transition-colors"
                 >
                     Bayar di Halaman Transaksi
                 </a>
@@ -131,7 +131,7 @@
                 </div>
                 <a
                     href="{{ $payment->checkout_url }}"
-                    class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-sm shadow-xs transition-colors"
+                    class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-[#FAFAFA] font-bold text-sm shadow-xs transition-colors"
                 >
                     Bayar Sekarang
                 </a>
@@ -158,7 +158,7 @@
 
                 <button
                     type="submit"
-                    class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-sm shadow-xs transition-colors"
+                    class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-[#FAFAFA] font-bold text-sm shadow-xs transition-colors"
                 >
                     {{ $failedAttempt ? 'Buat Tagihan Baru' : 'Bayar Sekarang' }}
                 </button>
@@ -175,7 +175,7 @@
                         $isFinished = $proc->status === 'selesai';
                     @endphp
                     <div class="flex items-start gap-4 p-4 rounded-xl border {{ $isFinished ? 'bg-emerald-50/40 border-emerald-200/80' : 'bg-slate-50/70 border-slate-200/80' }}">
-                        <div class="w-9 h-9 rounded-xl flex items-center justify-center font-bold text-xs shrink-0 {{ $isFinished ? 'bg-emerald-600 text-white shadow-xs' : 'bg-slate-200 text-slate-700' }}">
+                        <div class="w-9 h-9 rounded-xl flex items-center justify-center font-bold text-xs shrink-0 {{ $isFinished ? 'bg-emerald-600 text-[#FAFAFA] shadow-xs' : 'bg-slate-200 text-slate-700' }}">
                             @if ($isFinished)
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
@@ -190,7 +190,7 @@
                                 <h4 class="text-sm font-bold text-slate-900 uppercase">
                                     Proses {{ $proc->process }}
                                 </h4>
-                                <span class="px-2.5 py-0.5 rounded-full text-xs font-bold {{ $isFinished ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800' }}">
+                                <span class="px-2.5 py-0.5 rounded-full text-xs font-bold {{ $isFinished ? 'bg-emerald-100 text-[#166534]' : 'bg-amber-100 text-amber-800' }}">
                                     {{ $isFinished ? 'Selesai' : 'Sedang Menunggu / Dikerjakan' }}
                                 </span>
                             </div>

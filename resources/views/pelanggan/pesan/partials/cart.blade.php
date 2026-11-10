@@ -5,7 +5,7 @@
 @endphp
 
 <section
-    class="rounded-2xl border border-slate-200 bg-white shadow-xs"
+    class="rounded-2xl border border-slate-200 bg-[#FAFAFA] shadow-xs"
     aria-labelledby="keranjang-title"
     @unless ($readonly)
         x-data="cartSelection({
@@ -33,7 +33,7 @@
             </div>
             <p class="text-sm font-bold text-slate-700">Keranjang masih kosong</p>
             <p class="text-xs text-slate-500 mt-1">Centang layanan di halaman Pesan, lalu klik ikon keranjang di bar bawah.</p>
-            <a href="{{ route('pelanggan.pesan.index') }}" class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-white text-xs font-bold transition-colors">
+            <a href="{{ route('pelanggan.pesan.index') }}" class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-[#FAFAFA] text-xs font-bold transition-colors">
                 Pilih Layanan
             </a>
         </div>
@@ -65,7 +65,7 @@
                             <p class="text-sm font-bold text-slate-900 leading-snug">
                                 {{ $item->service?->name ?? 'Layanan dihapus' }}
                                 @if ($isNew)
-                                    <span class="ml-1 align-middle px-1.5 py-0.5 rounded bg-emerald-500 text-white text-[10px] font-extrabold">BARU</span>
+                                    <span class="ml-1 align-middle px-1.5 py-0.5 rounded bg-[#22C55E] text-[#FAFAFA] text-[10px] font-extrabold">BARU</span>
                                 @endif
                             </p>
                             <p class="text-[11px] text-slate-500">{{ $item->itemTypeLabel() }} · Rp {{ number_format($item->service?->price ?? 0, 0, ',', '.') }}/mesin</p>
@@ -134,7 +134,7 @@
                 id="lanjut-bayar"
                 action="{{ route('pelanggan.pesan.index') }}"
                 method="GET"
-                class="sticky bottom-0 z-20 px-5 py-4 border-t border-slate-200 bg-white/95 backdrop-blur rounded-b-2xl"
+                class="sticky bottom-0 z-20 px-5 py-4 border-t border-slate-200 bg-[#FAFAFA]/95 backdrop-blur rounded-b-2xl"
             >
                 <input type="hidden" name="langkah" value="detail" />
 
@@ -145,7 +145,7 @@
                         <p class="font-bold text-slate-900">Ingin melanjutkan pembayaran?</p>
                         <p class="text-slate-500"><span x-text="selected.length"></span> layanan · <span class="font-extrabold text-[#D91B20]" x-text="rupiah(selectedTotal())"></span></p>
                     </div>
-                    <button type="submit" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-sm font-bold shadow-sm transition-colors">
+                    <button type="submit" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-[#FAFAFA] text-sm font-bold shadow-sm transition-colors">
                         Lanjutkan
                         <x-icon name="arrow-right" class="w-4 h-4" />
                     </button>

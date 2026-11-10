@@ -6,7 +6,7 @@
 <div class="space-y-6">
 
     <!-- Top Banner -->
-    <div class="bg-gradient-to-r from-slate-900 via-[#8F0F13] to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800">
+    <div class="bg-[#FAFAFA] rounded-2xl p-6 sm:p-8 text-[#1F1415] shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-200">
         <div>
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold mb-2 border border-amber-400/30">
                 <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
@@ -15,7 +15,7 @@
             <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
                 Pusat Antrean Cuci & Kasir
             </h1>
-            <p class="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
+            <p class="text-xs sm:text-sm text-[#5C4A4B] mt-1 max-w-xl">
                 Kelola tahapan pencucian mesin, pengeringan, lipatan rapi, dan pembayaran pelanggan walk-in.
             </p>
         </div>
@@ -23,7 +23,7 @@
         <div class="flex flex-wrap items-center gap-3">
             <a
                 href="{{ route('pegawai.keuangan.index') }}"
-                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/20 transition-all active:scale-[0.98]"
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#FAFAFA] hover:bg-slate-100 text-[#1F1415] font-bold text-xs border border-slate-300 transition-all active:scale-[0.98]"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -32,7 +32,7 @@
             </a>
             <a
                 href="{{ route('pegawai.orders.index') }}"
-                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-xs shadow-md transition-all active:scale-[0.98]"
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#3B82F6] hover:bg-[#2563EB] text-[#FAFAFA] font-bold text-xs shadow-md transition-all active:scale-[0.98]"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -147,7 +147,7 @@
                                     <input type="hidden" name="status" value="selesai">
                                     <button
                                         type="submit"
-                                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-xs shadow-xs transition-colors"
+                                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-[#FAFAFA] font-bold text-xs shadow-xs transition-colors"
                                     >
                                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />

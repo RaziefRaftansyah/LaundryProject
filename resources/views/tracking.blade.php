@@ -40,7 +40,7 @@
                                 placeholder="Contoh: LC-XXXXXX"
                                 required
                                 autofocus
-                                class="w-full pl-11 pr-4 py-2.5 rounded-lg border border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] font-mono text-sm uppercase"
+                                class="w-full pl-11 pr-4 py-2.5 rounded-lg border border-slate-300 bg-[#FAFAFA] text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FDECEC] font-mono text-sm uppercase"
                             />
                         </div>
                         <x-button type="submit" variant="primary" size="md" class="shrink-0">
@@ -108,7 +108,7 @@
 
                     <!-- Privacy Notice -->
                     <div class="flex items-center gap-2 text-[11px] text-slate-500 border-t border-slate-100 pt-3">
-                        <x-icon name="check" class="w-4 h-4 text-emerald-600 shrink-0" />
+                        <x-icon name="check" class="w-4 h-4 text-[#22C55E] shrink-0" />
                         <span>Data pribadi (nama & nomor HP) disembunyikan untuk menjaga privasi pelanggan.</span>
                     </div>
                 </div>

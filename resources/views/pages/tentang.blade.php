@@ -9,7 +9,7 @@
         <h1 class="mt-3 text-3xl font-extrabold text-slate-900 tracking-tight">Tentang Laundry Coin</h1>
     </div>
 
-    <div class="bg-white rounded-2xl border border-slate-200 p-6 space-y-4 text-sm text-slate-600 leading-relaxed">
+    <div class="bg-[#FAFAFA] rounded-2xl border border-slate-200 p-6 space-y-4 text-sm text-slate-600 leading-relaxed">
         <p>
             <strong class="text-slate-900">{{ config('laundry.store_name', 'Laundry Coin') }}</strong> adalah laundromat modern di
             {{ config('laundry.city') }} dengan mesin cuci dan pengering berkapasitas besar yang higienis dan praktis.
@@ -23,8 +23,8 @@
     </div>
 
     <div class="flex flex-wrap gap-3">
-        <a href="{{ route('home') }}#layanan" class="px-4 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white text-xs font-bold transition-colors">Lihat Layanan</a>
-        <a href="{{ route('home') }}#kontak" class="px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold transition-colors">Hubungi Kami</a>
+        <a href="{{ route('home') }}#layanan" class="px-4 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-[#FAFAFA] text-xs font-bold transition-colors">Lihat Layanan</a>
+        <a href="{{ route('home') }}#kontak" class="px-4 py-2.5 rounded-xl border border-slate-300 bg-[#FAFAFA] hover:bg-slate-50 text-slate-700 text-xs font-bold transition-colors">Hubungi Kami</a>
     </div>
 </section>
 @endsection

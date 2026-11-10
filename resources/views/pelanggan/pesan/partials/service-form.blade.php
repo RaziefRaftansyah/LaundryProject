@@ -36,7 +36,7 @@
         cartUrl: {{ Js::from(route('pelanggan.cart.index')) }},
     })"
     x-on:submit="onSubmit($event)"
-    class="rounded-2xl border border-slate-200 bg-white shadow-xs"
+    class="rounded-2xl border border-slate-200 bg-[#FAFAFA] shadow-xs"
 >
     @csrf
     <input type="hidden" name="lanjut" :value="proceed ? 1 : 0" />
@@ -112,17 +112,14 @@
                                     Jenis Cucian
                                     <x-help-tip text="Menentukan batas muatan per mesin: pakaian 6 KG, sprei/selimut tipis 3 KG, bedcover 1 pcs. Campuran memakai batas aman 3 KG." />
                                 </label>
-                                <select
-                                    id="srv-{{ $id }}-type"
-                                    name="items[{{ $id }}][item_type]"
-                                    x-model="sel[{{ $id }}].item_type"
-                                    :disabled="! included({{ $id }})"
-                                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
-                                >
+                                <div class="grid grid-cols-1 gap-2" role="radiogroup" aria-label="Jenis cucian">
                                     @foreach ($itemTypes as $key => $type)
-                                        <option value="{{ $key }}">{{ $type['label'] }} (maks {{ $type['capacity'] }} {{ $type['unit'] }}/mesin)</option>
+                                        <label class="flex min-h-12 items-center gap-3 rounded-xl border border-slate-300 bg-[#FAFAFA] px-3 py-2 text-sm hover:border-[#3B82F6]">
+                                            <input type="radio" name="items[{{ $id }}][item_type]" value="{{ $key }}" x-model="sel[{{ $id }}].item_type" :disabled="! included({{ $id }})" class="h-4 w-4 border-slate-300 text-[#3B82F6] focus:ring-[#3B82F6]" />
+                                            <span><strong>{{ $type['label'] }}</strong><span class="block text-xs text-slate-500">Maks {{ $type['capacity'] }} {{ $type['unit'] }}/mesin</span></span>
+                                        </label>
                                     @endforeach
-                                </select>
+                                </div>
                             </div>
 
                             <!-- Jumlah mesin -->
@@ -132,7 +129,7 @@
                                     <x-help-tip text="Satu mesin = satu kali proses. Belum yakin? Gunakan bantuan hitung (opsional) di bawah." />
                                 </label>
                                 <div class="flex items-center gap-2">
-                                    <button type="button" x-on:click="dec({{ $id }})" :disabled="! sel[{{ $id }}].checked" class="w-9 h-9 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 flex items-center justify-center" aria-label="Kurangi jumlah mesin {{ $service->name }}">
+                                    <button type="button" x-on:click="dec({{ $id }})" :disabled="! sel[{{ $id }}].checked" class="w-9 h-9 rounded-lg border border-slate-300 bg-[#FAFAFA] hover:bg-slate-50 flex items-center justify-center" aria-label="Kurangi jumlah mesin {{ $service->name }}">
                                         <x-icon name="minus" class="w-4 h-4" />
                                     </button>
                                     <input
@@ -146,7 +143,7 @@
                                         max="{{ $maxQty }}"
                                         class="w-16 text-center rounded-lg border border-slate-300 py-1.5 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-[#FDECEC] focus:border-[#FDECEC]"
                                     />
-                                    <button type="button" x-on:click="inc({{ $id }})" :disabled="! sel[{{ $id }}].checked" class="w-9 h-9 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 flex items-center justify-center" aria-label="Tambah jumlah mesin {{ $service->name }}">
+                                    <button type="button" x-on:click="inc({{ $id }})" :disabled="! sel[{{ $id }}].checked" class="w-9 h-9 rounded-lg border border-slate-300 bg-[#FAFAFA] hover:bg-slate-50 flex items-center justify-center" aria-label="Tambah jumlah mesin {{ $service->name }}">
                                         <x-icon name="plus" class="w-4 h-4" />
                                     </button>
                                     <span class="ml-auto text-xs font-bold text-slate-700" x-text="rupiah(price({{ $id }}) * (sel[{{ $id }}].qty || 0))"></span>
@@ -174,7 +171,7 @@
                                         step="0.5"
                                         x-model="sel[{{ $id }}].weight"
                                         placeholder="0"
-                                        class="w-20 rounded-md border border-amber-300 px-2 py-1 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-amber-100"
+                                        class="w-20 rounded-md border border-amber-300 px-2 py-1 text-xs bg-[#FAFAFA] focus:outline-none focus:ring-2 focus:ring-amber-100"
                                     />
                                     <span class="text-amber-900" x-text="itemTypes[sel[{{ $id }}].item_type]?.unit ?? 'KG'"></span>
                                     <template x-if="suggestion({{ $id }})">
@@ -217,7 +214,7 @@
         <div
             x-show="selectedCount() > 0 || cartCount > 0"
             @if (! collect($initial)->contains('checked', true) && $cart['items']->isEmpty()) x-cloak @endif
-            class="sticky bottom-0 z-20 rounded-b-2xl border-t border-slate-200 bg-white/95 backdrop-blur px-5 sm:px-6 py-4"
+            class="sticky bottom-0 z-20 rounded-b-2xl border-t border-slate-200 bg-[#FAFAFA]/95 backdrop-blur px-5 sm:px-6 py-4"
         >
             <div class="flex items-center gap-3">
                 <button
@@ -241,7 +238,7 @@
                     type="button"
                     x-on:click="continueOrder($el.form)"
                     :disabled="submitting"
-                    class="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-sm font-bold shadow-sm disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+                    class="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-[#FAFAFA] text-sm font-bold shadow-sm disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
                 >
                     Lanjutkan
                     <x-icon name="arrow-right" class="w-4 h-4" />

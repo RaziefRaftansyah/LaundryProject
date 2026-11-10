@@ -30,7 +30,7 @@
         aria-controls="tutorial-pesan-body"
     >
         <span class="flex items-center gap-3">
-            <span class="w-9 h-9 rounded-xl bg-[#D91B20] text-white flex items-center justify-center shrink-0">
+            <span class="w-9 h-9 rounded-xl bg-[#D91B20] text-[#FAFAFA] flex items-center justify-center shrink-0">
                 <x-icon name="info" class="w-5 h-5" />
             </span>
             <span>
@@ -47,7 +47,7 @@
     <div id="tutorial-pesan-body" x-show="open" x-collapse>
         <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 px-5 pb-5">
             @foreach ($tutorialSteps as $i => $t)
-                <li class="relative rounded-xl bg-white border border-[#FDECEC] p-4">
+                <li class="relative rounded-xl bg-[#FAFAFA] border border-[#FDECEC] p-4">
                     <span class="absolute top-3 right-3 text-[10px] font-extrabold text-[#D91B20]">0{{ $i + 1 }}</span>
                     <span class="w-8 h-8 rounded-lg bg-[#FDECEC] text-[#D91B20] flex items-center justify-center mb-2">
                         <x-icon :name="$t['icon']" class="w-4 h-4" />

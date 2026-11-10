@@ -59,7 +59,7 @@
             </main>
 
             <!-- Dashboard Mini Footer -->
-            <footer class="px-4 sm:px-6 lg:px-8 py-4 border-t border-slate-200/80 bg-white text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <footer class="px-4 sm:px-6 lg:px-8 py-4 border-t border-slate-200/80 bg-[#FAFAFA] text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-2">
                 <span>&copy; {{ date('Y') }} Laundry Coin - Solusi Laundromat Modern</span>
                 <span class="text-slate-400">Versi 2.0 (Blade MVC)</span>
             </footer>

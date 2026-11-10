@@ -43,7 +43,7 @@
 
         <div x-data="{ active: null }" class="space-y-3.5">
             @foreach ($faqs as $index => $item)
-                <div class="rounded-2xl border border-slate-200/80 bg-white overflow-hidden shadow-xs transition-colors">
+                <div class="rounded-2xl border border-slate-200/80 bg-[#FAFAFA] overflow-hidden shadow-xs transition-colors">
                     <button
                         type="button"
                         x-on:click="active = (active === {{ $index }} ? null : {{ $index }})"

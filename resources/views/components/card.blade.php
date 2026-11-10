@@ -5,7 +5,7 @@
     'padding' => 'p-6',
 ])
 
-<div {{ $attributes->merge(['class' => 'bg-white rounded-xl border border-slate-200/80 shadow-xs hover:border-slate-300 transition-colors duration-150']) }}>
+<div {{ $attributes->merge(['class' => 'bg-[#FAFAFA] rounded-xl border border-slate-200/80 shadow-xs hover:border-slate-300 transition-colors duration-150']) }}>
     @if ($title || $subtitle || $action)
         <div class="px-6 py-4.5 border-b border-slate-100 flex items-center justify-between gap-4">
             <div>

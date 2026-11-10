@@ -18,8 +18,8 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             <!-- Step 1: Pilih Layanan & Masukkan Pakaian -->
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col">
-                <div class="w-10 h-10 rounded-xl bg-[#D91B20] text-white font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
+            <div class="bg-[#FAFAFA] rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col">
+                <div class="w-10 h-10 rounded-xl bg-[#D91B20] text-[#FAFAFA] font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
                     01
                 </div>
                 <h3 class="text-base font-bold text-slate-900 mb-3">Pilih Layanan & Masukkan Pakaian</h3>
@@ -44,7 +44,7 @@
             </div>
 
             <!-- Step 2: Pembayaran Online Cashless -->
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col">
+            <div class="bg-[#FAFAFA] rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col">
                 <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-900 font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
                     02
                 </div>
@@ -76,8 +76,8 @@
             </div>
 
             <!-- Step 3: Menunggu Estimasi Penyelesaian -->
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col">
-                <div class="w-10 h-10 rounded-xl bg-[#D91B20] text-white font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
+            <div class="bg-[#FAFAFA] rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col">
+                <div class="w-10 h-10 rounded-xl bg-[#D91B20] text-[#FAFAFA] font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
                     03
                 </div>
                 <h3 class="text-base font-bold text-slate-900 mb-3">Menunggu Estimasi Penyelesaian Laundry</h3>
@@ -97,8 +97,8 @@
             </div>
 
             <!-- Step 4: Pesanan Selesai -->
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col">
-                <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
+            <div class="bg-[#FAFAFA] rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col">
+                <div class="w-10 h-10 rounded-xl bg-emerald-600 text-[#FAFAFA] font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
                     04
                 </div>
                 <h3 class="text-base font-bold text-slate-900 mb-3">Pesanan Selesai, Pakaian Kering Siap Dipakai</h3>
@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="mt-auto pt-4">
-                    <div class="pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] font-semibold text-emerald-700">
+                    <div class="pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] font-semibold text-[#22C55E]">
                         <x-icon name="check" class="w-4 h-4 shrink-0" />
                         <span>100% Kering Tanpa Jemur</span>
                     </div>

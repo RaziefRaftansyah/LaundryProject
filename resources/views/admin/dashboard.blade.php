@@ -6,7 +6,7 @@
 <div class="space-y-6">
 
     <!-- Header Banner -->
-    <div class="bg-gradient-to-r from-slate-900 via-[#8F0F13] to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800">
+    <div class="bg-gradient-to-r from-slate-900 via-[#8F0F13] to-slate-900 rounded-2xl p-6 sm:p-8 text-[#FAFAFA] shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800">
         <div>
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FDECEC]/20 text-[#D91B20] text-xs font-semibold mb-2 border border-[#FDECEC]/30">
                 <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
@@ -23,7 +23,7 @@
         <div class="flex flex-wrap items-center gap-3">
             <a
                 href="{{ route('admin.orders.index') }}"
-                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-xs shadow-md transition-all"
+                class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-[#FAFAFA] font-bold text-xs shadow-md transition-all"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />

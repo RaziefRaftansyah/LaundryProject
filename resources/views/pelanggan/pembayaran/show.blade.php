@@ -34,7 +34,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
         <!-- Kolom kiri: ringkasan transaksi -->
         <div class="lg:col-span-3 space-y-6">
-            <section class="rounded-2xl border border-slate-200 bg-white shadow-xs" aria-labelledby="ringkasan-title">
+            <section class="rounded-2xl border border-slate-200 bg-[#FAFAFA] shadow-xs" aria-labelledby="ringkasan-title">
                 <div class="px-5 sm:px-6 pt-5 pb-4 border-b border-slate-100">
                     <h2 id="ringkasan-title" class="text-base font-extrabold text-slate-900">Ringkasan Pesanan</h2>
                     <p class="text-xs text-slate-500 mt-0.5">{{ $checkout->orders->count() }} pesanan dalam 1 transaksi · dibuat {{ $checkout->created_at->translatedFormat('d M Y, H:i') }}</p>
@@ -63,7 +63,7 @@
                 </div>
             </section>
 
-            <section class="rounded-2xl border border-slate-200 bg-white shadow-xs p-5 sm:p-6">
+            <section class="rounded-2xl border border-slate-200 bg-[#FAFAFA] shadow-xs p-5 sm:p-6">
                 <h2 class="text-sm font-extrabold text-slate-900">Detail Pengantaran</h2>
                 <dl class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                     <div class="flex items-start gap-2">
@@ -86,7 +86,7 @@
 
         <!-- Kolom kanan: panel pembayaran + tutorial -->
         <div class="lg:col-span-2 space-y-6 lg:sticky lg:top-24">
-            <section class="rounded-2xl border border-slate-200 bg-white shadow-xs p-5 sm:p-6" aria-labelledby="bayar-title">
+            <section class="rounded-2xl border border-slate-200 bg-[#FAFAFA] shadow-xs p-5 sm:p-6" aria-labelledby="bayar-title">
                 <h2 id="bayar-title" class="text-base font-extrabold text-slate-900">Pembayaran</h2>
 
                 @if ($state === 'awaiting')
@@ -114,7 +114,7 @@
                         </div>
 
                         <template x-if="! expired">
-                            <a href="{{ $payment->checkout_url }}" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-white text-sm font-bold shadow-sm">
+                            <a href="{{ $payment->checkout_url }}" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[#D91B20] hover:bg-[#B71419] text-[#FAFAFA] text-sm font-bold shadow-sm">
                                 Lanjutkan ke Halaman Pembayaran <x-icon name="arrow-right" class="w-4 h-4" />
                             </a>
                         </template>
@@ -173,7 +173,7 @@
                         ['Kembali otomatis', 'Status di halaman ini diperbarui otomatis. Setelah lunas, antar cucian ke outlet sesuai tanggal.'],
                     ] as $i => [$title, $text])
                         <li class="flex gap-3">
-                            <span class="w-6 h-6 rounded-full bg-[#D91B20] text-white text-[11px] font-extrabold flex items-center justify-center shrink-0">{{ $i + 1 }}</span>
+                            <span class="w-6 h-6 rounded-full bg-[#D91B20] text-[#FAFAFA] text-[11px] font-extrabold flex items-center justify-center shrink-0">{{ $i + 1 }}</span>
                             <div>
                                 <p class="text-xs font-bold text-slate-900">{{ $title }}</p>
                                 <p class="text-[11px] text-slate-600 leading-snug">{{ $text }}</p>

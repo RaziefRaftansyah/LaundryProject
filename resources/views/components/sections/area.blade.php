@@ -1,4 +1,4 @@
-<section id="operasional" class="py-16 lg:py-24 bg-white border-b border-slate-200/60">
+<section id="operasional" class="py-16 lg:py-24 bg-[#FAFAFA] border-b border-slate-200/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <!-- Left Info -->
@@ -19,7 +19,7 @@
                 <div class="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 space-y-4">
                     <div class="flex items-center justify-between pb-3 border-b border-slate-200">
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-[#D91B20] text-white flex items-center justify-center font-bold text-xs">
+                            <div class="w-8 h-8 rounded-lg bg-[#D91B20] text-[#1F1415] flex items-center justify-center font-bold text-xs">
                                 CS
                             </div>
                             <div>
@@ -27,7 +27,7 @@
                                 <p class="text-[11px] text-slate-500">{{ config('laundry.operating_hours.notes', 'Termasuk Hari Libur Nasional') }}</p>
                             </div>
                         </div>
-                        <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-extrabold text-xs">
+                        <span class="px-3 py-1 rounded-full bg-emerald-100 text-[#166534] font-extrabold text-xs">
                             {{ config('laundry.operating_hours.weekday', '07:00 - 22:00') }} {{ config('laundry.operating_hours.timezone', 'WIB') }}
                         </span>
                     </div>
@@ -66,45 +66,45 @@
 
             <!-- Right Visual Outlet Card -->
             <div class="lg:col-span-6">
-                <div class="bg-slate-900 rounded-3xl p-8 text-white relative overflow-hidden shadow-xl border border-slate-800">
-                    <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+                <div class="bg-[#FAFAFA] rounded-3xl p-8 text-[#1F1415] relative overflow-hidden shadow-xl border border-slate-200">
+                    <div class="flex items-center justify-between pb-6 border-b border-slate-200">
                         <div>
                             <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Pusat Outlet</span>
-                            <h3 class="text-xl font-bold text-white mt-1">{{ config('laundry.store_name', 'Laundry Coin') }}</h3>
+                            <h3 class="text-xl font-bold text-[#1F1415] mt-1">{{ config('laundry.store_name', 'Laundry Coin') }}</h3>
                         </div>
-                        <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-400 text-xs font-semibold border border-emerald-500/30">
+                        <span class="px-2.5 py-1 rounded-md bg-[#22C55E]/20 text-emerald-400 text-xs font-semibold border border-emerald-500/30">
                             Buka Setiap Hari
                         </span>
                     </div>
 
-                    <div class="py-6 space-y-4 text-sm text-slate-300">
+                    <div class="py-6 space-y-4 text-sm text-[#5C4A4B]">
                         <div class="flex items-start gap-3">
-                            <div class="p-2 rounded-lg bg-slate-800 text-[#D91B20] shrink-0">
+                            <div class="p-2 rounded-lg bg-[#FAFAFA] text-[#D91B20] shrink-0">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                             </div>
                             <div>
-                                <p class="font-semibold text-white">Alamat Outlet</p>
-                                <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">{{ config('laundry.address', '[ISI ALAMAT TOKO LENGKAP]') }}</p>
+                                <p class="font-semibold text-[#1F1415]">Alamat Outlet</p>
+                                <p class="text-xs text-[#5C4A4B] mt-0.5 leading-relaxed">{{ config('laundry.address', '[ISI ALAMAT TOKO LENGKAP]') }}</p>
                             </div>
                         </div>
 
                         <div class="flex items-start gap-3">
-                            <div class="p-2 rounded-lg bg-slate-800 text-amber-400 shrink-0">
+                            <div class="p-2 rounded-lg bg-[#FAFAFA] text-amber-400 shrink-0">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                             </div>
                             <div>
-                                <p class="font-semibold text-white">Wilayah Layanan</p>
-                                <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">{{ config('laundry.service_area', '[ISI NAMA AREA / WILAYAH OUTLET]') }}</p>
+                                <p class="font-semibold text-[#1F1415]">Wilayah Layanan</p>
+                                <p class="text-xs text-[#5C4A4B] mt-0.5 leading-relaxed">{{ config('laundry.service_area', '[ISI NAMA AREA / WILAYAH OUTLET]') }}</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-3">
+                    <div class="pt-4 border-t border-slate-200 flex flex-wrap gap-3">
                         <a
                             href="{{ config('laundry.google_maps_url', 'https://maps.google.com') }}"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-white font-bold text-xs shadow-xs transition-colors"
+                            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-[#1F1415] font-bold text-xs shadow-xs transition-colors"
                         >
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
                             <span>Buka di google maps</span>
@@ -113,7 +113,7 @@
                             href="tel:+6282150305758"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-700 hover:bg-slate-800 text-slate-200 font-bold text-xs transition-colors"
+                            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-700 hover:bg-[#FAFAFA] text-slate-200 font-bold text-xs transition-colors"
                         >
                             <span>Hubungi Staf Outlet</span>
                         </a>

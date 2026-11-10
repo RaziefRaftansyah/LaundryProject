@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full bg-white">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full bg-[#FAFAFA]">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -14,7 +14,7 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="min-h-full font-sans text-slate-800 antialiased bg-white">
+<body class="min-h-full font-sans text-slate-800 antialiased bg-[#FAFAFA]">
     {{-- Layout gaya aplikasi mobile (halaman Akun pelanggan): konten di tengah + bottom navigation --}}
     <div class="max-w-3xl mx-auto min-h-screen bg-[#FFF5F5] shadow-sm pb-24">
         @if (session('success') || session('error') || session('status'))
