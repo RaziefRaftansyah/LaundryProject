@@ -16,7 +16,7 @@
                 </p>
 
                 <!-- Direct WhatsApp CTA Box -->
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-700 text-[#FAFAFA] shadow-md">
+                <div class="p-6 rounded-2xl bg-[#FAFAFA] text-[#FAFAFA] shadow-md">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-10 h-10 rounded-xl bg-[#FAFAFA]/20 flex items-center justify-center font-bold">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">

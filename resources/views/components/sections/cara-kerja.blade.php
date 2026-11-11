@@ -12,17 +12,17 @@
                 4 Langkah Mudah Mencuci di Laundry Coin
             </h2>
             <p class="text-base text-slate-600 mt-3 leading-relaxed">
-                Pesan online atau datang langsung ke outlet. Ikuti 4 tahap praktis ini dan bawa pulang pakaian kering siap pakai.
+                Ikuti empat langkah singkat dari memilih layanan hingga mengambil pakaian.
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-            <!-- Step 1: Pilih Layanan & Masukkan Pakaian -->
+            <!-- Step 1: Pilih Layanan -->
             <div class="bg-[#FAFAFA] rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col">
                 <div class="w-10 h-10 rounded-xl bg-[#D91B20] text-[#FAFAFA] font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
                     01
                 </div>
-                <h3 class="text-base font-bold text-slate-900 mb-3">Pilih Layanan & Masukkan Pakaian</h3>
+                <h3 class="text-base font-bold text-slate-900 mb-3">Pilih Layanan</h3>
 
                 <div class="space-y-3 text-xs text-slate-600 leading-relaxed">
                     <div class="rounded-xl bg-[#FDECEC]/70 border border-[#FDECEC] p-3">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="rounded-xl bg-amber-50/70 border border-amber-100 p-3">
                         <p class="font-bold text-amber-800 mb-1">Langsung di Tempat (Self Laundry)</p>
-                        <p>Datang ke outlet, pilih mesin cuci yang berstatus siap pakai, masukkan pakaian sesuai batas kapasitas mesin, lalu tutup pintu mesin dengan rapat.</p>
+                        <p>Datang ke outlet, pilih mesin siap pakai, lalu masukkan pakaian sesuai kapasitas.</p>
                     </div>
                 </div>
 
@@ -43,18 +43,18 @@
                 </div>
             </div>
 
-            <!-- Step 2: Pembayaran Online Cashless -->
+            <!-- Step 2: Bayar Cashless -->
             <div class="bg-[#FAFAFA] rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col">
                 <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-900 font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
                     02
                 </div>
-                <h3 class="text-base font-bold text-slate-900 mb-3">Pembayaran Online Cashless</h3>
+                <h3 class="text-base font-bold text-slate-900 mb-3">Bayar Cashless</h3>
 
                 <ol class="space-y-1.5 text-xs text-slate-600 leading-relaxed list-decimal list-inside mb-4">
-                    <li>Pilih metode pembayaran saat membuat pesanan.</li>
-                    <li>Bayar sesuai total tagihan yang tertera di detail pesanan.</li>
-                    <li>Petugas memverifikasi pembayaran Anda.</li>
-                    <li>Status pembayaran berubah menjadi <strong>Lunas</strong> di riwayat pesanan.</li>
+                    <li>Pilih metode pembayaran.</li>
+                    <li>Bayar sesuai total tagihan.</li>
+                    <li>Pembayaran diverifikasi otomatis.</li>
+                    <li>Cek status <strong>Lunas</strong> di riwayat.</li>
                 </ol>
 
                 <p class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2">Metode Pembayaran</p>
@@ -80,12 +80,12 @@
                 <div class="w-10 h-10 rounded-xl bg-[#D91B20] text-[#FAFAFA] font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
                     03
                 </div>
-                <h3 class="text-base font-bold text-slate-900 mb-3">Menunggu Estimasi Penyelesaian Laundry</h3>
+                <h3 class="text-base font-bold text-slate-900 mb-3">Tunggu Proses</h3>
 
                 <div class="space-y-3 text-xs text-slate-600 leading-relaxed">
-                    <p>Setiap layanan memiliki <strong>estimasi waktu selesai</strong> yang tertera di kartu layanan dan di detail pesanan Anda.</p>
-                    <p>Untuk layanan Drop-Off, petugas mengerjakan pakaian Anda bertahap (<strong>cuci &rarr; kering &rarr; lipat</strong>) dan setiap tahap bisa dipantau lewat riwayat pesanan atau menu <a href="#lacak" class="font-semibold text-[#D91B20] hover:underline">Lacak Pesanan</a> dengan kode pesanan.</p>
-                    <p>Untuk Self Laundry, Anda bisa bersantai di waiting lounge sambil menunggu mesin selesai.</p>
+                    <p>Lihat estimasi selesai di detail pesanan.</p>
+                    <p>Drop-Off diproses bertahap: cuci, kering, lalu lipat.</p>
+                    <p>Self Laundry dapat ditunggu di lounge.</p>
                 </div>
 
                 <div class="mt-auto pt-4">
@@ -101,11 +101,11 @@
                 <div class="w-10 h-10 rounded-xl bg-emerald-600 text-[#FAFAFA] font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
                     04
                 </div>
-                <h3 class="text-base font-bold text-slate-900 mb-3">Pesanan Selesai, Pakaian Kering Siap Dipakai</h3>
+                <h3 class="text-base font-bold text-slate-900 mb-3">Ambil Pakaian</h3>
 
                 <div class="space-y-3 text-xs text-slate-600 leading-relaxed">
-                    <p>Saat status pesanan berubah menjadi <strong>Selesai</strong>, pakaian Anda sudah bersih, wangi, dan kering tuntas. Silakan ambil di outlet dengan menunjukkan kode pesanan.</p>
-                    <p>Untuk Self Laundry, pindahkan pakaian ke mesin pengering hingga kering, lalu lipat rapi di meja lipat yang tersedia.</p>
+                    <p>Saat status <strong>Selesai</strong>, ambil pakaian dengan kode pesanan.</p>
+                    <p>Keringkan pakaian, lalu lipat di meja yang tersedia.</p>
                 </div>
 
                 <div class="mt-auto pt-4">

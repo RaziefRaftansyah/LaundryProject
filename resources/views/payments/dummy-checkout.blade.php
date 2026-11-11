@@ -24,7 +24,7 @@
     </div>
 
     <div class="bg-[#FAFAFA] rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
-        <div class="px-6 py-5 bg-gradient-to-r from-[#8F0F13] to-slate-900 text-[#FAFAFA]">
+        <div class="px-6 py-5 bg-[#FAFAFA] text-[#FAFAFA]">
             <p class="text-xs text-[#D91B20]">Total Tagihan</p>
             <p class="text-3xl font-extrabold">Rp {{ number_format($payment->amount, 0, ',', '.') }}</p>
         </div>

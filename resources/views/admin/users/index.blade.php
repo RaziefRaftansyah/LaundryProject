@@ -253,7 +253,7 @@
                 x-show="addUserModalOpen"
                 class="relative z-10 inline-block align-bottom bg-[#FAFAFA] rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-slate-200"
             >
-                <div class="px-6 py-5 bg-gradient-to-r from-[#8F0F13] to-slate-900 text-[#FAFAFA] flex items-center justify-between">
+                <div class="px-6 py-5 bg-[#FAFAFA] text-[#FAFAFA] flex items-center justify-between">
                     <div>
                         <h3 class="text-base font-bold">Tambah Pengguna Baru</h3>
                         <p class="text-xs text-[#D91B20]">Buat akun staf atau pelanggan secara manual</p>
@@ -387,7 +387,7 @@
             >
                 <template x-if="selectedUser">
                     <div>
-                        <div class="px-6 py-5 bg-gradient-to-r from-slate-900 to-[#8F0F13] text-[#FAFAFA] flex items-center justify-between">
+                        <div class="px-6 py-5 bg-[#FAFAFA] text-[#FAFAFA] flex items-center justify-between">
                             <div>
                                 <h3 class="text-base font-bold">Edit Akun Pengguna</h3>
                                 <p class="text-xs text-[#D91B20]" x-text="selectedUser.name + ' (#' + selectedUser.id + ')'"></p>

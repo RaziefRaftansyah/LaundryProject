@@ -6,7 +6,7 @@
 <div class="space-y-6">
 
     <!-- Header Banner -->
-    <div class="bg-gradient-to-r from-slate-900 via-[#8F0F13] to-slate-900 rounded-2xl p-6 sm:p-8 text-[#FAFAFA] shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800">
+    <div class="bg-[#FAFAFA] rounded-2xl p-6 sm:p-8 text-[#FAFAFA] shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800">
         <div>
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FDECEC]/20 text-[#D91B20] text-xs font-semibold mb-2 border border-[#FDECEC]/30">
                 <span class="w-2 h-2 rounded-full bg-emerald-400"></span>

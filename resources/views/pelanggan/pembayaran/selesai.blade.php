@@ -14,7 +14,7 @@
     </div>
 
     <!-- 1. Banner berhasil -->
-    <section class="rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-[#FAFAFA] p-6 sm:p-8 shadow-sm">
+    <section class="rounded-2xl bg-[#FAFAFA] text-[#FAFAFA] p-6 sm:p-8 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center gap-5">
             <div class="w-14 h-14 rounded-2xl bg-[#FAFAFA]/20 flex items-center justify-center shrink-0">
                 <x-icon name="check" class="w-8 h-8" />

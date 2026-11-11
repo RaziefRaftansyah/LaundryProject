@@ -16,7 +16,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FDECEC] text-[#D91B20] text-xs font-bold uppercase tracking-wider border border-[#FDECEC] mb-3">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#DBEAFE] text-[#1D4ED8] text-xs font-bold uppercase tracking-wider border border-[#FDECEC] mb-3">
                 Tarif Transparan & Bersahabat
             </span>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -28,10 +28,10 @@
         </div>
 
         <!-- Kotak Info Kapasitas Mesin -->
-        <div class="mb-14 rounded-2xl bg-amber-50/70 border border-amber-200 p-6 sm:p-7 shadow-xs">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-amber-200/70 pb-4 mb-4">
+        <div class="mb-14 rounded-2xl bg-[#EFF6FF] border border-[#93C5FD] p-6 sm:p-7 shadow-xs">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#93C5FD] pb-4 mb-4">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-900 flex items-center justify-center font-bold shrink-0">
+                    <div class="w-10 h-10 rounded-xl bg-[#3B82F6] text-[#FAFAFA] flex items-center justify-center font-bold shrink-0">
                         <x-icon name="washer" class="w-5 h-5" />
                     </div>
                     <div>
@@ -39,38 +39,35 @@
                         <p class="text-xs text-slate-600">Pastikan muatan cucian sesuai anjuran agar hasil cuci & pengeringan optimal 100%.</p>
                     </div>
                 </div>
-                <span class="inline-flex self-start sm:self-auto items-center px-3 py-1 rounded-full text-xs font-bold bg-amber-200 text-amber-900">
-                    Kapasitas Terukur
-                </span>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-                <div class="bg-[#FAFAFA]/80 p-3.5 rounded-xl border border-amber-200/60 flex items-center gap-3">
-                    <span class="w-8 h-8 rounded-lg bg-[#FDECEC] text-[#D91B20] flex items-center justify-center font-bold shrink-0">1</span>
+                <div class="bg-[#FAFAFA]/80 p-3.5 rounded-xl border border-[#93C5FD] flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-lg bg-[#DBEAFE] text-[#1D4ED8] flex items-center justify-center font-bold shrink-0">1</span>
                     <div>
                         <p class="font-bold text-slate-900">Pakaian Biasa</p>
-                        <p class="text-slate-600 font-semibold text-amber-900">Maksimal 6 KG / mesin</p>
+                        <p class="text-slate-600 font-semibold text-[#1D4ED8]">Maksimal 6 KG / mesin</p>
                     </div>
                 </div>
-                <div class="bg-[#FAFAFA]/80 p-3.5 rounded-xl border border-amber-200/60 flex items-center gap-3">
-                    <span class="w-8 h-8 rounded-lg bg-[#FDECEC] text-[#D91B20] flex items-center justify-center font-bold shrink-0">2</span>
+                <div class="bg-[#FAFAFA]/80 p-3.5 rounded-xl border border-[#93C5FD] flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-lg bg-[#DBEAFE] text-[#1D4ED8] flex items-center justify-center font-bold shrink-0">2</span>
                     <div>
                         <p class="font-bold text-slate-900">Sprei / Selimut Tipis</p>
-                        <p class="text-slate-600 font-semibold text-amber-900">Maksimal 3 KG / mesin</p>
+                        <p class="text-slate-600 font-semibold text-[#1D4ED8]">Maksimal 3 KG / mesin</p>
                     </div>
                 </div>
-                <div class="bg-[#FAFAFA]/80 p-3.5 rounded-xl border border-amber-200/60 flex items-center gap-3">
-                    <span class="w-8 h-8 rounded-lg bg-[#FDECEC] text-[#D91B20] flex items-center justify-center font-bold shrink-0">3</span>
+                <div class="bg-[#FAFAFA]/80 p-3.5 rounded-xl border border-[#93C5FD] flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-lg bg-[#DBEAFE] text-[#1D4ED8] flex items-center justify-center font-bold shrink-0">3</span>
                     <div>
                         <p class="font-bold text-slate-900">Bedcover</p>
-                        <p class="text-slate-600 font-semibold text-amber-900">Maksimal 1 Pcs / mesin</p>
+                        <p class="text-slate-600 font-semibold text-[#1D4ED8]">Maksimal 1 Pcs / mesin</p>
                     </div>
                 </div>
-                <div class="bg-[#FAFAFA]/80 p-3.5 rounded-xl border border-amber-200/60 flex items-center gap-3">
-                    <span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center font-bold shrink-0">4</span>
+                <div class="bg-[#FAFAFA]/80 p-3.5 rounded-xl border border-[#93C5FD] flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-lg bg-[#DBEAFE] text-[#1D4ED8] flex items-center justify-center font-bold shrink-0">4</span>
                     <div>
                         <p class="font-bold text-slate-900">Mesin Besar</p>
-                        <p class="text-slate-600 font-semibold text-amber-900">Maksimal 12 KG / mesin</p>
+                        <p class="text-slate-600 font-semibold text-[#1D4ED8]">Maksimal 12 KG / mesin</p>
                     </div>
                 </div>
             </div>
@@ -94,7 +91,7 @@
                         <div class="rounded-2xl border border-slate-200 bg-[#FAFAFA] p-6 shadow-xs hover:border-[#FDECEC] hover:shadow-md transition-all flex flex-col justify-between">
                             <div>
                                 <div class="flex items-center justify-between mb-4">
-                                    <div class="w-10 h-10 rounded-xl bg-[#FDECEC] text-[#D91B20] flex items-center justify-center">
+                                    <div class="w-10 h-10 rounded-xl bg-[#DBEAFE] text-[#1D4ED8] flex items-center justify-center">
                                         <x-icon name="washer" class="w-5 h-5" />
                                     </div>
                                     <x-badge variant="info" size="sm">Self Laundry</x-badge>

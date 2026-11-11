@@ -12,7 +12,7 @@
 @endphp
 
 <!-- 1. Header & Profil (latar biru) -->
-<header class="bg-gradient-to-br from-[#8F0F13] to-[#8F0F13] text-[#FAFAFA] px-4 pt-4 pb-6 rounded-b-3xl">
+<header class="bg-[#8F0F13] text-[#FAFAFA] px-4 pt-4 pb-6 rounded-b-3xl">
     <!-- Top bar: judul kiri, ikon notifikasi / pesan / pengaturan di kanan -->
     <div class="flex items-center justify-between">
         <a href="{{ route('home') }}" class="flex items-center gap-2 text-sm font-extrabold tracking-tight">
@@ -59,7 +59,7 @@
                     </svg>
                 </a>
             </div>
-            <p class="text-xs text-[#D91B20] truncate">{{ $user->phone ?: $user->email }}</p>
+            <p class="text-xs text-[#FDECEC] truncate">{{ $user->phone ?: $user->email }}</p>
         </div>
         <div class="w-16 h-16 rounded-full bg-[#FAFAFA] text-[#D91B20] flex items-center justify-center text-xl font-extrabold ring-4 ring-white/30 shrink-0" aria-hidden="true">
             {{ $user->initials() }}

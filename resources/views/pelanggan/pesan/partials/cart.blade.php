@@ -16,7 +16,7 @@
 >
     <div class="px-5 pt-5 pb-4 border-b border-slate-100 flex items-center justify-between">
         <h2 id="keranjang-title" class="flex items-center gap-2 text-base font-extrabold text-slate-900">
-            <x-icon name="cart" class="w-5 h-5 text-[#D91B20]" />
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[#D91B20]"><x-icon name="cart" class="w-5 h-5 text-[#FAFAFA]" /></span>
             Keranjang
         </h2>
         <span class="text-xs font-bold text-slate-500">{{ $cart['items']->count() }} layanan</span>

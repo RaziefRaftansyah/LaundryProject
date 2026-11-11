@@ -1,4 +1,4 @@
-﻿# Laundry Coin
+# Laundry Coin
 
 Laundry Coin adalah layanan laundry modern di Samarinda yang menyediakan self-service laundry dan layanan drop-off. Website ini membantu pelanggan memilih layanan, melakukan pemesanan, membayar secara cashless, dan memantau status cucian.
 
@@ -69,3 +69,14 @@ Status pesanan selalu disertai ikon dan teks:
 Website dirancang mobile-first dengan target sentuh minimal 48px, fokus keyboard yang terlihat, pilihan warna dengan kontras yang diperhatikan, serta tampilan permukaan netral berbasis Spatial System.
 
 Untuk dokumentasi teknis dan panduan pengembangan, lihat [`docs/DOKUMENTASI_PENGEMBANGAN.md`](docs/DOKUMENTASI_PENGEMBANGAN.md).
+
+## Perubahan homepage terbaru
+- Tombol `Pelajari Cara Kerja` pada hero diganti menjadi `Kontak Kami` dengan ikon telepon dan tautan langsung ke WhatsApp/telepon Laundry Coin.
+- Card `Ketentuan & Batas Kapasitas Mesin Cuci` menggunakan tema informasi biru `#3B82F6` dan tidak lagi menggunakan eyebrow `Kapasitas Terukur`.
+- Bagian `Lokasi & Jam Buka` diganti menjadi bagian benefit layanan.
+- Elemen gradient pada bagian yang diperbarui dihapus dan diganti dengan surface datar.
+## Pembaruan benefit dan hero
+- Hero menggunakan latar merah #8F0F13 dengan teks #FAFAFA dan elemen pendukung yang disesuaikan agar tetap terbaca.
+- Tombol Kontak Kami menampilkan ikon WhatsApp dan mengarah ke nomor WhatsApp Laundry Coin.
+- Benefit diperbarui menjadi Free Wifi, Cashless, Murah, Cepat, dan Pakaian Hilang Minim Terjadi dengan ikon Wifi, uang kertas, senyum, jam, serta perisai centang.
+- Judul langkah proses dipersingkat menjadi Pilih Layanan, Bayar Cashless, Tunggu Proses, dan Ambil Pakaian.

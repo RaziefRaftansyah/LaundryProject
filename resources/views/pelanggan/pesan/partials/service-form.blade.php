@@ -223,9 +223,9 @@
                     :disabled="submitting"
                     :aria-label="selectedCount() > 0 ? 'Masukkan layanan terpilih ke keranjang' : 'Buka keranjang'"
                     :title="selectedCount() > 0 ? 'Masukkan layanan terpilih ke keranjang' : 'Buka keranjang'"
-                    class="relative w-11 h-11 shrink-0 rounded-lg border border-[#FDECEC] bg-[#D91B20] hover:bg-[#B71419] text-[#D91B20] flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    class="relative w-11 h-11 shrink-0 rounded-lg border border-[#FDECEC] bg-[#D91B20] hover:bg-[#B71419] text-[#FAFAFA] flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
-                    <x-icon name="cart" class="w-5 h-5" />
+                    <x-icon name="cart" class="w-5 h-5 text-[#FAFAFA]" />
                     <span x-show="cartCount > 0" x-text="cartCount" class="absolute -top-1.5 -right-1.5 min-w-5 h-5 px-1 rounded-full bg-amber-400 text-slate-900 text-[10px] font-extrabold leading-5 text-center" aria-hidden="true"></span>
                 </button>
 

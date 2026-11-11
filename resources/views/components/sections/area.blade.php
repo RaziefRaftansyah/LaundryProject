@@ -1,125 +1,24 @@
 <section id="operasional" class="py-16 lg:py-24 bg-[#FAFAFA] border-b border-slate-200/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <!-- Left Info -->
-            <div class="lg:col-span-6 space-y-6">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FDECEC] text-[#D91B20] text-xs font-bold uppercase tracking-wider border border-[#FDECEC]">
-                    Lokasi & Jam Buka
-                </span>
-
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                    Buka Setiap Hari, Dari Pagi Hingga Malam
-                </h2>
-
-                <p class="text-base text-slate-600 leading-relaxed">
-                    Hadir di lokasi strategis wilayah {{ config('laundry.city', '[ISI KOTA OUTLET]') }} dengan fasilitas parkir luas dan akses mudah untuk membawa cucian Anda setiap hari.
-                </p>
-
-                <!-- Schedule Box -->
-                <div class="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 space-y-4">
-                    <div class="flex items-center justify-between pb-3 border-b border-slate-200">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-[#D91B20] text-[#1F1415] flex items-center justify-center font-bold text-xs">
-                                CS
-                            </div>
-                            <div>
-                                <p class="text-xs font-bold text-slate-800">Jam Operasional</p>
-                                <p class="text-[11px] text-slate-500">{{ config('laundry.operating_hours.notes', 'Termasuk Hari Libur Nasional') }}</p>
-                            </div>
-                        </div>
-                        <span class="px-3 py-1 rounded-full bg-emerald-100 text-[#166534] font-extrabold text-xs">
-                            {{ config('laundry.operating_hours.weekday', '07:00 - 22:00') }} {{ config('laundry.operating_hours.timezone', 'WIB') }}
-                        </span>
-                    </div>
-
-                    <div class="flex items-center gap-3 text-xs text-slate-600">
-                        <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
-                        </svg>
-                        <span>Last order mesin cuci self-service pukul <strong>{{ config('laundry.operating_hours.last_order', '21:00') }} {{ config('laundry.operating_hours.timezone', 'WIB') }}</strong> agar proses cuci-kering tuntas sebelum outlet tutup.</span>
-                    </div>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#DBEAFE] text-[#1D4ED8] text-xs font-bold uppercase tracking-wider border border-[#93C5FD]">Keunggulan Laundry Coin</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-3">Lebih Praktis, Bersih, dan Terukur</h2>
+            <p class="text-base text-slate-600 leading-relaxed mt-3">Nikmati pengalaman laundry yang dirancang agar cepat, nyaman, dan mudah dipantau.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            @foreach([
+                ['title'=>'Free Wifi','text'=>'Tetap produktif dan nyaman selama menunggu proses selesai.','icon'=>'wifi'],
+                ['title'=>'Cashless','text'=>'Pembayaran praktis dengan metode non-tunai.','icon'=>'banknote'],
+                ['title'=>'Murah','text'=>'Harga transparan untuk layanan laundry yang efisien.','icon'=>'smile'],
+                ['title'=>'Cepat','text'=>'Proses dirancang singkat dengan tahapan yang jelas.','icon'=>'clock'],
+                ['title'=>'Pakaian Hilang Minim Terjadi','text'=>'Pencatatan dan proses terstruktur membantu menjaga pakaian tetap aman.','icon'=>'shield-check'],
+            ] as $benefit)
+                <div class="rounded-2xl border border-slate-200 bg-[#FAFAFA] p-6 shadow-sm">
+                    <div class="w-11 h-11 rounded-xl bg-[#DBEAFE] text-[#3B82F6] flex items-center justify-center mb-4"><x-icon name="{{ $benefit['icon'] }}" class="w-5 h-5" /></div>
+                    <h3 class="font-bold text-slate-900">{{ $benefit['title'] }}</h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">{{ $benefit['text'] }}</p>
                 </div>
-
-                <!-- Facilities Grid -->
-                <div class="pt-2">
-                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-800 mb-3">Fasilitas Nyaman di Outlet</h3>
-                    <div class="grid grid-cols-2 gap-3 text-xs text-slate-700">
-                        <div class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-[#D91B20] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span>Ruang Tunggu Ber-AC Sejuk</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-[#D91B20] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span>Free WiFi & Charging Station</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-[#D91B20] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span>Pembayaran Cashless (Transfer & QRIS)</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-[#D91B20] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span>Meja Lipat & Keranjang Steril</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Visual Outlet Card -->
-            <div class="lg:col-span-6">
-                <div class="bg-[#FAFAFA] rounded-3xl p-8 text-[#1F1415] relative overflow-hidden shadow-xl border border-slate-200">
-                    <div class="flex items-center justify-between pb-6 border-b border-slate-200">
-                        <div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Pusat Outlet</span>
-                            <h3 class="text-xl font-bold text-[#1F1415] mt-1">{{ config('laundry.store_name', 'Laundry Coin') }}</h3>
-                        </div>
-                        <span class="px-2.5 py-1 rounded-md bg-[#22C55E]/20 text-emerald-400 text-xs font-semibold border border-emerald-500/30">
-                            Buka Setiap Hari
-                        </span>
-                    </div>
-
-                    <div class="py-6 space-y-4 text-sm text-[#5C4A4B]">
-                        <div class="flex items-start gap-3">
-                            <div class="p-2 rounded-lg bg-[#FAFAFA] text-[#D91B20] shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-[#1F1415]">Alamat Outlet</p>
-                                <p class="text-xs text-[#5C4A4B] mt-0.5 leading-relaxed">{{ config('laundry.address', '[ISI ALAMAT TOKO LENGKAP]') }}</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <div class="p-2 rounded-lg bg-[#FAFAFA] text-amber-400 shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-[#1F1415]">Wilayah Layanan</p>
-                                <p class="text-xs text-[#5C4A4B] mt-0.5 leading-relaxed">{{ config('laundry.service_area', '[ISI NAMA AREA / WILAYAH OUTLET]') }}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pt-4 border-t border-slate-200 flex flex-wrap gap-3">
-                        <a
-                            href="{{ config('laundry.google_maps_url', 'https://maps.google.com') }}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#D91B20] hover:bg-[#B71419] text-[#1F1415] font-bold text-xs shadow-xs transition-colors"
-                        >
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
-                            <span>Buka di google maps</span>
-                        </a>
-                        <a
-                            href="tel:+6282150305758"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-700 hover:bg-[#FAFAFA] text-slate-200 font-bold text-xs transition-colors"
-                        >
-                            <span>Hubungi Staf Outlet</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
