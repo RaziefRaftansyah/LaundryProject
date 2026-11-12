@@ -1,58 +1,111 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# LaundryProject — Website Laundry Coin
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Laravel 13 + Tailwind CSS 4 + Alpine.js + Chart.js. Aplikasi untuk outlet laundromat **Laundry Coin** (Samarinda): laundromat modern dengan self-service cuci mandiri, drop-off kiloan, pembayaran cashless.
 
-## About Laravel
+## Tujuan Website
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. **Etalase & informasi outlet** — tarif layanan, kapasitas mesin, jam buka, alamat & peta, kontak WA (halaman publik `/`).
+2. **Pemesanan online pelanggan** — pelanggan memilih layanan, mengatur jumlah mesin, dan mengatur waktu antar cucian; transaksi dilunasi lewat Midtrans (Transfer Bank / E-Wallet QRIS) atau di kasir outlet.
+3. **Lacak pesanan publik** — cek progres cucian hanya dengan kode pesanan dari struk kasir (tanpa login, rate-limited).
+4. **Sistem operasional outlet** — kasir walk-in, shift kas harian, pengeluaran, void transaksi, laporan keuangan admin.
+5. **Manajemen** — admin mengelola user, layanan/tarif, pesanan, refund.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Alur Pengguna
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+### Pengunjung (tanpa akun)
+```
+Beranda /  →  lihat tarif, kapasitas mesin, jam buka (footer + section operasional), kontak WA
+           →  /tracking?order_code=XXXX  →  status pesanan ( kode dari struk kasir )
+           →  /tentang, /aturan-penggunaan
+           →  /register → verifikasi email → masuk sebagai pelanggan
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### Pelanggan (pemesanan online)
+```
+/pesan (Langkah 1)  →  pilih layanan (self / titip cuci), atur jumlah mesin, masuk keranjang
+/keranjang          →  centang item, koreksi jumlah mesin
+/pesan (Langkah 2)  →  detail & konfirmasi: nama, no. HP, tanggal antar, catatan
+/checkout           →  buat transaksi → /pembayaran/{kode}
+/pembayaran/{kode}  →  bayar online (Midtrans: Transfer / QRIS) atau bayar di kasir
+   ↳ lunas          →  /pembayaran/{kode}/selesai  →  nota + status
+   ↳ gagal/kadaluarsa →  coba bayar lagi / batal (refund otomatis atau manual oleh admin)
+   ↳ dibayar lalu dibatalkan → pengajuan refund; admin menyelesaikannya di /perlu-refund
+/orders              →  riwayat pesanan + detail + timeline status
+/transaksi/{kode}    →  detail transaksi + batalkan
+/akun                →  profil, riwayat, tautan Tentang Kami & Aturan
+```
 
-## Contributing
+### Pelanggan — status pesanan
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Transaksi (pembayaran): `menunggu_pembayaran → lunas | gagal | kadaluarsa | dibatalkan` (4 status terakhir = final).
 
-## Code of Conduct
+Pesanan (pengerjaan): `pending → diproses → siap_diambil → selesai`. Pesanan boleh diproses sebelum lunas, tetapi hanya boleh ditandai selesai setelah transaksi lunas. Mundur status hanya admin, dengan catatan wajib, dan hanya dalam jendela koreksi setelah "selesai".
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Pegawai outlet (walk-in kasir)
+```
+/pegawai/dashboard        →  ringkasan
+/pegawai/orders           →  buat pesanan walk-in, update tahapan cuci/kering/lipat
+/pegawai/keuangan         →  rekap keuangan (read-only)
+/panel/transaksi          →  transaksi kasir: buat, lunasi di kasir, struk, void
+/panel/transaksi/baru     →  kasir walk-in (pilih pelanggan / tambah cepat)
+/panel/shift              →  buka/tutup shift kas harian
+/panel/pengeluaran        →  catat pengeluaran operasional
+/panel/pelanggan          →  cari/daftarkan pelanggan
+```
 
-## Security Vulnerabilities
+### Admin
+```
+/admin/dashboard          →  statistik pesanan 6 bulan terakhir
+/admin/orders             →  semua pesanan, konfirmasi pembayaran, cek Midtrans
+/admin/services           →  kelola layanan & tarif
+/admin/users              →  kelola user
+/admin/perlu-refund       →  nomor perlu refund + refund pembatalan
+/panel/laporan            →  laporan keuangan (trend, saluran, metode)
+/panel/ekspor             →  ekspor laporan
+/panel/tutup-buku         →  tutup periode
+/panel/void               →  setujui/tolak void
+/panel/shift, /panel/pengeluaran, /panel/pelanggan  →  verifikasi shift, pengeluaran, pelanggan
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Peta Rute Utama
 
-## License
+| Alamat | Akses | Fungsi |
+|--------|-------|--------|
+| `/` | publik | Landing: tarif, jam buka, kontak, peta |
+| `/tracking` | publik (rate-limited) | Lacak pesanan via kode |
+| `/register`, `/login` | publik | Akun pelanggan |
+| `/pesan`, `/keranjang`, `/pembayaran/{kode}` | pelanggan | Pemesanan & pembayaran |
+| `/orders`, `/transaksi/{kode}`, `/akun` | pelanggan | Riwayat & profil |
+| `/pegawai/*` | pegawai | Kasir walk-in & operasional |
+| `/panel/*` | admin + pegawai | Kasir harian, shift, laporan |
+| `/admin/*` | admin | Manajemen user, layanan, refund |
+| `/payments/webhook/{gateway}` | gateway | Notifikasi pembayaran (signature, tanpa CSRF) |
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Konfigurasi Outlet
+
+Data outlet diubah di `config/laundry.php` (atau `.env`):
+
+- **Telepon/WA**: `LAUNDRY_PHONE` / `LAUNDRY_WHATSAPP` — nilai aktif `0821-5030-5758`.
+- **Jam operasional**: Senin–Jumat `07.00 - 19.00`, Sabtu–Minggu `07.00 - 21.00` WITA.
+- **Layanan & kapasitas mesin**: `item_types` (pakaian 6 KG, sprei 3 KG, bedcover 1 Pcs, campuran 3 KG per mesin).
+- **Metode pembayaran online**: `online_payment_methods` (Transfer Bank, E-Wallet / QRIS).
+
+Nilai-nilai ini dibagikan ke semua view via `View::share` di `AppServiceProvider` — ubah di satu tempat, berlaku di seluruh UI. Placeholder `[ISI ...]` otomatis disembunyikan oleh `App\Support\Placeholder`.
+
+## Teknis Singkat
+
+| Aspek | Nilai |
+|-------|-------|
+| Framework | Laravel 13, PHP 8.3 |
+| Frontend | Tailwind CSS 4 (`@theme` di `resources/css/app.css`), Alpine.js, Chart.js (lazy-load) |
+| Data outlet | `config/laundry.php` + `.env` |
+| Warna diagram | `--color-chart-*` di `app.css`, dibaca JS via `getChartColors()` |
+| Desain | Lihat `DESIGN.md` |
+| Audit UI | Lihat `anti-slop/audit-001-2026-11-12.md` |
+| Migrasi DB | `php artisan migrate` |
+| Server dev | `composer dev` (server + queue + vite) atau `php artisan serve` |
+| Build | `npm run build` |
+
+## Peran & Hak Akses
+
+Tiga peran (`App\Enums\UserRole`): `admin`, `pegawai`, `pelanggan`. Hak aksi per peran didaftarkan di `config/permissions.php` dan dieksekusi sebagai Gate native (`can:transaksi.void.approve`, dst.). Pelanggan hanya melihat data miliknya sendiri; transaksi orang lain → 404.
