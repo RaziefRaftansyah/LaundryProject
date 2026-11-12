@@ -58,7 +58,7 @@
 
             @if ($key === 'pesan')
                 {{-- Tombol utama: bulat, menonjol ke atas, dengan ikon plus --}}
-                <li class="flex flex-col items-center pb-2.5 text-[11px] font-semibold {{ $isActive ? 'text-primary-700' : 'text-slate-500' }}">
+                <li class="flex flex-col items-center pb-2.5 text-[11px] font-semibold {{ $isActive ? 'text-primary-700' : 'text-slate-700' }}">
                     <a
                         href="{{ $item['href'] }}"
                         @if ($isActive) aria-current="page" @endif
@@ -75,7 +75,7 @@
                         href="{{ $item['href'] }}"
                         @if ($isActive) aria-current="page" @endif
                         @if ($key === 'keranjang' && $cartCount > 0) aria-label="Keranjang ({{ $cartCount }} layanan)" @endif
-                        class="flex flex-col items-center gap-1 py-2.5 text-[11px] font-semibold transition-colors {{ $isActive ? 'text-primary-700' : 'text-slate-500 hover:text-primary-700' }}"
+                        class="flex flex-col items-center gap-1 py-2.5 text-[11px] font-semibold transition-colors {{ $isActive ? 'text-primary-700' : 'text-slate-700 hover:text-primary-700' }}"
                     >
                         <span class="relative">
                             <x-icon :name="$item['icon']" class="w-6 h-6" />

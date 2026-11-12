@@ -23,7 +23,7 @@
                 Langkah 2 dari 3
             </span>
             <h2 class="mt-2 text-lg font-extrabold tracking-tight text-slate-900 sm:text-xl">2. Detail & Konfirmasi Pesanan</h2>
-            <p class="mt-1 max-w-[70ch] text-sm leading-relaxed text-slate-600">
+            <p class="mt-1 max-w-[70ch] text-sm leading-relaxed text-slate-700">
                 Tentukan kapan cucian diantar ke outlet. Layanan yang dipesan sudah tersedia di ringkasan.
             </p>
         </div>
@@ -46,8 +46,8 @@
         <div class="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
             <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-700 text-xs font-extrabold text-white">{{ $user->initials() }}</span>
             <div class="min-w-0">
-                <p class="text-xs text-slate-500">Dipesan atas nama</p>
-                <p class="truncate text-sm font-bold text-slate-900">{{ $user->name }} <span class="font-normal text-slate-500">· {{ $user->email }}</span></p>
+                <p class="text-xs text-slate-700">Dipesan atas nama</p>
+                <p class="truncate text-sm font-bold text-slate-900">{{ $user->name }} <span class="font-normal text-slate-700">· {{ $user->email }}</span></p>
             </div>
         </div>
 
@@ -77,7 +77,7 @@
                         inputmode="tel"
                         autocomplete="tel"
                         placeholder="08xxxxxxxxxx"
-                        class="h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-base text-slate-900 placeholder:text-slate-500 focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100 @error('contact_phone') border-rose-400 @enderror"
+                        class="h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-base text-slate-900 placeholder:text-slate-700 focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100 @error('contact_phone') border-rose-400 @enderror"
                     />
                     @error('contact_phone')
                         <p class="mt-1 text-sm font-medium text-rose-600" role="alert">{{ $message }}</p>
@@ -104,7 +104,7 @@
                 @error('drop_off_date')
                     <p class="mt-1 text-sm font-medium text-rose-600" role="alert">{{ $message }}</p>
                 @else
-                    <p class="mt-1 text-xs text-slate-500">Paling lambat {{ $dropOffMax->translatedFormat('d F Y') }}.</p>
+                    <p class="mt-1 text-xs text-slate-700">Paling lambat {{ $dropOffMax->translatedFormat('d F Y') }}.</p>
                 @enderror
             </div>
         </div>
@@ -114,7 +114,7 @@
                 <x-icon name="clock" class="mt-0.5 h-4 w-4 shrink-0" />
                 <div>
                     <p class="font-bold">Jam operasional outlet</p>
-                    <p>Senin–Jumat: {{ $hours['weekday'] ?? '-' }} · Sabtu–Minggu: {{ $hours['weekend'] ?? '-' }} {{ $hours['timezone'] ?? '' }}</p>
+                    <p>Senin-Jumat: {{ $hours['weekday'] ?? '-' }} · Sabtu-Minggu: {{ $hours['weekend'] ?? '-' }} {{ $hours['timezone'] ?? '' }}</p>
                 </div>
             </div>
         @endif
@@ -128,7 +128,7 @@
                 rows="3"
                 maxlength="1000"
                 placeholder="Contoh: saya antar sore hari, mohon kabari via WhatsApp jika sudah selesai."
-                class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-3 text-base leading-relaxed text-slate-900 placeholder:text-slate-500 focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100"
+                class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-3 text-base leading-relaxed text-slate-900 placeholder:text-slate-700 focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100"
             >{{ old('notes') }}</textarea>
             @error('notes')
                 <p class="mt-1 text-sm font-medium text-rose-600" role="alert">{{ $message }}</p>
@@ -152,7 +152,7 @@
 
     <div class="sticky bottom-[4.25rem] z-20 flex flex-wrap items-center justify-between gap-3 rounded-b-2xl border-t border-slate-200 bg-white/95 px-4 py-3 shadow-[0_-8px_24px_-16px_rgba(15,23,42,0.35)] backdrop-blur md:bottom-0 sm:px-6 sm:py-4 lg:static">
         <div>
-            <p class="text-xs font-semibold text-slate-500">Total yang akan dibayar</p>
+            <p class="text-xs font-semibold text-slate-700">Total yang akan dibayar</p>
             <p class="text-lg font-extrabold text-primary-700 sm:text-xl">Rp {{ number_format($cart['total'], 0, ',', '.') }}</p>
         </div>
         <button

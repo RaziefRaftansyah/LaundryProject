@@ -10,7 +10,7 @@
                 <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
                     Tahu posisi cucian tanpa perlu menelepon
                 </h2>
-                <p class="mt-3 max-w-md text-sm leading-relaxed text-slate-600 sm:text-base">
+                <p class="mt-3 max-w-md text-sm leading-relaxed text-slate-700 sm:text-base">
                     Setiap pesanan punya kode unik. Masukkan kode itu untuk melihat apakah cucian masih di antrean, sedang diproses, atau sudah siap diambil.
                 </p>
             </div>
@@ -24,7 +24,7 @@
                     <label for="home-order-code" class="block text-sm font-semibold text-slate-900">
                         Kode pesanan
                     </label>
-                    <p id="home-order-code-hint" class="mt-1 text-xs leading-relaxed text-slate-500">
+                    <p id="home-order-code-hint" class="mt-1 text-xs leading-relaxed text-slate-700">
                         Tertera di struk kasir atau pesan konfirmasi, contohnya LC-8F3K2Q.
                     </p>
 

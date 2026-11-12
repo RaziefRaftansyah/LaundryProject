@@ -14,7 +14,7 @@
             <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 Selamat Datang Kembali
             </h1>
-            <p class="text-xs sm:text-sm text-slate-600 mt-1.5">
+            <p class="text-xs sm:text-sm text-slate-700 mt-1.5">
                 Masuk ke panel Laundry Coin untuk mengelola cucian Anda.
             </p>
         </div>
@@ -58,7 +58,7 @@
                             name="remember"
                             class="rounded border-slate-300 text-primary-600 shadow-xs focus:ring-primary-500"
                         />
-                        <span class="text-slate-600 font-medium">Ingat saya</span>
+                        <span class="text-slate-700 font-medium">Ingat saya</span>
                     </label>
 
                     @if (Route::has('password.request'))
@@ -77,7 +77,7 @@
             </form>
 
             <!-- Bottom Register Link -->
-            <div class="mt-6 pt-5 border-t border-slate-100 text-center text-xs text-slate-600">
+            <div class="mt-6 pt-5 border-t border-slate-100 text-center text-xs text-slate-700">
                 Belum memiliki akun?
                 <a href="{{ route('register') }}" class="text-primary-600 hover:text-primary-700 font-bold hover:underline ml-1">
                     Daftar Sekarang

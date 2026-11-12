@@ -28,7 +28,7 @@
     <nav class="flex gap-2 border-b border-slate-200" aria-label="Saluran">
         @foreach (ReportFilter::CHANNELS as $key => $label)
             <a href="{{ route('panel.laporan.index', ['kanal' => $key] + $query) }}" @if ($filter->channel === $key) aria-current="page" @endif
-               class="px-4 py-2.5 -mb-px border-b-2 text-sm font-bold {{ $filter->channel === $key ? 'border-primary-600 text-primary-700' : 'border-transparent text-slate-500 hover:text-slate-800' }}">{{ $label }}</a>
+               class="px-4 py-2.5 -mb-px border-b-2 text-sm font-bold {{ $filter->channel === $key ? 'border-primary-600 text-primary-700' : 'border-transparent text-slate-700 hover:text-slate-800' }}">{{ $label }}</a>
         @endforeach
     </nav>
 
@@ -37,7 +37,7 @@
             <input type="hidden" name="kanal" value="{{ $filter->channel }}" />
             <label class="lg:col-span-3 text-xs"><span class="font-bold text-slate-700">Periode</span>
                 <select name="periode" class="mt-1 w-full rounded-xl border-slate-200 text-sm">
-                    @foreach (['harian' => 'Harian', 'mingguan' => 'Mingguan (Senin–Minggu)', 'bulanan' => 'Bulanan'] as $key => $label)
+                    @foreach (['harian' => 'Harian', 'mingguan' => 'Mingguan (Senin-Minggu)', 'bulanan' => 'Bulanan'] as $key => $label)
                         <option value="{{ $key }}" @selected($filter->bucket === $key)>{{ $label }}</option>
                     @endforeach
                 </select></label>
@@ -47,7 +47,7 @@
                 <input type="date" name="sampai" value="{{ $filter->custom ? $filter->to->toDateString() : '' }}" class="mt-1 w-full rounded-xl border-slate-200 text-sm" /></label>
             <button type="submit" class="lg:col-span-3 px-4 py-2.5 rounded-xl bg-slate-900 text-white font-bold text-xs">Tampilkan</button>
         </form>
-        <p class="mt-2 text-[11px] text-slate-500">Kosongkan tanggal untuk rentang bawaan: bulan ini (harian), 12 minggu terakhir (mingguan), tahun ini (bulanan).</p>
+        <p class="mt-2 text-[11px] text-slate-700">Kosongkan tanggal untuk rentang bawaan: bulan ini (harian), 12 minggu terakhir (mingguan), tahun ini (bulanan).</p>
     </x-card>
 
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" data-kpi>
@@ -107,7 +107,7 @@
         const money = { ticks: { callback: (v) => rupiah(v) } };
 
         function draw() {
-            if (typeof Chart === 'undefined') return;
+            window.loadChartLib().then((Chart) => {
             const make = (id, config) => { const el = document.getElementById(id); if (el) new Chart(el, config); };
 
             make('trendChart', { type: 'bar', data: { labels: trend.map(b => b.label), datasets: [
@@ -123,6 +123,7 @@
             make('methodChart', { type: 'doughnut', data: { labels: methods.map(m => m.label), datasets: [{ data: methods.map(m => m.value),
                 backgroundColor: ['#dc2626', '#10b981', '#f59e0b', '#7c3aed', '#e11d48', '#64748b', '#14b8a6'] }] },
                 options: { maintainAspectRatio: false, plugins: { tooltip: { callbacks: { label: (c) => c.label + ': ' + rupiah(c.raw) } } } } });
+            });
         }
 
         document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', draw) : draw();

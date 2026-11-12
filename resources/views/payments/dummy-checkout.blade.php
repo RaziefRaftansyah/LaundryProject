@@ -31,28 +31,28 @@
 
         <dl class="px-6 py-5 grid grid-cols-2 gap-x-4 gap-y-3 text-xs">
             <div>
-                <dt class="text-slate-500 font-semibold">{{ $checkout ? 'Kode Transaksi' : 'Kode Pesanan' }}</dt>
+                <dt class="text-slate-700 font-semibold">{{ $checkout ? 'Kode Transaksi' : 'Kode Pesanan' }}</dt>
                 <dd class="font-bold text-slate-900 font-mono">{{ $code }}</dd>
             </div>
             <div>
-                <dt class="text-slate-500 font-semibold">Layanan</dt>
+                <dt class="text-slate-700 font-semibold">Layanan</dt>
                 <dd class="font-bold text-slate-900">{{ $serviceNames }}</dd>
             </div>
             <div>
-                <dt class="text-slate-500 font-semibold">Metode</dt>
+                <dt class="text-slate-700 font-semibold">Metode</dt>
                 <dd class="font-bold text-slate-900">{{ $methodLabel }}</dd>
             </div>
             <div>
-                <dt class="text-slate-500 font-semibold">Status</dt>
+                <dt class="text-slate-700 font-semibold">Status</dt>
                 <dd><x-badge :payment="$status" size="sm" /></dd>
             </div>
             <div class="col-span-2">
-                <dt class="text-slate-500 font-semibold">Reference</dt>
+                <dt class="text-slate-700 font-semibold">Reference</dt>
                 <dd class="font-bold text-slate-900 font-mono break-all">{{ $payment->reference }}</dd>
             </div>
             @if ($payment->expires_at)
                 <div class="col-span-2">
-                    <dt class="text-slate-500 font-semibold">Batas Pembayaran</dt>
+                    <dt class="text-slate-700 font-semibold">Batas Pembayaran</dt>
                     <dd class="font-bold text-slate-900">{{ $payment->expires_at->format('d M Y, H:i') }}</dd>
                 </div>
             @endif
@@ -62,7 +62,7 @@
             @if ($status === 'pending')
                 <form action="{{ route('payments.dummy.simulate', $payment->reference) }}" method="POST">
                     @csrf
-                    <p class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2">Simulasikan Hasil Pembayaran</p>
+                    <p class="text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-2">Simulasikan Hasil Pembayaran</p>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
                         @foreach ([
                             'paid'    => ['label' => 'Bayar Berhasil', 'class' => 'bg-emerald-600 hover:bg-emerald-700 text-white'],
@@ -75,13 +75,13 @@
                         @endforeach
                     </div>
 
-                    <label class="mt-3 flex items-start gap-2 text-[11px] text-slate-600 cursor-pointer">
+                    <label class="mt-3 flex items-start gap-2 text-[11px] text-slate-700 cursor-pointer">
                         <input type="checkbox" name="duplicate" value="1" class="mt-0.5 rounded border-slate-300 text-primary-600 focus:ring-primary-500" />
                         <span>Kirim notifikasi webhook 2x (simulasi gateway retry). Sistem harus tetap memprosesnya hanya 1x.</span>
                     </label>
                 </form>
             @else
-                <p class="text-xs text-slate-600">Tagihan ini sudah tidak bisa dibayar (status: <strong>{{ $status }}</strong>).</p>
+                <p class="text-xs text-slate-700">Tagihan ini sudah tidak bisa dibayar (status: <strong>{{ $status }}</strong>).</p>
             @endif
 
             <a href="{{ $backUrl }}" class="mt-4 inline-flex text-xs font-bold text-primary-700 hover:underline">

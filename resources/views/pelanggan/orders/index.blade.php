@@ -25,7 +25,7 @@
                 <x-icon name="package" class="w-6 h-6" />
             </div>
             <p class="text-sm font-bold text-slate-700">{{ $tab === 'semua' ? 'Belum Ada Pesanan' : 'Tidak ada pesanan di tab ini' }}</p>
-            <p class="mt-1 text-xs text-slate-500">{{ $tab === 'semua' ? 'Anda belum pernah membuat pesanan di Laundry Coin.' : 'Pesanan akan muncul di sini sesuai statusnya.' }}</p>
+            <p class="mt-1 text-xs text-slate-700">{{ $tab === 'semua' ? 'Anda belum pernah membuat pesanan di Laundry Coin.' : 'Pesanan akan muncul di sini sesuai statusnya.' }}</p>
             <a href="{{ route('pelanggan.pesan.index') }}" class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-bold transition-colors">
                 <x-icon name="plus" class="w-4 h-4" />
                 <span>Buat Pesanan</span>

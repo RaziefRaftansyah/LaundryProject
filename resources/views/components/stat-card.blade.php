@@ -22,7 +22,7 @@
 
 <div {{ $attributes->merge(['class' => 'bg-white rounded-xl border border-slate-200/80 p-5 shadow-xs hover:border-slate-300 transition-all duration-150 flex flex-col justify-between']) }}>
     <div class="flex items-start justify-between gap-3 mb-3">
-        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">{{ $title }}</p>
+        <p class="text-xs font-semibold uppercase tracking-wider text-slate-700">{{ $title }}</p>
         @if ($icon)
             <div class="p-2 rounded-lg border {{ $badgeClass }}">
                 {{ $icon }}
@@ -41,7 +41,7 @@
         </div>
 
         @if ($hint)
-            <p class="text-xs text-slate-500 mt-1.5 flex items-center gap-1.5">
+            <p class="text-xs text-slate-700 mt-1.5 flex items-center gap-1.5">
                 {{ $hint }}
             </p>
         @endif

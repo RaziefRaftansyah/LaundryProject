@@ -46,10 +46,10 @@
             <span class="inline-flex h-7 items-center rounded-full bg-primary-50 px-2.5 text-xs font-extrabold text-primary-700 ring-1 ring-primary-200">
                 Langkah 1 dari 3
             </span>
-            <span class="text-xs font-semibold text-slate-500">Pilih satu atau beberapa layanan</span>
+            <span class="text-xs font-semibold text-slate-700">Pilih satu atau beberapa layanan</span>
         </div>
         <h2 class="mt-2 text-lg font-extrabold tracking-tight text-slate-900 sm:text-xl">1. Pilih Layanan Drop-Off</h2>
-        <p class="mt-1 max-w-[70ch] text-sm leading-relaxed text-slate-600">
+        <p class="mt-1 max-w-[70ch] text-sm leading-relaxed text-slate-700">
             Centang layanan yang Anda butuhkan. Ikon keranjang menyimpan pilihan agar bisa dilanjutkan nanti;
             tombol <strong class="font-bold text-slate-800">Lanjutkan</strong> menyimpan pilihan lalu membuka keranjang.
         </p>
@@ -94,10 +94,10 @@
                                 <span class="text-base font-extrabold text-slate-900">{{ $service->name }}</span>
                                 <span class="inline-flex items-baseline gap-1 rounded-xl bg-white px-3 py-1.5 text-base font-extrabold text-primary-700 ring-1 ring-slate-200">
                                     Rp {{ number_format($service->price, 0, ',', '.') }}
-                                    <span class="text-xs font-semibold text-slate-500">/ {{ $service->unit ?? 'Mesin' }}</span>
+                                    <span class="text-xs font-semibold text-slate-700">/ {{ $service->unit ?? 'Mesin' }}</span>
                                 </span>
                             </span>
-                            <span id="srv-{{ $id }}-desc" class="mt-1 block max-w-[70ch] text-sm leading-relaxed text-slate-600">
+                            <span id="srv-{{ $id }}-desc" class="mt-1 block max-w-[70ch] text-sm leading-relaxed text-slate-700">
                                 {{ $service->description }}
                             </span>
                             <span class="mt-3 flex flex-wrap items-center gap-2 text-xs">
@@ -212,7 +212,7 @@
                                     :disabled="! included({{ $id }})"
                                     maxlength="500"
                                     placeholder="Contoh: pisahkan pakaian putih"
-                                    class="h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-base text-slate-900 placeholder:text-slate-500 focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100 disabled:cursor-not-allowed disabled:bg-slate-100"
+                                    class="h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-base text-slate-900 placeholder:text-slate-700 focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100 disabled:cursor-not-allowed disabled:bg-slate-100"
                                 />
                             </div>
 
@@ -252,7 +252,7 @@
 
                 <div class="min-w-0 flex-1 text-sm" aria-live="polite">
                     <p class="truncate font-bold text-slate-900" x-text="selectedCount() > 0 ? selectedCount() + ' layanan dipilih' : cartCount + ' layanan di keranjang'"></p>
-                    <p class="truncate text-xs text-slate-500" x-show="selectedCount() > 0">Estimasi <span class="font-extrabold text-primary-700" x-text="rupiah(selectedTotal())"></span></p>
+                    <p class="truncate text-xs text-slate-700" x-show="selectedCount() > 0">Estimasi <span class="font-extrabold text-primary-700" x-text="rupiah(selectedTotal())"></span></p>
                 </div>
 
                 <button

@@ -36,7 +36,7 @@
             <span class="min-w-0">
                 <span class="block text-xs font-bold uppercase tracking-wider text-info-700">Panduan pemesanan</span>
                 <span id="tutorial-pesan-title" class="block text-base font-extrabold leading-tight text-slate-900">Cara Memesan di Halaman Ini</span>
-                <span class="mt-0.5 hidden text-sm text-slate-500 sm:block">4 langkah singkat, tidak perlu kembali ke halaman utama.</span>
+                <span class="mt-0.5 hidden text-sm text-slate-700 sm:block">4 langkah singkat, tidak perlu kembali ke halaman utama.</span>
             </span>
         </span>
         <span class="flex shrink-0 items-center gap-1.5 rounded-lg px-2 py-1 text-xs font-bold text-info-700">
@@ -56,7 +56,7 @@
                         <x-icon :name="$t['icon']" class="h-4 w-4" />
                     </span>
                     <p class="text-sm font-extrabold text-slate-900">{{ $t['title'] }}</p>
-                    <p class="mt-1 text-sm leading-relaxed text-slate-600">{{ $t['text'] }}</p>
+                    <p class="mt-1 text-sm leading-relaxed text-slate-700">{{ $t['text'] }}</p>
                 </li>
             @endforeach
         </ol>

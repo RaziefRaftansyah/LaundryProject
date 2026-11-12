@@ -34,7 +34,7 @@
                 <x-icon name="cart" class="h-6 w-6" />
             </div>
             <p class="text-base font-bold text-slate-800">Keranjang masih kosong</p>
-            <p class="mx-auto mt-1 max-w-[42ch] text-sm leading-relaxed text-slate-500">Centang layanan di halaman Pesan, lalu klik ikon keranjang di bar bawah.</p>
+            <p class="mx-auto mt-1 max-w-[42ch] text-sm leading-relaxed text-slate-700">Centang layanan di halaman Pesan, lalu klik ikon keranjang di bar bawah.</p>
             <a href="{{ route('pelanggan.pesan.index') }}" class="mt-4 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary-700 px-4 text-sm font-bold text-white transition-colors hover:bg-primary-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 active:scale-[0.99]">
                 Pilih Layanan
             </a>
@@ -70,9 +70,9 @@
                                     <span class="ml-1 align-middle rounded bg-emerald-700 px-1.5 py-0.5 text-[10px] font-extrabold text-white">BARU</span>
                                 @endif
                             </p>
-                            <p class="mt-0.5 text-xs text-slate-500">{{ $item->itemTypeLabel() }} · Rp {{ number_format($item->service?->price ?? 0, 0, ',', '.') }}/mesin</p>
+                            <p class="mt-0.5 text-xs text-slate-700">{{ $item->itemTypeLabel() }} · Rp {{ number_format($item->service?->price ?? 0, 0, ',', '.') }}/mesin</p>
                             @if ($item->notes)
-                                <p class="mt-1 text-xs italic leading-relaxed text-slate-600">"{{ $item->notes }}"</p>
+                                <p class="mt-1 text-xs italic leading-relaxed text-slate-700">"{{ $item->notes }}"</p>
                             @endif
                             @unless ($orderable)
                                 <p class="mt-1 text-xs font-bold text-rose-600">Layanan sedang tidak tersedia, tidak ikut dipesan. Hapus dari keranjang.</p>
@@ -83,7 +83,7 @@
 
                     <div class="mt-3 flex items-center justify-between gap-3">
                         @if ($readonly || ! $orderable)
-                            <span class="text-sm font-semibold text-slate-600">{{ $item->qty }} × mesin</span>
+                            <span class="text-sm font-semibold text-slate-700">{{ $item->qty }} × mesin</span>
                         @else
                             {{-- Tombol -/+ langsung mengirim jumlah baru, tanpa perlu JavaScript --}}
                             <form action="{{ route('pelanggan.cart.update', $item->id) }}" method="POST" class="flex items-center gap-1.5">
@@ -96,7 +96,7 @@
                                 <button type="submit" name="qty" value="{{ $item->qty + 1 }}" @disabled($item->qty >= $maxQty) class="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-300 bg-white text-slate-700 transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 active:scale-95 disabled:cursor-not-allowed disabled:opacity-40" aria-label="Tambah">
                                     <x-icon name="plus" class="h-3.5 w-3.5" />
                                 </button>
-                                <span class="ml-1 text-xs text-slate-500">mesin</span>
+                                <span class="ml-1 text-xs text-slate-700">mesin</span>
                             </form>
                         @endif
 
@@ -116,7 +116,7 @@
 
         @if ($readonly)
             <div class="space-y-3 rounded-b-2xl border-t border-slate-200 bg-slate-50/70 px-5 py-4">
-                <div class="flex items-center justify-between gap-3 text-sm text-slate-600">
+                <div class="flex items-center justify-between gap-3 text-sm text-slate-700">
                     <span>Total mesin</span>
                     <span class="font-bold text-slate-900">{{ $cart['machine_count'] }} mesin</span>
                 </div>
@@ -140,12 +140,12 @@
             >
                 <input type="hidden" name="langkah" value="detail" />
 
-                <p x-show="selected.length === 0" class="text-center text-sm font-semibold text-slate-500">Centang layanan yang ingin dibayar sekarang.</p>
+                <p x-show="selected.length === 0" class="text-center text-sm font-semibold text-slate-700">Centang layanan yang ingin dibayar sekarang.</p>
 
                 <div x-show="selected.length > 0" x-cloak class="flex flex-wrap items-center justify-between gap-3">
                     <div class="text-sm" aria-live="polite">
                         <p class="font-bold text-slate-900">Ingin melanjutkan pembayaran?</p>
-                        <p class="text-slate-500"><span x-text="selected.length"></span> layanan · <span class="font-extrabold text-primary-700" x-text="rupiah(selectedTotal())"></span></p>
+                        <p class="text-slate-700"><span x-text="selected.length"></span> layanan · <span class="font-extrabold text-primary-700" x-text="rupiah(selectedTotal())"></span></p>
                     </div>
                     <button type="submit" class="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary-700 px-5 text-sm font-bold text-white shadow-sm transition-colors hover:bg-primary-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 active:scale-[0.99]">
                         Lanjutkan

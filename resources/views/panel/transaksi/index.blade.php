@@ -30,7 +30,7 @@
             @continue($key === D::TAB_APP && ! auth()->user()->can('transaksi.online.view'))
             <a href="{{ route('panel.transaksi.index', ['tab' => $key]) }}"
                @if ($tab === $key && ! $audit) aria-current="page" @endif
-               class="px-4 py-2.5 -mb-px border-b-2 text-sm font-bold {{ $tab === $key && ! $audit ? 'border-primary-600 text-primary-700' : 'border-transparent text-slate-500 hover:text-slate-800' }}">{{ $label }}</a>
+               class="px-4 py-2.5 -mb-px border-b-2 text-sm font-bold {{ $tab === $key && ! $audit ? 'border-primary-600 text-primary-700' : 'border-transparent text-slate-700 hover:text-slate-800' }}">{{ $label }}</a>
         @endforeach
         @can('transaksi.audit_pembayaran.view')
             <a href="{{ route('panel.transaksi.index', ['tab' => D::TAB_APP, 'audit' => 1]) }}"
@@ -81,13 +81,13 @@
                     <td class="px-5 py-3 text-xs whitespace-nowrap">{{ $trx->created_at->timezone($tz)->format('d/m/Y H:i') }}</td>
                     <td class="px-5 py-3 text-xs">
                         <p class="font-bold text-slate-800">{{ $trx->user?->name ?? '-' }}</p>
-                        <p class="text-slate-500">{{ $trx->contact_phone }}</p>
+                        <p class="text-slate-700">{{ $trx->contact_phone }}</p>
                     </td>
                     <td class="px-5 py-3 text-xs">
                         @foreach ($trx->orders->take(2) as $order)
                             <p>{{ $order->serviceName() }} &times; {{ $order->machine_qty }} <x-badge :status="$order->status" size="sm" :dot="false" /></p>
                         @endforeach
-                        @if ($trx->orders->count() > 2)<p class="text-slate-500">+{{ $trx->orders->count() - 2 }} lainnya</p>@endif
+                        @if ($trx->orders->count() > 2)<p class="text-slate-700">+{{ $trx->orders->count() - 2 }} lainnya</p>@endif
                     </td>
                     <td class="px-5 py-3 text-xs font-bold whitespace-nowrap">{{ L::rupiah($trx->total_amount) }}</td>
                     <td class="px-5 py-3 text-xs">{{ L::method($trx) }}</td>

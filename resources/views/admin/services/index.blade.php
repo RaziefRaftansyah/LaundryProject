@@ -22,7 +22,7 @@
             <h1 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
                 Katalog Layanan & Tarif Outlet
             </h1>
-            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">
+            <p class="text-xs sm:text-sm text-slate-700 mt-0.5">
                 Kelola paket pencucian koin mandiri, layanan drop-off titip cuci, dan tarif mesin komersial
             </p>
         </div>
@@ -108,7 +108,7 @@
                 @if (($search ?? '') || ($category ?? ''))
                     <a
                         href="{{ route('admin.services.index') }}"
-                        class="p-2 rounded-xl border border-slate-200 text-slate-500 hover:bg-slate-100 transition-colors"
+                        class="p-2 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 transition-colors"
                         title="Reset Filter"
                     >
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,12 +139,12 @@
                                     </span>
                                 @endif
                             </div>
-                            <div class="text-[11px] text-slate-500 font-mono mt-0.5">slug: {{ $serviceItem->slug }}</div>
+                            <div class="text-[11px] text-slate-700 font-mono mt-0.5">slug: {{ $serviceItem->slug }}</div>
                         </td>
 
                         <td class="px-5 py-4 text-xs text-slate-700">
                             <div class="font-semibold text-slate-900">{{ $serviceItem->category }}</div>
-                            <div class="text-[11px] text-slate-500">Estimasi: {{ $serviceItem->estimate }}</div>
+                            <div class="text-[11px] text-slate-700">Estimasi: {{ $serviceItem->estimate }}</div>
                         </td>
 
                         <td class="px-5 py-4 text-xs text-slate-700">
@@ -167,7 +167,7 @@
                                     <span>Penuh / Sibuk</span>
                                 </span>
                             @else
-                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-600 border border-slate-300">
+                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-300">
                                     <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
                                     <span>Nonaktif</span>
                                 </span>
@@ -392,7 +392,7 @@
                         </div>
                         <div>
                             <label for="srv-image" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Gambar (Opsional)</label>
-                            <input id="srv-image" type="file" name="image" accept="image/png,image/jpeg,image/webp" class="w-full text-xs text-slate-600 file:mr-2 file:rounded-lg file:border-0 file:bg-primary-50 file:px-2.5 file:py-1.5 file:text-xs file:font-bold file:text-primary-700" />
+                            <input id="srv-image" type="file" name="image" accept="image/png,image/jpeg,image/webp" class="w-full text-xs text-slate-700 file:mr-2 file:rounded-lg file:border-0 file:bg-primary-50 file:px-2.5 file:py-1.5 file:text-xs file:font-bold file:text-primary-700" />
                         </div>
                     </div>
 
@@ -577,14 +577,14 @@
                                 </div>
                                 <div>
                                     <label for="edit-srv-image" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Ganti Gambar (Opsional)</label>
-                                    <input id="edit-srv-image" type="file" name="image" accept="image/png,image/jpeg,image/webp" class="w-full text-xs text-slate-600 file:mr-2 file:rounded-lg file:border-0 file:bg-primary-50 file:px-2.5 file:py-1.5 file:text-xs file:font-bold file:text-primary-700" />
+                                    <input id="edit-srv-image" type="file" name="image" accept="image/png,image/jpeg,image/webp" class="w-full text-xs text-slate-700 file:mr-2 file:rounded-lg file:border-0 file:bg-primary-50 file:px-2.5 file:py-1.5 file:text-xs file:font-bold file:text-primary-700" />
                                 </div>
                             </div>
 
                             <template x-if="selectedService.image_url">
                                 <div class="flex items-center gap-3">
                                     <img :src="selectedService.image_url" alt="Gambar layanan" class="h-12 w-12 rounded-lg object-cover border border-slate-200" />
-                                    <label class="flex items-center gap-2 text-xs text-slate-600">
+                                    <label class="flex items-center gap-2 text-xs text-slate-700">
                                         <input type="checkbox" name="remove_image" value="1" class="rounded border-slate-300" />
                                         Hapus gambar saat ini
                                     </label>

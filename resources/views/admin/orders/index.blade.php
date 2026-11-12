@@ -35,7 +35,7 @@
             <h1 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
                 Manajemen Seluruh Pesanan Laundry
             </h1>
-            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">
+            <p class="text-xs sm:text-sm text-slate-700 mt-0.5">
                 Pantau seluruh siklus order, filter status pembayaran & tanggal, serta kelola antrean mesin
             </p>
         </div>
@@ -148,7 +148,7 @@
                 @if (($search ?? '') || ($status ?? '') || ($paymentStatus ?? '') || ($date ?? ''))
                     <a
                         href="{{ route('admin.orders.index') }}"
-                        class="p-2 rounded-xl border border-slate-200 text-slate-500 hover:bg-slate-100 transition-colors shrink-0"
+                        class="p-2 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 transition-colors shrink-0"
                         title="Reset Filter"
                     >
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -172,21 +172,21 @@
                                 <span class="block mt-0.5 text-[10px] font-semibold text-primary-700" title="Dibayar sekaligus dalam 1 transaksi online">{{ $order->checkout->code }}</span>
                             @endif
                         </td>
-                        <td class="px-5 py-4 text-xs text-slate-500">
+                        <td class="px-5 py-4 text-xs text-slate-700">
                             {{ $order->created_at->format('d M, H:i') }}
                         </td>
                         <td class="px-5 py-4">
                             <div class="font-bold text-slate-900 text-xs">
                                 {{ $order->customer_name ?? $order->user?->name ?? 'Walk-in' }}
                             </div>
-                            <div class="text-[11px] text-slate-500">
+                            <div class="text-[11px] text-slate-700">
                                 {{ $order->customer_phone ?? $order->user?->phone ?? '-' }}
                             </div>
                             <x-order-checkout-info :order="$order" />
                         </td>
                         <td class="px-5 py-4">
                             <div class="font-semibold text-slate-800 text-xs">{{ $order->service?->name ?? 'Layanan' }}</div>
-                            <div class="text-[11px] text-slate-500">{{ $order->service?->category ?? 'Laundromat' }}</div>
+                            <div class="text-[11px] text-slate-700">{{ $order->service?->category ?? 'Laundromat' }}</div>
                         </td>
                         <td class="px-5 py-4 text-xs text-slate-700">
                             @if (($order->service?->unit ?? 'Mesin') === 'Mesin')
@@ -415,7 +415,7 @@
                                 @click="if (qty < 20) qty++"
                                 class="w-10 h-10 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold flex items-center justify-center transition-colors"
                             >+</button>
-                            <span class="text-xs text-slate-500">Unit mesin</span>
+                            <span class="text-xs text-slate-700">Unit mesin</span>
                         </div>
                     </div>
 
@@ -526,7 +526,7 @@
                                     <h4 class="text-xs font-bold uppercase tracking-wider text-slate-800">
                                         2. Ubah Jumlah Mesin
                                     </h4>
-                                    <span class="text-[11px] font-semibold text-slate-500" x-text="'Saat ini: ' + selectedOrder.machine_qty + ' unit'"></span>
+                                    <span class="text-[11px] font-semibold text-slate-700" x-text="'Saat ini: ' + selectedOrder.machine_qty + ' unit'"></span>
                                 </div>
 
                                 <template x-if="selectedOrder.can_edit_qty">
@@ -542,7 +542,7 @@
                                             required
                                             class="w-24 rounded-xl border border-slate-300 py-2 text-center text-xs font-bold text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary-100 focus:border-primary-500"
                                         />
-                                        <span class="text-xs text-slate-500">Unit Mesin</span>
+                                        <span class="text-xs text-slate-700">Unit Mesin</span>
                                         <button
                                             type="submit"
                                             class="ml-auto px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-xs transition-colors shrink-0"

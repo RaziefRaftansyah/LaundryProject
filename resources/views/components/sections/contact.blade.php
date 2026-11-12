@@ -19,7 +19,7 @@
                 <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
                     Tanya staf {{ $storeName }} langsung
                 </h2>
-                <p class="mt-3 max-w-md text-sm leading-relaxed text-slate-600 sm:text-base">
+                <p class="mt-3 max-w-md text-sm leading-relaxed text-slate-700 sm:text-base">
                     Ketersediaan mesin, tarif drop-off, atau cara pesan online bisa ditanyakan langsung ke staf outlet di {{ $city }}.@if ($hasWhatsapp) Balasan tercepat lewat WhatsApp.@endif
                 </p>
             </div>
@@ -40,7 +40,7 @@
                         </span>
                         <span class="min-w-0">
                             <span class="block text-base font-bold text-slate-900">WhatsApp outlet</span>
-                            <span class="mt-1 block text-sm leading-relaxed text-slate-600">
+                            <span class="mt-1 block text-sm leading-relaxed text-slate-700">
                                 Kirim pesan berisi pertanyaan atau kebutuhan cucian Anda, lalu tunggu balasan staf.
                             </span>
                         </span>
@@ -48,7 +48,7 @@
                 @else
                     <div class="rounded-xl border border-dashed border-slate-300 bg-slate-50 p-4 sm:p-5">
                         <p class="text-sm font-bold text-slate-900">Nomor WhatsApp outlet belum tersedia</p>
-                        <p class="mt-1 text-sm leading-relaxed text-slate-600">
+                        <p class="mt-1 text-sm leading-relaxed text-slate-700">
                             Sementara ini, gunakan rute ke outlet atau halaman lacak pesanan di bawah.
                         </p>
                     </div>
@@ -65,7 +65,7 @@
                     </span>
                     <span class="min-w-0">
                         <span class="block text-base font-bold text-slate-900">Rute ke outlet {{ $city }}</span>
-                        <span class="mt-1 block text-sm leading-relaxed text-slate-600">
+                        <span class="mt-1 block text-sm leading-relaxed text-slate-700">
                             Buka titik outlet di Google Maps untuk petunjuk arah dari lokasi Anda.
                         </span>
                     </span>
@@ -80,7 +80,7 @@
                     </span>
                     <span class="min-w-0">
                         <span class="block text-base font-bold text-slate-900">Lacak pesanan</span>
-                        <span class="mt-1 block text-sm leading-relaxed text-slate-600">
+                        <span class="mt-1 block text-sm leading-relaxed text-slate-700">
                             Masukkan kode pesanan dari struk kasir untuk melihat progres cucian.
                         </span>
                     </span>

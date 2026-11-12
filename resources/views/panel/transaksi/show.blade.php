@@ -50,7 +50,7 @@
                 @endphp
                 <tr data-order="{{ $order->order_code }}">
                     <td class="px-5 py-3 font-mono text-xs">{{ $order->order_code }}</td>
-                    <td class="px-5 py-3 text-xs">{{ $order->serviceName() }}@if ($order->notes)<br><span class="text-slate-500">{{ $order->notes }}</span>@endif</td>
+                    <td class="px-5 py-3 text-xs">{{ $order->serviceName() }}@if ($order->notes)<br><span class="text-slate-700">{{ $order->notes }}</span>@endif</td>
                     <td class="px-5 py-3 text-xs">{{ $order->machine_qty }} &times; {{ L::rupiah($order->unit_price) }}</td>
                     <td class="px-5 py-3 text-xs font-bold">{{ L::rupiah($order->total_price) }}</td>
                     <td class="px-5 py-3"><x-badge :status="$order->status" size="sm" /></td>
@@ -112,10 +112,10 @@
         <x-card title="Pembayaran">
             @if ($paid)
                 <p class="text-xs text-slate-700">Lunas {{ $paid->paid_at?->timezone($tz)->format('d/m/Y H:i') }} WIB · {{ L::method($checkout) }} · {{ L::rupiah($paid->amount) }}</p>
-                @if ($paid->reference)<p class="text-xs text-slate-500 mt-1">Bukti: <span class="font-mono">{{ $paid->reference }}</span></p>@endif
-                @if (isset($paid->meta['cash_received']))<p class="text-xs text-slate-500 mt-1">Diterima {{ L::rupiah($paid->meta['cash_received']) }}, kembali {{ L::rupiah($paid->meta['change'] ?? 0) }}</p>@endif
+                @if ($paid->reference)<p class="text-xs text-slate-700 mt-1">Bukti: <span class="font-mono">{{ $paid->reference }}</span></p>@endif
+                @if (isset($paid->meta['cash_received']))<p class="text-xs text-slate-700 mt-1">Diterima {{ L::rupiah($paid->meta['cash_received']) }}, kembali {{ L::rupiah($paid->meta['change'] ?? 0) }}</p>@endif
             @else
-                <p class="text-xs text-slate-500">Belum ada pembayaran lunas.</p>
+                <p class="text-xs text-slate-700">Belum ada pembayaran lunas.</p>
             @endif
         </x-card>
 
@@ -125,7 +125,7 @@
                     @foreach ($checkout->voidRequests as $void)
                         <li class="border-b border-slate-100 pb-2">
                             <span class="font-bold">{{ VoidRequest::STATUS_LABELS[$void->status] }}</span> · diajukan {{ $void->requester?->name }}: {{ $void->reason }}
-                            @if ($void->decided_at)<br><span class="text-slate-500">Diputuskan {{ $void->decider?->name }} {{ $void->decided_at->timezone($tz)->format('d/m/Y H:i') }}{{ $void->decision_note ? ': ' . $void->decision_note : '' }}</span>@endif
+                            @if ($void->decided_at)<br><span class="text-slate-700">Diputuskan {{ $void->decider?->name }} {{ $void->decided_at->timezone($tz)->format('d/m/Y H:i') }}{{ $void->decision_note ? ': ' . $void->decision_note : '' }}</span>@endif
                         </li>
                     @endforeach
                 </ul>
@@ -140,7 +140,7 @@
     <x-modal name="ajukan-void" title="Ajukan Void" maxWidth="md">
         <x-panel.form :action="route('panel.transaksi.void', $checkout)" class="space-y-4" confirm="Kirim pengajuan void ke admin?">
             <input type="hidden" name="_modal" value="ajukan-void" />
-            <p class="text-xs text-slate-600">Transaksi asli tidak dihapus. Jika admin menyetujui, nominalnya dibalik di laporan keuangan pada tanggal persetujuan.</p>
+            <p class="text-xs text-slate-700">Transaksi asli tidak dihapus. Jika admin menyetujui, nominalnya dibalik di laporan keuangan pada tanggal persetujuan.</p>
             <x-panel.field label="Alasan void" name="reason" required minlength="10" hint="Minimal 10 karakter." />
             <div class="flex justify-end"><x-panel.submit variant="danger">Ajukan Void</x-panel.submit></div>
         </x-panel.form>

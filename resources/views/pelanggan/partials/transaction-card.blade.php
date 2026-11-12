@@ -28,7 +28,7 @@
     <div class="flex items-start justify-between gap-3">
         <div class="min-w-0">
             <p class="font-mono text-sm font-bold text-slate-900 truncate">{{ $code }}</p>
-            <p class="text-[11px] text-slate-500">
+            <p class="text-[11px] text-slate-700">
                 {{ $card->created_at->timezone($timezone)->translatedFormat('d M Y, H:i') }}
                 @unless ($isCheckout) &middot; Pesanan di outlet @endunless
             </p>
@@ -46,12 +46,12 @@
             </li>
         @endforeach
         @if ($items->count() > 3)
-            <li class="text-[11px] text-slate-500">+{{ $items->count() - 3 }} layanan lainnya</li>
+            <li class="text-[11px] text-slate-700">+{{ $items->count() - 3 }} layanan lainnya</li>
         @endif
     </ul>
 
     <div class="flex items-center justify-between border-t border-slate-100 pt-3">
-        <span class="text-[11px] text-slate-500">Total</span>
+        <span class="text-[11px] text-slate-700">Total</span>
         <span class="text-sm font-extrabold text-slate-900">Rp {{ number_format((float) $total, 0, ',', '.') }}</span>
     </div>
 

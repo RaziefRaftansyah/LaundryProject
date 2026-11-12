@@ -92,7 +92,7 @@
     <x-modal name="nonaktif-pelanggan" title="Nonaktifkan Pelanggan" maxWidth="md">
         <x-panel.form :action="route('panel.pelanggan.deactivate', $customer)" :token="false" class="space-y-4" confirm="Nonaktifkan pelanggan ini? Riwayat transaksinya tetap tersimpan.">
             <input type="hidden" name="_modal" value="nonaktif-pelanggan" />
-            <p class="text-xs text-slate-600">Data tidak dihapus. Pelanggan nonaktif tidak bisa dipilih di transaksi baru dan tidak bisa login.</p>
+            <p class="text-xs text-slate-700">Data tidak dihapus. Pelanggan nonaktif tidak bisa dipilih di transaksi baru dan tidak bisa login.</p>
             <x-panel.field label="Alasan" name="reason" required minlength="10" />
             <div class="flex justify-end"><x-panel.submit variant="danger">Nonaktifkan</x-panel.submit></div>
         </x-panel.form>

@@ -20,7 +20,7 @@
         'secondary' => 'bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold shadow-sm hover:shadow focus-visible:ring-amber-400',
         'outline' => 'border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 focus-visible:ring-primary-500',
         'danger' => 'bg-red-600 hover:bg-red-700 text-white shadow-sm focus-visible:ring-red-500',
-        'ghost' => 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus-visible:ring-slate-400',
+        'ghost' => 'text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus-visible:ring-slate-400',
     ];
 
     $classes = $baseClasses . ' ' . ($sizes[$size] ?? $sizes['md']) . ' ' . ($variants[$variant] ?? $variants['primary']);

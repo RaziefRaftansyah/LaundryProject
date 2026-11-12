@@ -22,5 +22,5 @@
             Pesan Lagi
         </button>
     </form>
-    <p class="text-[11px] text-slate-500 text-center">Layanan dimasukkan ke keranjang dengan harga terbaru.</p>
+    <p class="text-[11px] text-slate-700 text-center">Layanan dimasukkan ke keranjang dengan harga terbaru.</p>
 </div>

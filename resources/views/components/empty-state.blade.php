@@ -14,7 +14,7 @@
         @endif
     </div>
     <h4 class="text-base font-semibold text-slate-800 mb-1">{{ $title }}</h4>
-    <p class="text-xs text-slate-500 max-w-sm mb-5 leading-relaxed">{{ $description }}</p>
+    <p class="text-xs text-slate-700 max-w-sm mb-5 leading-relaxed">{{ $description }}</p>
     @if ($action)
         <div>
             {{ $action }}

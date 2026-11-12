@@ -23,7 +23,7 @@
             <h1 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
                 Manajemen Akun & Peran Pengguna
             </h1>
-            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">
+            <p class="text-xs sm:text-sm text-slate-700 mt-0.5">
                 Kelola hak akses administrator, staf kasir/operasional pegawai, dan data pelanggan
             </p>
         </div>
@@ -110,7 +110,7 @@
                 @if (($search ?? '') || ($role ?? ''))
                     <a
                         href="{{ route('admin.users.index') }}"
-                        class="p-2 rounded-xl border border-slate-200 text-slate-500 hover:bg-slate-100 transition-colors"
+                        class="p-2 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 transition-colors"
                         title="Reset Filter"
                     >
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -144,14 +144,14 @@
                                             <span class="px-1.5 py-0.5 rounded text-[10px] bg-primary-100 text-primary-800 font-extrabold">Anda</span>
                                         @endif
                                     </div>
-                                    <div class="text-[11px] text-slate-500">ID #{{ $userItem->id }}</div>
+                                    <div class="text-[11px] text-slate-700">ID #{{ $userItem->id }}</div>
                                 </div>
                             </div>
                         </td>
 
                         <td class="px-5 py-4 text-xs text-slate-700">
                             <div class="font-medium text-slate-900">{{ $userItem->email }}</div>
-                            <div class="text-[11px] text-slate-500">{{ $userItem->phone ?: 'Tanpa nomor HP' }}</div>
+                            <div class="text-[11px] text-slate-700">{{ $userItem->phone ?: 'Tanpa nomor HP' }}</div>
                         </td>
 
                         <td class="px-5 py-4">
@@ -173,7 +173,7 @@
                             @endif
                         </td>
 
-                        <td class="px-5 py-4 text-xs text-slate-500">
+                        <td class="px-5 py-4 text-xs text-slate-700">
                             {{ $userItem->created_at->format('d M Y') }}
                         </td>
 
@@ -471,7 +471,7 @@
                                     name="role"
                                     required
                                     :disabled="selectedUser.id === currentUserId"
-                                    class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary-100 focus:border-primary-500 disabled:bg-slate-100 disabled:text-slate-500"
+                                    class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-xs text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary-100 focus:border-primary-500 disabled:bg-slate-100 disabled:text-slate-700"
                                 >
                                     <option value="pelanggan" :selected="selectedUser.role === 'pelanggan'">Pelanggan (Customer)</option>
                                     <option value="pegawai" :selected="selectedUser.role === 'pegawai'">Pegawai Outlet (Staf / Kasir)</option>

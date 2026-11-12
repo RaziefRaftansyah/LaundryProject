@@ -24,5 +24,5 @@
         </svg>
         <span x-text="submitting ? 'Memproses pembayaran...' : @js($buttonLabel)">{{ $buttonLabel }}</span>
     </button>
-    <p class="text-[11px] text-slate-500 text-center">Tombol terkunci setelah diklik. Pembayaran tidak akan diproses dua kali.</p>
+    <p class="text-[11px] text-slate-700 text-center">Tombol terkunci setelah diklik. Pembayaran tidak akan diproses dua kali.</p>
 </form>

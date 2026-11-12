@@ -39,7 +39,7 @@
             <h1 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
                 Manajemen Pesanan & Kasir Outlet
             </h1>
-            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">
+            <p class="text-xs sm:text-sm text-slate-700 mt-0.5">
                 Daftar pesanan aktif, penerimaan walk-in, update status pengerjaan, dan pencatatan kasir
             </p>
         </div>
@@ -102,7 +102,7 @@
                 @if(($search ?? '') || ($status ?? ''))
                     <a
                         href="{{ route('pegawai.orders.index') }}"
-                        class="p-2 rounded-xl border border-slate-200 text-slate-500 hover:bg-slate-100 transition-colors"
+                        class="p-2 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 transition-colors"
                         title="Reset Filter"
                     >
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -130,14 +130,14 @@
                             <div class="font-bold text-slate-900 text-xs">
                                 {{ $order->customer_name ?? $order->user?->name ?? 'Walk-in Kasir' }}
                             </div>
-                            <div class="text-[11px] text-slate-500">
+                            <div class="text-[11px] text-slate-700">
                                 {{ $order->customer_phone ?? $order->user?->phone ?? '-' }}
                             </div>
                             <x-order-checkout-info :order="$order" />
                         </td>
                         <td class="px-5 py-4">
                             <div class="font-semibold text-slate-800 text-xs">{{ $order->service?->name ?? 'Layanan' }}</div>
-                            <div class="text-[11px] text-slate-500">{{ $order->service?->category ?? 'Laundromat' }}</div>
+                            <div class="text-[11px] text-slate-700">{{ $order->service?->category ?? 'Laundromat' }}</div>
                         </td>
                         <td class="px-5 py-4 text-xs text-slate-700">
                             @if (($order->service?->unit ?? 'Mesin') === 'Mesin')
@@ -372,7 +372,7 @@
                                 @click="if (qty < 20) qty++"
                                 class="w-10 h-10 rounded-xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold flex items-center justify-center transition-colors"
                             >+</button>
-                            <span class="text-xs text-slate-500">Unit mesin</span>
+                            <span class="text-xs text-slate-700">Unit mesin</span>
                         </div>
                     </div>
 
@@ -491,7 +491,7 @@
                                     <span>LUNAS (<span x-text="selectedOrder.payment_method.toUpperCase()"></span>) untuk <span x-text="selectedOrder.machine_qty"></span> unit</span>
                                 </div>
 
-                                <p class="text-[11px] text-slate-500">Pembayaran, jumlah mesin, dan nominal terkunci karena pesanan sudah dibayar.</p>
+                                <p class="text-[11px] text-slate-700">Pembayaran, jumlah mesin, dan nominal terkunci karena pesanan sudah dibayar.</p>
                             </div>
 
                         </div>

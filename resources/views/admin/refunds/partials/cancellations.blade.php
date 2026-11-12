@@ -4,7 +4,7 @@
 @php $tz = \App\Support\BusinessCalendar::timezone(); @endphp
 <section class="mt-8 space-y-3" aria-label="Refund pembatalan pesanan">
     <h2 class="text-base font-extrabold text-slate-900">Refund Pembatalan Pesanan</h2>
-    <p class="text-xs text-slate-500">Pelanggan membatalkan transaksi online yang sudah dibayar. Metode yang didukung Refund API Midtrans diproses otomatis; VA/transfer bank perlu transfer manual ke rekening pelanggan.</p>
+    <p class="text-xs text-slate-700">Pelanggan membatalkan transaksi online yang sudah dibayar. Metode yang didukung Refund API Midtrans diproses otomatis; VA/transfer bank perlu transfer manual ke rekening pelanggan.</p>
 
     @if ($cancellations->isEmpty())
         <x-card padding="p-0"><x-empty-state title="Tidak ada refund pembatalan" description="Refund pembatalan yang perlu ditangani akan tampil di sini." /></x-card>
@@ -15,7 +15,7 @@
                     <div class="text-xs space-y-1">
                         <p><span class="font-mono font-bold">{{ $refund->checkout->code }}</span> · {{ $refund->checkout->user?->name }} · <span class="font-bold">{{ L::rupiah($refund->amount) }}</span></p>
                         <p>Metode: {{ $refund->isApi() ? 'Refund API Midtrans (' . $refund->payment?->payment_type . ')' : 'Transfer manual' }} · Status: <span class="font-bold">{{ Refund::STATUS_LABELS[$refund->status] }}</span> · Percobaan: {{ $refund->attempts }}</p>
-                        <p class="text-slate-500">Diajukan {{ $refund->created_at->timezone($tz)->format('d/m/Y H:i') }} WIB · refund_key <span class="font-mono">{{ $refund->refund_key }}</span></p>
+                        <p class="text-slate-700">Diajukan {{ $refund->created_at->timezone($tz)->format('d/m/Y H:i') }} WIB · refund_key <span class="font-mono">{{ $refund->refund_key }}</span></p>
                         @if ($refund->method === Refund::METHOD_MANUAL)
                             <p>Rekening: {{ $refund->bank_name }} {{ $refund->account_number }} a.n. {{ $refund->account_holder }}</p>
                         @endif

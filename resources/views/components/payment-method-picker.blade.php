@@ -27,7 +27,7 @@
                 />
                 <span>
                     <span class="block text-xs font-bold text-slate-900">{{ $method['label'] }}</span>
-                    <span class="block text-[11px] text-slate-500 leading-snug">{{ $method['description'] }}</span>
+                    <span class="block text-[11px] text-slate-700 leading-snug">{{ $method['description'] }}</span>
                 </span>
             </label>
         @endforeach

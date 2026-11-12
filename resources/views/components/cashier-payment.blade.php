@@ -32,7 +32,7 @@
     </div>
 
     <div>
-        <label for="cashier-method" class="block text-[11px] font-semibold text-slate-600 mb-1">Metode Bayar</label>
+        <label for="cashier-method" class="block text-[11px] font-semibold text-slate-700 mb-1">Metode Bayar</label>
         <select
             id="cashier-method"
             name="payment_method"
@@ -49,7 +49,7 @@
     <!-- Tunai: uang diterima dicatat untuk audit laci kasir -->
     <div x-show="method === 'cash'" class="space-y-2">
         <div class="flex items-center justify-between gap-2">
-            <label for="cashier-received" class="block text-[11px] font-semibold text-slate-600">Uang Diterima</label>
+            <label for="cashier-received" class="block text-[11px] font-semibold text-slate-700">Uang Diterima</label>
             <button type="button" @click="received = estimatedTotal" class="text-[11px] font-bold text-primary-600 hover:text-primary-700">Uang pas</button>
         </div>
         <input
@@ -71,7 +71,7 @@
 
     <!-- Non-tunai: nomor bukti wajib agar bisa dicocokkan dengan mutasi -->
     <div x-show="method !== 'cash'">
-        <label for="cashier-reference" class="block text-[11px] font-semibold text-slate-600 mb-1">Nomor Bukti Transaksi</label>
+        <label for="cashier-reference" class="block text-[11px] font-semibold text-slate-700 mb-1">Nomor Bukti Transaksi</label>
         <input
             id="cashier-reference"
             type="text"
@@ -83,10 +83,10 @@
             placeholder="Nomor referensi di bukti transfer / QRIS"
             class="w-full rounded-lg border border-slate-300 py-1.5 px-2.5 text-xs text-slate-900 bg-white"
         />
-        <p class="mt-1 text-[11px] text-slate-500">Cek dulu uangnya sudah masuk. Satu nomor bukti hanya bisa dipakai sekali.</p>
+        <p class="mt-1 text-[11px] text-slate-700">Cek dulu uangnya sudah masuk. Satu nomor bukti hanya bisa dipakai sekali.</p>
     </div>
 
-    <p class="pt-2 border-t border-slate-200 text-[11px] text-slate-500">
+    <p class="pt-2 border-t border-slate-200 text-[11px] text-slate-700">
         Terima pembayaran dulu. Pesanan langsung tercatat lunas atas nama Anda dan tidak bisa diubah lagi.
     </p>
 </div>

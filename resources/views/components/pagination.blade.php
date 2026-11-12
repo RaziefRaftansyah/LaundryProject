@@ -28,7 +28,7 @@
 
         <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
             <div>
-                <p class="text-xs text-slate-600">
+                <p class="text-xs text-slate-700">
                     Menampilkan
                     <span class="font-semibold text-slate-900">{{ $paginator->firstItem() ?? 0 }}</span>
                     sampai
@@ -48,7 +48,7 @@
                             <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
                         </span>
                     @else
-                        <a href="{{ $paginator->previousPageUrl() }}" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-slate-300 bg-white text-xs font-medium text-slate-600 hover:bg-slate-50">
+                        <a href="{{ $paginator->previousPageUrl() }}" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-slate-300 bg-white text-xs font-medium text-slate-700 hover:bg-slate-50">
                             <span class="sr-only">Previous</span>
                             <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
                         </a>
@@ -61,7 +61,7 @@
                                 {{ $page }}
                             </span>
                         @else
-                            <a href="{{ $url }}" class="bg-white border-slate-300 text-slate-600 hover:bg-slate-50 relative inline-flex items-center px-3.5 py-2 border text-xs font-medium">
+                            <a href="{{ $url }}" class="bg-white border-slate-300 text-slate-700 hover:bg-slate-50 relative inline-flex items-center px-3.5 py-2 border text-xs font-medium">
                                 {{ $page }}
                             </a>
                         @endif
@@ -69,7 +69,7 @@
 
                     {{-- Next Page Link --}}
                     @if ($paginator->hasMorePages())
-                        <a href="{{ $paginator->nextPageUrl() }}" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-slate-300 bg-white text-xs font-medium text-slate-600 hover:bg-slate-50">
+                        <a href="{{ $paginator->nextPageUrl() }}" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-slate-300 bg-white text-xs font-medium text-slate-700 hover:bg-slate-50">
                             <span class="sr-only">Next</span>
                             <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </a>

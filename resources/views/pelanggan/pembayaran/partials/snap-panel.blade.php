@@ -36,9 +36,9 @@
     </div>
 
     @if ($reason === 'popup_ditutup')
-        <p x-show="! verifying" class="text-[11px] text-slate-600">Jendela pembayaran sebelumnya ditutup sebelum selesai. Klik "Bayar Sekarang" untuk melanjutkan, tagihannya tetap sama.</p>
+        <p x-show="! verifying" class="text-[11px] text-slate-700">Jendela pembayaran sebelumnya ditutup sebelum selesai. Klik "Bayar Sekarang" untuk melanjutkan, tagihannya tetap sama.</p>
     @elseif ($reason === 'menunggu_transfer')
-        <p class="text-[11px] text-slate-600">Tagihan sudah dibuat. Selesaikan transfer, atau klik "Bayar Sekarang" untuk melihat instruksinya lagi.</p>
+        <p class="text-[11px] text-slate-700">Tagihan sudah dibuat. Selesaikan transfer, atau klik "Bayar Sekarang" untuk melihat instruksinya lagi.</p>
     @endif
 
     <template x-if="! expired">
@@ -62,7 +62,7 @@
     </template>
 
     <p x-show="message" x-cloak x-text="message" class="rounded-lg bg-rose-50 border border-rose-200 p-3 text-xs text-rose-800"></p>
-    <p class="text-[11px] text-slate-500 text-center">Klik berkali-kali tetap memakai tagihan yang sama. Anda tidak akan ditagih dua kali.</p>
+    <p class="text-[11px] text-slate-700 text-center">Klik berkali-kali tetap memakai tagihan yang sama. Anda tidak akan ditagih dua kali.</p>
 </div>
 
 @once

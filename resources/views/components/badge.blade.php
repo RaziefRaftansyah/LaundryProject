@@ -54,7 +54,7 @@
             'label' => 'Gagal',
         ],
         'expired' => [
-            'class' => 'bg-slate-100 text-slate-600 border-slate-300',
+            'class' => 'bg-slate-100 text-slate-700 border-slate-300',
             'dot'   => 'bg-slate-400',
             'label' => 'Kadaluarsa',
         ],

@@ -14,7 +14,7 @@
             <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 Atur Kata Sandi Baru
             </h1>
-            <p class="text-xs sm:text-sm text-slate-600 mt-1.5">
+            <p class="text-xs sm:text-sm text-slate-700 mt-1.5">
                 Silakan buat kata sandi baru untuk akun Anda.
             </p>
         </div>

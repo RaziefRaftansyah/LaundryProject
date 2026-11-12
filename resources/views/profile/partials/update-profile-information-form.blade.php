@@ -3,7 +3,7 @@
         <h2 class="text-base font-bold text-slate-900 tracking-tight">
             Informasi Profil Pengguna
         </h2>
-        <p class="text-xs text-slate-500 mt-1">
+        <p class="text-xs text-slate-700 mt-1">
             Perbarui data profil akun, alamat email, dan nomor kontak Anda.
         </p>
     </header>

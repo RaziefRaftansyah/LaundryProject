@@ -33,7 +33,7 @@
                 'flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-extrabold sm:h-10 sm:w-10',
                 'bg-primary-700 text-white ring-4 ring-primary-100' => $state === 'current',
                 'bg-emerald-600 text-white' => $state === 'done',
-                'bg-slate-100 text-slate-500' => $state === 'next',
+                'bg-slate-100 text-slate-700' => $state === 'next',
             ])>
                 @if ($state === 'done')
                     <x-icon name="check" class="h-4 w-4" />
@@ -44,8 +44,8 @@
             <span @class([
                 'min-w-0 truncate text-xs font-bold sm:text-sm',
                 'text-slate-900' => $state === 'current',
-                'text-slate-600' => $state === 'done',
-                'text-slate-500' => $state === 'next',
+                'text-slate-700' => $state === 'done',
+                'text-slate-700' => $state === 'next',
             ])>{{ $label }}</span>
         </li>
     @endforeach

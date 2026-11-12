@@ -110,14 +110,14 @@
                             <div class="font-semibold text-slate-900 text-xs">
                                 {{ $proc->order?->customer_name ?? $proc->order?->user?->name ?? 'Walk-in' }}
                             </div>
-                            <div class="text-[11px] text-slate-500">
+                            <div class="text-[11px] text-slate-700">
                                 {{ $proc->order?->customer_phone ?? $proc->order?->user?->phone ?? '-' }}
                             </div>
                         </td>
                         <td class="px-5 py-4 text-xs text-slate-700">
                             {{ $proc->order?->service?->name ?? 'Layanan' }}
                             @if (($proc->order?->service?->unit ?? 'Mesin') === 'Mesin')
-                                <span class="text-[11px] text-slate-500">({{ $proc->order?->machine_qty }} × mesin)</span>
+                                <span class="text-[11px] text-slate-700">({{ $proc->order?->machine_qty }} × mesin)</span>
                             @endif
                         </td>
                         <td class="px-5 py-4">

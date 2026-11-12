@@ -14,7 +14,7 @@
             <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 Lupa Kata Sandi?
             </h1>
-            <p class="text-xs sm:text-sm text-slate-600 mt-1.5 max-w-xs mx-auto">
+            <p class="text-xs sm:text-sm text-slate-700 mt-1.5 max-w-xs mx-auto">
                 Masukkan email Anda dan kami akan mengirimkan tautan untuk mengatur ulang kata sandi.
             </p>
         </div>
@@ -46,7 +46,7 @@
                 </div>
             </form>
 
-            <div class="mt-6 pt-5 border-t border-slate-100 text-center text-xs text-slate-600">
+            <div class="mt-6 pt-5 border-t border-slate-100 text-center text-xs text-slate-700">
                 Kembali ke
                 <a href="{{ route('login') }}" class="text-primary-600 hover:text-primary-700 font-bold hover:underline ml-1">
                     Halaman Masuk

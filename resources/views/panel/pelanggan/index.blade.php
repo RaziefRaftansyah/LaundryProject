@@ -44,7 +44,7 @@
                     <td class="px-5 py-3">
                         <p class="font-bold text-slate-900">{{ $customer->name }}</p>
                         @unless ($customer->isWalkIn())
-                            <p class="text-[11px] text-slate-500">{{ $customer->email }}</p>
+                            <p class="text-[11px] text-slate-700">{{ $customer->email }}</p>
                         @endunless
                     </td>
                     <td class="px-5 py-3 font-mono text-xs">{{ $customer->phone_e164 ? \App\Support\PhoneNumber::display($customer->phone_e164) : ($customer->phone ?: '-') }}</td>
@@ -75,7 +75,7 @@
                 <textarea name="notes" rows="2" maxlength="500" class="mt-1 w-full rounded-xl border-slate-200 text-sm focus:border-primary-500 focus:ring-primary-500">{{ old('notes') }}</textarea>
             </label>
             <div class="flex justify-end gap-2">
-                <button type="button" x-on:click="$dispatch('close-modal', 'tambah-pelanggan')" class="px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-600">Batal</button>
+                <button type="button" x-on:click="$dispatch('close-modal', 'tambah-pelanggan')" class="px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-700">Batal</button>
                 <x-panel.submit>Simpan Pelanggan</x-panel.submit>
             </div>
         </x-panel.form>
@@ -86,7 +86,7 @@
     <x-modal name="gabung-pelanggan" title="Gabungkan Pelanggan Ganda" maxWidth="md">
         <x-panel.form :action="route('panel.pelanggan.merge')" class="space-y-4" confirm="Semua transaksi pelanggan ganda akan dipindah ke pelanggan utama dan akun ganda dinonaktifkan. Lanjutkan?">
             <input type="hidden" name="_modal" value="gabung-pelanggan" />
-            <p class="text-xs text-slate-600">Gunakan ID pelanggan dari halaman detail. Semua transaksi akun ganda dipindah ke akun utama, lalu akun ganda dinonaktifkan. Tercatat di audit log.</p>
+            <p class="text-xs text-slate-700">Gunakan ID pelanggan dari halaman detail. Semua transaksi akun ganda dipindah ke akun utama, lalu akun ganda dinonaktifkan. Tercatat di audit log.</p>
             <x-panel.field label="ID pelanggan utama (dipertahankan)" name="primary_id" type="number" required min="1" />
             <x-panel.field label="ID pelanggan ganda (dinonaktifkan)" name="duplicate_id" type="number" required min="1" />
             <x-panel.field label="Alasan" name="reason" required minlength="10" hint="Minimal 10 karakter." />

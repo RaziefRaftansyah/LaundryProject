@@ -6,7 +6,7 @@
 <div class="mx-auto max-w-7xl px-4 pb-28 pt-4 sm:px-6 sm:pt-6 lg:px-8 lg:pb-16">
     {{-- Breadcrumb: memberi tahu posisi halaman & jalan kembali --}}
     <nav aria-label="Breadcrumb" class="text-sm">
-        <ol class="flex flex-wrap items-center gap-2 text-slate-500">
+        <ol class="flex flex-wrap items-center gap-2 text-slate-700">
             <li>
                 <a href="{{ route('home') }}" class="inline-flex min-h-11 items-center gap-1.5 rounded-lg font-semibold transition-colors hover:text-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2">
                     <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -32,7 +32,7 @@
             <h1 class="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
                 Pesan Layanan Laundry
             </h1>
-            <p class="mt-3 max-w-[62ch] text-base leading-relaxed text-slate-600">
+            <p class="mt-3 max-w-[62ch] text-base leading-relaxed text-slate-700">
                 Pilih layanan, atur jenis dan jumlah mesin, lalu lanjutkan ke pembayaran.
                 Harga dan ketersediaan selalu dicek ulang oleh sistem agar pesanan Anda aman.
             </p>
@@ -88,7 +88,7 @@
                             {{ $cart['items']->count() }}
                         </span>
                     </div>
-                    <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                    <p class="mt-2 text-sm leading-relaxed text-slate-700">
                         @if ($cart['items']->isEmpty())
                             Belum ada layanan tersimpan. Centang layanan di samping untuk mulai memesan.
                         @else
@@ -98,7 +98,7 @@
 
                     <dl class="mt-4 space-y-2 border-t border-slate-100 pt-4 text-sm">
                         <div class="flex items-center justify-between gap-3">
-                            <dt class="text-slate-500">Total sementara</dt>
+                            <dt class="text-slate-700">Total sementara</dt>
                             <dd class="font-extrabold text-slate-900">Rp {{ number_format($cart['total'], 0, ',', '.') }}</dd>
                         </div>
                     </dl>

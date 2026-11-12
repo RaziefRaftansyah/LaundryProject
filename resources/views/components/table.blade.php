@@ -5,7 +5,7 @@
 <div class="overflow-x-auto rounded-xl border border-slate-200/80 bg-white shadow-xs">
     <table {{ $attributes->merge(['class' => 'min-w-full divide-y divide-slate-200 text-left text-sm']) }}>
         @if (count($headers) > 0)
-            <thead class="bg-slate-50/80 text-[11px] font-bold uppercase tracking-wider text-slate-500">
+            <thead class="bg-slate-50/80 text-[11px] font-bold uppercase tracking-wider text-slate-700">
                 <tr>
                     @foreach ($headers as $header)
                         <th scope="col" class="px-5 py-3.5">{{ $header }}</th>

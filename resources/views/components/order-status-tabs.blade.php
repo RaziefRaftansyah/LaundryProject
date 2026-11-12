@@ -19,11 +19,11 @@
         <a
             href="{{ $url }}"
             @if ($isActive) aria-current="page" @endif
-            class="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold border transition-colors {{ $isActive ? 'bg-primary-600 border-primary-600 text-white' : 'bg-white border-slate-200 text-slate-600 hover:border-primary-300 hover:text-primary-700' }}"
+            class="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold border transition-colors {{ $isActive ? 'bg-primary-600 border-primary-600 text-white' : 'bg-white border-slate-200 text-slate-700 hover:border-primary-300 hover:text-primary-700' }}"
         >
             <span>{{ $label }}</span>
             @isset($counts[$key])
-                <span class="min-w-5 px-1.5 rounded-full text-[10px] leading-4 {{ $isActive ? 'bg-white/25 text-white' : 'bg-slate-100 text-slate-600' }}">{{ $counts[$key] }}</span>
+                <span class="min-w-5 px-1.5 rounded-full text-[10px] leading-4 {{ $isActive ? 'bg-white/25 text-white' : 'bg-slate-100 text-slate-700' }}">{{ $counts[$key] }}</span>
             @endisset
         </a>
     @endforeach

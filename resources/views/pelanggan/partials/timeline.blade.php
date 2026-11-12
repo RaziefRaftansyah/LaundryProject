@@ -11,7 +11,7 @@
             <li class="ml-4" data-timeline-row>
                 <span class="absolute -left-[5px] mt-1.5 w-2.5 h-2.5 rounded-full {{ $dots[$row['tone']] ?? $dots['info'] }}" aria-hidden="true"></span>
                 <p class="text-xs font-bold text-slate-800">{{ $row['label'] }}</p>
-                <time class="text-[11px] text-slate-500" datetime="{{ $row['at']->toIso8601String() }}">
+                <time class="text-[11px] text-slate-700" datetime="{{ $row['at']->toIso8601String() }}">
                     {{ $row['at']->copy()->timezone($timezone)->translatedFormat('d M Y, H:i') }} WIB
                 </time>
             </li>

@@ -15,7 +15,7 @@
             <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 Lacak Status Pesanan Cucian
             </h1>
-            <p class="text-xs sm:text-sm text-slate-600 mt-2">
+            <p class="text-xs sm:text-sm text-slate-700 mt-2">
                 Pantau proses cucian Anda langsung dari sistem mesin laundromat kami.
             </p>
         </div>
@@ -47,7 +47,7 @@
                             <span>Lacak Sekarang</span>
                         </x-button>
                     </div>
-                    <p class="mt-1.5 text-[11px] text-slate-500">
+                    <p class="mt-1.5 text-[11px] text-slate-700">
                         Kode pesanan tertera pada struk kasir atau pesan konfirmasi Anda.
                     </p>
                 </div>
@@ -75,7 +75,7 @@
                                 <x-badge :variant="$statusBadgeVariant" size="md">
                                     {{ ucfirst($trackedOrder['status']) }}
                                 </x-badge>
-                                <span class="text-xs text-slate-600">
+                                <span class="text-xs text-slate-700">
                                     @if ($trackedOrder['status'] === 'pending')
                                         Menunggu antrean mesin.
                                     @elseif ($trackedOrder['status'] === 'diproses')
@@ -89,7 +89,7 @@
                             </div>
                         </div>
                         <div class="text-left sm:text-right">
-                            <span class="text-xs text-slate-500">Waktu Order Masuk</span>
+                            <span class="text-xs text-slate-700">Waktu Order Masuk</span>
                             <p class="text-xs font-semibold text-slate-800 mt-0.5">{{ $trackedOrder['created_at'] }}</p>
                         </div>
                     </div>
@@ -97,17 +97,17 @@
                     <!-- Details Grid (Minimal Info, NO PII / Tanpa Nama & HP) -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                         <div class="p-3.5 rounded-lg border border-slate-100 bg-slate-50/60">
-                            <p class="text-slate-500 font-medium">Layanan Laundry</p>
+                            <p class="text-slate-700 font-medium">Layanan Laundry</p>
                             <p class="text-sm font-bold text-slate-900 mt-1">{{ $trackedOrder['service'] }}</p>
                         </div>
                         <div class="p-3.5 rounded-lg border border-slate-100 bg-slate-50/60">
-                            <p class="text-slate-500 font-medium">Jumlah Mesin Digunakan</p>
+                            <p class="text-slate-700 font-medium">Jumlah Mesin Digunakan</p>
                             <p class="text-sm font-bold text-slate-900 mt-1">{{ $trackedOrder['machine_qty'] }} unit mesin</p>
                         </div>
                     </div>
 
                     <!-- Privacy Notice -->
-                    <div class="flex items-center gap-2 text-[11px] text-slate-500 border-t border-slate-100 pt-3">
+                    <div class="flex items-center gap-2 text-[11px] text-slate-700 border-t border-slate-100 pt-3">
                         <x-icon name="check" class="w-4 h-4 text-emerald-600 shrink-0" />
                         <span>Data pribadi (nama & nomor HP) disembunyikan untuk menjaga privasi pelanggan.</span>
                     </div>
@@ -120,7 +120,7 @@
                     <x-icon name="x" class="w-6 h-6" />
                 </div>
                 <h3 class="text-base font-bold text-slate-900">Kode Pesanan Tidak Ditemukan</h3>
-                <p class="text-xs text-slate-600 max-w-md mx-auto mt-1 mb-6">
+                <p class="text-xs text-slate-700 max-w-md mx-auto mt-1 mb-6">
                     Pesanan dengan kode <span class="font-mono font-bold text-rose-600">{{ $orderCode }}</span> tidak tercatat di database kami. Pastikan huruf besar/kecil dan angka sesuai dengan struk cucian Anda.
                 </p>
                 <x-button href="{{ route('tracking') }}" variant="outline" size="sm">

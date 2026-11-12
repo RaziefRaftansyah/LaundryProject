@@ -19,14 +19,14 @@
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
     <div class="pt-2 pb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-            <a href="{{ route('home') }}" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-primary-600">
+            <a href="{{ route('home') }}" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-primary-600">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                 Kembali ke Beranda
             </a>
             <h1 class="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 Selesaikan Pembayaran
             </h1>
-            <p class="text-sm text-slate-500 mt-1">Kode transaksi <span class="font-mono font-bold text-slate-900">{{ $checkout->code }}</span></p>
+            <p class="text-sm text-slate-700 mt-1">Kode transaksi <span class="font-mono font-bold text-slate-900">{{ $checkout->code }}</span></p>
         </div>
         <x-order-stepper current="bayar" />
     </div>
@@ -37,7 +37,7 @@
             <section class="rounded-2xl border border-slate-200 bg-white shadow-xs" aria-labelledby="ringkasan-title">
                 <div class="px-5 sm:px-6 pt-5 pb-4 border-b border-slate-100">
                     <h2 id="ringkasan-title" class="text-base font-extrabold text-slate-900">Ringkasan Pesanan</h2>
-                    <p class="text-xs text-slate-500 mt-0.5">{{ $checkout->orders->count() }} pesanan dalam 1 transaksi · dibuat {{ $checkout->created_at->translatedFormat('d M Y, H:i') }}</p>
+                    <p class="text-xs text-slate-700 mt-0.5">{{ $checkout->orders->count() }} pesanan dalam 1 transaksi · dibuat {{ $checkout->created_at->translatedFormat('d M Y, H:i') }}</p>
                 </div>
 
                 <ul class="divide-y divide-slate-100">
@@ -45,11 +45,11 @@
                         <li class="px-5 sm:px-6 py-4 flex items-start justify-between gap-3">
                             <div class="min-w-0">
                                 <p class="text-sm font-bold text-slate-900">{{ $order->service?->name }}</p>
-                                <p class="text-[11px] text-slate-500">
+                                <p class="text-[11px] text-slate-700">
                                     <span class="font-mono">{{ $order->order_code }}</span> · {{ $order->item_type }} · {{ $order->machine_qty }} × Rp {{ number_format($order->unit_price, 0, ',', '.') }}
                                 </p>
                                 @if ($order->notes)
-                                    <p class="text-[11px] text-slate-600 italic mt-0.5">"{{ $order->notes }}"</p>
+                                    <p class="text-[11px] text-slate-700 italic mt-0.5">"{{ $order->notes }}"</p>
                                 @endif
                             </div>
                             <p class="text-sm font-extrabold text-slate-900 shrink-0">Rp {{ number_format($order->total_price, 0, ',', '.') }}</p>
@@ -68,16 +68,16 @@
                 <dl class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                     <div class="flex items-start gap-2">
                         <x-icon name="calendar" class="w-4 h-4 text-primary-600 shrink-0" />
-                        <div><dt class="text-slate-500">Rencana antar ke outlet</dt><dd class="font-bold text-slate-900">{{ $checkout->drop_off_date?->translatedFormat('l, d F Y') }}</dd></div>
+                        <div><dt class="text-slate-700">Rencana antar ke outlet</dt><dd class="font-bold text-slate-900">{{ $checkout->drop_off_date?->translatedFormat('l, d F Y') }}</dd></div>
                     </div>
                     <div class="flex items-start gap-2">
                         <x-icon name="phone" class="w-4 h-4 text-primary-600 shrink-0" />
-                        <div><dt class="text-slate-500">No. HP / WhatsApp</dt><dd class="font-bold text-slate-900">{{ $checkout->contact_phone }}</dd></div>
+                        <div><dt class="text-slate-700">No. HP / WhatsApp</dt><dd class="font-bold text-slate-900">{{ $checkout->contact_phone }}</dd></div>
                     </div>
                     @if ($checkout->notes)
                         <div class="sm:col-span-2 flex items-start gap-2">
                             <x-icon name="edit" class="w-4 h-4 text-primary-600 shrink-0" />
-                            <div><dt class="text-slate-500">Catatan</dt><dd class="font-semibold text-slate-900">{{ $checkout->notes }}</dd></div>
+                            <div><dt class="text-slate-700">Catatan</dt><dd class="font-semibold text-slate-900">{{ $checkout->notes }}</dd></div>
                         </div>
                     @endif
                 </dl>
@@ -131,11 +131,11 @@
 
                         <!-- Metode lain = token baru = tagihan baru (yang lama ditutup); metode yang sama tetap tagihan ini -->
                         <div x-data="{ change: false }" class="border-t border-slate-100 pt-3">
-                            <button type="button" x-on:click="change = ! change" class="text-xs font-bold text-slate-600 hover:text-primary-700">
+                            <button type="button" x-on:click="change = ! change" class="text-xs font-bold text-slate-700 hover:text-primary-700">
                                 <span x-text="change ? 'Batal ganti metode' : 'Ganti metode pembayaran'">Ganti metode pembayaran</span>
                             </button>
                             <div x-show="change" x-collapse x-cloak class="mt-3 space-y-3">
-                                <p class="text-[11px] text-slate-500">Tagihan lama akan ditutup dan diganti tagihan baru. Jangan membayar tagihan lama setelah ini.</p>
+                                <p class="text-[11px] text-slate-700">Tagihan lama akan ditutup dan diganti tagihan baru. Jangan membayar tagihan lama setelah ini.</p>
                                 @include('pelanggan.pembayaran.partials.pay-form', ['buttonLabel' => 'Buat Tagihan Baru', 'selected' => $payment->method, 'idPrefix' => 'pay-change'])
                             </div>
                         </div>
@@ -154,7 +154,7 @@
                             />
                         </div>
                     @else
-                        <p class="mt-1 text-xs text-slate-500">Pilih metode pembayaran cashless, lalu Anda akan diarahkan ke halaman pembayaran.</p>
+                        <p class="mt-1 text-xs text-slate-700">Pilih metode pembayaran cashless, lalu Anda akan diarahkan ke halaman pembayaran.</p>
                     @endif
 
                     <div class="mt-4">
@@ -185,12 +185,12 @@
                             <span class="w-6 h-6 rounded-full bg-info-600 text-white text-[11px] font-extrabold flex items-center justify-center shrink-0">{{ $i + 1 }}</span>
                             <div>
                                 <p class="text-xs font-bold text-slate-900">{{ $title }}</p>
-                                <p class="text-[11px] text-slate-600 leading-snug">{{ $text }}</p>
+                                <p class="text-[11px] text-slate-700 leading-snug">{{ $text }}</p>
                             </div>
                         </li>
                     @endforeach
                 </ol>
-                <p class="mt-3 text-[11px] text-slate-600 border-t border-info-200 pt-3">
+                <p class="mt-3 text-[11px] text-slate-700 border-t border-info-200 pt-3">
                     Klik "Bayar" lebih dari sekali atau koneksi terputus? Tenang, setiap permintaan pembayaran punya kode unik sehingga Anda tidak akan ditagih dua kali.
                 </p>
             </section>

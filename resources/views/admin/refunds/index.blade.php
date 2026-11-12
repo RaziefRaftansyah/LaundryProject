@@ -18,7 +18,7 @@
 <div class="space-y-6">
     <div>
         <h1 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">Perlu Refund</h1>
-        <p class="text-xs sm:text-sm text-slate-500 mt-0.5">
+        <p class="text-xs sm:text-sm text-slate-700 mt-0.5">
             Uang pelanggan yang masuk lewat Midtrans tetapi tidak melunasi transaksi. Lakukan refund di dashboard Midtrans
             atau transfer manual, lalu tandai di sini beserta catatannya.
         </p>
@@ -28,7 +28,7 @@
         @foreach ([RefundController::TAB_OPEN => 'Perlu Ditangani', RefundController::TAB_DONE => 'Sudah Direfund'] as $key => $label)
             <a
                 href="{{ route('admin.refunds.index', ['tab' => $key]) }}"
-                class="px-4 py-2 -mb-px text-xs sm:text-sm font-bold border-b-2 {{ $tab === $key ? 'border-primary-600 text-primary-700' : 'border-transparent text-slate-500 hover:text-slate-700' }}"
+                class="px-4 py-2 -mb-px text-xs sm:text-sm font-bold border-b-2 {{ $tab === $key ? 'border-primary-600 text-primary-700' : 'border-transparent text-slate-700 hover:text-slate-700' }}"
             >
                 {{ $label }} <span class="ml-1 text-[11px] px-1.5 py-0.5 rounded-full {{ $tab === $key ? 'bg-primary-100' : 'bg-slate-100' }}">{{ $counts[$key] }}</span>
             </a>
@@ -56,10 +56,10 @@
                         <div class="min-w-0">
                             <x-badge variant="danger" size="sm">{{ $flag[0] }}</x-badge>
                             <p class="mt-2 font-mono text-sm font-bold text-slate-900 break-all">{{ $payment->reference }}</p>
-                            <p class="text-[11px] text-slate-500">{{ $flag[1] }}</p>
+                            <p class="text-[11px] text-slate-700">{{ $flag[1] }}</p>
                         </div>
                         <div class="text-right shrink-0">
-                            <p class="text-[11px] text-slate-500">Diterima</p>
+                            <p class="text-[11px] text-slate-700">Diterima</p>
                             <p class="text-sm font-extrabold text-slate-900">{{ $flagged && $flagged['gross_amount'] !== null ? $rupiah($flagged['gross_amount']) : $rupiah($payment->amount) }}</p>
                             @if ($payment->review_flag === Payment::FLAG_AMOUNT_MISMATCH)
                                 <p class="text-[11px] text-rose-600">Tagihan {{ $rupiah($payment->amount) }}</p>
@@ -68,15 +68,15 @@
                     </div>
 
                     <dl class="grid grid-cols-2 gap-x-3 gap-y-1 text-[11px]">
-                        <dt class="text-slate-500">Transaksi</dt>
+                        <dt class="text-slate-700">Transaksi</dt>
                         <dd class="text-slate-800 font-semibold text-right">{{ $payment->checkout?->code ?? $payment->order?->order_code ?? '-' }} ({{ $owner?->status ?? '-' }})</dd>
-                        <dt class="text-slate-500">Pelanggan</dt>
+                        <dt class="text-slate-700">Pelanggan</dt>
                         <dd class="text-slate-800 text-right truncate">{{ $customer?->name ?? '-' }} {{ $customer?->phone ? '· ' . $customer->phone : '' }}</dd>
-                        <dt class="text-slate-500">Metode</dt>
+                        <dt class="text-slate-700">Metode</dt>
                         <dd class="text-slate-800 text-right">{{ $payment->payment_type ?? $payment->method }}</dd>
-                        <dt class="text-slate-500">Transaction ID</dt>
+                        <dt class="text-slate-700">Transaction ID</dt>
                         <dd class="text-slate-800 text-right font-mono break-all">{{ $flagged['transaction_id'] ?? $payment->transaction_id ?? '-' }}</dd>
-                        <dt class="text-slate-500">Ditandai</dt>
+                        <dt class="text-slate-700">Ditandai</dt>
                         <dd class="text-slate-800 text-right">{{ $flagged ? \Illuminate\Support\Carbon::parse($flagged['at'])->timezone(config('laundry.report_timezone', 'Asia/Jakarta'))->format('d M Y H:i') : $payment->updated_at->format('d M Y H:i') }}</dd>
                     </dl>
 

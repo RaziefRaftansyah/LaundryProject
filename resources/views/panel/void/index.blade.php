@@ -12,7 +12,7 @@
     <nav class="flex gap-2" aria-label="Status pengajuan">
         @foreach (VoidRequest::STATUS_LABELS as $key => $label)
             <a href="{{ route('panel.void.index', ['status' => $key]) }}" @if ($status === $key) aria-current="page" @endif
-               class="px-4 py-2 rounded-full text-xs font-bold border {{ $status === $key ? 'bg-primary-600 border-primary-600 text-white' : 'bg-white border-slate-200 text-slate-600' }}">{{ $label }}</a>
+               class="px-4 py-2 rounded-full text-xs font-bold border {{ $status === $key ? 'bg-primary-600 border-primary-600 text-white' : 'bg-white border-slate-200 text-slate-700' }}">{{ $label }}</a>
         @endforeach
     </nav>
 
@@ -29,7 +29,7 @@
                             <p>Diajukan <span class="font-bold">{{ $void->requester?->name }}</span> {{ $void->created_at->timezone($tz)->format('d/m/Y H:i') }}</p>
                             <p class="text-slate-700">Alasan: {{ $void->reason }}</p>
                             @if ($void->decided_at)
-                                <p class="text-slate-500">Diputuskan {{ $void->decider?->name }}{{ $void->decision_note ? ': ' . $void->decision_note : '' }}</p>
+                                <p class="text-slate-700">Diputuskan {{ $void->decider?->name }}{{ $void->decision_note ? ': ' . $void->decision_note : '' }}</p>
                             @endif
                         </div>
                         @if ($void->status === VoidRequest::STATUS_PENDING)

@@ -43,7 +43,7 @@
                 <tr data-expense="{{ $expense->id }}">
                     <td class="px-5 py-3 text-xs whitespace-nowrap">{{ $expense->expense_date->format('d/m/Y') }}</td>
                     <td class="px-5 py-3 text-xs">{{ $expense->category?->name }}</td>
-                    <td class="px-5 py-3 text-xs max-w-xs">{{ $expense->description }}@if ($expense->decision_note)<br><span class="text-slate-500">Catatan admin: {{ $expense->decision_note }}</span>@endif</td>
+                    <td class="px-5 py-3 text-xs max-w-xs">{{ $expense->description }}@if ($expense->decision_note)<br><span class="text-slate-700">Catatan admin: {{ $expense->decision_note }}</span>@endif</td>
                     <td class="px-5 py-3 text-xs font-bold whitespace-nowrap">{{ L::rupiah($expense->amount) }}</td>
                     <td class="px-5 py-3 text-xs">{{ $expense->creator?->name }}</td>
                     <td class="px-5 py-3 text-xs"><a href="{{ route('panel.pengeluaran.receipt', $expense) }}" target="_blank" rel="noopener" class="font-bold text-primary-600">Lihat</a></td>
@@ -101,7 +101,7 @@
             <label class="block text-xs"><span class="font-bold text-slate-700">Deskripsi *</span>
                 <textarea name="description" rows="2" required minlength="5" maxlength="1000" class="mt-1 w-full rounded-xl border-slate-200 text-sm">{{ old('description') }}</textarea>
                 @error('description')<span class="text-[11px] text-rose-600">{{ $message }}</span>@enderror</label>
-            <label class="block text-xs"><span class="font-bold text-slate-700">Foto nota * <span class="font-normal text-slate-500">(JPG/PNG/WEBP/PDF, maks. {{ (int) (config('finance.expense.receipt_max_kb') / 1024) }} MB)</span></span>
+            <label class="block text-xs"><span class="font-bold text-slate-700">Foto nota * <span class="font-normal text-slate-700">(JPG/PNG/WEBP/PDF, maks. {{ (int) (config('finance.expense.receipt_max_kb') / 1024) }} MB)</span></span>
                 <input type="file" name="receipt" required accept="image/jpeg,image/png,image/webp,application/pdf" class="mt-1 w-full text-sm" />
                 @error('receipt')<span class="text-[11px] text-rose-600">{{ $message }}</span>@enderror</label>
             <div class="flex justify-end"><x-panel.submit>Simpan</x-panel.submit></div>

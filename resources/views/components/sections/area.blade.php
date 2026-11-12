@@ -39,7 +39,7 @@
                     Mampir saat cucian sudah menumpuk
                 </h2>
             </div>
-            <p class="text-sm leading-relaxed text-slate-600 sm:text-base lg:col-span-5">
+            <p class="text-sm leading-relaxed text-slate-700 sm:text-base lg:col-span-5">
                 Outlet {{ $storeName }} di {{ $city }} melayani cuci mandiri dan drop-off. Parkir tersedia di depan outlet, dan ruang tunggu ber-AC membuat menunggu mesin selesai tetap nyaman.
             </p>
         </div>
@@ -54,28 +54,28 @@
                     <dl class="mt-4 space-y-2 text-sm">
                         @if (! $isPlaceholder($hoursDay))
                             <div class="flex items-baseline justify-between gap-3 border-b border-slate-100 pb-2">
-                                <dt class="text-slate-600">Senin sampai Jumat</dt>
+                                <dt class="text-slate-700">Senin sampai Jumat</dt>
                                 <dd class="font-semibold text-slate-900">{{ $hoursDay }}{{ $tzLabel }}</dd>
                             </div>
                         @endif
                         @if (! $isPlaceholder($hoursEnd))
                             <div class="flex items-baseline justify-between gap-3 border-b border-slate-100 pb-2">
-                                <dt class="text-slate-600">Sabtu dan Minggu</dt>
+                                <dt class="text-slate-700">Sabtu dan Minggu</dt>
                                 <dd class="font-semibold text-slate-900">{{ $hoursEnd }}{{ $tzLabel }}</dd>
                             </div>
                         @endif
                     </dl>
 
                     @if (! $isPlaceholder($lastOrder))
-                        <p class="mt-4 text-xs leading-relaxed text-slate-500">
+                        <p class="mt-4 text-xs leading-relaxed text-slate-700">
                             Pesanan self laundry terakhir {{ $lastOrder }}{{ $tzLabel }} agar cuci dan kering selesai sebelum outlet tutup.
                         </p>
                     @endif
                     @if (! $isPlaceholder($notes))
-                        <p class="mt-2 text-xs leading-relaxed text-slate-500">{{ $notes }}</p>
+                        <p class="mt-2 text-xs leading-relaxed text-slate-700">{{ $notes }}</p>
                     @endif
                 @else
-                    <p class="mt-4 text-sm leading-relaxed text-slate-600">
+                    <p class="mt-4 text-sm leading-relaxed text-slate-700">
                         Jam buka outlet belum dipublikasikan di halaman ini.
                     </p>
 
@@ -95,7 +95,7 @@
             {{-- Fasilitas --}}
             <div class="bg-white p-6 sm:p-7">
                 <h3 class="text-sm font-bold text-slate-900">Fasilitas di outlet</h3>
-                <ul class="mt-4 space-y-3 text-sm text-slate-600">
+                <ul class="mt-4 space-y-3 text-sm text-slate-700">
                     @foreach ($facilities as $facility)
                         <li class="flex items-start gap-2.5">
                             <x-icon name="check" class="mt-0.5 h-4 w-4 shrink-0 text-primary-600" />
@@ -110,9 +110,9 @@
                 <h3 class="text-sm font-bold text-slate-900">Alamat dan rute</h3>
 
                 @if (! $isPlaceholder($address))
-                    <p class="mt-4 text-sm leading-relaxed text-slate-600">{{ $address }}</p>
+                    <p class="mt-4 text-sm leading-relaxed text-slate-700">{{ $address }}</p>
                 @else
-                    <p class="mt-4 text-sm leading-relaxed text-slate-600">
+                    <p class="mt-4 text-sm leading-relaxed text-slate-700">
                         Titik outlet {{ $storeName }} sudah terpasang di peta beranda. Alamat lengkap dan petunjuk jalan tersedia di Google Maps.
                     </p>
                 @endif

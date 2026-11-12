@@ -14,7 +14,7 @@
             <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 Konfirmasi Keamanan
             </h1>
-            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+            <p class="text-xs sm:text-sm text-slate-700 mt-2 leading-relaxed">
                 Ini adalah area aman. Harap masukkan kata sandi Anda sebelum melanjutkan.
             </p>
         </div>

@@ -37,7 +37,7 @@
             <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
                 Yang paling sering ditanyakan pelanggan
             </h2>
-            <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+            <p class="mt-3 text-sm leading-relaxed text-slate-700 sm:text-base">
                 Pembayaran, durasi mesin, fasilitas, dan cara pemesanan di Laundry Coin.
             </p>
         </div>
@@ -54,7 +54,7 @@
                     >
                         <span class="text-sm sm:text-base">{{ $item['q'] }}</span>
                         <div
-                            class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 shrink-0 transition-transform duration-200"
+                            class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 shrink-0 transition-transform duration-200"
                             :class="active === {{ $index }} ? 'rotate-180 bg-primary-100 text-primary-700' : ''"
                         >
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,7 +70,7 @@
                         class="border-t border-slate-100 px-6 py-4 bg-slate-50/50"
                         style="display: none;"
                     >
-                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
                             {{ $item['a'] }}
                         </p>
                     </div>

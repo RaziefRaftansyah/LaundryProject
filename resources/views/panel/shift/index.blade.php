@@ -49,7 +49,7 @@
                 <x-panel.field label="Saldo awal laci (Rp)" name="opening_balance" type="number" required min="0" />
                 <x-panel.submit>Buka Shift</x-panel.submit>
             </x-panel.form>
-            <p class="mt-3 text-[11px] text-slate-500">Satu shift aktif per petugas. Transaksi tunai "bayar sekarang" hanya bisa dicatat saat shift buka.</p>
+            <p class="mt-3 text-[11px] text-slate-700">Satu shift aktif per petugas. Transaksi tunai "bayar sekarang" hanya bisa dicatat saat shift buka.</p>
         </x-card>
     @endif
 

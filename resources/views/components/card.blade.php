@@ -13,7 +13,7 @@
                     <h3 class="text-base font-semibold text-slate-900 tracking-tight">{{ $title }}</h3>
                 @endif
                 @if ($subtitle)
-                    <p class="text-xs text-slate-500 mt-0.5">{{ $subtitle }}</p>
+                    <p class="text-xs text-slate-700 mt-0.5">{{ $subtitle }}</p>
                 @endif
             </div>
             @if ($action)

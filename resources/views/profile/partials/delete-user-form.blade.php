@@ -3,7 +3,7 @@
         <h2 class="text-base font-bold text-red-600 tracking-tight">
             Hapus Akun Pengguna
         </h2>
-        <p class="text-xs text-slate-500 mt-1">
+        <p class="text-xs text-slate-700 mt-1">
             Setelah akun Anda dihapus, seluruh data dan riwayat pesanan akan dihapus secara permanen. Tindakan ini tidak dapat dibatalkan.
         </p>
     </header>
@@ -29,11 +29,11 @@
                 </div>
                 <div>
                     <h3 class="text-base font-bold text-slate-900 leading-tight">Konfirmasi Hapus Akun</h3>
-                    <p class="text-xs text-slate-500">Tindakan ini permanen dan tidak dapat dipulihkan.</p>
+                    <p class="text-xs text-slate-700">Tindakan ini permanen dan tidak dapat dipulihkan.</p>
                 </div>
             </div>
 
-            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            <p class="text-xs text-slate-700 leading-relaxed mb-4">
                 Masukkan kata sandi akun Anda untuk mengonfirmasi bahwa Anda adalah pemilik sah akun ini.
             </p>
 

@@ -128,7 +128,7 @@
                     @if (auth()->user()->isPelanggan())
                         <a
                             href="{{ route('pelanggan.cart.index') }}"
-                            class="relative p-2.5 rounded-lg text-slate-600 hover:text-primary-700 hover:bg-slate-100"
+                            class="relative p-2.5 rounded-lg text-slate-700 hover:text-primary-700 hover:bg-slate-100"
                             aria-label="Keranjang{{ $cartCount > 0 ? " ({$cartCount} layanan)" : '' }}"
                         >
                             <x-icon name="cart" class="w-6 h-6" />
@@ -141,7 +141,7 @@
                 <button
                     type="button"
                     x-on:click="mobileOpen = !mobileOpen"
-                    class="p-2.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
+                    class="p-2.5 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                     aria-label="Toggle navigation"
                 >
                     <svg x-show="!mobileOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

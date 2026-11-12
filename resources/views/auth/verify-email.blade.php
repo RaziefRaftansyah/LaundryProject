@@ -14,7 +14,7 @@
             <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 Verifikasi Email Anda
             </h1>
-            <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+            <p class="text-xs sm:text-sm text-slate-700 mt-2 leading-relaxed">
                 Terima kasih telah mendaftar! Sebelum memulai, silakan klik tautan verifikasi yang baru saja kami kirimkan ke email Anda.
             </p>
         </div>
@@ -34,7 +34,7 @@
 
                 <form method="POST" action="{{ route('logout') }}" class="text-center pt-2">
                     @csrf
-                    <button type="submit" class="text-xs text-slate-500 hover:text-slate-800 font-semibold underline cursor-pointer">
+                    <button type="submit" class="text-xs text-slate-700 hover:text-slate-800 font-semibold underline cursor-pointer">
                         Keluar dari Akun (Logout)
                     </button>
                 </form>

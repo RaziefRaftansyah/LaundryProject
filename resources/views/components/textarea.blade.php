@@ -39,7 +39,7 @@
             {{ $required ? 'required' : '' }}
             {{ $disabled ? 'disabled' : '' }}
             {{ $attributes->except('class')->merge([
-                'class' => "block w-full rounded-lg border text-sm transition-all duration-150 py-2.5 px-3.5 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 disabled:bg-slate-50 disabled:text-slate-500 {$borderClass}"
+                'class' => "block w-full rounded-lg border text-sm transition-all duration-150 py-2.5 px-3.5 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 disabled:bg-slate-50 disabled:text-slate-700 {$borderClass}"
             ]) }}
         >{{ old($name, $value ?? $slot) }}</textarea>
     </div>
@@ -52,6 +52,6 @@
             <span>{{ $errorMessage }}</span>
         </p>
     @elseif ($hint)
-        <p class="mt-1 text-xs text-slate-500">{{ $hint }}</p>
+        <p class="mt-1 text-xs text-slate-700">{{ $hint }}</p>
     @endif
 </div>

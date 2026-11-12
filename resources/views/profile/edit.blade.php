@@ -15,7 +15,7 @@
         <!-- Breadcrumb / Header Title -->
         <div>
             <h2 class="text-xl font-bold text-slate-900 tracking-tight">Pengaturan Profil & Keamanan</h2>
-            <p class="text-xs text-slate-500 mt-1">Kelola data profil, kontak, dan kata sandi akun Anda.</p>
+            <p class="text-xs text-slate-700 mt-1">Kelola data profil, kontak, dan kata sandi akun Anda.</p>
         </div>
     @endunless
 

@@ -21,7 +21,7 @@
         <x-table :headers="['Periode', 'Catatan', 'Ditutup oleh', 'Waktu']">
             @foreach ($periods as $period)
                 <tr>
-                    <td class="px-5 py-3 text-xs font-bold">{{ $period->period_start->format('d/m/Y') }} – {{ $period->period_end->format('d/m/Y') }}</td>
+                    <td class="px-5 py-3 text-xs font-bold">{{ $period->period_start->format('d/m/Y') }} - {{ $period->period_end->format('d/m/Y') }}</td>
                     <td class="px-5 py-3 text-xs">{{ $period->note ?? '-' }}</td>
                     <td class="px-5 py-3 text-xs">{{ $period->closer?->name ?? '-' }}</td>
                     <td class="px-5 py-3 text-xs">{{ $period->created_at->timezone(\App\Support\BusinessCalendar::timezone())->format('d/m/Y H:i') }}</td>

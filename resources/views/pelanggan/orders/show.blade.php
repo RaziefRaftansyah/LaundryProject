@@ -68,7 +68,7 @@
                             </div>
                         </div>
                     @else
-                        <p class="text-xs text-slate-600">Pesanan ini belum memiliki tagihan online. Pilih metode untuk membayar Rp {{ number_format($order->total_price, 0, ',', '.') }}, atau bayar langsung di kasir outlet.</p>
+                        <p class="text-xs text-slate-700">Pesanan ini belum memiliki tagihan online. Pilih metode untuk membayar Rp {{ number_format($order->total_price, 0, ',', '.') }}, atau bayar langsung di kasir outlet.</p>
                     @endif
 
                     <x-payment-method-picker id-prefix="show-pm" :selected="$payment?->method" />
@@ -103,7 +103,7 @@
                         </span>
                         <div class="min-w-0">
                             <p class="text-xs font-bold text-slate-900 uppercase">Proses {{ $proc->process }}</p>
-                            <p class="text-[11px] text-slate-500">
+                            <p class="text-[11px] text-slate-700">
                                 @if ($isFinished)
                                     Selesai {{ $proc->updated_at->timezone(config('laundry.report_timezone', 'Asia/Jakarta'))->format('d M Y, H:i') }}
                                     @if ($proc->pegawai) oleh {{ $proc->pegawai->name }} @endif

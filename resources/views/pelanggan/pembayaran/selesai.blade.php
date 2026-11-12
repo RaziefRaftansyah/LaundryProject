@@ -65,7 +65,7 @@
     <section class="rounded-2xl border border-slate-200 bg-white shadow-xs" aria-labelledby="riwayat-transaksi-title">
         <div class="px-5 sm:px-6 pt-5 pb-4 border-b border-slate-100">
             <h2 id="riwayat-transaksi-title" class="text-base font-extrabold text-slate-900">Riwayat Pemesanan Layanan</h2>
-            <p class="text-xs text-slate-500 mt-0.5">Pesanan dari transaksi ini ({{ $checkout->orders->count() }} layanan)</p>
+            <p class="text-xs text-slate-700 mt-0.5">Pesanan dari transaksi ini ({{ $checkout->orders->count() }} layanan)</p>
         </div>
 
         <ul class="divide-y divide-slate-100">
@@ -80,7 +80,7 @@
                                 <p class="text-sm font-bold text-slate-900 group-hover:text-primary-700">{{ $order->service?->name ?? 'Layanan' }}</p>
                                 <x-badge :status="$order->status" size="sm" />
                             </div>
-                            <p class="text-[11px] text-slate-500 mt-0.5">
+                            <p class="text-[11px] text-slate-700 mt-0.5">
                                 <span class="font-mono font-semibold">{{ $order->order_code }}</span> · {{ $order->item_type }} · {{ $order->machine_qty }} mesin
                             </p>
                             @if ($order->orderProcesses->isNotEmpty())
@@ -89,7 +89,7 @@
                                         <span @class([
                                             'inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-bold',
                                             'bg-emerald-100 text-emerald-700' => $process->status === 'selesai',
-                                            'bg-slate-100 text-slate-500' => $process->status !== 'selesai',
+                                            'bg-slate-100 text-slate-700' => $process->status !== 'selesai',
                                         ])>
                                             @if ($process->status === 'selesai') <x-icon name="check" class="w-3 h-3" /> @endif
                                             {{ $stepLabels[$process->process] ?? ucfirst($process->process) }}
@@ -110,7 +110,7 @@
 
         @if ($recentOrders->isNotEmpty())
             <div class="px-5 sm:px-6 pt-5 pb-2 border-t border-slate-200">
-                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500">Pesanan Anda Sebelumnya</h3>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700">Pesanan Anda Sebelumnya</h3>
             </div>
             <ul class="divide-y divide-slate-100">
                 @foreach ($recentOrders as $order)
@@ -119,7 +119,7 @@
                         <a href="{{ route('pelanggan.orders.show', $order) }}" class="flex items-center gap-3 px-5 sm:px-6 py-3 group hover:bg-slate-50/70 transition-colors">
                             <div class="flex-1 min-w-0">
                                 <p class="text-sm font-semibold text-slate-800 truncate group-hover:text-primary-700">{{ $order->service?->name ?? 'Layanan' }}</p>
-                                <p class="text-[11px] text-slate-500"><span class="font-mono">{{ $order->order_code }}</span> · {{ $order->created_at->format('d M Y') }}</p>
+                                <p class="text-[11px] text-slate-700"><span class="font-mono">{{ $order->order_code }}</span> · {{ $order->created_at->format('d M Y') }}</p>
                             </div>
                             <x-badge :status="$order->status" size="sm" />
                             <x-badge :payment="$payStatus" size="sm" />

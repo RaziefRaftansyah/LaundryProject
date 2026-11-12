@@ -14,7 +14,7 @@
             <button
                 type="button"
                 x-on:click="sidebarOpen = true"
-                class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-500 cursor-pointer"
+                class="lg:hidden p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-500 cursor-pointer"
                 aria-label="Buka menu navigasi"
             >
                 <x-icon name="menu" class="w-6 h-6" />
@@ -60,7 +60,7 @@
                 >
                     <div class="px-4 py-2 border-b border-slate-100">
                         <p class="font-semibold text-slate-900 truncate">{{ $user->name ?? 'User' }}</p>
-                        <p class="text-[11px] text-slate-500 truncate">{{ $user->email ?? '' }}</p>
+                        <p class="text-[11px] text-slate-700 truncate">{{ $user->email ?? '' }}</p>
                     </div>
 
                     <a href="{{ route('profile.edit') }}" class="flex items-center gap-2.5 px-4 py-2 text-slate-700 hover:bg-slate-50 hover:text-primary-600">

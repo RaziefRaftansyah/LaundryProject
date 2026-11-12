@@ -29,13 +29,13 @@
     <div>
         <span class="inline-flex px-3 py-1 rounded-full bg-primary-50 text-primary-700 text-xs font-bold uppercase tracking-wider border border-primary-200">Tentang Kami</span>
         <h1 class="mt-3 text-3xl font-extrabold text-slate-900 tracking-tight">Aturan Penggunaan</h1>
-        <p class="mt-2 text-sm text-slate-600">Ketentuan penggunaan layanan dan website {{ config('laundry.store_name', 'Laundry Coin') }}.</p>
+        <p class="mt-2 text-sm text-slate-700">Ketentuan penggunaan layanan dan website {{ config('laundry.store_name', 'Laundry Coin') }}.</p>
     </div>
 
     @foreach ($rules as $title => $items)
         <div class="bg-white rounded-2xl border border-slate-200 p-6">
             <h2 class="text-base font-bold text-slate-900 mb-3">{{ $loop->iteration }}. {{ $title }}</h2>
-            <ul class="list-disc list-inside space-y-1.5 text-sm text-slate-600 leading-relaxed">
+            <ul class="list-disc list-inside space-y-1.5 text-sm text-slate-700 leading-relaxed">
                 @foreach ($items as $item)
                     <li>{{ $item }}</li>
                 @endforeach

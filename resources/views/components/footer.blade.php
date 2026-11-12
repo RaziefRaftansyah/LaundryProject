@@ -144,7 +144,7 @@
         </div>
 
         <!-- Bottom Copyright -->
-        <div class="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div class="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
             <p>&copy; {{ date('Y') }} {{ $storeName }}. Seluruh Hak Cipta Dilindungi.</p>
             <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
                 <a href="{{ route('tentang') }}" class="hover:text-slate-300 transition-colors">Tentang Kami</a>

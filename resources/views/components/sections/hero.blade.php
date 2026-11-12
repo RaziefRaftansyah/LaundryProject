@@ -61,7 +61,7 @@
         >
             {{-- Tampil selama peta dimuat, atau jika iframe gagal dirender --}}
             <div class="absolute inset-0 flex items-center justify-center p-6 text-center">
-                <p class="max-w-xs text-sm leading-relaxed text-slate-600">
+                <p class="max-w-xs text-sm leading-relaxed text-slate-700">
                     Memuat peta lokasi outlet.
                     <a
                         href="{{ $mapsUrl }}"
@@ -89,7 +89,7 @@
             {{-- Kartu lokasi: mengambang di sudut peta agar atribusi dan kontrol Google tetap terlihat --}}
             <div class="pointer-events-none absolute right-3 top-3 z-20 sm:right-4 sm:top-4">
                 <div class="pointer-events-auto rounded-xl border border-slate-200 bg-white p-3 shadow-lg sm:p-4">
-                    <p class="text-[11px] font-semibold text-slate-500">Lokasi outlet</p>
+                    <p class="text-[11px] font-semibold text-slate-700">Lokasi outlet</p>
                     <p class="mt-0.5 font-display text-sm font-bold text-slate-900 sm:text-base">{{ $storeName }}, {{ $city }}</p>
 
                     <button

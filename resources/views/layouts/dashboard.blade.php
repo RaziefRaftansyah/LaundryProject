@@ -18,9 +18,6 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23DC2626'><rect x='3' y='2' width='18' height='20' rx='3'/><circle cx='12' cy='14' r='5' fill='white'/></svg>">
 
-    <!-- Chart.js via CDN for responsive dashboard charts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
@@ -59,7 +56,7 @@
             </main>
 
             <!-- Dashboard Mini Footer -->
-            <footer class="px-4 sm:px-6 lg:px-8 py-4 border-t border-slate-200/80 bg-white text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <footer class="px-4 sm:px-6 lg:px-8 py-4 border-t border-slate-200/80 bg-white text-xs text-slate-700 flex flex-col sm:flex-row items-center justify-between gap-2">
                 <span>&copy; {{ date('Y') }} Laundry Coin - Solusi Laundromat Modern</span>
                 <span class="text-slate-400">Versi 2.0 (Blade MVC)</span>
             </footer>

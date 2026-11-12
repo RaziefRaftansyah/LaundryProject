@@ -39,13 +39,13 @@
         <div class="flex items-center justify-between gap-3">
             <div>
                 <p class="text-sm font-extrabold text-slate-900">Berubah pikiran?</p>
-                <p class="text-[11px] text-slate-600">Pesanan bisa dibatalkan sebelum cucian diterima outlet.</p>
+                <p class="text-[11px] text-slate-700">Pesanan bisa dibatalkan sebelum cucian diterima outlet.</p>
             </div>
             <span class="font-mono text-sm font-extrabold tabular-nums" :class="remaining === 0 ? 'text-slate-400' : 'text-rose-600'" x-text="remaining === 0 ? 'Habis' : label">--:--</span>
         </div>
 
         <button type="button" x-show="! open && remaining !== 0" x-on:click="open = true" class="w-full py-2.5 rounded-xl border border-rose-200 text-rose-600 hover:bg-rose-50 text-xs font-bold">Batalkan Pesanan</button>
-        <p x-show="remaining === 0" x-cloak class="text-[11px] text-slate-500">Batas waktu pembatalan sudah lewat.</p>
+        <p x-show="remaining === 0" x-cloak class="text-[11px] text-slate-700">Batas waktu pembatalan sudah lewat.</p>
 
         <form
             x-show="open && remaining !== 0" x-cloak
@@ -55,7 +55,7 @@
         >
             @csrf
             @if ($cancellation['method'] === Refund::METHOD_MANUAL)
-                <p class="text-[11px] text-slate-600">Pembayaran Anda (transfer/VA) direfund lewat transfer oleh admin. Isi rekening tujuan:</p>
+                <p class="text-[11px] text-slate-700">Pembayaran Anda (transfer/VA) direfund lewat transfer oleh admin. Isi rekening tujuan:</p>
                 @foreach (['bank_name' => 'Nama bank', 'account_number' => 'Nomor rekening', 'account_holder' => 'Nama pemilik rekening'] as $field => $label)
                     <label class="block text-xs"><span class="font-bold text-slate-700">{{ $label }}</span>
                         <input type="text" name="{{ $field }}" value="{{ old($field) }}" required @if ($field === 'account_number') inputmode="numeric" @endif class="mt-1 w-full rounded-xl border-slate-200 text-sm" />
@@ -63,7 +63,7 @@
                     </label>
                 @endforeach
             @else
-                <p class="text-[11px] text-slate-600">Dana dikembalikan otomatis ke metode pembayaran Anda lewat Midtrans.</p>
+                <p class="text-[11px] text-slate-700">Dana dikembalikan otomatis ke metode pembayaran Anda lewat Midtrans.</p>
             @endif
             <label class="block text-xs"><span class="font-bold text-slate-700">Alasan (opsional)</span>
                 <input type="text" name="reason" value="{{ old('reason') }}" maxlength="500" class="mt-1 w-full rounded-xl border-slate-200 text-sm" /></label>

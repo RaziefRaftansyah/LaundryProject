@@ -112,7 +112,7 @@
         <x-slot:action>
             <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-info-50 text-info-700 border border-info-200">
                 <span class="w-2 h-2 rounded-full bg-info-500 animate-pulse"></span>
-                <span>Chart.js Realtime Feed</span>
+                <span>Data 6 bulan terakhir</span>
             </span>
         </x-slot:action>
 
@@ -139,7 +139,7 @@
                         <td class="px-5 py-4 font-mono font-bold text-slate-900 text-xs">
                             {{ $order->order_code }}
                         </td>
-                        <td class="px-5 py-4 text-xs text-slate-500">
+                        <td class="px-5 py-4 text-xs text-slate-700">
                             {{ $order->created_at->format('d M, H:i') }}
                         </td>
                         <td class="px-5 py-4 text-xs font-semibold text-slate-800">
@@ -148,7 +148,7 @@
                         <td class="px-5 py-4 text-xs text-slate-700">
                             {{ $order->service?->name ?? 'Layanan' }}
                             @if (($order->service?->unit ?? 'Mesin') === 'Mesin')
-                                <span class="text-[11px] text-slate-500">({{ $order->machine_qty }} × mesin)</span>
+                                <span class="text-[11px] text-slate-700">({{ $order->machine_qty }} × mesin)</span>
                             @endif
                         </td>
                         <td class="px-5 py-4 text-xs font-extrabold text-slate-900">
@@ -188,7 +188,8 @@
         const labels = chartData.map(item => item.label);
         const dataValues = chartData.map(item => item.value);
 
-        new Chart(canvas, {
+        window.loadChartLib().then((Chart) => {
+            new Chart(canvas, {
             type: 'bar',
             data: {
                 labels: labels,
@@ -244,6 +245,7 @@
                     }
                 }
             }
+        });
         });
     };
 
