@@ -79,7 +79,7 @@
                         <td class="px-5 py-3 text-xs">{{ $shift->counted_cash !== null ? L::rupiah($shift->counted_cash) : '-' }}</td>
                         <td class="px-5 py-3 text-xs font-bold {{ ($shift->difference ?? 0) === 0 ? 'text-slate-700' : 'text-rose-600' }}">{{ $shift->difference !== null ? ($shift->difference < 0 ? '-' : '') . L::rupiah(abs($shift->difference)) : '-' }}</td>
                         <td class="px-5 py-3"><x-badge :variant="['open' => 'primary', 'closed' => 'warning', 'verified' => 'success'][$shift->status]" size="sm">{{ CashShift::STATUS_LABELS[$shift->status] }}</x-badge></td>
-                        <td class="px-5 py-3 text-right"><a href="{{ route('panel.shift.show', $shift) }}" class="text-xs font-bold text-sky-600">Detail</a></td>
+                        <td class="px-5 py-3 text-right"><a href="{{ route('panel.shift.show', $shift) }}" class="text-xs font-bold text-primary-600">Detail</a></td>
                     </tr>
                 @endforeach
             </x-table>

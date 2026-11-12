@@ -27,9 +27,9 @@
     </div>
 
     {{-- Kembali dari Snap: hanya menampilkan & memantau, tidak mengubah status apa pun --}}
-    <div x-show="verifying" x-cloak class="rounded-xl bg-sky-50 border border-sky-200 p-4 text-xs text-sky-900">
+    <div x-show="verifying" x-cloak class="rounded-xl bg-info-50 border border-info-200 p-4 text-xs text-info-900">
         <p class="font-bold flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
+            <span class="w-2 h-2 rounded-full bg-info-500 animate-pulse"></span>
             Kami sedang memverifikasi pembayaran Anda.
         </p>
         <p class="mt-1">Halaman ini diperbarui otomatis setelah Midtrans mengonfirmasi. Jika Anda memilih transfer/VA, selesaikan transfer sesuai instruksi.</p>
@@ -46,7 +46,7 @@
             type="button"
             x-on:click="pay()"
             :disabled="loading"
-            class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-sky-600 hover:bg-sky-700 text-white text-sm font-bold shadow-sm disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+            class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-primary-600 hover:bg-primary-700 text-white text-sm font-bold shadow-sm disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
         >
             <svg x-show="loading" x-cloak class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>

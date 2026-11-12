@@ -11,7 +11,7 @@
             </button>
         @endcan
         @can('pelanggan.create')
-            <button type="button" x-data x-on:click="$dispatch('open-modal', 'tambah-pelanggan')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs shadow-xs">
+            <button type="button" x-data x-on:click="$dispatch('open-modal', 'tambah-pelanggan')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-bold text-xs shadow-xs">
                 <x-icon name="plus" class="w-4 h-4" />
                 <span>Tambah Pelanggan</span>
             </button>
@@ -20,8 +20,8 @@
 
     <x-card padding="p-4">
         <form method="GET" action="{{ route('panel.pelanggan.index') }}" class="grid grid-cols-1 sm:grid-cols-12 gap-3">
-            <input type="search" name="search" value="{{ $search }}" placeholder="Cari nama, nomor HP, atau email…" class="sm:col-span-7 rounded-xl border-slate-200 text-sm focus:border-sky-500 focus:ring-sky-500" />
-            <select name="status" class="sm:col-span-3 rounded-xl border-slate-200 text-sm focus:border-sky-500 focus:ring-sky-500">
+            <input type="search" name="search" value="{{ $search }}" placeholder="Cari nama, nomor HP, atau email…" class="sm:col-span-7 rounded-xl border-slate-200 text-sm focus:border-primary-500 focus:ring-primary-500" />
+            <select name="status" class="sm:col-span-3 rounded-xl border-slate-200 text-sm focus:border-primary-500 focus:ring-primary-500">
                 @foreach (['aktif' => 'Aktif', 'nonaktif' => 'Nonaktif', 'semua' => 'Semua status'] as $value => $label)
                     <option value="{{ $value }}" @selected($status === $value)>{{ $label }}</option>
                 @endforeach
@@ -54,7 +54,7 @@
                         <x-badge :variant="$customer->is_active ? 'success' : 'danger'" size="sm">{{ $customer->is_active ? 'Aktif' : ($customer->merged_into_id ? 'Digabung' : 'Nonaktif') }}</x-badge>
                     </td>
                     <td class="px-5 py-3 text-right">
-                        <a href="{{ route('panel.pelanggan.show', $customer) }}" class="text-xs font-bold text-sky-600 hover:text-sky-700">Detail</a>
+                        <a href="{{ route('panel.pelanggan.show', $customer) }}" class="text-xs font-bold text-primary-600 hover:text-primary-700">Detail</a>
                     </td>
                 </tr>
             @endforeach
@@ -72,7 +72,7 @@
             <x-panel.field label="Nomor HP" name="phone" type="tel" required hint="Disimpan dalam format +62 dan harus unik." placeholder="0812xxxxxxxx" />
             <label class="block text-xs">
                 <span class="font-bold text-slate-700">Catatan</span>
-                <textarea name="notes" rows="2" maxlength="500" class="mt-1 w-full rounded-xl border-slate-200 text-sm focus:border-sky-500 focus:ring-sky-500">{{ old('notes') }}</textarea>
+                <textarea name="notes" rows="2" maxlength="500" class="mt-1 w-full rounded-xl border-slate-200 text-sm focus:border-primary-500 focus:ring-primary-500">{{ old('notes') }}</textarea>
             </label>
             <div class="flex justify-end gap-2">
                 <button type="button" x-on:click="$dispatch('close-modal', 'tambah-pelanggan')" class="px-4 py-2.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-600">Batal</button>

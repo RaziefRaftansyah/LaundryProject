@@ -1,6 +1,6 @@
 {{-- Timeline dari order_status_logs (lihat App\Support\TransactionTimeline). Variabel: $timeline --}}
 @php
-    $dots = ['success' => 'bg-emerald-500', 'danger' => 'bg-rose-500', 'info' => 'bg-sky-500'];
+    $dots = ['success' => 'bg-emerald-500', 'danger' => 'bg-rose-500', 'info' => 'bg-info-500'];
     $timezone = config('laundry.report_timezone', 'Asia/Jakarta');
 @endphp
 

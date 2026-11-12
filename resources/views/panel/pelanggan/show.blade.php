@@ -9,7 +9,7 @@
 @endphp
 <div class="space-y-6">
     <div>
-        <a href="{{ route('panel.pelanggan.index') }}" class="text-xs font-bold text-sky-600 hover:text-sky-700">&larr; Data Pelanggan</a>
+        <a href="{{ route('panel.pelanggan.index') }}" class="text-xs font-bold text-primary-600 hover:text-primary-700">&larr; Data Pelanggan</a>
     </div>
 
     <x-panel.header :title="$customer->name" :subtitle="'ID #' . $customer->id . ' · ' . ($customer->isWalkIn() ? 'Pelanggan outlet (tanpa akun website)' : 'Akun website ' . $customer->email)">

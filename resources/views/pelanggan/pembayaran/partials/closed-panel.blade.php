@@ -18,7 +18,7 @@
 
     <form action="{{ route('pelanggan.pembayaran.reorder', $checkout) }}" method="POST" x-data="{ sending: false }" x-on:submit="if (sending) { $event.preventDefault(); return; } sending = true">
         @csrf
-        <button type="submit" :disabled="sending" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-sky-600 hover:bg-sky-700 text-white text-sm font-bold shadow-sm disabled:opacity-60">
+        <button type="submit" :disabled="sending" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-primary-600 hover:bg-primary-700 text-white text-sm font-bold shadow-sm disabled:opacity-60">
             Pesan Lagi
         </button>
     </form>

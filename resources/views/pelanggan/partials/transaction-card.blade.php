@@ -58,13 +58,13 @@
     @if ($isCheckout && in_array($card->status, \App\Models\Checkout::CLOSED_UNPAID, true))
         <form action="{{ route('pelanggan.pembayaran.reorder', $card) }}" method="POST" x-data="{ sending: false }" x-on:submit="if (sending) { $event.preventDefault(); return; } sending = true">
             @csrf
-            <button type="submit" :disabled="sending" class="w-full px-3 py-2 rounded-xl bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold disabled:opacity-60">
+            <button type="submit" :disabled="sending" class="w-full px-3 py-2 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-bold disabled:opacity-60">
                 Pesan Lagi
             </button>
         </form>
     @endif
 
-    <a href="{{ $detailUrl }}" class="flex items-center justify-center gap-1 text-xs font-bold text-sky-600 hover:text-sky-700">
+    <a href="{{ $detailUrl }}" class="flex items-center justify-center gap-1 text-xs font-bold text-primary-600 hover:text-primary-700">
         <span>Lihat Detail / Nota</span>
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

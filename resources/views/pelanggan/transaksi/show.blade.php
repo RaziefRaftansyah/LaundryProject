@@ -13,7 +13,7 @@
     @if (in_array($checkout->status, \App\Models\Checkout::CLOSED_UNPAID, true))
         <form action="{{ route('pelanggan.pembayaran.reorder', $checkout) }}" method="POST" x-data="{ sending: false }" x-on:submit="if (sending) { $event.preventDefault(); return; } sending = true">
             @csrf
-            <button type="submit" :disabled="sending" class="w-full py-3 rounded-2xl bg-sky-600 hover:bg-sky-700 text-white text-sm font-bold disabled:opacity-60 transition-colors">
+            <button type="submit" :disabled="sending" class="w-full py-3 rounded-2xl bg-primary-600 hover:bg-primary-700 text-white text-sm font-bold disabled:opacity-60 transition-colors">
                 Pesan Lagi
             </button>
         </form>

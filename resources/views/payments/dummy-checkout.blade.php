@@ -24,8 +24,8 @@
     </div>
 
     <div class="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
-        <div class="px-6 py-5 bg-gradient-to-r from-sky-900 to-slate-900 text-white">
-            <p class="text-xs text-sky-200">Total Tagihan</p>
+        <div class="px-6 py-5 bg-gradient-to-r from-primary-900 to-slate-900 text-white">
+            <p class="text-xs text-primary-200">Total Tagihan</p>
             <p class="text-3xl font-extrabold">Rp {{ number_format($payment->amount, 0, ',', '.') }}</p>
         </div>
 
@@ -76,7 +76,7 @@
                     </div>
 
                     <label class="mt-3 flex items-start gap-2 text-[11px] text-slate-600 cursor-pointer">
-                        <input type="checkbox" name="duplicate" value="1" class="mt-0.5 rounded border-slate-300 text-sky-600 focus:ring-sky-500" />
+                        <input type="checkbox" name="duplicate" value="1" class="mt-0.5 rounded border-slate-300 text-primary-600 focus:ring-primary-500" />
                         <span>Kirim notifikasi webhook 2x (simulasi gateway retry). Sistem harus tetap memprosesnya hanya 1x.</span>
                     </label>
                 </form>
@@ -84,7 +84,7 @@
                 <p class="text-xs text-slate-600">Tagihan ini sudah tidak bisa dibayar (status: <strong>{{ $status }}</strong>).</p>
             @endif
 
-            <a href="{{ $backUrl }}" class="mt-4 inline-flex text-xs font-bold text-sky-700 hover:underline">
+            <a href="{{ $backUrl }}" class="mt-4 inline-flex text-xs font-bold text-primary-700 hover:underline">
                 {{ $checkout ? 'Kembali ke halaman pembayaran' : 'Kembali ke detail pesanan' }}
             </a>
         </div>

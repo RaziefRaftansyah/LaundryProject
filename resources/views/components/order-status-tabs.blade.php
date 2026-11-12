@@ -19,7 +19,7 @@
         <a
             href="{{ $url }}"
             @if ($isActive) aria-current="page" @endif
-            class="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold border transition-colors {{ $isActive ? 'bg-sky-600 border-sky-600 text-white' : 'bg-white border-slate-200 text-slate-600 hover:border-sky-300 hover:text-sky-700' }}"
+            class="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold border transition-colors {{ $isActive ? 'bg-primary-600 border-primary-600 text-white' : 'bg-white border-slate-200 text-slate-600 hover:border-primary-300 hover:text-primary-700' }}"
         >
             <span>{{ $label }}</span>
             @isset($counts[$key])

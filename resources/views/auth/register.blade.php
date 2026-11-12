@@ -8,7 +8,7 @@
         
         <!-- Header Brand -->
         <div class="text-center mb-8">
-            <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-sky-600 text-white shadow-md mb-3">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-primary-600 text-white shadow-md mb-3">
                 <x-icon name="washer" class="w-7 h-7" />
             </div>
             <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
@@ -89,7 +89,7 @@
             <!-- Bottom Login Link -->
             <div class="mt-6 pt-5 border-t border-slate-100 text-center text-xs text-slate-600">
                 Sudah memiliki akun?
-                <a href="{{ route('login') }}" class="text-sky-600 hover:text-sky-700 font-bold hover:underline ml-1">
+                <a href="{{ route('login') }}" class="text-primary-600 hover:text-primary-700 font-bold hover:underline ml-1">
                     Masuk di sini
                 </a>
             </div>

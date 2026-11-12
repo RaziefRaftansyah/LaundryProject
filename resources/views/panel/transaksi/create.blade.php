@@ -20,7 +20,7 @@
         cash: @js(old('cash_received')),
      })">
     <div>
-        <a href="{{ route('panel.transaksi.index') }}" class="text-xs font-bold text-sky-600 hover:text-sky-700">&larr; Transaksi</a>
+        <a href="{{ route('panel.transaksi.index') }}" class="text-xs font-bold text-primary-600 hover:text-primary-700">&larr; Transaksi</a>
     </div>
     <x-panel.header title="Transaksi Outlet Baru" subtitle="Harga dihitung server dari tarif layanan. Transaksi tunai bayar sekarang wajib punya shift kas yang buka." />
 
@@ -32,8 +32,8 @@
         {{-- 1. Pelanggan --}}
         <x-card title="1. Pelanggan">
             <div class="flex gap-2 mb-4" role="tablist">
-                <button type="button" x-on:click="mode = 'existing'" :class="mode === 'existing' ? 'bg-sky-600 text-white' : 'bg-white border border-slate-200 text-slate-600'" class="px-3 py-1.5 rounded-full text-xs font-bold">Pilih pelanggan</button>
-                <button type="button" x-on:click="mode = 'new'; customerId = null" :class="mode === 'new' ? 'bg-sky-600 text-white' : 'bg-white border border-slate-200 text-slate-600'" class="px-3 py-1.5 rounded-full text-xs font-bold">Tambah cepat</button>
+                <button type="button" x-on:click="mode = 'existing'" :class="mode === 'existing' ? 'bg-primary-600 text-white' : 'bg-white border border-slate-200 text-slate-600'" class="px-3 py-1.5 rounded-full text-xs font-bold">Pilih pelanggan</button>
+                <button type="button" x-on:click="mode = 'new'; customerId = null" :class="mode === 'new' ? 'bg-primary-600 text-white' : 'bg-white border border-slate-200 text-slate-600'" class="px-3 py-1.5 rounded-full text-xs font-bold">Tambah cepat</button>
             </div>
 
             <div x-show="mode === 'existing'" class="space-y-2">
@@ -43,7 +43,7 @@
                 <p x-show="loading" class="text-[11px] text-slate-500">Mencari…</p>
                 <ul x-show="results.length" class="border border-slate-200 rounded-xl divide-y divide-slate-100 max-h-56 overflow-y-auto">
                     <template x-for="c in results" :key="c.id">
-                        <li><button type="button" x-on:click="pick(c)" class="w-full text-left px-3 py-2 text-xs hover:bg-sky-50"><span class="font-bold" x-text="c.name"></span> <span class="text-slate-500" x-text="c.phone"></span></button></li>
+                        <li><button type="button" x-on:click="pick(c)" class="w-full text-left px-3 py-2 text-xs hover:bg-primary-50"><span class="font-bold" x-text="c.name"></span> <span class="text-slate-500" x-text="c.phone"></span></button></li>
                     </template>
                 </ul>
                 <p x-show="customerId" class="text-xs text-emerald-700 font-bold">Dipilih: <span x-text="customerLabel"></span></p>
@@ -80,7 +80,7 @@
                             </div>
                         </div>
                     </template>
-                    <button type="button" x-on:click="items.push({ service_id: '', qty: 1, notes: '' })" x-show="items.length < {{ config('laundry.cart_max_lines', 10) }}" class="text-xs font-bold text-sky-600">+ Tambah layanan</button>
+                    <button type="button" x-on:click="items.push({ service_id: '', qty: 1, notes: '' })" x-show="items.length < {{ config('laundry.cart_max_lines', 10) }}" class="text-xs font-bold text-primary-600">+ Tambah layanan</button>
                     <div class="flex justify-between border-t border-slate-100 pt-3 text-sm">
                         <span class="text-slate-500">Perkiraan total <span class="text-[11px]">(final dihitung server)</span></span>
                         <span class="font-extrabold text-slate-900" x-text="rupiah(total())"></span>

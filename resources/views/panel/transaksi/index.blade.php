@@ -17,7 +17,7 @@
 <div class="space-y-6">
     <x-panel.header title="Transaksi" subtitle="Outlet: dibuat di kasir. Aplikasi: dari website, hanya yang sudah lunas.">
         @can('transaksi.outlet.create')
-            <a href="{{ route('panel.transaksi.create') }}" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs shadow-xs">
+            <a href="{{ route('panel.transaksi.create') }}" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-bold text-xs shadow-xs">
                 <x-icon name="plus" class="w-4 h-4" />
                 <span>Transaksi Outlet Baru</span>
             </a>
@@ -30,7 +30,7 @@
             @continue($key === D::TAB_APP && ! auth()->user()->can('transaksi.online.view'))
             <a href="{{ route('panel.transaksi.index', ['tab' => $key]) }}"
                @if ($tab === $key && ! $audit) aria-current="page" @endif
-               class="px-4 py-2.5 -mb-px border-b-2 text-sm font-bold {{ $tab === $key && ! $audit ? 'border-sky-600 text-sky-700' : 'border-transparent text-slate-500 hover:text-slate-800' }}">{{ $label }}</a>
+               class="px-4 py-2.5 -mb-px border-b-2 text-sm font-bold {{ $tab === $key && ! $audit ? 'border-primary-600 text-primary-700' : 'border-transparent text-slate-500 hover:text-slate-800' }}">{{ $label }}</a>
         @endforeach
         @can('transaksi.audit_pembayaran.view')
             <a href="{{ route('panel.transaksi.index', ['tab' => D::TAB_APP, 'audit' => 1]) }}"
@@ -92,7 +92,7 @@
                     <td class="px-5 py-3 text-xs font-bold whitespace-nowrap">{{ L::rupiah($trx->total_amount) }}</td>
                     <td class="px-5 py-3 text-xs">{{ L::method($trx) }}</td>
                     <td class="px-5 py-3"><x-badge :variant="$variant" size="sm">{{ $label }}</x-badge></td>
-                    <td class="px-5 py-3 text-right"><a href="{{ route('panel.transaksi.show', $trx) }}" class="text-xs font-bold text-sky-600 hover:text-sky-700">Detail</a></td>
+                    <td class="px-5 py-3 text-right"><a href="{{ route('panel.transaksi.show', $trx) }}" class="text-xs font-bold text-primary-600 hover:text-primary-700">Detail</a></td>
                 </tr>
             @endforeach
         </x-table>

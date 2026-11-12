@@ -17,7 +17,7 @@
 @endphp
 <div class="space-y-6">
     <div>
-        <a href="{{ route('panel.transaksi.index', ['tab' => $checkout->isOutlet() ? 'outlet' : 'aplikasi']) }}" class="text-xs font-bold text-sky-600 hover:text-sky-700">&larr; Transaksi {{ $checkout->isOutlet() ? 'Outlet' : 'Aplikasi' }}</a>
+        <a href="{{ route('panel.transaksi.index', ['tab' => $checkout->isOutlet() ? 'outlet' : 'aplikasi']) }}" class="text-xs font-bold text-primary-600 hover:text-primary-700">&larr; Transaksi {{ $checkout->isOutlet() ? 'Outlet' : 'Aplikasi' }}</a>
     </div>
 
     <x-panel.header :title="$checkout->code" :subtitle="($checkout->isOutlet() ? 'Transaksi outlet' : 'Transaksi aplikasi') . ' · ' . $checkout->created_at->timezone($tz)->format('d/m/Y H:i') . ' WIB'">

@@ -15,13 +15,13 @@
     </legend>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
         @foreach ($methods as $key => $method)
-            <label for="{{ $idPrefix }}-{{ $key }}" class="flex items-start gap-2.5 rounded-xl border border-slate-300 p-3 cursor-pointer hover:border-sky-400 has-[:checked]:border-sky-500 has-[:checked]:bg-sky-50/70 transition-colors">
+            <label for="{{ $idPrefix }}-{{ $key }}" class="flex items-start gap-2.5 rounded-xl border border-slate-300 p-3 cursor-pointer hover:border-primary-400 has-[:checked]:border-primary-500 has-[:checked]:bg-primary-50/70 transition-colors">
                 <input
                     id="{{ $idPrefix }}-{{ $key }}"
                     type="radio"
                     name="{{ $name }}"
                     value="{{ $key }}"
-                    class="mt-0.5 text-sky-600 focus:ring-sky-500"
+                    class="mt-0.5 text-primary-600 focus:ring-primary-500"
                     required
                     @checked($selected === $key)
                 />

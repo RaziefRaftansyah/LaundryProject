@@ -27,7 +27,7 @@
 
 <section class="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-6">
     <div>
-        <span class="inline-flex px-3 py-1 rounded-full bg-sky-50 text-sky-700 text-xs font-bold uppercase tracking-wider border border-sky-200">Tentang Kami</span>
+        <span class="inline-flex px-3 py-1 rounded-full bg-primary-50 text-primary-700 text-xs font-bold uppercase tracking-wider border border-primary-200">Tentang Kami</span>
         <h1 class="mt-3 text-3xl font-extrabold text-slate-900 tracking-tight">Aturan Penggunaan</h1>
         <p class="mt-2 text-sm text-slate-600">Ketentuan penggunaan layanan dan website {{ config('laundry.store_name', 'Laundry Coin') }}.</p>
     </div>

@@ -18,16 +18,16 @@
             @if ($order->checkout)
                 {{-- Order dari keranjang dibayar sekaligus per transaksi, bukan per order --}}
                 <div class="space-y-3">
-                    <div class="flex items-start gap-3 p-4 rounded-xl bg-sky-50/70 border border-sky-200 text-xs">
-                        <x-icon name="info" class="w-5 h-5 text-sky-600 shrink-0" />
+                    <div class="flex items-start gap-3 p-4 rounded-xl bg-info-50/70 border border-info-200 text-xs">
+                        <x-icon name="info" class="w-5 h-5 text-info-600 shrink-0" />
                         <div>
-                            <p class="font-bold text-sky-900">Bagian dari transaksi <span class="font-mono">{{ $order->checkout->code }}</span></p>
-                            <p class="text-sky-800/90 mt-0.5">Pesanan ini dibayar bersama {{ $order->checkout->orders()->count() }} pesanan dalam transaksi yang sama, total Rp {{ number_format($order->checkout->total_amount, 0, ',', '.') }}.</p>
+                            <p class="font-bold text-info-900">Bagian dari transaksi <span class="font-mono">{{ $order->checkout->code }}</span></p>
+                            <p class="text-info-800/90 mt-0.5">Pesanan ini dibayar bersama {{ $order->checkout->orders()->count() }} pesanan dalam transaksi yang sama, total Rp {{ number_format($order->checkout->total_amount, 0, ',', '.') }}.</p>
                         </div>
                     </div>
                     <a
                         href="{{ route('pelanggan.pembayaran.show', $order->checkout) }}"
-                        class="inline-flex items-center justify-center gap-2 w-full px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-sm shadow-xs transition-colors"
+                        class="inline-flex items-center justify-center gap-2 w-full px-5 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-bold text-sm shadow-xs transition-colors"
                     >
                         Bayar di Halaman Transaksi
                     </a>
@@ -48,7 +48,7 @@
                     </div>
                     <a
                         href="{{ $payment->checkout_url }}"
-                        class="inline-flex items-center justify-center gap-2 w-full px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-sm shadow-xs transition-colors"
+                        class="inline-flex items-center justify-center gap-2 w-full px-5 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-bold text-sm shadow-xs transition-colors"
                     >
                         Bayar Sekarang
                     </a>
@@ -75,7 +75,7 @@
 
                     <button
                         type="submit"
-                        class="inline-flex items-center justify-center gap-2 w-full px-5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-sm shadow-xs transition-colors"
+                        class="inline-flex items-center justify-center gap-2 w-full px-5 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-bold text-sm shadow-xs transition-colors"
                     >
                         {{ $failedAttempt ? 'Buat Tagihan Baru' : 'Bayar Sekarang' }}
                     </button>

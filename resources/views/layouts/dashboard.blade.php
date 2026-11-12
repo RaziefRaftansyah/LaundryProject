@@ -16,7 +16,7 @@
     <link href="https://fonts.bunny.net/css?family=plus-jakarta-sans:500,600,700,800|dm-sans:400,500,600,700&display=swap" rel="stylesheet" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230284C7'><rect x='3' y='2' width='18' height='20' rx='3'/><circle cx='12' cy='14' r='5' fill='white'/></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23DC2626'><rect x='3' y='2' width='18' height='20' rx='3'/><circle cx='12' cy='14' r='5' fill='white'/></svg>">
 
     <!-- Chart.js via CDN for responsive dashboard charts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
@@ -26,7 +26,7 @@
 </head>
 <body
     x-data="{ sidebarOpen: false }"
-    class="h-full font-sans text-slate-800 antialiased bg-slate-50 selection:bg-sky-200 selection:text-sky-900"
+    class="h-full font-sans text-slate-800 antialiased bg-slate-50 selection:bg-primary-200 selection:text-primary-900"
 >
     <div class="min-h-screen flex flex-col">
         <!-- Sidebar Component -->

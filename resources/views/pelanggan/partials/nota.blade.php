@@ -47,7 +47,7 @@
 <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden" data-nota="{{ $code }}">
     {{-- Kepala nota --}}
     <div class="px-5 pt-5 pb-4 text-center border-b border-dashed border-slate-300">
-        <p class="text-base font-extrabold text-sky-700 tracking-tight">{{ config('laundry.store_name', 'Laundry Coin') }}</p>
+        <p class="text-base font-extrabold text-primary-700 tracking-tight">{{ config('laundry.store_name', 'Laundry Coin') }}</p>
         <p class="text-[11px] text-slate-500">{{ config('laundry.address') }}</p>
         <p class="mt-3 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">Nota Pesanan</p>
         <p class="font-mono text-lg font-extrabold text-slate-900 select-all">{{ $code }}</p>
@@ -135,7 +135,7 @@
         @if ($group === 'dibatalkan')
             <p class="text-[11px] text-rose-700 bg-rose-50 border border-rose-200 rounded-xl px-3 py-2">Transaksi ini sudah ditutup dan tidak berlaku sebagai bukti pesanan.</p>
         @else
-            <p class="text-[11px] text-sky-800 bg-sky-50 border border-sky-200 rounded-xl px-3 py-2">Tunjukkan nota ini ke petugas saat mengantar atau mengambil cucian di outlet.</p>
+            <p class="text-[11px] text-info-800 bg-info-50 border border-info-200 rounded-xl px-3 py-2">Tunjukkan nota ini ke petugas saat mengantar atau mengambil cucian di outlet.</p>
         @endif
     </div>
 </article>

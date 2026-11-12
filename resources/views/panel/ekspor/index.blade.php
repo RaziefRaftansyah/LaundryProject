@@ -27,7 +27,7 @@
                     </td>
                     <td class="px-5 py-3 text-right">
                         @if ($export->status === FinanceExport::STATUS_DONE)
-                            <a href="{{ route('panel.ekspor.download', $export) }}" class="text-xs font-bold text-sky-600">Unduh</a>
+                            <a href="{{ route('panel.ekspor.download', $export) }}" class="text-xs font-bold text-primary-600">Unduh</a>
                         @endif
                     </td>
                 </tr>

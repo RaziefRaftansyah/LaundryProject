@@ -1,3 +1,7 @@
+@php
+    // Bottom navigation hanya untuk pelanggan yang login dan hanya di layar mobile.
+    $showBottomNav = auth()->check() && auth()->user()->isPelanggan();
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 <head>
@@ -13,12 +17,12 @@
     <link href="https://fonts.bunny.net/css?family=plus-jakarta-sans:500,600,700,800|dm-sans:400,500,600,700&display=swap" rel="stylesheet" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230284C7'><rect x='3' y='2' width='18' height='20' rx='3'/><circle cx='12' cy='14' r='5' fill='white'/></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23DC2626'><rect x='3' y='2' width='18' height='20' rx='3'/><circle cx='12' cy='14' r='5' fill='white'/></svg>">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased font-sans min-h-screen flex flex-col selection:bg-sky-200 selection:text-sky-900">
+<body class="bg-slate-50 text-slate-800 antialiased font-sans min-h-screen flex flex-col selection:bg-primary-200 selection:text-primary-900 {{ $showBottomNav ? 'pb-24 md:pb-0' : '' }}">
     <!-- Public Navbar Component -->
     <x-navbar />
 
@@ -44,6 +48,12 @@
 
     <!-- Public Footer Component -->
     <x-footer />
+
+    @if ($showBottomNav)
+        <div class="md:hidden">
+            <x-bottom-nav />
+        </div>
+    @endif
 
     @stack('scripts')
 </body>

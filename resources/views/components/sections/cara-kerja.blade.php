@@ -19,14 +19,14 @@
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             <!-- Step 1: Pilih Layanan & Masukkan Pakaian -->
             <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col">
-                <div class="w-10 h-10 rounded-xl bg-sky-600 text-white font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
+                <div class="w-10 h-10 rounded-xl bg-primary-600 text-white font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
                     01
                 </div>
                 <h3 class="text-base font-bold text-slate-900 mb-3">Pilih Layanan & Masukkan Pakaian</h3>
 
                 <div class="space-y-3 text-xs text-slate-600 leading-relaxed">
-                    <div class="rounded-xl bg-sky-50/70 border border-sky-100 p-3">
-                        <p class="font-bold text-sky-800 mb-1">Pemesanan Online</p>
+                    <div class="rounded-xl bg-info-50/70 border border-info-100 p-3">
+                        <p class="font-bold text-info-800 mb-1">Pemesanan Online</p>
                         <p>Masuk ke akun Anda, pilih layanan Drop-Off di bagian Layanan lalu klik <strong>Pesan Sekarang</strong>. Tentukan jumlah paket, buat pesanan, lalu bawa pakaian Anda ke outlet dan serahkan ke petugas.</p>
                     </div>
                     <div class="rounded-xl bg-amber-50/70 border border-amber-100 p-3">
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="mt-auto pt-4">
-                    <div class="pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] font-semibold text-sky-700">
+                    <div class="pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] font-semibold text-primary-700">
                         <x-icon name="check" class="w-4 h-4 shrink-0" />
                         <span>Deterjen Otomatis Diberikan</span>
                     </div>
@@ -77,19 +77,19 @@
 
             <!-- Step 3: Menunggu Estimasi Penyelesaian -->
             <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col">
-                <div class="w-10 h-10 rounded-xl bg-sky-600 text-white font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
+                <div class="w-10 h-10 rounded-xl bg-primary-600 text-white font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
                     03
                 </div>
                 <h3 class="text-base font-bold text-slate-900 mb-3">Menunggu Estimasi Penyelesaian Laundry</h3>
 
                 <div class="space-y-3 text-xs text-slate-600 leading-relaxed">
                     <p>Setiap layanan memiliki <strong>estimasi waktu selesai</strong> yang tertera di kartu layanan dan di detail pesanan Anda.</p>
-                    <p>Untuk layanan Drop-Off, petugas mengerjakan pakaian Anda bertahap (<strong>cuci &rarr; kering &rarr; lipat</strong>) dan setiap tahap bisa dipantau lewat riwayat pesanan atau menu <a href="#lacak" class="font-semibold text-sky-700 hover:underline">Lacak Pesanan</a> dengan kode pesanan.</p>
+                    <p>Untuk layanan Drop-Off, petugas mengerjakan pakaian Anda bertahap (<strong>cuci &rarr; kering &rarr; lipat</strong>) dan setiap tahap bisa dipantau lewat riwayat pesanan atau menu <a href="#lacak" class="font-semibold text-primary-700 hover:underline">Lacak Pesanan</a> dengan kode pesanan.</p>
                     <p>Untuk Self Laundry, Anda bisa bersantai di waiting lounge sambil menunggu mesin selesai.</p>
                 </div>
 
                 <div class="mt-auto pt-4">
-                    <div class="pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] font-semibold text-sky-700">
+                    <div class="pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] font-semibold text-primary-700">
                         <x-icon name="check" class="w-4 h-4 shrink-0" />
                         <span>Free WiFi & AC Sejuk</span>
                     </div>

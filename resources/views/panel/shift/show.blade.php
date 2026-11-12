@@ -8,7 +8,7 @@
 @use('App\Support\TransactionLabels', 'L')
 @php $tz = \App\Support\BusinessCalendar::timezone(); @endphp
 <div class="space-y-6">
-    <div><a href="{{ route('panel.shift.index') }}" class="text-xs font-bold text-sky-600">&larr; Kas & Shift</a></div>
+    <div><a href="{{ route('panel.shift.index') }}" class="text-xs font-bold text-primary-600">&larr; Kas & Shift</a></div>
 
     <x-panel.header :title="'Shift #' . $shift->id . ' · ' . $shift->user?->name" :subtitle="'Buka ' . $shift->opened_at->timezone($tz)->format('d/m/Y H:i') . ($shift->closed_at ? ' · Tutup ' . $shift->closed_at->timezone($tz)->format('d/m/Y H:i') : '') . ' WIB'">
         <x-badge :variant="['open' => 'primary', 'closed' => 'warning', 'verified' => 'success'][$shift->status]">{{ CashShift::STATUS_LABELS[$shift->status] }}</x-badge>

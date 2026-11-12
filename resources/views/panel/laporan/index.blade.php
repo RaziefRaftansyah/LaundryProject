@@ -28,7 +28,7 @@
     <nav class="flex gap-2 border-b border-slate-200" aria-label="Saluran">
         @foreach (ReportFilter::CHANNELS as $key => $label)
             <a href="{{ route('panel.laporan.index', ['kanal' => $key] + $query) }}" @if ($filter->channel === $key) aria-current="page" @endif
-               class="px-4 py-2.5 -mb-px border-b-2 text-sm font-bold {{ $filter->channel === $key ? 'border-sky-600 text-sky-700' : 'border-transparent text-slate-500 hover:text-slate-800' }}">{{ $label }}</a>
+               class="px-4 py-2.5 -mb-px border-b-2 text-sm font-bold {{ $filter->channel === $key ? 'border-primary-600 text-primary-700' : 'border-transparent text-slate-500 hover:text-slate-800' }}">{{ $label }}</a>
         @endforeach
     </nav>
 
@@ -121,7 +121,7 @@
             ] }, options: { maintainAspectRatio: false, scales: { y: money } } });
 
             make('methodChart', { type: 'doughnut', data: { labels: methods.map(m => m.label), datasets: [{ data: methods.map(m => m.value),
-                backgroundColor: ['#0284c7', '#10b981', '#f59e0b', '#7c3aed', '#e11d48', '#64748b', '#14b8a6'] }] },
+                backgroundColor: ['#dc2626', '#10b981', '#f59e0b', '#7c3aed', '#e11d48', '#64748b', '#14b8a6'] }] },
                 options: { maintainAspectRatio: false, plugins: { tooltip: { callbacks: { label: (c) => c.label + ': ' + rupiah(c.raw) } } } } });
         }
 

@@ -36,18 +36,27 @@
         cartUrl: {{ Js::from(route('pelanggan.cart.index')) }},
     })"
     x-on:submit="onSubmit($event)"
-    class="rounded-2xl border border-slate-200 bg-white shadow-xs"
+    class="rounded-2xl border border-slate-200 bg-white shadow-sm"
 >
     @csrf
     <input type="hidden" name="lanjut" :value="proceed ? 1 : 0" />
 
-    <div class="px-5 sm:px-6 pt-5 pb-4 border-b border-slate-100">
-        <h2 class="text-base font-extrabold text-slate-900">1. Pilih Layanan Drop-Off</h2>
-        <p class="text-xs text-slate-500 mt-0.5">Centang satu atau beberapa layanan. Ikon keranjang di bawah menyimpan pilihan dan Anda bisa memilih lagi; tombol Lanjutkan menyimpan pilihan lalu membuka keranjang.</p>
+    <div class="border-b border-slate-100 px-5 pb-4 pt-5 sm:px-6">
+        <div class="flex flex-wrap items-center gap-2">
+            <span class="inline-flex h-7 items-center rounded-full bg-primary-50 px-2.5 text-xs font-extrabold text-primary-700 ring-1 ring-primary-200">
+                Langkah 1 dari 3
+            </span>
+            <span class="text-xs font-semibold text-slate-500">Pilih satu atau beberapa layanan</span>
+        </div>
+        <h2 class="mt-2 text-lg font-extrabold tracking-tight text-slate-900 sm:text-xl">1. Pilih Layanan Drop-Off</h2>
+        <p class="mt-1 max-w-[70ch] text-sm leading-relaxed text-slate-600">
+            Centang layanan yang Anda butuhkan. Ikon keranjang menyimpan pilihan agar bisa dilanjutkan nanti;
+            tombol <strong class="font-bold text-slate-800">Lanjutkan</strong> menyimpan pilihan lalu membuka keranjang.
+        </p>
     </div>
 
     @error('items')
-        <div class="mx-5 sm:mx-6 mt-4"><x-alert type="error" :message="$message" :dismissible="false" /></div>
+        <div class="mx-5 mt-4 sm:mx-6"><x-alert type="error" :message="$message" :dismissible="false" /></div>
     @enderror
 
     @if ($services->isEmpty())
@@ -55,7 +64,7 @@
             <x-empty-state title="Belum Ada Layanan" description="Saat ini belum ada layanan drop-off yang dapat dipesan online." />
         </div>
     @else
-        <div class="p-5 sm:p-6 space-y-3">
+        <div class="space-y-3 p-4 sm:p-6">
             @foreach ($services as $service)
                 @php
                     $id = $service->id;
@@ -64,51 +73,55 @@
                         ->filter();
                 @endphp
                 <div
-                    :class="sel[{{ $id }}].checked ? 'border-sky-500 ring-2 ring-sky-100 bg-sky-50/30' : 'border-slate-200 hover:border-slate-300'"
+                    :class="sel[{{ $id }}].checked
+                        ? 'border-primary-500 bg-primary-50/40 ring-4 ring-primary-100'
+                        : 'border-slate-200 bg-white hover:border-primary-300 hover:shadow-sm'"
                     @class([
-                        'rounded-xl border transition-colors',
+                        'rounded-2xl border-2 transition-all duration-150',
                         'outline-2 outline-offset-2 outline-rose-400' => $cardErrors->isNotEmpty(),
                     ])
                 >
                     <!-- Header kartu: centang layanan -->
-                    <label class="flex items-start gap-3 p-4 cursor-pointer">
+                    <label class="flex cursor-pointer items-start gap-3 rounded-2xl p-4 focus-within:ring-2 focus-within:ring-primary-500 focus-within:ring-offset-2 sm:p-5">
                         <input
                             type="checkbox"
                             x-model="sel[{{ $id }}].checked"
-                            class="mt-1 w-5 h-5 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
+                            class="mt-0.5 h-5 w-5 shrink-0 rounded border-slate-300 text-primary-600 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                             aria-describedby="srv-{{ $id }}-desc"
                         />
-                        <span class="flex-1 min-w-0">
-                            <span class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                                <span class="text-sm font-extrabold text-slate-900">{{ $service->name }}</span>
-                                <span class="text-sm font-extrabold text-sky-700">
+                        <span class="min-w-0 flex-1">
+                            <span class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1.5">
+                                <span class="text-base font-extrabold text-slate-900">{{ $service->name }}</span>
+                                <span class="inline-flex items-baseline gap-1 rounded-xl bg-white px-3 py-1.5 text-base font-extrabold text-primary-700 ring-1 ring-slate-200">
                                     Rp {{ number_format($service->price, 0, ',', '.') }}
-                                    <span class="text-[11px] font-semibold text-slate-500">/ {{ $service->unit ?? 'Mesin' }}</span>
+                                    <span class="text-xs font-semibold text-slate-500">/ {{ $service->unit ?? 'Mesin' }}</span>
                                 </span>
                             </span>
-                            <span id="srv-{{ $id }}-desc" class="block text-xs text-slate-500 mt-0.5">{{ $service->description }}</span>
-                            <span class="mt-2 flex flex-wrap items-center gap-2 text-[11px]">
-                                <span class="inline-flex items-center gap-1 font-semibold text-slate-600">
-                                    <x-icon name="clock" class="w-3.5 h-3.5" /> {{ $service->estimate }}
+                            <span id="srv-{{ $id }}-desc" class="mt-1 block max-w-[70ch] text-sm leading-relaxed text-slate-600">
+                                {{ $service->description }}
+                            </span>
+                            <span class="mt-3 flex flex-wrap items-center gap-2 text-xs">
+                                <span class="inline-flex min-h-7 items-center gap-1.5 rounded-full bg-slate-100 px-2.5 font-semibold text-slate-700">
+                                    <x-icon name="clock" class="h-3.5 w-3.5" /> {{ $service->estimate }}
                                 </span>
-                                <span class="text-slate-300">|</span>
-                                <span class="font-semibold text-slate-600">Proses:</span>
-                                @foreach ($service->processSteps() as $proc)
-                                    <span class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 font-bold">{{ $stepLabels[$proc] ?? ucfirst($proc) }}</span>
-                                    @if (! $loop->last) <span class="text-slate-400">→</span> @endif
-                                @endforeach
+                                <span class="inline-flex min-h-7 items-center gap-1.5 rounded-full bg-slate-100 px-2.5 font-semibold text-slate-700">
+                                    Proses:
+                                    @foreach ($service->processSteps() as $proc)
+                                        <span class="font-bold text-slate-900">{{ $stepLabels[$proc] ?? ucfirst($proc) }}</span>@if (! $loop->last)<span class="text-slate-400">→</span>@endif
+                                    @endforeach
+                                </span>
                             </span>
                         </span>
                     </label>
 
                     <!-- Detail layanan (hanya terkirim jika dicentang: input disabled tidak ikut dikirim) -->
                     <div x-show="sel[{{ $id }}].checked" x-collapse @if (! $initial[$id]['checked']) x-cloak @endif>
-                        <div class="px-4 pb-4 pt-1 grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-slate-100 mt-1">
+                        <div class="mx-4 mb-4 mt-1 grid grid-cols-1 gap-4 rounded-xl border border-slate-200 bg-slate-50/70 p-4 sm:mx-5 sm:mb-5 sm:grid-cols-2">
                             <input type="hidden" name="items[{{ $id }}][service_id]" value="{{ $id }}" :disabled="! included({{ $id }})" />
 
                             <!-- Jenis cucian -->
-                            <div class="pt-3">
-                                <label for="srv-{{ $id }}-type" class="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                            <div>
+                                <label for="srv-{{ $id }}-type" class="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-700">
                                     Jenis Cucian
                                     <x-help-tip text="Menentukan batas muatan per mesin: pakaian 6 KG, sprei/selimut tipis 3 KG, bedcover 1 pcs. Campuran memakai batas aman 3 KG." />
                                 </label>
@@ -117,7 +130,7 @@
                                     name="items[{{ $id }}][item_type]"
                                     x-model="sel[{{ $id }}].item_type"
                                     :disabled="! included({{ $id }})"
-                                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                    class="h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-base text-slate-900 focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100 disabled:cursor-not-allowed disabled:bg-slate-100"
                                 >
                                     @foreach ($itemTypes as $key => $type)
                                         <option value="{{ $key }}">{{ $type['label'] }} (maks {{ $type['capacity'] }} {{ $type['unit'] }}/mesin)</option>
@@ -126,14 +139,14 @@
                             </div>
 
                             <!-- Jumlah mesin -->
-                            <div class="pt-3">
-                                <label for="srv-{{ $id }}-qty" class="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                            <div>
+                                <label for="srv-{{ $id }}-qty" class="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-700">
                                     Jumlah Mesin
                                     <x-help-tip text="Satu mesin = satu kali proses. Belum yakin? Gunakan bantuan hitung (opsional) di bawah." />
                                 </label>
                                 <div class="flex items-center gap-2">
-                                    <button type="button" x-on:click="dec({{ $id }})" :disabled="! sel[{{ $id }}].checked" class="w-9 h-9 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 flex items-center justify-center" aria-label="Kurangi jumlah mesin {{ $service->name }}">
-                                        <x-icon name="minus" class="w-4 h-4" />
+                                    <button type="button" x-on:click="dec({{ $id }})" :disabled="! sel[{{ $id }}].checked" class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-300 bg-white text-slate-700 transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 active:scale-95 disabled:cursor-not-allowed disabled:opacity-40" aria-label="Kurangi jumlah mesin {{ $service->name }}">
+                                        <x-icon name="minus" class="h-4 w-4" />
                                     </button>
                                     <input
                                         id="srv-{{ $id }}-qty"
@@ -144,12 +157,12 @@
                                         :disabled="! included({{ $id }})"
                                         min="1"
                                         max="{{ $maxQty }}"
-                                        class="w-16 text-center rounded-lg border border-slate-300 py-1.5 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                        class="h-11 w-16 rounded-xl border border-slate-300 bg-white text-center text-base font-extrabold text-slate-900 focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100 disabled:cursor-not-allowed disabled:bg-slate-100"
                                     />
-                                    <button type="button" x-on:click="inc({{ $id }})" :disabled="! sel[{{ $id }}].checked" class="w-9 h-9 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 flex items-center justify-center" aria-label="Tambah jumlah mesin {{ $service->name }}">
-                                        <x-icon name="plus" class="w-4 h-4" />
+                                    <button type="button" x-on:click="inc({{ $id }})" :disabled="! sel[{{ $id }}].checked" class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-300 bg-white text-slate-700 transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 active:scale-95 disabled:cursor-not-allowed disabled:opacity-40" aria-label="Tambah jumlah mesin {{ $service->name }}">
+                                        <x-icon name="plus" class="h-4 w-4" />
                                     </button>
-                                    <span class="ml-auto text-xs font-bold text-slate-700" x-text="rupiah(price({{ $id }}) * (sel[{{ $id }}].qty || 0))"></span>
+                                    <span class="ml-auto truncate text-sm font-extrabold text-slate-900" x-text="rupiah(price({{ $id }}) * (sel[{{ $id }}].qty || 0))"></span>
                                 </div>
                             </div>
 
@@ -158,39 +171,39 @@
                                 <button
                                     type="button"
                                     x-on:click="helper = ! helper"
-                                    class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-800"
+                                    class="inline-flex min-h-11 items-center gap-1.5 rounded-lg text-sm font-bold text-amber-700 transition-colors hover:text-amber-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2"
                                     :aria-expanded="helper.toString()"
                                 >
-                                    <x-icon name="sparkles" class="w-3.5 h-3.5" />
+                                    <x-icon name="sparkles" class="h-4 w-4" />
                                     <span x-text="helper ? 'Tutup bantuan hitung mesin' : 'Bingung jumlah mesin? Hitung dari perkiraan muatan (opsional)'">Bingung jumlah mesin? Hitung dari perkiraan muatan (opsional)</span>
                                 </button>
-                            <div x-show="helper" x-collapse x-cloak class="mt-2 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2.5">
-                                <div class="flex flex-wrap items-center gap-2 text-xs">
-                                    <label for="srv-{{ $id }}-weight" class="font-bold text-amber-900">Perkiraan muatan <span class="font-medium">(opsional)</span></label>
-                                    <input
-                                        id="srv-{{ $id }}-weight"
-                                        type="number"
-                                        min="0"
-                                        step="0.5"
-                                        x-model="sel[{{ $id }}].weight"
-                                        placeholder="0"
-                                        class="w-20 rounded-md border border-amber-300 px-2 py-1 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-amber-100"
-                                    />
-                                    <span class="text-amber-900" x-text="itemTypes[sel[{{ $id }}].item_type]?.unit ?? 'KG'"></span>
-                                    <template x-if="suggestion({{ $id }})">
-                                        <span class="flex items-center gap-2">
-                                            <span class="text-amber-900">→ saran <strong x-text="suggestion({{ $id }})"></strong> mesin</span>
-                                            <button type="button" x-on:click="sel[{{ $id }}].qty = suggestion({{ $id }})" class="px-2 py-0.5 rounded-md bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold">Pakai saran</button>
-                                        </span>
-                                    </template>
+                                <div x-show="helper" x-collapse x-cloak class="mt-2 rounded-xl border border-amber-200 bg-amber-50 px-3.5 py-3">
+                                    <div class="flex flex-wrap items-center gap-2 text-sm">
+                                        <label for="srv-{{ $id }}-weight" class="font-bold text-amber-900">Perkiraan muatan <span class="font-medium">(opsional)</span></label>
+                                        <input
+                                            id="srv-{{ $id }}-weight"
+                                            type="number"
+                                            min="0"
+                                            step="0.5"
+                                            x-model="sel[{{ $id }}].weight"
+                                            placeholder="0"
+                                            class="h-11 w-24 rounded-lg border border-amber-300 bg-white px-3 text-base text-slate-900 focus:border-amber-500 focus:outline-none focus:ring-4 focus:ring-amber-100"
+                                        />
+                                        <span class="text-amber-900" x-text="itemTypes[sel[{{ $id }}].item_type]?.unit ?? 'KG'"></span>
+                                        <template x-if="suggestion({{ $id }})">
+                                            <span class="flex flex-wrap items-center gap-2">
+                                                <span class="text-amber-900">→ saran <strong x-text="suggestion({{ $id }})"></strong> mesin</span>
+                                                <button type="button" x-on:click="sel[{{ $id }}].qty = suggestion({{ $id }})" class="min-h-11 rounded-lg bg-amber-500 px-3 text-sm font-bold text-slate-900 transition-colors hover:bg-amber-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 active:scale-95">Pakai saran</button>
+                                            </span>
+                                        </template>
+                                    </div>
+                                    <p class="mt-1 text-xs leading-relaxed text-amber-800">Boleh dikosongkan. Hanya untuk membantu; petugas akan mengecek ulang muatan saat cucian diterima di outlet.</p>
                                 </div>
-                                <p class="text-[11px] text-amber-800 mt-1">Boleh dikosongkan. Hanya untuk membantu; petugas akan mengecek ulang muatan saat cucian diterima di outlet.</p>
-                            </div>
                             </div>
 
                             <!-- Catatan per layanan -->
                             <div class="sm:col-span-2">
-                                <label for="srv-{{ $id }}-notes" class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1.5">Catatan untuk layanan ini (opsional)</label>
+                                <label for="srv-{{ $id }}-notes" class="mb-1.5 block text-xs font-bold uppercase tracking-wider text-slate-700">Catatan untuk layanan ini (opsional)</label>
                                 <input
                                     id="srv-{{ $id }}-notes"
                                     type="text"
@@ -199,14 +212,13 @@
                                     :disabled="! included({{ $id }})"
                                     maxlength="500"
                                     placeholder="Contoh: pisahkan pakaian putih"
-                                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                    class="h-11 w-full rounded-xl border border-slate-300 bg-white px-3.5 text-base text-slate-900 placeholder:text-slate-500 focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-100 disabled:cursor-not-allowed disabled:bg-slate-100"
                                 />
                             </div>
 
                             @foreach ($cardErrors as $message)
-                                <p class="sm:col-span-2 text-xs font-semibold text-rose-600">{{ $message }}</p>
+                                <p class="rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-sm font-semibold text-rose-700 sm:col-span-2" role="alert">{{ $message }}</p>
                             @endforeach
-
                         </div>
                     </div>
                 </div>
@@ -217,7 +229,7 @@
         <div
             x-show="selectedCount() > 0 || cartCount > 0"
             @if (! collect($initial)->contains('checked', true) && $cart['items']->isEmpty()) x-cloak @endif
-            class="sticky bottom-0 z-20 rounded-b-2xl border-t border-slate-200 bg-white/95 backdrop-blur px-5 sm:px-6 py-4"
+            class="sticky bottom-[4.25rem] z-20 rounded-b-2xl border-t border-slate-200 bg-white/95 px-4 py-3 shadow-[0_-8px_24px_-16px_rgba(15,23,42,0.35)] backdrop-blur md:bottom-0 sm:px-6 sm:py-4"
         >
             <div class="flex items-center gap-3">
                 <button
@@ -226,25 +238,35 @@
                     :disabled="submitting"
                     :aria-label="selectedCount() > 0 ? 'Masukkan layanan terpilih ke keranjang' : 'Buka keranjang'"
                     :title="selectedCount() > 0 ? 'Masukkan layanan terpilih ke keranjang' : 'Buka keranjang'"
-                    class="relative w-11 h-11 shrink-0 rounded-lg border border-sky-200 bg-sky-50 hover:bg-sky-100 text-sky-700 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    class="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-primary-200 bg-primary-50 text-primary-700 transition-colors hover:bg-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                    <x-icon name="cart" class="w-5 h-5" />
-                    <span x-show="cartCount > 0" x-text="cartCount" class="absolute -top-1.5 -right-1.5 min-w-5 h-5 px-1 rounded-full bg-amber-400 text-slate-900 text-[10px] font-extrabold leading-5 text-center" aria-hidden="true"></span>
+                    <span x-show="submitting" x-cloak class="absolute inset-0 flex items-center justify-center rounded-xl bg-primary-50">
+                        <svg class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                        </svg>
+                    </span>
+                    <x-icon name="cart" class="h-5 w-5" />
+                    <span x-show="cartCount > 0" x-text="cartCount" class="absolute -right-1.5 -top-1.5 min-w-5 rounded-full bg-amber-400 px-1 text-center text-[10px] font-extrabold leading-5 text-slate-900" aria-hidden="true"></span>
                 </button>
 
-                <div class="min-w-0 flex-1 text-xs">
-                    <p class="font-bold text-slate-900 truncate" x-text="selectedCount() > 0 ? selectedCount() + ' layanan dipilih' : cartCount + ' layanan di keranjang'"></p>
-                    <p class="text-slate-500 truncate" x-show="selectedCount() > 0">Estimasi <span class="font-extrabold text-sky-700" x-text="rupiah(selectedTotal())"></span></p>
+                <div class="min-w-0 flex-1 text-sm" aria-live="polite">
+                    <p class="truncate font-bold text-slate-900" x-text="selectedCount() > 0 ? selectedCount() + ' layanan dipilih' : cartCount + ' layanan di keranjang'"></p>
+                    <p class="truncate text-xs text-slate-500" x-show="selectedCount() > 0">Estimasi <span class="font-extrabold text-primary-700" x-text="rupiah(selectedTotal())"></span></p>
                 </div>
 
                 <button
                     type="button"
                     x-on:click="continueOrder($el.form)"
                     :disabled="submitting"
-                    class="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-sm font-bold shadow-sm disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+                    class="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-primary-700 px-4 text-sm font-bold text-white shadow-sm transition-colors hover:bg-primary-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60 sm:px-5"
                 >
-                    Lanjutkan
-                    <x-icon name="arrow-right" class="w-4 h-4" />
+                    <svg x-show="submitting" x-cloak class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                    </svg>
+                    <span x-text="submitting ? 'Menyimpan...' : 'Lanjutkan'">Lanjutkan</span>
+                    <span x-show="! submitting"><x-icon name="arrow-right" class="h-4 w-4" /></span>
                 </button>
             </div>
         </div>

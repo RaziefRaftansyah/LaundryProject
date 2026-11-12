@@ -28,9 +28,9 @@
         @foreach ([RefundController::TAB_OPEN => 'Perlu Ditangani', RefundController::TAB_DONE => 'Sudah Direfund'] as $key => $label)
             <a
                 href="{{ route('admin.refunds.index', ['tab' => $key]) }}"
-                class="px-4 py-2 -mb-px text-xs sm:text-sm font-bold border-b-2 {{ $tab === $key ? 'border-sky-600 text-sky-700' : 'border-transparent text-slate-500 hover:text-slate-700' }}"
+                class="px-4 py-2 -mb-px text-xs sm:text-sm font-bold border-b-2 {{ $tab === $key ? 'border-primary-600 text-primary-700' : 'border-transparent text-slate-500 hover:text-slate-700' }}"
             >
-                {{ $label }} <span class="ml-1 text-[11px] px-1.5 py-0.5 rounded-full {{ $tab === $key ? 'bg-sky-100' : 'bg-slate-100' }}">{{ $counts[$key] }}</span>
+                {{ $label }} <span class="ml-1 text-[11px] px-1.5 py-0.5 rounded-full {{ $tab === $key ? 'bg-primary-100' : 'bg-slate-100' }}">{{ $counts[$key] }}</span>
             </a>
         @endforeach
     </div>
@@ -101,7 +101,7 @@
                                 minlength="5"
                                 maxlength="500"
                                 placeholder="Catatan wajib: ID refund Midtrans / bukti transfer, tanggal, rekening tujuan"
-                                class="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-primary-100 focus:border-primary-500"
                             >{{ (int) old('payment_id') === $payment->id ? old('refund_note') : '' }}</textarea>
                             @if ($errors->has('refund_note') && (int) old('payment_id') === $payment->id)
                                 <p class="text-[11px] text-rose-600">{{ $errors->first('refund_note') }}</p>

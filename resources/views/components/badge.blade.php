@@ -15,8 +15,8 @@
             'label' => 'Menunggu',
         ],
         'diproses' => [
-            'class' => 'bg-sky-50 text-sky-700 border-sky-200',
-            'dot'   => 'bg-sky-500',
+            'class' => 'bg-info-50 text-info-700 border-info-200',
+            'dot'   => 'bg-info-500',
             'label' => 'Diproses',
         ],
         'siap_diambil' => [
@@ -63,7 +63,8 @@
     // Lookup varian manual umum
     $manualVariantLookup = [
         'slate'   => ['class' => 'bg-slate-100 text-slate-700 border-slate-200',     'dot' => 'bg-slate-400'],
-        'primary' => ['class' => 'bg-sky-50 text-sky-700 border-sky-200',           'dot' => 'bg-sky-500'],
+        'primary' => ['class' => 'bg-primary-50 text-primary-700 border-primary-200',           'dot' => 'bg-primary-500'],
+        'info'    => ['class' => 'bg-info-50 text-info-700 border-info-200',                 'dot' => 'bg-info-500'],
         'success' => ['class' => 'bg-emerald-50 text-emerald-700 border-emerald-200', 'dot' => 'bg-emerald-500'],
         'warning' => ['class' => 'bg-amber-50 text-amber-800 border-amber-200',     'dot' => 'bg-amber-500'],
         'danger'  => ['class' => 'bg-rose-50 text-rose-700 border-rose-200',         'dot' => 'bg-rose-500'],

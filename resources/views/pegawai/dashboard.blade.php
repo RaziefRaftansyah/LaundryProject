@@ -6,7 +6,7 @@
 <div class="space-y-6">
 
     <!-- Top Banner -->
-    <div class="bg-gradient-to-r from-slate-900 via-sky-950 to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800">
+    <div class="bg-gradient-to-r from-slate-900 via-primary-950 to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-800">
         <div>
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold mb-2 border border-amber-400/30">
                 <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
@@ -32,7 +32,7 @@
             </a>
             <a
                 href="{{ route('pegawai.orders.index') }}"
-                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-md transition-all active:scale-[0.98]"
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-bold text-xs shadow-md transition-all active:scale-[0.98]"
             >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -122,7 +122,7 @@
                         </td>
                         <td class="px-5 py-4">
                             <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider
-                                @if($proc->process === 'cuci') bg-sky-100 text-sky-800
+                                @if($proc->process === 'cuci') bg-info-100 text-info-800
                                 @elseif($proc->process === 'kering') bg-amber-100 text-amber-800
                                 @else bg-violet-100 text-violet-800 @endif
                             ">
@@ -167,7 +167,7 @@
     <!-- Pesanan Hari Ini Card -->
     <x-card title="Pesanan Berjalan Hari Ini" subtitle="10 pesanan pending atau dalam proses pengerjaan">
         <x-slot:action>
-            <a href="{{ route('pegawai.orders.index') }}" class="text-xs font-bold text-sky-600 hover:text-sky-700">
+            <a href="{{ route('pegawai.orders.index') }}" class="text-xs font-bold text-primary-600 hover:text-primary-700">
                 Buka Kasir & Daftar Pesanan →
             </a>
         </x-slot:action>

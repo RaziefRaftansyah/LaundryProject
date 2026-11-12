@@ -62,11 +62,11 @@ class AccountPageTest extends TestCase
         $this->actingAs($this->budi)->get('/dashboard')->assertRedirect(route('home'));
     }
 
-    public function test_header_biru_dengan_ikon_kanan_atas_dan_profil_rata_kanan(): void
+    public function test_header_primary_dengan_ikon_kanan_atas_dan_profil_rata_kanan(): void
     {
         $header = $this->section($this->actingAs($this->budi)->get('/akun')->getContent(), '<header', '</header>');
 
-        $this->assertStringContainsString('from-sky-600', $header);
+        $this->assertStringContainsString('from-primary-700', $header);
 
         preg_match_all('/aria-label="(Notifikasi|Pesan|Pengaturan)"/', $header, $icons);
         $this->assertSame(['Notifikasi', 'Pesan', 'Pengaturan'], $icons[1]);
@@ -181,10 +181,12 @@ class AccountPageTest extends TestCase
         $nav = $this->section($html, 'aria-label="Navigasi utama"', '</nav>');
 
         preg_match_all('/<span>([^<]+)<\/span>/', $nav, $items);
-        $this->assertSame(['Beranda', 'Favorit', 'Transaksi', 'Bantuan', 'Akun'], $items[1]);
+        $this->assertSame(['Beranda', 'Riwayat', 'Pesan', 'Keranjang', 'Akun'], $items[1]);
         $this->assertSame(1, substr_count($nav, 'aria-current="page"'));
         $this->assertMatchesRegularExpression('/aria-current="page"(?:(?!<\/a>).)*<span>Akun<\/span>/s', $nav);
         $this->assertStringContainsString('href="' . route('pelanggan.orders.index') . '"', $nav);
+        $this->assertStringContainsString('href="' . route('pelanggan.pesan.index') . '"', $nav);
+        $this->assertStringContainsString('href="' . route('pelanggan.cart.index') . '"', $nav);
         $this->assertStringContainsString('fixed bottom-0', $html);
     }
 

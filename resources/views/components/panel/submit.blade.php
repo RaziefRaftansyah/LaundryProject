@@ -4,11 +4,11 @@
 
 @php
     $classes = [
-        'primary'   => 'bg-sky-600 hover:bg-sky-700 text-white',
+        'primary'   => 'bg-primary-600 hover:bg-primary-700 text-white',
         'danger'    => 'bg-rose-600 hover:bg-rose-700 text-white',
         'success'   => 'bg-emerald-600 hover:bg-emerald-700 text-white',
         'secondary' => 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50',
-    ][$variant] ?? 'bg-sky-600 hover:bg-sky-700 text-white';
+    ][$variant] ?? 'bg-primary-600 hover:bg-primary-700 text-white';
 @endphp
 
 {{-- Tombol submit di dalam <x-panel.form>: nonaktif + spinner selama form dikirim --}}

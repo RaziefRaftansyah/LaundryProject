@@ -13,7 +13,7 @@
         $tone = [
             'selesai'  => 'bg-emerald-50 border-emerald-200',
             'gagal'    => 'bg-amber-50 border-amber-200',
-            'diproses' => 'bg-sky-50 border-sky-200',
+            'diproses' => 'bg-info-50 border-info-200',
         ][$refund->status];
     @endphp
     <section class="rounded-2xl border p-4 text-xs space-y-1 {{ $tone }} print:hidden" data-refund-status="{{ $refund->status }}">

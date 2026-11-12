@@ -73,12 +73,12 @@
 
     <!-- Sidebar Header / Brand Logo -->
     <div class="px-6 py-6 border-b border-slate-800 flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-sky-600 text-white flex items-center justify-center shadow-xs shrink-0">
+        <div class="w-10 h-10 rounded-xl bg-primary-600 text-white flex items-center justify-center shadow-xs shrink-0">
             <x-icon name="washer" class="w-6 h-6" />
         </div>
         <div class="flex flex-col overflow-hidden">
-            <a href="{{ route('home') }}" class="font-extrabold text-lg tracking-tight text-white leading-none hover:text-sky-400 transition-colors">
-                Laundry <span class="text-sky-400">Coin</span>
+            <a href="{{ route('home') }}" class="font-extrabold text-lg tracking-tight text-white leading-none hover:text-primary-400 transition-colors">
+                Laundry <span class="text-primary-400">Coin</span>
             </a>
             <div class="flex items-center gap-1.5 mt-1.5">
                 <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
@@ -98,7 +98,7 @@
             @endphp
             <a
                 href="{{ $url }}"
-                class="relative flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors group {{ $isActive ? 'bg-sky-600 text-white font-semibold shadow-xs' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}"
+                class="relative flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors group {{ $isActive ? 'bg-primary-600 text-white font-semibold shadow-xs' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}"
             >
                 @if ($isActive)
                     <div class="absolute left-0 top-1.5 bottom-1.5 w-1 bg-amber-400 rounded-r-md"></div>
@@ -127,7 +127,7 @@
     <!-- Bottom User & Logout -->
     <div class="p-4 border-t border-slate-800 space-y-3 bg-slate-900/50">
         <a href="{{ route('profile.edit') }}" class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-800 transition-colors group">
-            <div class="w-9 h-9 rounded-full bg-sky-600/30 text-sky-400 border border-sky-500/30 flex items-center justify-center font-bold text-xs shrink-0">
+            <div class="w-9 h-9 rounded-full bg-primary-600/30 text-primary-400 border border-primary-500/30 flex items-center justify-center font-bold text-xs shrink-0">
                 {{ strtoupper(substr($user->name ?? 'U', 0, 1)) }}
             </div>
             <div class="flex-col min-w-0 flex-1">

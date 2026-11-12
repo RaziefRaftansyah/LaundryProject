@@ -15,7 +15,7 @@
         name="{{ $name }}"
         value="{{ old($name, $value) }}"
         @if ($required) required @endif
-        {{ $attributes->merge(['class' => 'mt-1 w-full rounded-xl border-slate-200 text-sm focus:border-sky-500 focus:ring-sky-500' . ($errors->has($name) ? ' border-rose-400' : '')]) }}
+        {{ $attributes->merge(['class' => 'mt-1 w-full rounded-xl border-slate-200 text-sm focus:border-primary-500 focus:ring-primary-500' . ($errors->has($name) ? ' border-rose-400' : '')]) }}
     />
     @if ($hint)
         <span class="mt-1 block text-[11px] text-slate-500">{{ $hint }}</span>

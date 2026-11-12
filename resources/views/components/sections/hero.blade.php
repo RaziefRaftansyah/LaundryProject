@@ -1,6 +1,6 @@
-<section id="hero" class="relative overflow-hidden bg-gradient-to-b from-sky-50/70 via-white to-slate-50 py-16 lg:py-24 border-b border-slate-200/60">
+<section id="hero" class="relative overflow-hidden bg-gradient-to-b from-primary-50/70 via-white to-slate-50 py-16 lg:py-24 border-b border-slate-200/60">
     <!-- Subtle Background Accents -->
-    <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-sky-200/30 blur-3xl pointer-events-none"></div>
+    <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-primary-200/30 blur-3xl pointer-events-none"></div>
     <div class="absolute top-1/2 -left-32 w-80 h-80 rounded-full bg-amber-200/20 blur-3xl pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -8,14 +8,14 @@
             <!-- Left Column: Copy & Actions -->
             <div class="lg:col-span-7 space-y-6 text-left">
                 <!-- Pill Badge -->
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-100/80 border border-sky-200 text-sky-800 text-xs font-semibold">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-100/80 border border-primary-200 text-primary-800 text-xs font-semibold">
                     <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
                     <span>Laundromat Modern di {{ config('laundry.city', '[ISI KOTA OUTLET]') }}</span>
                 </div>
 
                 <!-- Headline -->
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-                    Pakaian Bersih, Wangi & Kering Sempurna dalam <span class="text-sky-600 underline decoration-amber-400 decoration-wavy decoration-2">60 Menit</span>
+                    Pakaian Bersih, Wangi & Kering Sempurna dalam <span class="text-primary-600 underline decoration-amber-400 decoration-wavy decoration-2">60 Menit</span>
                 </h1>
 
                 <!-- Subheadline -->
@@ -27,7 +27,7 @@
                 <div class="flex flex-wrap items-center gap-3.5 pt-2">
                     <a
                         href="#layanan"
-                        class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:scale-[0.98]"
+                        class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:scale-[0.98]"
                     >
                         <span>Lihat Layanan & Tarif</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -51,7 +51,7 @@
                         <p class="text-xs text-slate-500 mt-0.5">Mesin Siap Pakai</p>
                     </div>
                     <div>
-                        <p class="text-xl sm:text-2xl font-extrabold text-sky-600">45 Menit</p>
+                        <p class="text-xl sm:text-2xl font-extrabold text-primary-600">45 Menit</p>
                         <p class="text-xs text-slate-500 mt-0.5">Cuci & Kering Cepat</p>
                     </div>
                     <div>
@@ -81,18 +81,18 @@
                         <div class="relative py-2 flex items-center justify-center">
                             <svg class="w-56 h-64 sm:w-64 sm:h-72 drop-shadow-md" viewBox="0 0 200 230" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <!-- Machine Housing Body -->
-                                <rect x="15" y="10" width="170" height="210" rx="20" fill="#F8FAFC" stroke="#0284C7" stroke-width="3.5" />
+                                <rect x="15" y="10" width="170" height="210" rx="20" fill="#F8FAFC" stroke="#DC2626" stroke-width="3.5" />
                                 
                                 <!-- Top Control Panel Dashboard -->
                                 <rect x="25" y="20" width="150" height="42" rx="10" fill="#0F172A" />
                                 
                                 <!-- LED Digital Timer -->
-                                <rect x="35" y="28" width="55" height="24" rx="4" fill="#0369A1" />
-                                <text x="43" y="44" font-family="monospace" font-size="12" font-weight="extrabold" fill="#E0F2FE">45:00</text>
+                                <rect x="35" y="28" width="55" height="24" rx="4" fill="#B91C1C" />
+                                <text x="43" y="44" font-family="monospace" font-size="12" font-weight="extrabold" fill="#FEE2E2">45:00</text>
                                 
                                 <!-- Cycle Program Selectors -->
                                 <circle cx="106" cy="40" r="7" fill="#1E293B" stroke="#64748B" stroke-width="1.5" />
-                                <circle cx="106" cy="40" r="3" fill="#38BDF8" />
+                                <circle cx="106" cy="40" r="3" fill="#F87171" />
                                 <circle cx="126" cy="40" r="5" fill="#1E293B" />
                                 <circle cx="140" cy="40" r="5" fill="#1E293B" />
 
@@ -103,16 +103,16 @@
                                 <circle cx="100" cy="142" r="62" fill="#E2E8F0" stroke="#94A3B8" stroke-width="3" />
                                 
                                 <!-- Glass Seal Outer -->
-                                <circle cx="100" cy="142" r="50" fill="#0284C7" fill-opacity="0.12" stroke="#0284C7" stroke-width="2" />
+                                <circle cx="100" cy="142" r="50" fill="#DC2626" fill-opacity="0.12" stroke="#DC2626" stroke-width="2" />
                                 
                                 <!-- Inner Spinning Drum -->
                                 <g class="animate-drum-spin origin-[100px_142px]">
-                                    <circle cx="100" cy="142" r="38" stroke="#38BDF8" stroke-width="2" stroke-dasharray="8 6" opacity="0.9" />
-                                    <circle cx="100" cy="142" r="26" stroke="#0284C7" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.7" />
+                                    <circle cx="100" cy="142" r="38" stroke="#F87171" stroke-width="2" stroke-dasharray="8 6" opacity="0.9" />
+                                    <circle cx="100" cy="142" r="26" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.7" />
                                     <!-- Fresh Clean Clothes Dynamic Wave -->
                                     <path d="M86 142c5-7 12-7 18 0s12 7 18 0" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
-                                    <circle cx="95" cy="132" r="3" fill="#BAE6FD" />
-                                    <circle cx="112" cy="148" r="2.5" fill="#BAE6FD" />
+                                    <circle cx="95" cy="132" r="3" fill="#FECACA" />
+                                    <circle cx="112" cy="148" r="2.5" fill="#FECACA" />
                                 </g>
 
                                 <!-- Door Handle -->
@@ -137,13 +137,13 @@
                         <!-- Bottom Fast Status -->
                         <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
                             <span class="flex items-center gap-1.5 font-medium">
-                                <svg class="w-4 h-4 text-sky-600" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                                 </svg>
                                 Deterjen Otomatis
                             </span>
                             <span class="flex items-center gap-1.5 font-medium">
-                                <svg class="w-4 h-4 text-sky-600" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                                 </svg>
                                 Pengering Anti-Bakteri

@@ -8,7 +8,7 @@
         
         <!-- Header Brand -->
         <div class="text-center mb-8">
-            <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-sky-600 text-white shadow-md mb-3">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-primary-600 text-white shadow-md mb-3">
                 <x-icon name="washer" class="w-7 h-7" />
             </div>
             <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
@@ -56,13 +56,13 @@
                         <input
                             type="checkbox"
                             name="remember"
-                            class="rounded border-slate-300 text-sky-600 shadow-xs focus:ring-sky-500"
+                            class="rounded border-slate-300 text-primary-600 shadow-xs focus:ring-primary-500"
                         />
                         <span class="text-slate-600 font-medium">Ingat saya</span>
                     </label>
 
                     @if (Route::has('password.request'))
-                        <a href="{{ route('password.request') }}" class="text-sky-600 hover:text-sky-700 font-semibold hover:underline">
+                        <a href="{{ route('password.request') }}" class="text-primary-600 hover:text-primary-700 font-semibold hover:underline">
                             Lupa kata sandi?
                         </a>
                     @endif
@@ -79,7 +79,7 @@
             <!-- Bottom Register Link -->
             <div class="mt-6 pt-5 border-t border-slate-100 text-center text-xs text-slate-600">
                 Belum memiliki akun?
-                <a href="{{ route('register') }}" class="text-sky-600 hover:text-sky-700 font-bold hover:underline ml-1">
+                <a href="{{ route('register') }}" class="text-primary-600 hover:text-primary-700 font-bold hover:underline ml-1">
                     Daftar Sekarang
                 </a>
             </div>

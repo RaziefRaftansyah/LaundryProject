@@ -22,7 +22,7 @@
                         @if ($refund->last_error)<p class="text-rose-600">Error terakhir: {{ $refund->last_error }}</p>@endif
                         @if ($refund->completed_at)
                             <p class="text-emerald-700">Selesai {{ $refund->completed_at->timezone($tz)->format('d/m/Y H:i') }}{{ $refund->processor ? ' oleh ' . $refund->processor->name : ' (konfirmasi Midtrans)' }}{{ $refund->note ? ': ' . $refund->note : '' }}</p>
-                            @if ($refund->proof_path)<a href="{{ route('admin.refunds.cancellation.proof', $refund) }}" target="_blank" class="font-bold text-sky-600">Lihat bukti transfer</a>@endif
+                            @if ($refund->proof_path)<a href="{{ route('admin.refunds.cancellation.proof', $refund) }}" target="_blank" class="font-bold text-primary-600">Lihat bukti transfer</a>@endif
                         @endif
                     </div>
 

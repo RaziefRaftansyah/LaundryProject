@@ -1,34 +1,48 @@
 @props([
-    'active' => null, // beranda | favorit | transaksi | bantuan | akun
+    'active' => null, // beranda | transaksi | pesan | keranjang | akun
 ])
 
 @php
+    $user = auth()->user();
+    $cartCount = $user?->isPelanggan() ? $user->cartItems()->count() : 0;
+
+    // Deteksi tab aktif otomatis bila halaman tidak mengirim prop $active.
+    $active ??= match (true) {
+        request()->routeIs('home', 'tentang', 'aturan') => 'beranda',
+        request()->routeIs('pelanggan.orders.start') => 'pesan',
+        request()->routeIs('pelanggan.pesan.*') => 'pesan',
+        request()->routeIs('pelanggan.cart.*') => 'keranjang',
+        request()->routeIs('pelanggan.orders.*', 'pelanggan.transaksi.*', 'pelanggan.pembayaran.*') => 'transaksi',
+        request()->routeIs('pelanggan.akun', 'profile.*') => 'akun',
+        default => null,
+    };
+
+    // Urutan tampil kiri → kanan. Tombol paling kanan = Akun.
     $items = [
         'beranda' => [
             'label' => 'Beranda',
             'href'  => route('home'),
-            'icon'  => 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
-        ],
-        // Belum ada fitur favorit: diarahkan ke katalog layanan di landing page
-        'favorit' => [
-            'label' => 'Favorit',
-            'href'  => route('home') . '#layanan',
-            'icon'  => 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
+            'icon'  => 'home',
         ],
         'transaksi' => [
-            'label' => 'Transaksi',
+            'label' => 'Riwayat',
             'href'  => route('pelanggan.orders.index'),
-            'icon'  => 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
+            'icon'  => 'receipt',
         ],
-        'bantuan' => [
-            'label' => 'Bantuan',
-            'href'  => route('home') . '#faq',
-            'icon'  => 'M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+        'pesan' => [
+            'label' => 'Pesan',
+            'href'  => route('pelanggan.pesan.index'),
+            'icon'  => 'plus',
+        ],
+        'keranjang' => [
+            'label' => 'Keranjang',
+            'href'  => route('pelanggan.cart.index'),
+            'icon'  => 'cart',
         ],
         'akun' => [
             'label' => 'Akun',
             'href'  => route('pelanggan.akun'),
-            'icon'  => 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z',
+            'icon'  => 'user',
         ],
     ];
 @endphp
@@ -38,21 +52,41 @@
     style="padding-bottom: env(safe-area-inset-bottom, 0px);"
     aria-label="Navigasi utama"
 >
-    <ul class="max-w-3xl mx-auto grid grid-cols-5">
+    <ul class="max-w-md mx-auto grid grid-cols-5 items-end">
         @foreach ($items as $key => $item)
             @php $isActive = $active === $key; @endphp
-            <li>
-                <a
-                    href="{{ $item['href'] }}"
-                    @if ($isActive) aria-current="page" @endif
-                    class="flex flex-col items-center gap-1 py-2.5 text-[11px] font-semibold transition-colors {{ $isActive ? 'text-sky-600' : 'text-slate-500 hover:text-sky-600' }}"
-                >
-                    <svg class="w-6 h-6" fill="{{ $isActive ? 'currentColor' : 'none' }}" fill-opacity="{{ $isActive ? '0.15' : '0' }}" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="{{ $isActive ? '2.2' : '1.8' }}" d="{{ $item['icon'] }}" />
-                    </svg>
+
+            @if ($key === 'pesan')
+                {{-- Tombol utama: bulat, menonjol ke atas, dengan ikon plus --}}
+                <li class="flex flex-col items-center pb-2.5 text-[11px] font-semibold {{ $isActive ? 'text-primary-700' : 'text-slate-500' }}">
+                    <a
+                        href="{{ $item['href'] }}"
+                        @if ($isActive) aria-current="page" @endif
+                        aria-label="Pesan layanan laundry"
+                        class="-mt-6 mb-0.5 flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lg shadow-primary-700/30 ring-4 ring-white transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-primary-200 {{ $isActive ? 'bg-primary-800' : 'bg-primary-700 hover:bg-primary-800' }}"
+                    >
+                        <x-icon :name="$item['icon']" class="w-7 h-7" />
+                    </a>
                     <span>{{ $item['label'] }}</span>
-                </a>
-            </li>
+                </li>
+            @else
+                <li>
+                    <a
+                        href="{{ $item['href'] }}"
+                        @if ($isActive) aria-current="page" @endif
+                        @if ($key === 'keranjang' && $cartCount > 0) aria-label="Keranjang ({{ $cartCount }} layanan)" @endif
+                        class="flex flex-col items-center gap-1 py-2.5 text-[11px] font-semibold transition-colors {{ $isActive ? 'text-primary-700' : 'text-slate-500 hover:text-primary-700' }}"
+                    >
+                        <span class="relative">
+                            <x-icon :name="$item['icon']" class="w-6 h-6" />
+                            @if ($key === 'keranjang' && $cartCount > 0)
+                                <span class="absolute -top-1.5 -right-2 min-w-4 h-4 px-1 rounded-full bg-amber-400 text-slate-900 text-[9px] font-extrabold leading-4 text-center" aria-hidden="true">{{ $cartCount }}</span>
+                            @endif
+                        </span>
+                        <span>{{ $item['label'] }}</span>
+                    </a>
+                </li>
+            @endif
         @endforeach
     </ul>
 </nav>

@@ -17,7 +17,7 @@
         x-on:click="show = !show"
         x-on:focus="show = true"
         x-on:blur="show = false"
-        class="w-4 h-4 rounded-full text-slate-400 hover:text-sky-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+        class="w-4 h-4 rounded-full text-slate-400 hover:text-primary-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
         aria-label="{{ $label }}"
     >
         <x-icon name="question" class="w-4 h-4" />

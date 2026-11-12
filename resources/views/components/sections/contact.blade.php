@@ -3,7 +3,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <!-- Left Info Column -->
             <div class="lg:col-span-5 space-y-6">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50 text-sky-700 text-xs font-bold uppercase tracking-wider border border-sky-200">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 text-primary-700 text-xs font-bold uppercase tracking-wider border border-primary-200">
                     Hubungi Laundry Coin
                 </span>
 
@@ -62,7 +62,7 @@
                                     type="text"
                                     required
                                     placeholder="Contoh: Budi Santoso"
-                                    class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                    class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-100 focus:border-primary-500"
                                 />
                             </div>
 
@@ -75,7 +75,7 @@
                                     type="tel"
                                     required
                                     placeholder="0812xxxxxxxx"
-                                    class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                    class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-100 focus:border-primary-500"
                                 />
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                             </label>
                             <select
                                 id="contact-service"
-                                class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary-100 focus:border-primary-500"
                             >
                                 <option value="self-laundry">Self Laundry (Cuci & Kering Mandiri di Outlet)</option>
                                 <option value="dropoff">Drop-Off Kiloan / Express</option>
@@ -104,13 +104,13 @@
                                 rows="4"
                                 required
                                 placeholder="Tuliskan pertanyaan atau alamat penjemputan Anda..."
-                                class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-100 focus:border-sky-500"
+                                class="w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-100 focus:border-primary-500"
                             ></textarea>
                         </div>
 
                         <button
                             type="submit"
-                            class="w-full py-3 px-6 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all active:scale-[0.98]"
+                            class="w-full py-3 px-6 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all active:scale-[0.98]"
                         >
                             Kirim Pesan Sekarang
                         </button>
