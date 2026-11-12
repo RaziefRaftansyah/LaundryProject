@@ -10,7 +10,7 @@
         ],
         [
             'q' => 'Berapa lama waktu yang dibutuhkan untuk mencuci dan mengeringkan pakaian?',
-            'a' => 'Siklus cuci cepat berlangsung sekitar 35 menit, dan siklus pengeringan (dryer) berlangsung 40 menit. Jadi hanya dalam waktu kurang lebih 75 menit (1 jam 15 menit), pakaian Anda sudah bersih, steril bebas tungau, wangi, dan 100% kering siap pakai.'
+            'a' => 'Siklus cuci cepat berlangsung sekitar 35 menit, dan siklus pengeringan (dryer) berlangsung 40 menit. Jadi hanya dalam waktu kurang lebih 75 menit (1 jam 15 menit), pakaian Anda sudah bersih, steril bebas tungau, wangi, dan kering siap pakai.'
         ],
         [
             'q' => 'Apakah saya boleh meninggalkan cucian saat mesin sedang berputar?',
@@ -29,15 +29,16 @@
 
 <section id="faq" class="py-16 lg:py-24 bg-slate-50 border-b border-slate-200/60">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 text-primary-700 text-xs font-bold uppercase tracking-wider border border-primary-200 mb-3">
-                Pertanyaan yang Sering Diajukan
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                Ada Pertanyaan Seputar Laundry Coin?
+        <div class="mb-10 max-w-2xl">
+            <p class="flex items-center gap-2 text-sm font-semibold text-primary-700">
+                <span class="h-px w-8 bg-primary-700" aria-hidden="true"></span>
+                Pertanyaan umum
+            </p>
+            <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                Yang paling sering ditanyakan pelanggan
             </h2>
-            <p class="text-base text-slate-600 mt-3 leading-relaxed">
-                Temukan jawaban cepat mengenai pembayaran, durasi mesin, fasilitas, dan cara pemesanan.
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+                Pembayaran, durasi mesin, fasilitas, dan cara pemesanan di Laundry Coin.
             </p>
         </div>
 
@@ -47,7 +48,9 @@
                     <button
                         type="button"
                         x-on:click="active = (active === {{ $index }} ? null : {{ $index }})"
-                        class="w-full px-6 py-4.5 text-left flex items-center justify-between gap-4 font-semibold text-slate-900 hover:text-primary-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-2xl"
+                        :aria-expanded="(active === {{ $index }}).toString()"
+                        aria-controls="faq-panel-{{ $index }}"
+                        class="w-full px-6 py-4.5 text-left flex items-center justify-between gap-4 font-semibold text-slate-900 hover:text-primary-600 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-2xl"
                     >
                         <span class="text-sm sm:text-base">{{ $item['q'] }}</span>
                         <div
@@ -61,6 +64,7 @@
                     </button>
 
                     <div
+                        id="faq-panel-{{ $index }}"
                         x-show="active === {{ $index }}"
                         x-collapse
                         class="border-t border-slate-100 px-6 py-4 bg-slate-50/50"

@@ -12,7 +12,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-18">
             <!-- Brand Logo -->
-            <a href="{{ route('home') }}" class="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-lg">
+            <a href="{{ route('home') }}" class="flex min-h-11 items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-lg">
                 <div class="w-10 h-10 rounded-xl bg-primary-600 text-white flex items-center justify-center shadow-xs group-hover:bg-primary-700 transition-colors">
                     <!-- Modern Washer + Coin SVG Icon -->
                     <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -43,22 +43,22 @@
 
             <!-- Desktop Nav Links -->
             <div class="hidden md:flex items-center gap-1">
-                <a href="{{ route('home') }}#hero" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-primary-700 rounded-lg hover:bg-slate-50 transition-colors">
+                <a href="{{ route('home') }}#hero" class="inline-flex min-h-11 items-center px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-primary-700 rounded-lg hover:bg-slate-50 transition-colors">
                     Beranda
                 </a>
-                <a href="{{ route('home') }}#layanan" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-primary-700 rounded-lg hover:bg-slate-50 transition-colors">
+                <a href="{{ route('home') }}#layanan" class="inline-flex min-h-11 items-center px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-primary-700 rounded-lg hover:bg-slate-50 transition-colors">
                     Layanan & Tarif
                 </a>
-                <a href="{{ route('home') }}#cara-kerja" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-primary-700 rounded-lg hover:bg-slate-50 transition-colors">
+                <a href="{{ route('home') }}#cara-kerja" class="inline-flex min-h-11 items-center px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-primary-700 rounded-lg hover:bg-slate-50 transition-colors">
                     Cara Kerja
                 </a>
-                <a href="{{ route('home') }}#operasional" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-primary-700 rounded-lg hover:bg-slate-50 transition-colors">
+                <a href="{{ route('home') }}#operasional" class="inline-flex min-h-11 items-center px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-primary-700 rounded-lg hover:bg-slate-50 transition-colors">
                     Area & Jam
                 </a>
-                <a href="{{ route('home') }}#faq" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-primary-700 rounded-lg hover:bg-slate-50 transition-colors">
+                <a href="{{ route('home') }}#faq" class="inline-flex min-h-11 items-center px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-primary-700 rounded-lg hover:bg-slate-50 transition-colors">
                     FAQ
                 </a>
-                <a href="{{ route('home') }}#kontak" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-primary-700 rounded-lg hover:bg-slate-50 transition-colors">
+                <a href="{{ route('home') }}#kontak" class="inline-flex min-h-11 items-center px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-primary-700 rounded-lg hover:bg-slate-50 transition-colors">
                     Kontak
                 </a>
             </div>
@@ -109,7 +109,7 @@
                 @else
                     <a
                         href="{{ route('login') }}"
-                        class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-primary-700 rounded-lg hover:bg-slate-50 transition-colors"
+                        class="inline-flex min-h-11 items-center px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-primary-700 rounded-lg hover:bg-slate-50 transition-colors"
                     >
                         Masuk
                     </a>
@@ -128,7 +128,7 @@
                     @if (auth()->user()->isPelanggan())
                         <a
                             href="{{ route('pelanggan.cart.index') }}"
-                            class="relative p-2 rounded-lg text-slate-600 hover:text-primary-700 hover:bg-slate-100"
+                            class="relative p-2.5 rounded-lg text-slate-600 hover:text-primary-700 hover:bg-slate-100"
                             aria-label="Keranjang{{ $cartCount > 0 ? " ({$cartCount} layanan)" : '' }}"
                         >
                             <x-icon name="cart" class="w-6 h-6" />
@@ -141,7 +141,7 @@
                 <button
                     type="button"
                     x-on:click="mobileOpen = !mobileOpen"
-                    class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    class="p-2.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                     aria-label="Toggle navigation"
                 >
                     <svg x-show="!mobileOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -162,22 +162,22 @@
         class="md:hidden border-t border-slate-100 bg-white px-4 pt-3 pb-6 space-y-2"
         style="display: none;"
     >
-        <a href="{{ route('home') }}#hero" x-on:click="mobileOpen = false" class="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">
+        <a href="{{ route('home') }}#hero" x-on:click="mobileOpen = false" class="block px-3 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">
             Beranda
         </a>
-        <a href="{{ route('home') }}#layanan" x-on:click="mobileOpen = false" class="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">
+        <a href="{{ route('home') }}#layanan" x-on:click="mobileOpen = false" class="block px-3 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">
             Layanan & Tarif
         </a>
-        <a href="{{ route('home') }}#cara-kerja" x-on:click="mobileOpen = false" class="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">
+        <a href="{{ route('home') }}#cara-kerja" x-on:click="mobileOpen = false" class="block px-3 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">
             Cara Kerja
         </a>
-        <a href="{{ route('home') }}#operasional" x-on:click="mobileOpen = false" class="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">
+        <a href="{{ route('home') }}#operasional" x-on:click="mobileOpen = false" class="block px-3 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">
             Area & Jam
         </a>
-        <a href="{{ route('home') }}#faq" x-on:click="mobileOpen = false" class="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">
+        <a href="{{ route('home') }}#faq" x-on:click="mobileOpen = false" class="block px-3 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">
             FAQ
         </a>
-        <a href="{{ route('home') }}#kontak" x-on:click="mobileOpen = false" class="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">
+        <a href="{{ route('home') }}#kontak" x-on:click="mobileOpen = false" class="block px-3 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">
             Kontak
         </a>
 

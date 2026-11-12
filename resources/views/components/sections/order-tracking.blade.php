@@ -1,32 +1,52 @@
-<section id="lacak" class="py-16 lg:py-20 bg-gradient-to-b from-info-50/50 to-white border-b border-slate-200/60">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-info-100 text-info-800 text-xs font-bold uppercase tracking-wider mb-3">
-            Realtime Status
-        </span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Lacak Pesanan Laundry Anda
-        </h2>
-        <p class="text-sm text-slate-600 mt-2 max-w-xl mx-auto">
-            Masukkan kode pesanan Anda (contoh: <span class="font-mono font-semibold text-info-700">LC-XXXXXX</span>) untuk melihat status pengerjaan cucian secara langsung.
-        </p>
+<section id="lacak" class="border-b border-slate-200 bg-slate-50 py-14 lg:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-12 lg:items-center">
 
-        <form method="GET" action="{{ route('tracking') }}" class="mt-8 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
-            <div class="relative flex-1">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
-                    <x-icon name="search" class="w-5 h-5" />
-                </span>
-                <input
-                    type="text"
-                    name="order_code"
-                    placeholder="Masukkan Kode Pesanan (LC-XXXXXX)"
-                    required
-                    class="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 font-mono text-sm uppercase shadow-xs"
-                />
+            <div class="lg:col-span-5">
+                <p class="flex items-center gap-2 text-sm font-semibold text-primary-700">
+                    <span class="h-px w-8 bg-primary-700" aria-hidden="true"></span>
+                    Lacak pesanan
+                </p>
+                <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                    Tahu posisi cucian tanpa perlu menelepon
+                </h2>
+                <p class="mt-3 max-w-md text-sm leading-relaxed text-slate-600 sm:text-base">
+                    Setiap pesanan punya kode unik. Masukkan kode itu untuk melihat apakah cucian masih di antrean, sedang diproses, atau sudah siap diambil.
+                </p>
             </div>
-            <x-button type="submit" variant="primary" size="lg" class="rounded-xl shrink-0">
-                <x-icon name="search" class="w-4 h-4" />
-                <span>Lacak Pesanan</span>
-            </x-button>
-        </form>
+
+            <div class="lg:col-span-7">
+                <form
+                    method="GET"
+                    action="{{ route('tracking') }}"
+                    class="rounded-2xl border border-slate-200 bg-white p-5 shadow-xs sm:p-6"
+                >
+                    <label for="home-order-code" class="block text-sm font-semibold text-slate-900">
+                        Kode pesanan
+                    </label>
+                    <p id="home-order-code-hint" class="mt-1 text-xs leading-relaxed text-slate-500">
+                        Tertera di struk kasir atau pesan konfirmasi, contohnya LC-8F3K2Q.
+                    </p>
+
+                    <div class="mt-3 flex flex-col gap-3 sm:flex-row">
+                        <input
+                            id="home-order-code"
+                            type="text"
+                            name="order_code"
+                            placeholder="LC-XXXXXX"
+                            required
+                            autocomplete="off"
+                            aria-describedby="home-order-code-hint"
+                            class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 font-mono text-sm uppercase text-slate-900 placeholder:text-slate-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                        />
+
+                        <x-button type="submit" variant="primary" size="lg" class="min-h-11 shrink-0">
+                            <x-icon name="search" class="h-4 w-4" />
+                            <span>Lacak pesanan</span>
+                        </x-button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </section>

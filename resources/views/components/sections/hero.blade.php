@@ -1,155 +1,106 @@
-<section id="hero" class="relative overflow-hidden bg-gradient-to-b from-primary-50/70 via-white to-slate-50 py-16 lg:py-24 border-b border-slate-200/60">
-    <!-- Subtle Background Accents -->
-    <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-primary-200/30 blur-3xl pointer-events-none"></div>
-    <div class="absolute top-1/2 -left-32 w-80 h-80 rounded-full bg-amber-200/20 blur-3xl pointer-events-none"></div>
+@php
+    $storeName = config('laundry.store_name', 'Laundry Coin');
+    $city      = config('laundry.city', 'Balikpapan');
+    $mapsEmbed = config('laundry.maps_embed_url');
+    $mapsUrl   = config('laundry.google_maps_url', 'https://maps.google.com');
+@endphp
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-            <!-- Left Column: Copy & Actions -->
-            <div class="lg:col-span-7 space-y-6 text-left">
-                <!-- Pill Badge -->
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-100/80 border border-primary-200 text-primary-800 text-xs font-semibold">
-                    <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-                    <span>Laundromat Modern di {{ config('laundry.city', '[ISI KOTA OUTLET]') }}</span>
-                </div>
+<section id="hero" class="relative bg-primary-700 text-white">
+    <div class="grid lg:grid-cols-2">
 
-                <!-- Headline -->
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-                    Pakaian Bersih, Wangi & Kering Sempurna dalam <span class="text-primary-600 underline decoration-amber-400 decoration-wavy decoration-2">60 Menit</span>
-                </h1>
+        {{-- Kolom kiri: klaim utama dan aksi --}}
+        <div class="flex flex-col justify-center px-4 py-14 sm:px-8 sm:py-16 lg:px-12 lg:py-20 xl:px-16">
+            <p class="flex items-center gap-2.5 text-sm font-semibold text-primary-100">
+                <span class="inline-flex h-2.5 w-2.5 rounded-full bg-amber-300" aria-hidden="true"></span>
+                <span>{{ $storeName }}, laundromat di {{ $city }}</span>
+            </p>
 
-                <!-- Subheadline -->
-                <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-                    <strong>Laundry Coin</strong> menghadirkan self laundry praktis dengan mesin komersial berkapasitas besar, serta layanan drop-off yang bisa dipesan online. Tanpa ribet jemur, higienis dengan air filter steril, dan siap pakai seketika.
-                </p>
+            <h1 class="mt-5 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl xl:text-6xl">
+                Cuci, kering, lipat.
+                <span class="block text-amber-300">Beres tanpa jemur.</span>
+            </h1>
 
-                <!-- Action CTAs -->
-                <div class="flex flex-wrap items-center gap-3.5 pt-2">
-                    <a
-                        href="#layanan"
-                        class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:scale-[0.98]"
-                    >
-                        <span>Lihat Layanan & Tarif</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </a>
+            <p class="mt-5 max-w-xl text-base leading-relaxed text-primary-50 sm:text-lg">
+                Mesin cuci dan pengering berkapasitas besar, deterjen otomatis, dan pembayaran cashless. Datang langsung ke outlet atau pesan drop-off dari rumah.
+            </p>
 
-                    <a
-                        href="#cara-kerja"
-                        class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-sm shadow-xs transition-all"
-                    >
-                        <x-icon name="info" class="w-4 h-4 text-amber-500" />
-                        <span>Pelajari Cara Kerja</span>
-                    </a>
-                </div>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                    href="{{ $mapsUrl }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-bold text-primary-800 transition-colors hover:bg-primary-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-700"
+                >
+                    <x-icon name="map-pin" class="h-4 w-4" />
+                    <span>Buka rute ke outlet</span>
+                </a>
 
-                <!-- Trust Points -->
-                <div class="pt-6 border-t border-slate-200/80 grid grid-cols-3 gap-4 text-left">
-                    <div>
-                        <p class="text-xl sm:text-2xl font-extrabold text-slate-900">12+ Unit</p>
-                        <p class="text-xs text-slate-500 mt-0.5">Mesin Siap Pakai</p>
-                    </div>
-                    <div>
-                        <p class="text-xl sm:text-2xl font-extrabold text-primary-600">45 Menit</p>
-                        <p class="text-xs text-slate-500 mt-0.5">Cuci & Kering Cepat</p>
-                    </div>
-                    <div>
-                        <p class="text-xl sm:text-2xl font-extrabold text-amber-600">07 - 22</p>
-                        <p class="text-xs text-slate-500 mt-0.5">Buka Setiap Hari</p>
-                    </div>
-                </div>
+                <a
+                    href="#layanan"
+                    class="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-white/40 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-700"
+                >
+                    <span>Lihat tarif layanan</span>
+                </a>
             </div>
 
-            <!-- Right Column: Human-Crafted Washing Machine SVG Illustration -->
-            <div class="lg:col-span-5 flex justify-center">
-                <div class="relative w-full max-w-md">
-                    <!-- Machine Showcase Card -->
-                    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xl relative overflow-hidden">
-                        <!-- Top Machine Banner -->
-                        <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
-                                <span class="text-xs font-bold uppercase tracking-wider text-slate-700">Mesin #04 Siap Pakai</span>
-                            </div>
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
-                                Bayar Cashless
-                            </span>
-                        </div>
+            <p class="mt-6 text-sm text-primary-100">
+                <a
+                    href="{{ route('tracking') }}"
+                    class="font-semibold text-white underline decoration-amber-300 decoration-2 underline-offset-4 hover:decoration-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary-700"
+                >
+                    Lacak pesanan
+                </a>
+                <span class="text-primary-200"> dengan kode dari struk kasir.</span>
+            </p>
+        </div>
 
-                        <!-- SVG Washer Visual -->
-                        <div class="relative py-2 flex items-center justify-center">
-                            <svg class="w-56 h-64 sm:w-64 sm:h-72 drop-shadow-md" viewBox="0 0 200 230" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Machine Housing Body -->
-                                <rect x="15" y="10" width="170" height="210" rx="20" fill="#F8FAFC" stroke="#DC2626" stroke-width="3.5" />
-                                
-                                <!-- Top Control Panel Dashboard -->
-                                <rect x="25" y="20" width="150" height="42" rx="10" fill="#0F172A" />
-                                
-                                <!-- LED Digital Timer -->
-                                <rect x="35" y="28" width="55" height="24" rx="4" fill="#B91C1C" />
-                                <text x="43" y="44" font-family="monospace" font-size="12" font-weight="extrabold" fill="#FEE2E2">45:00</text>
-                                
-                                <!-- Cycle Program Selectors -->
-                                <circle cx="106" cy="40" r="7" fill="#1E293B" stroke="#64748B" stroke-width="1.5" />
-                                <circle cx="106" cy="40" r="3" fill="#F87171" />
-                                <circle cx="126" cy="40" r="5" fill="#1E293B" />
-                                <circle cx="140" cy="40" r="5" fill="#1E293B" />
+        {{-- Kolom kanan: peta lokasi outlet --}}
+        <div
+            class="relative min-h-[320px] isolate border-t-4 border-amber-300 bg-slate-200 sm:min-h-[420px] lg:min-h-0 lg:border-l-4 lg:border-t-0"
+            x-data="{ mapAktif: false }"
+        >
+            {{-- Tampil selama peta dimuat, atau jika iframe gagal dirender --}}
+            <div class="absolute inset-0 flex items-center justify-center p-6 text-center">
+                <p class="max-w-xs text-sm leading-relaxed text-slate-600">
+                    Memuat peta lokasi outlet.
+                    <a
+                        href="{{ $mapsUrl }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="font-semibold text-primary-700 underline decoration-primary-300 decoration-2 underline-offset-4 hover:decoration-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                    >
+                        Buka di Google Maps
+                    </a>
+                    jika peta tidak muncul.
+                </p>
+            </div>
 
-                                <!-- Coin Ingot Slot -->
-                                <rect x="155" y="32" width="4" height="18" rx="1" fill="#F59E0B" stroke="#FEF3C7" stroke-width="0.8" />
+            <iframe
+                src="{{ $mapsEmbed }}"
+                title="Peta lokasi {{ $storeName }} di {{ $city }}"
+                width="600"
+                height="450"
+                class="absolute inset-0 z-10 h-full w-full border-0"
+                :class="mapAktif ? '' : 'pointer-events-none'"
+                allowfullscreen
+                referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
 
-                                <!-- Washing Chamber Ring (Door Frame) -->
-                                <circle cx="100" cy="142" r="62" fill="#E2E8F0" stroke="#94A3B8" stroke-width="3" />
-                                
-                                <!-- Glass Seal Outer -->
-                                <circle cx="100" cy="142" r="50" fill="#DC2626" fill-opacity="0.12" stroke="#DC2626" stroke-width="2" />
-                                
-                                <!-- Inner Spinning Drum -->
-                                <g class="animate-drum-spin origin-[100px_142px]">
-                                    <circle cx="100" cy="142" r="38" stroke="#F87171" stroke-width="2" stroke-dasharray="8 6" opacity="0.9" />
-                                    <circle cx="100" cy="142" r="26" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.7" />
-                                    <!-- Fresh Clean Clothes Dynamic Wave -->
-                                    <path d="M86 142c5-7 12-7 18 0s12 7 18 0" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
-                                    <circle cx="95" cy="132" r="3" fill="#FECACA" />
-                                    <circle cx="112" cy="148" r="2.5" fill="#FECACA" />
-                                </g>
+            {{-- Kartu lokasi: mengambang di sudut peta agar atribusi dan kontrol Google tetap terlihat --}}
+            <div class="pointer-events-none absolute right-3 top-3 z-20 sm:right-4 sm:top-4">
+                <div class="pointer-events-auto rounded-xl border border-slate-200 bg-white p-3 shadow-lg sm:p-4">
+                    <p class="text-[11px] font-semibold text-slate-500">Lokasi outlet</p>
+                    <p class="mt-0.5 font-display text-sm font-bold text-slate-900 sm:text-base">{{ $storeName }}, {{ $city }}</p>
 
-                                <!-- Door Handle -->
-                                <rect x="150" y="136" width="6" height="16" rx="2" fill="#64748B" />
-
-                                <!-- Soap Dispenser Drawer -->
-                                <rect x="35" y="70" width="30" height="8" rx="2" fill="#CBD5E1" />
-                            </svg>
-
-                            <!-- Floating Badge Pembayaran Cashless -->
-                            <div class="absolute -bottom-3 -right-2 bg-white rounded-2xl p-3 border border-slate-200 shadow-lg flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-amber-500 text-white flex items-center justify-center font-black text-sm shadow-xs border-2 border-amber-300">
-                                    <x-icon name="check" class="w-5 h-5" />
-                                </div>
-                                <div class="text-left">
-                                    <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Pembayaran Online</p>
-                                    <p class="text-xs font-extrabold text-slate-900">Transfer Bank & E-Wallet / QRIS</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Bottom Fast Status -->
-                        <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                            <span class="flex items-center gap-1.5 font-medium">
-                                <svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                Deterjen Otomatis
-                            </span>
-                            <span class="flex items-center gap-1.5 font-medium">
-                                <svg class="w-4 h-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                Pengering Anti-Bakteri
-                            </span>
-                        </div>
-                    </div>
+                    <button
+                        type="button"
+                        x-on:click="mapAktif = !mapAktif"
+                        :aria-pressed="mapAktif.toString()"
+                        class="mt-2 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-bold text-slate-800 transition-colors hover:border-primary-300 hover:bg-primary-50 hover:text-primary-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                    >
+                        <x-icon name="map-pin" class="h-4 w-4" />
+                        <span x-text="mapAktif ? 'Kunci peta' : 'Geser peta'">Geser peta</span>
+                    </button>
                 </div>
             </div>
         </div>

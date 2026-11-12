@@ -1,124 +1,131 @@
-<section id="operasional" class="py-16 lg:py-24 bg-white border-b border-slate-200/60">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <!-- Left Info -->
-            <div class="lg:col-span-6 space-y-6">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 text-primary-700 text-xs font-bold uppercase tracking-wider border border-primary-200">
-                    Lokasi & Jam Buka
-                </span>
+@php
+    $storeName = config('laundry.store_name', 'Laundry Coin');
+    $city      = config('laundry.city', 'Balikpapan');
+    $mapsUrl   = config('laundry.google_maps_url', 'https://maps.google.com');
 
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                    Buka Setiap Hari, Dari Pagi Hingga Malam
-                </h2>
+    // Nilai "[ISI ...]" adalah placeholder bawaan config, bukan data asli.
+    $isPlaceholder = fn ($value) => trim((string) $value) === '' || str_contains((string) $value, '[ISI');
 
-                <p class="text-base text-slate-600 leading-relaxed">
-                    Hadir di lokasi strategis wilayah {{ config('laundry.city', '[ISI KOTA OUTLET]') }} dengan fasilitas parkir luas dan akses mudah untuk membawa cucian Anda setiap hari.
+    $address    = (string) config('laundry.address', '');
+    $hoursDay   = (string) config('laundry.operating_hours.weekday', '');
+    $hoursEnd   = (string) config('laundry.operating_hours.weekend', '');
+    $lastOrder  = (string) config('laundry.operating_hours.last_order', '');
+    $timezone   = (string) config('laundry.operating_hours.timezone', '');
+    $notes      = (string) config('laundry.operating_hours.notes', '');
+
+    $hoursKnown = ! $isPlaceholder($hoursDay) || ! $isPlaceholder($hoursEnd);
+    $tzLabel    = $isPlaceholder($timezone) ? '' : ' ' . $timezone;
+
+    $whatsapp    = preg_replace('/[^0-9]/', '', (string) config('laundry.whatsapp', ''));
+    $hasWhatsapp = strlen($whatsapp) >= 9;
+
+    $facilities = [
+        'Ruang tunggu ber-AC',
+        'WiFi gratis dan colokan charger',
+        'Pembayaran cashless di kasir',
+        'Meja lipat dan keranjang steril',
+    ];
+@endphp
+
+<section id="operasional" class="border-b border-slate-200 bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-6 lg:grid-cols-12 lg:items-end">
+            <div class="lg:col-span-7">
+                <p class="flex items-center gap-2 text-sm font-semibold text-primary-700">
+                    <span class="h-px w-8 bg-primary-700" aria-hidden="true"></span>
+                    Jam buka dan fasilitas
                 </p>
+                <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                    Mampir saat cucian sudah menumpuk
+                </h2>
+            </div>
+            <p class="text-sm leading-relaxed text-slate-600 sm:text-base lg:col-span-5">
+                Outlet {{ $storeName }} di {{ $city }} melayani cuci mandiri dan drop-off. Parkir tersedia di depan outlet, dan ruang tunggu ber-AC membuat menunggu mesin selesai tetap nyaman.
+            </p>
+        </div>
 
-                <!-- Schedule Box -->
-                <div class="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 space-y-4">
-                    <div class="flex items-center justify-between pb-3 border-b border-slate-200">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-primary-600 text-white flex items-center justify-center font-bold text-xs">
-                                CS
+        <div class="mt-12 grid gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 md:grid-cols-3">
+
+            {{-- Jam buka --}}
+            <div class="bg-white p-6 sm:p-7">
+                <h3 class="text-sm font-bold text-slate-900">Jam buka</h3>
+
+                @if ($hoursKnown)
+                    <dl class="mt-4 space-y-2 text-sm">
+                        @if (! $isPlaceholder($hoursDay))
+                            <div class="flex items-baseline justify-between gap-3 border-b border-slate-100 pb-2">
+                                <dt class="text-slate-600">Senin sampai Jumat</dt>
+                                <dd class="font-semibold text-slate-900">{{ $hoursDay }}{{ $tzLabel }}</dd>
                             </div>
-                            <div>
-                                <p class="text-xs font-bold text-slate-800">Senin s/d Minggu (Setiap Hari)</p>
-                                <p class="text-[11px] text-slate-500">{{ config('laundry.operating_hours.notes', 'Termasuk Hari Libur Nasional') }}</p>
+                        @endif
+                        @if (! $isPlaceholder($hoursEnd))
+                            <div class="flex items-baseline justify-between gap-3 border-b border-slate-100 pb-2">
+                                <dt class="text-slate-600">Sabtu dan Minggu</dt>
+                                <dd class="font-semibold text-slate-900">{{ $hoursEnd }}{{ $tzLabel }}</dd>
                             </div>
-                        </div>
-                        <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-extrabold text-xs">
-                            {{ config('laundry.operating_hours.weekday', '07:00 - 22:00') }} {{ config('laundry.operating_hours.timezone', 'WIB') }}
-                        </span>
-                    </div>
+                        @endif
+                    </dl>
 
-                    <div class="flex items-center gap-3 text-xs text-slate-600">
-                        <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
-                        </svg>
-                        <span>Last order mesin cuci self-service pukul <strong>{{ config('laundry.operating_hours.last_order', '21:00') }} {{ config('laundry.operating_hours.timezone', 'WIB') }}</strong> agar proses cuci-kering tuntas sebelum outlet tutup.</span>
-                    </div>
-                </div>
+                    @if (! $isPlaceholder($lastOrder))
+                        <p class="mt-4 text-xs leading-relaxed text-slate-500">
+                            Pesanan self laundry terakhir {{ $lastOrder }}{{ $tzLabel }} agar cuci dan kering selesai sebelum outlet tutup.
+                        </p>
+                    @endif
+                    @if (! $isPlaceholder($notes))
+                        <p class="mt-2 text-xs leading-relaxed text-slate-500">{{ $notes }}</p>
+                    @endif
+                @else
+                    <p class="mt-4 text-sm leading-relaxed text-slate-600">
+                        Jam buka outlet belum dipublikasikan di halaman ini.
+                    </p>
 
-                <!-- Facilities Grid -->
-                <div class="pt-2">
-                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-800 mb-3">Fasilitas Nyaman di Outlet</h3>
-                    <div class="grid grid-cols-2 gap-3 text-xs text-slate-700">
-                        <div class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-primary-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span>Ruang Tunggu Ber-AC Sejuk</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-primary-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span>Free WiFi & Charging Station</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-primary-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span>Pembayaran Cashless (Transfer & QRIS)</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-primary-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            <span>Meja Lipat & Keranjang Steril</span>
-                        </div>
-                    </div>
-                </div>
+                    @if ($hasWhatsapp)
+                        <a
+                            href="https://wa.me/{{ $whatsapp }}?text={{ urlencode('Halo ' . $storeName . ', jam buka outlet hari ini sampai jam berapa?') }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-primary-700 underline decoration-primary-300 decoration-2 underline-offset-4 hover:text-primary-800 hover:decoration-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                        >
+                            Tanyakan jam buka lewat WhatsApp
+                        </a>
+                    @endif
+                @endif
             </div>
 
-            <!-- Right Visual Outlet Card -->
-            <div class="lg:col-span-6">
-                <div class="bg-slate-900 rounded-3xl p-8 text-white relative overflow-hidden shadow-xl border border-slate-800">
-                    <div class="flex items-center justify-between pb-6 border-b border-slate-800">
-                        <div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Pusat Outlet</span>
-                            <h3 class="text-xl font-bold text-white mt-1">{{ config('laundry.store_name', 'Laundry Coin') }}</h3>
-                        </div>
-                        <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-400 text-xs font-semibold border border-emerald-500/30">
-                            Buka Setiap Hari
-                        </span>
-                    </div>
+            {{-- Fasilitas --}}
+            <div class="bg-white p-6 sm:p-7">
+                <h3 class="text-sm font-bold text-slate-900">Fasilitas di outlet</h3>
+                <ul class="mt-4 space-y-3 text-sm text-slate-600">
+                    @foreach ($facilities as $facility)
+                        <li class="flex items-start gap-2.5">
+                            <x-icon name="check" class="mt-0.5 h-4 w-4 shrink-0 text-primary-600" />
+                            <span>{{ $facility }}</span>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
 
-                    <div class="py-6 space-y-4 text-sm text-slate-300">
-                        <div class="flex items-start gap-3">
-                            <div class="p-2 rounded-lg bg-slate-800 text-primary-400 shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-white">Alamat Outlet</p>
-                                <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">{{ config('laundry.address', '[ISI ALAMAT TOKO LENGKAP]') }}</p>
-                            </div>
-                        </div>
+            {{-- Alamat & rute --}}
+            <div class="bg-white p-6 sm:p-7">
+                <h3 class="text-sm font-bold text-slate-900">Alamat dan rute</h3>
 
-                        <div class="flex items-start gap-3">
-                            <div class="p-2 rounded-lg bg-slate-800 text-amber-400 shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-white">Wilayah Layanan</p>
-                                <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">{{ config('laundry.service_area', '[ISI NAMA AREA / WILAYAH OUTLET]') }}</p>
-                            </div>
-                        </div>
-                    </div>
+                @if (! $isPlaceholder($address))
+                    <p class="mt-4 text-sm leading-relaxed text-slate-600">{{ $address }}</p>
+                @else
+                    <p class="mt-4 text-sm leading-relaxed text-slate-600">
+                        Titik outlet {{ $storeName }} sudah terpasang di peta beranda. Alamat lengkap dan petunjuk jalan tersedia di Google Maps.
+                    </p>
+                @endif
 
-                    <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-3">
-                        <a
-                            href="{{ config('laundry.google_maps_url', 'https://maps.google.com') }}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-bold text-xs shadow-xs transition-colors"
-                        >
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
-                            <span>Buka di Google Maps</span>
-                        </a>
-                        <a
-                            href="https://wa.me/{{ preg_replace('/[^0-9]/', '', config('laundry.whatsapp', '')) }}?text=Halo%20{{ urlencode(config('laundry.store_name', 'Laundry Coin')) }},%20saya%20mau%20tanya%20layanan"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-700 hover:bg-slate-800 text-slate-200 font-bold text-xs transition-colors"
-                        >
-                            <span>Hubungi Staf Outlet</span>
-                        </a>
-                    </div>
-                </div>
+                <a
+                    href="{{ $mapsUrl }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mt-4 inline-flex min-h-11 items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 transition-colors hover:border-primary-300 hover:bg-primary-50 hover:text-primary-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                >
+                    <x-icon name="map-pin" class="h-4 w-4 text-primary-600" />
+                    <span>Buka rute di Google Maps</span>
+                </a>
             </div>
         </div>
     </div>

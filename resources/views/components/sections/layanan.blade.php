@@ -15,15 +15,18 @@
 <section id="layanan" class="py-16 lg:py-24 bg-white border-b border-slate-200/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 text-primary-700 text-xs font-bold uppercase tracking-wider border border-primary-200 mb-3">
-                Tarif Transparan & Bersahabat
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                Pilihan Layanan Laundry Coin
-            </h2>
-            <p class="text-base text-slate-600 mt-3 leading-relaxed">
-                Cuci sendiri langsung di outlet dengan layanan self laundry, atau pesan online layanan drop-off dan serahkan cucian Anda pada staf kami.
+        <div class="mb-14 grid gap-6 lg:grid-cols-12 lg:items-end">
+            <div class="lg:col-span-7">
+                <p class="flex items-center gap-2 text-sm font-semibold text-primary-700">
+                    <span class="h-px w-8 bg-primary-700" aria-hidden="true"></span>
+                    Layanan dan tarif
+                </p>
+                <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                    Self laundry atau drop-off, pilih sesuai jadwal Anda
+                </h2>
+            </div>
+            <p class="text-sm leading-relaxed text-slate-600 sm:text-base lg:col-span-5">
+                Cuci sendiri langsung di outlet dengan tarif per siklus, atau serahkan cucian ke staf lewat layanan drop-off yang bisa dipesan online.
             </p>
         </div>
 
@@ -36,7 +39,7 @@
                     </div>
                     <div>
                         <h3 class="text-base font-bold text-slate-900">Ketentuan & Batas Kapasitas Mesin Cuci</h3>
-                        <p class="text-xs text-slate-600">Pastikan muatan cucian sesuai anjuran agar hasil cuci & pengeringan optimal 100%.</p>
+                        <p class="text-xs text-slate-600">Pastikan muatan cucian sesuai anjuran agar hasil cuci dan pengeringan optimal.</p>
                     </div>
                 </div>
                 <span class="inline-flex self-start sm:self-auto items-center px-3 py-1 rounded-full text-xs font-bold bg-amber-200 text-amber-900">
@@ -118,7 +121,7 @@
                             <div class="pt-4 mt-2">
                                 <div class="flex items-center justify-center gap-2 rounded-xl bg-amber-50 border border-amber-200 px-3 py-2.5 text-xs font-bold text-amber-800">
                                     <x-icon name="map-pin" class="w-4 h-4 shrink-0" />
-                                    <span>Menu Khusus Langsung Ditempat</span>
+                                    <span>Langsung di outlet</span>
                                 </div>
                             </div>
                         </div>
@@ -168,11 +171,11 @@
 
                             <div class="pt-4 mt-2">
                                 @if ($isPelanggan)
-                                    <x-button href="{{ route('pelanggan.pesan.index', ['layanan' => $service->slug]) }}" size="sm" class="w-full">
+                                    <x-button href="{{ route('pelanggan.pesan.index', ['layanan' => $service->slug]) }}" size="md" class="w-full min-h-11">
                                         Pesan Sekarang
                                     </x-button>
                                 @elseif (! $authUser)
-                                    <x-button href="{{ route('pelanggan.orders.start', $service) }}" size="sm" class="w-full">
+                                    <x-button href="{{ route('pelanggan.orders.start', $service) }}" size="md" class="w-full min-h-11">
                                         Pesan Sekarang
                                     </x-button>
                                 @else

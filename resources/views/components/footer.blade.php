@@ -1,3 +1,18 @@
+@php
+    // Nilai "[ISI ...]" adalah placeholder bawaan config, bukan data asli.
+    $isPlaceholder = fn ($value) => trim((string) $value) === '' || str_contains((string) $value, '[ISI');
+
+    $storeName = config('laundry.store_name', 'Laundry Coin');
+    $address   = (string) config('laundry.address', '');
+    $phone     = (string) config('laundry.phone', '');
+    $email     = (string) config('laundry.email', '');
+
+    $hoursDay = (string) config('laundry.operating_hours.weekday', '');
+    $hoursEnd = (string) config('laundry.operating_hours.weekend', '');
+    $hoursNote = (string) config('laundry.operating_hours.notes', '');
+    $hoursKnown = ! $isPlaceholder($hoursDay) || ! $isPlaceholder($hoursEnd);
+@endphp
+
 <footer class="bg-slate-900 text-slate-300 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
@@ -53,46 +68,76 @@
             <!-- Jam Operasional -->
             <div>
                 <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Jam Operasional</h4>
-                <ul class="space-y-2 text-sm text-slate-400">
-                    <li class="flex items-start justify-between border-b border-slate-800 pb-2">
-                        <span>Senin - Jumat</span>
-                        <span class="font-medium text-slate-200">{{ config('laundry.operating_hours.weekday', '07:00 - 22:00') }}</span>
-                    </li>
-                    <li class="flex items-start justify-between border-b border-slate-800 pb-2">
-                        <span>Sabtu - Minggu</span>
-                        <span class="font-medium text-slate-200">{{ config('laundry.operating_hours.weekend', '07:00 - 22:00') }}</span>
-                    </li>
-                    <li class="pt-1 text-xs text-amber-400 flex items-center gap-1.5 font-medium">
-                        <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
-                        </svg>
-                        {{ config('laundry.operating_hours.notes', 'Buka Setiap Hari Termasuk Libur') }}
-                    </li>
-                </ul>
+
+                @if ($hoursKnown)
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        @if (! $isPlaceholder($hoursDay))
+                            <li class="flex items-start justify-between gap-3 border-b border-slate-800 pb-2">
+                                <span>Senin - Jumat</span>
+                                <span class="font-medium text-slate-200">{{ $hoursDay }}</span>
+                            </li>
+                        @endif
+                        @if (! $isPlaceholder($hoursEnd))
+                            <li class="flex items-start justify-between gap-3 border-b border-slate-800 pb-2">
+                                <span>Sabtu - Minggu</span>
+                                <span class="font-medium text-slate-200">{{ $hoursEnd }}</span>
+                            </li>
+                        @endif
+                        @if (! $isPlaceholder($hoursNote))
+                            <li class="pt-1 text-xs text-amber-400 flex items-center gap-1.5 font-medium">
+                                <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                                </svg>
+                                {{ $hoursNote }}
+                            </li>
+                        @endif
+                    </ul>
+                @else
+                    <p class="text-sm leading-relaxed text-slate-400">
+                        Jam buka belum dipublikasikan. Tanyakan jadwal hari ini lewat halaman kontak.
+                    </p>
+                @endif
             </div>
 
             <!-- Kontak & Alamat -->
             <div>
                 <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Outlet & Kontak</h4>
                 <ul class="space-y-2.5 text-sm text-slate-400">
+                    @if (! $isPlaceholder($address))
+                        <li class="flex items-start gap-2.5">
+                            <svg class="w-4 h-4 text-primary-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>{{ $address }}</span>
+                        </li>
+                    @endif
+
+                    @if (! $isPlaceholder($phone))
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 text-primary-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>{{ $phone }}</span>
+                        </li>
+                    @endif
+
+                    @if (! $isPlaceholder($email))
+                        <li class="flex items-center gap-2.5">
+                            <svg class="w-4 h-4 text-primary-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>{{ $email }}</span>
+                        </li>
+                    @endif
+
                     <li class="flex items-start gap-2.5">
-                        <svg class="w-4 h-4 text-primary-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <svg class="w-4 h-4 text-primary-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                         </svg>
-                        <span>{{ config('laundry.address', '[ISI ALAMAT TOKO LENGKAP]') }}</span>
-                    </li>
-                    <li class="flex items-center gap-2.5">
-                        <svg class="w-4 h-4 text-primary-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                        <span>{{ config('laundry.phone', '[ISI NOMOR HP/TELEPON]') }}</span>
-                    </li>
-                    <li class="flex items-center gap-2.5">
-                        <svg class="w-4 h-4 text-primary-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        <span>{{ config('laundry.email', '[ISI EMAIL TOKO]') }}</span>
+                        <a href="{{ config('laundry.google_maps_url', 'https://maps.google.com') }}" target="_blank" rel="noopener noreferrer" class="hover:text-primary-400 transition-colors">
+                            Lihat titik outlet di Google Maps
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -100,11 +145,11 @@
 
         <!-- Bottom Copyright -->
         <div class="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-            <p>&copy; {{ date('Y') }} Laundry Coin. Seluruh Hak Cipta Dilindungi.</p>
-            <div class="flex items-center gap-6">
-                <a href="#" class="hover:text-slate-400 transition-colors">Kebijakan Privasi</a>
-                <a href="#" class="hover:text-slate-400 transition-colors">Syarat & Ketentuan</a>
-                <a href="#" class="hover:text-slate-400 transition-colors">Bantuan Pelanggan</a>
+            <p>&copy; {{ date('Y') }} {{ $storeName }}. Seluruh Hak Cipta Dilindungi.</p>
+            <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+                <a href="{{ route('tentang') }}" class="hover:text-slate-300 transition-colors">Tentang Kami</a>
+                <a href="{{ route('aturan') }}" class="hover:text-slate-300 transition-colors">Aturan Penggunaan</a>
+                <a href="{{ route('tracking') }}" class="hover:text-slate-300 transition-colors">Lacak Pesanan</a>
             </div>
         </div>
     </div>

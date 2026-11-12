@@ -13,10 +13,15 @@ return [
     'tagline'    => env('LAUNDRY_TAGLINE', '[ISI TAGLINE TOKO]'),
     
     // Alamat dan Lokasi Outlet
-    'city'             => env('LAUNDRY_CITY', '[ISI KOTA OUTLET]'),
-    'address'          => env('LAUNDRY_ADDRESS', '[ISI ALAMAT LENGKAP OUTLET]'),
+    // Data kota, alamat, dan titik peta diambil dari listing "Laundry Coin" pada peta outlet
+    // yang dipasang di beranda (Jl. PM. Noor, Sempaja, Samarinda Utara).
+    'city'             => env('LAUNDRY_CITY', 'Samarinda'),
+    'address'          => env('LAUNDRY_ADDRESS', 'Jl. PM. Noor No. 15b, Sempaja Selatan, Kec. Samarinda Utara, Kota Samarinda, Kalimantan Timur 75119'),
     'service_area'     => env('LAUNDRY_SERVICE_AREA', '[ISI NAMA AREA / JANGKAUAN LAYANAN]'),
-    'google_maps_url'  => env('LAUNDRY_MAPS_URL', 'https://maps.google.com'),
+    // Titik koordinat sama dengan pin "Laundry Coin" pada peta embed di bawah.
+    'google_maps_url'  => env('LAUNDRY_MAPS_URL', 'https://www.google.com/maps/search/?api=1&query=-0.4518989,117.1620591'),
+    // Peta lokasi outlet (iframe hero beranda).
+    'maps_embed_url'   => env('LAUNDRY_MAPS_EMBED_URL', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6942242309133!2d117.15947881089576!3d-0.45189889954176055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df679e11457daab%3A0x22987d217cc81316!2sLaundry%20Coin!5e0!3m2!1sid!2sid!4v1794472319735!5m2!1sid!2sid'),
 
     // Kontak Outlet
     'phone'      => env('LAUNDRY_PHONE', '[ISI NOMOR HP/TELEPON]'),

@@ -4,22 +4,23 @@
 
 <section id="cara-kerja" class="py-16 lg:py-24 bg-slate-50 border-b border-slate-200/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-bold uppercase tracking-wider border border-amber-200 mb-3">
-                Simpel & Cashless
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                4 Langkah Mudah Mencuci di Laundry Coin
+        <div class="mb-12 max-w-2xl">
+            <p class="flex items-center gap-2 text-sm font-semibold text-primary-700">
+                <span class="h-px w-8 bg-primary-700" aria-hidden="true"></span>
+                Alur mencuci
+            </p>
+            <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                Empat langkah, dari cucian kotor sampai siap pakai
             </h2>
-            <p class="text-base text-slate-600 mt-3 leading-relaxed">
-                Pesan online atau datang langsung ke outlet. Ikuti 4 tahap praktis ini dan bawa pulang pakaian kering siap pakai.
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+                Pesan online atau datang langsung ke outlet. Ikuti empat tahap ini dan bawa pulang pakaian kering siap pakai.
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             <!-- Step 1: Pilih Layanan & Masukkan Pakaian -->
             <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col">
-                <div class="w-10 h-10 rounded-xl bg-primary-600 text-white font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
+                <div class="w-10 h-10 rounded-xl bg-primary-700 text-white font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
                     01
                 </div>
                 <h3 class="text-base font-bold text-slate-900 mb-3">Pilih Layanan & Masukkan Pakaian</h3>
@@ -45,7 +46,7 @@
 
             <!-- Step 2: Pembayaran Online Cashless -->
             <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col">
-                <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-900 font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
+                <div class="w-10 h-10 rounded-xl bg-primary-700 text-white font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
                     02
                 </div>
                 <h3 class="text-base font-bold text-slate-900 mb-3">Pembayaran Online Cashless</h3>
@@ -77,7 +78,7 @@
 
             <!-- Step 3: Menunggu Estimasi Penyelesaian -->
             <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col">
-                <div class="w-10 h-10 rounded-xl bg-primary-600 text-white font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
+                <div class="w-10 h-10 rounded-xl bg-primary-700 text-white font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
                     03
                 </div>
                 <h3 class="text-base font-bold text-slate-900 mb-3">Menunggu Estimasi Penyelesaian Laundry</h3>
@@ -98,7 +99,7 @@
 
             <!-- Step 4: Pesanan Selesai -->
             <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs flex flex-col">
-                <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
+                <div class="w-10 h-10 rounded-xl bg-primary-700 text-white font-extrabold text-base flex items-center justify-center mb-5 shadow-xs">
                     04
                 </div>
                 <h3 class="text-base font-bold text-slate-900 mb-3">Pesanan Selesai, Pakaian Kering Siap Dipakai</h3>
@@ -111,7 +112,7 @@
                 <div class="mt-auto pt-4">
                     <div class="pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] font-semibold text-emerald-700">
                         <x-icon name="check" class="w-4 h-4 shrink-0" />
-                        <span>100% Kering Tanpa Jemur</span>
+                        <span>Kering tanpa jemur</span>
                     </div>
                 </div>
             </div>

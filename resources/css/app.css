@@ -70,6 +70,26 @@ html {
     font-family: var(--font-sans);
 }
 
+/* Kontrol yang bisa dipakai memakai kursor pointer, kontrol nonaktif tidak.
+   Ditulis sekali di base layer agar semua komponen konsisten. */
+@layer base {
+    a[href],
+    button:not(:disabled),
+    summary,
+    select,
+    label[for],
+    [role="button"]:not([aria-disabled="true"]),
+    input[type="checkbox"]:not(:disabled),
+    input[type="radio"]:not(:disabled) {
+        cursor: pointer;
+    }
+
+    :disabled,
+    [aria-disabled="true"] {
+        cursor: not-allowed;
+    }
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     letter-spacing: -0.025em;
