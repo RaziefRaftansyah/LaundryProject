@@ -188,6 +188,7 @@
         const labels = chartData.map(item => item.label);
         const dataValues = chartData.map(item => item.value);
 
+        const colors = window.getChartColors();
         window.loadChartLib().then((Chart) => {
             new Chart(canvas, {
             type: 'bar',
@@ -196,8 +197,8 @@
                 datasets: [{
                     label: 'Pesanan Selesai / Masuk',
                     data: dataValues,
-                    backgroundColor: 'rgba(2, 132, 199, 0.85)',
-                    hoverBackgroundColor: 'rgba(3, 105, 161, 1)',
+                    backgroundColor: colors.income,
+                    hoverBackgroundColor: colors.incomeHover,
                     borderRadius: 8,
                     borderSkipped: false,
                     maxBarThickness: 48,
@@ -211,7 +212,7 @@
                         display: false
                     },
                     tooltip: {
-                        backgroundColor: '#0f172a',
+                        backgroundColor: colors.tooltipBg,
                         titleFont: { size: 12, weight: 'bold' },
                         bodyFont: { size: 12 },
                         padding: 10,
@@ -232,7 +233,7 @@
                             font: { size: 11 }
                         },
                         grid: {
-                            color: 'rgba(226, 232, 240, 0.8)'
+                            color: colors.grid
                         }
                     },
                     x: {

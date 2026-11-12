@@ -1,16 +1,17 @@
 @php
-    // Nilai "[ISI ...]" adalah placeholder bawaan config, bukan data asli.
-    $isPlaceholder = fn ($value) => trim((string) $value) === '' || str_contains((string) $value, '[ISI');
+    // Semua nilai outlet datang dari View::share di AppServiceProvider (config/laundry.php).
+    use App\Support\Placeholder;
 
-    $storeName = config('laundry.store_name', 'Laundry Coin');
-    $address   = (string) config('laundry.address', '');
-    $phone     = (string) config('laundry.phone', '');
-    $email     = (string) config('laundry.email', '');
+    $isPlaceholder = fn ($value) => Placeholder::is($value);
 
-    $hoursDay = (string) config('laundry.operating_hours.weekday', '');
-    $hoursEnd = (string) config('laundry.operating_hours.weekend', '');
-    $hoursNote = (string) config('laundry.operating_hours.notes', '');
-    $hoursKnown = ! $isPlaceholder($hoursDay) || ! $isPlaceholder($hoursEnd);
+    $address   = (string) $address;
+    $phone     = (string) $phone;
+    $email     = (string) $email;
+
+    $hoursDay = (string) $hoursDay;
+    $hoursEnd = (string) $hoursEnd;
+    $hoursNote = (string) $hoursNote;
+    $hoursKnown = (bool) $hoursKnown;
 @endphp
 
 <footer class="bg-slate-900 text-slate-300 border-t border-slate-800">

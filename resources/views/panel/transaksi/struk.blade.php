@@ -23,8 +23,8 @@
 </head>
 <body>
 <div class="struk">
-    <div class="c b">{{ config('laundry.store_name', 'Laundry Coin') }}</div>
-    <div class="c">{{ config('laundry.address') }}</div>
+    <div class="c b">{{ $storeName }}</div>
+    <div class="c">{{ $address }}</div>
     <hr>
     <table>
         <tr><td>Kode</td><td class="r b">{{ $checkout->code }}</td></tr>

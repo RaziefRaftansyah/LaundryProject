@@ -1,23 +1,20 @@
 @php
-    $storeName = config('laundry.store_name', 'Laundry Coin');
-    $city      = config('laundry.city', 'Balikpapan');
-    $mapsUrl   = config('laundry.google_maps_url', 'https://maps.google.com');
+    // Semua nilai outlet datang dari View::share di AppServiceProvider (config/laundry.php).
+    use App\Support\Placeholder;
 
-    // Nilai "[ISI ...]" adalah placeholder bawaan config, bukan data asli.
-    $isPlaceholder = fn ($value) => trim((string) $value) === '' || str_contains((string) $value, '[ISI');
+    $isPlaceholder = fn ($value) => Placeholder::is($value);
 
-    $address    = (string) config('laundry.address', '');
-    $hoursDay   = (string) config('laundry.operating_hours.weekday', '');
-    $hoursEnd   = (string) config('laundry.operating_hours.weekend', '');
-    $lastOrder  = (string) config('laundry.operating_hours.last_order', '');
-    $timezone   = (string) config('laundry.operating_hours.timezone', '');
-    $notes      = (string) config('laundry.operating_hours.notes', '');
+    $address   = (string) $address;
+    $hoursDay  = (string) $hoursDay;
+    $hoursEnd  = (string) $hoursEnd;
+    $lastOrder = (string) config('laundry.operating_hours.last_order', '');
+    $timezone  = (string) config('laundry.operating_hours.timezone', '');
+    $notes     = (string) $hoursNote;
 
-    $hoursKnown = ! $isPlaceholder($hoursDay) || ! $isPlaceholder($hoursEnd);
+    $hoursKnown = (bool) $hoursKnown;
     $tzLabel    = $isPlaceholder($timezone) ? '' : ' ' . $timezone;
 
-    $whatsapp    = preg_replace('/[^0-9]/', '', (string) config('laundry.whatsapp', ''));
-    $hasWhatsapp = strlen($whatsapp) >= 9;
+    $hasWhatsapp = strlen((string) $whatsapp) >= 9;
 
     $facilities = [
         'Ruang tunggu ber-AC',

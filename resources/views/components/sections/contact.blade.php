@@ -1,10 +1,6 @@
 @php
-    $storeName = config('laundry.store_name', 'Laundry Coin');
-    $city      = config('laundry.city', 'Balikpapan');
-    $mapsUrl   = config('laundry.google_maps_url', 'https://maps.google.com');
-
-    $whatsapp    = preg_replace('/[^0-9]/', '', (string) config('laundry.whatsapp', ''));
-    $hasWhatsapp = strlen($whatsapp) >= 9;
+    // Nilai outlet datang dari View::share di AppServiceProvider (config/laundry.php).
+    $hasWhatsapp = strlen((string) $whatsapp) >= 9;
 @endphp
 
 <section id="kontak" class="bg-white py-16 lg:py-24">

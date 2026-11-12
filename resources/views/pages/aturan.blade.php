@@ -29,7 +29,7 @@
     <div>
         <span class="inline-flex px-3 py-1 rounded-full bg-primary-50 text-primary-700 text-xs font-bold uppercase tracking-wider border border-primary-200">Tentang Kami</span>
         <h1 class="mt-3 text-3xl font-extrabold text-slate-900 tracking-tight">Aturan Penggunaan</h1>
-        <p class="mt-2 text-sm text-slate-700">Ketentuan penggunaan layanan dan website {{ config('laundry.store_name', 'Laundry Coin') }}.</p>
+        <p class="mt-2 text-sm text-slate-700">Ketentuan penggunaan layanan dan website {{ $storeName }}.</p>
     </div>
 
     @foreach ($rules as $title => $items)

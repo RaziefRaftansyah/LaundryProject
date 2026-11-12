@@ -52,3 +52,19 @@
 - **R-05 ritme section seragam:** pilihan sengaja agar setiap section mudah di-scan. Hero, FAQ, dan contact sudah berbeda komposisi.
 - **Stripe di header grup layanan:** garis vertikal warna primary-600 (self) vs slate-800 (non-self) sebagai penanda kategori, bukan hiasan.
 - **R-29 3 core + status:** merah + biru + amber sebagai core; emerald/warning/danger dipakai khusus untuk status pesanan & pembayaran, bukan sebagai warna dekoratif.
+
+## Data Outlet (config/laundry.php)
+- Telepon: `0821-5030-5758` (config `phone`, fallback WA `6282150305758`).
+- Jam operasional: Senin–Jumat `07.00 - 19.00`, Sabtu–Minggu `07.00 - 21.00` WITA (UTC+8). Last order 30 menit sebelum tutup; catatan operasional disertakan.
+- Alamat/kota/peta diambil dari `config/laundry.php` dan ditampilkan di footer + section operasional/kontak.
+- Nilai outlet dibagikan ke semua view via `View::share` di `App\Providers\AppServiceProvider::boot()`, jadi view tidak perlu membaca `config('laundry.*')` berulang-ulang.
+- Deteksi placeholder `"[ISI ...]"` diposisikan di satu tempat: `App\Support\Placeholder::is()`.
+
+## Warna diagram (Chart.js)
+- Palet diagram dipisah dari warna UI dan diatur di satu tempat: `resources/css/app.css` (`--color-chart-*`).
+- JS lewat `window.getChartColors()` (`resources/js/app.js`) membaca CSS variable saat runtime, bukan literal hex/rgba di setiap view.
+- Digunakan di admin dashboard + panel laporan (trend, channel, metode).
+
+## Deduplikasi kode
+- `$isPlaceholder` closure: satu implementasi (`App\Support\Placeholder::is`) dipakai di footer + section operasional.
+- Normalisasi digit WhatsApp: `App\Support\PhoneNumber::digits()` dipakai di section operasional + kontak.

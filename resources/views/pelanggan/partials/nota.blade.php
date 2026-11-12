@@ -47,8 +47,8 @@
 <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden" data-nota="{{ $code }}">
     {{-- Kepala nota --}}
     <div class="px-5 pt-5 pb-4 text-center border-b border-dashed border-slate-300">
-        <p class="text-base font-extrabold text-primary-700 tracking-tight">{{ config('laundry.store_name', 'Laundry Coin') }}</p>
-        <p class="text-[11px] text-slate-700">{{ config('laundry.address') }}</p>
+        <p class="text-base font-extrabold text-primary-700 tracking-tight">{{ $storeName }}</p>
+        <p class="text-[11px] text-slate-700">{{ $address }}</p>
         <p class="mt-3 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">Nota Pesanan</p>
         <p class="font-mono text-lg font-extrabold text-slate-900 select-all">{{ $code }}</p>
         <span class="mt-2 inline-block px-3 py-1 rounded-lg border-2 text-[11px] font-extrabold uppercase tracking-wider -rotate-2 {{ $stamp[0] }}">{{ $stamp[1] }}</span>

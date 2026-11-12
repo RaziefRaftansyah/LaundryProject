@@ -10,9 +10,13 @@
     /* Netral 60% memakai palet slate bawaan Tailwind:
        bg-slate-50, surface putih, text-slate-900, border-slate-200. */
     --color-bg: #F8FAFC;
-    --color-surface: #FFFFFF;
+    --color-surface: #FAFAFA;
     --color-container: #F1F5F9;
     --color-border: #E2E8F0;
+
+    /* bg-white (Tailwind default putih) diubah ke #FAFAFA.
+       text-white di atas latar gelap/brand tetap terbaca (kontras tinggi). */
+    --color-white: #FAFAFA;
 
     --color-text: #0F172A;
     --color-muted: #64748B;
@@ -63,6 +67,27 @@
     --color-success: #10B981;
     --color-danger: #EF4444;
     --color-warning: #F59E0B;
+
+    /* Warna diagram Chart.js — diambil oleh JS melalui getComputedStyle(),
+       agar satu warna diubah di sini baru meratap ke semua diagram. */
+    --color-chart-income: rgba(2, 132, 199, 0.85);
+    --color-chart-income-hover: rgba(3, 105, 161, 1);
+    --color-chart-expense: rgba(225, 29, 72, 0.75);
+    --color-chart-grid: rgba(226, 232, 240, 0.8);
+    --color-chart-tooltip-bg: #0F172A;
+
+    /* Palet chart saluran & metode pembayaran (diambil oleh JS laporan). */
+    --color-chart-channel-outlet: #F59E0B;
+    --color-chart-channel-online: #7C3AED;
+    --color-chart-channel-outlet-bg: rgba(245, 158, 11, 0.15);
+    --color-chart-channel-online-bg: rgba(124, 58, 237, 0.12);
+    --color-chart-method-1: #DC2626;
+    --color-chart-method-2: #10B981;
+    --color-chart-method-3: #F59E0B;
+    --color-chart-method-4: #7C3AED;
+    --color-chart-method-5: #E11D48;
+    --color-chart-method-6: #64748B;
+    --color-chart-method-7: #14B8A6;
 }
 
 html {

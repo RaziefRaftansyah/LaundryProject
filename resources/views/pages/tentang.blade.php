@@ -11,8 +11,8 @@
 
     <div class="bg-white rounded-2xl border border-slate-200 p-6 space-y-4 text-sm text-slate-700 leading-relaxed">
         <p>
-            <strong class="text-slate-900">{{ config('laundry.store_name', 'Laundry Coin') }}</strong> adalah laundromat modern di
-            {{ config('laundry.city') }} dengan mesin cuci dan pengering berkapasitas besar yang higienis dan praktis.
+            <strong class="text-slate-900">{{ $storeName }}</strong> adalah laundromat modern di
+            {{ $city }} dengan mesin cuci dan pengering berkapasitas besar yang higienis dan praktis.
         </p>
         <p>Kami menyediakan dua jenis layanan:</p>
         <ul class="list-disc list-inside space-y-1">

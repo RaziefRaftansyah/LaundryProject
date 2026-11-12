@@ -47,4 +47,12 @@ final class PhoneNumber
 
         return implode('-', str_split($local, 4));
     }
+
+    /**
+     * Hanya digit (untuk wa.me/wa.link): "+628123456789" → "628123456789".
+     */
+    public static function digits(?string $value): string
+    {
+        return preg_replace('/\D/', '', (string) $value);
+    }
 }

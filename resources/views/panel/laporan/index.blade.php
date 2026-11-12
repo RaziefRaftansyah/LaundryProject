@@ -106,22 +106,23 @@
         const rupiah = (v) => 'Rp ' + Number(v).toLocaleString('id-ID');
         const money = { ticks: { callback: (v) => rupiah(v) } };
 
+        const colors = window.getChartColors();
         function draw() {
             window.loadChartLib().then((Chart) => {
             const make = (id, config) => { const el = document.getElementById(id); if (el) new Chart(el, config); };
 
             make('trendChart', { type: 'bar', data: { labels: trend.map(b => b.label), datasets: [
-                { label: 'Pendapatan neto', data: trend.map(b => b.income), backgroundColor: 'rgba(2,132,199,.85)', borderRadius: 6 },
-                { label: 'Pengeluaran', data: trend.map(b => b.expense), backgroundColor: 'rgba(225,29,72,.75)', borderRadius: 6 },
+                { label: 'Pendapatan neto', data: trend.map(b => b.income), backgroundColor: colors.income, borderRadius: 6 },
+                { label: 'Pengeluaran', data: trend.map(b => b.expense), backgroundColor: colors.expense, borderRadius: 6 },
             ] }, options: { maintainAspectRatio: false, scales: { y: money }, plugins: { tooltip: { callbacks: { label: (c) => c.dataset.label + ': ' + rupiah(c.raw) } } } } });
 
             make('channelChart', { type: 'line', data: { labels: channels.map(b => b.label), datasets: [
-                { label: 'Outlet', data: channels.map(b => b.outlet), borderColor: '#f59e0b', backgroundColor: 'rgba(245,158,11,.15)', fill: true, tension: .3 },
-                { label: 'Online', data: channels.map(b => b.online), borderColor: '#7c3aed', backgroundColor: 'rgba(124,58,237,.12)', fill: true, tension: .3 },
+                { label: 'Outlet', data: channels.map(b => b.outlet), borderColor: colors.channel.outlet, backgroundColor: colors.channel.outletBg, fill: true, tension: .3 },
+                { label: 'Online', data: channels.map(b => b.online), borderColor: colors.channel.online, backgroundColor: colors.channel.onlineBg, fill: true, tension: .3 },
             ] }, options: { maintainAspectRatio: false, scales: { y: money } } });
 
             make('methodChart', { type: 'doughnut', data: { labels: methods.map(m => m.label), datasets: [{ data: methods.map(m => m.value),
-                backgroundColor: ['#dc2626', '#10b981', '#f59e0b', '#7c3aed', '#e11d48', '#64748b', '#14b8a6'] }] },
+                backgroundColor: colors.methods }] },
                 options: { maintainAspectRatio: false, plugins: { tooltip: { callbacks: { label: (c) => c.label + ': ' + rupiah(c.raw) } } } } });
             });
         }

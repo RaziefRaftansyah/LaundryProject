@@ -1,8 +1,6 @@
 @php
-    $storeName = config('laundry.store_name', 'Laundry Coin');
-    $city      = config('laundry.city', 'Balikpapan');
+    // Nilai outlet datang dari View::share di AppServiceProvider (config/laundry.php).
     $mapsEmbed = config('laundry.maps_embed_url');
-    $mapsUrl   = config('laundry.google_maps_url', 'https://maps.google.com');
 @endphp
 
 <section id="hero" class="relative bg-primary-700 text-white">
